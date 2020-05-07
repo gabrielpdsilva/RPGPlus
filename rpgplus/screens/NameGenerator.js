@@ -17,14 +17,12 @@ https://teasnake.wordpress.com/2016/03/03/how-to-build-a-simple-javascript-name-
 
 export default class NameGenerator extends Component {
 	constructor(props){
-		super(props);
+	    super(props);
 		this.state={
-      pickerValue:'cyberpunk',
-      name: ''
-			
-		}
-		
-  };
+            pickerValue:'medieval',
+            name: ''	
+		}	
+    };
 
   //still finishing
 /*  =====================================
@@ -83,34 +81,48 @@ var options =["Home","Savings","Car","GirlFriend"];
     let lastName;
 
     switch(category){
-      case "cyberpunk":
-
-        firstName = ["Alpha", "Zero"];
-        lastName = ["Zeke","dr0id"];
-
-      break;
-  
-      case "lovecraft":
-        firstName = ["Edmund","Francis","Carla","Xavier"];
-        lastName = ["Newton", "Kennedy"];
         
-      break;
-  
-      case "medieval":
+        case "changeling":
 
-        firstName = ["Aynur","Asriel","Baldor","Hannah","Vannet"];
-        lastName = ["the Great","Iron Heart","Turambar", "Valstar", "Yelenna", "The Great One"];
+            firstName = ["Ax", "Zyx"];
+            lastName = ["Yow","D'ella"];
+
+        break;
+
+        case "cyberpunk":
+
+            firstName = ["Alpha", "Zero"];
+            lastName = ["Zeke","dr0id"];
+
+        break;
+  
+        case "lovecraft":
+            firstName = ["Edmund","Francis","Carla","Xavier"];
+            lastName = ["Newton", "Kennedy"];
         
-      break;
+        break;
   
-      case "vampire":
-        firstName = ["Victoria","Anna","Richard"];
-        lastName = ["Valerius","Stohess"];
+        case "medieval":
 
-      break;
+            firstName = ["Aynur","Asriel","Baldor","Hannah","Vannet"];
+            lastName = ["the Great","Iron Heart","Turambar", "Valstar", "Yelenna", "The Great One"];
+        
+        break;
+
+        case "werewolf":
+            firstName = ["Ganur", "Foryn"];
+            lastName = ["Heart of the Forest", "ay' Ul"];
+    
+        break;
   
-      default:
-        alert("No options.");
+        case "vampire":
+            firstName = ["Victoria","Anna","Richard"];
+            lastName = ["Valerius","Stohess"];
+
+        break;
+  
+        default:
+            alert("No options.");
      }
 
      this.generateName(firstName, lastName);
@@ -136,18 +148,19 @@ var options =["Home","Savings","Car","GirlFriend"];
     return (
       <View style={styles.container}>
         <Text style={styles.title}>Name Generator 2.0</Text>
-        <Text style={styles.texts}>Press the button to generate random names, you can copy it to your clipboard by clicking on it.</Text>
+        <Text style={styles.texts}>Select a category and press the button to generate random names, you can copy it to your clipboard by clicking on it.</Text>
 
         <Picker
           style={{width:'80%'}}
           selectedValue={this.state.pickerValue}
           onValueChange={(itemValue, itemIndex) => this.setState({pickerValue: itemValue})}
         >
-		
+            <Picker.Item label="Changeling: The Dreaming" value="changeling"/>
             <Picker.Item label="Cyberpunk" value="cyberpunk"/>
             <Picker.Item label="Lovecraft Mythos" value="lovecraft"/>
             <Picker.Item label="Medieval" value="medieval"/>
-            <Picker.Item label="Vampire the Masquerade" value="vampire" />
+            <Picker.Item label="Vampire: the Masquerade" value="vampire" />
+            <Picker.Item label="Werewolf: the Apocalypse" value="werewolf" />
 		
 		</Picker>
 
@@ -187,7 +200,8 @@ const styles = StyleSheet.create({
   },
   texts: {
       margin: 15,
-      fontSize: 15
+      fontSize: 15,
+      textAlign: 'center'
 
   },
   buttonText: {
