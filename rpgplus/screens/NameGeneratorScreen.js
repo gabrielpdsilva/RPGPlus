@@ -15,7 +15,7 @@ Name Generator algorithm by RyanGoslingsBugle
 https://teasnake.wordpress.com/2016/03/03/how-to-build-a-simple-javascript-name-generator/
 */
 
-export default class NameGenerator extends Component {
+export default class NameGeneratorScreen extends Component {
 	constructor(props){
 	    super(props);
 		this.state={
@@ -143,7 +143,6 @@ var options =["Home","Savings","Car","GirlFriend"];
     ToastAndroid.show(this.state.name + " copied to your clipboard", ToastAndroid.SHORT);
   }
 
-
   render() {
     return (
       <View style={styles.container}>
@@ -162,7 +161,7 @@ var options =["Home","Savings","Car","GirlFriend"];
             <Picker.Item label="Vampire: the Masquerade" value="vampire" />
             <Picker.Item label="Werewolf: the Apocalypse" value="werewolf" />
 		
-		</Picker>
+		    </Picker>
 
         <TouchableOpacity onPress={this.copyToClipboard}>
           <Text style={styles.texts}>{this.state.name}</Text>
@@ -199,17 +198,17 @@ const styles = StyleSheet.create({
     fontSize: 20
   },
   texts: {
-      margin: 15,
-      fontSize: 15,
-      textAlign: 'center'
+    margin: 15,
+    fontSize: 15,
+    textAlign: 'center'
 
   },
   buttonText: {
-      color: '#ffffff',
-      textAlign: 'center'
+    color: '#ffffff',
+    textAlign: 'center'
   },
   button: {
-      padding:10,
+    padding:10,
     backgroundColor: '#202646',
     borderRadius:5
   }
