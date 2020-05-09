@@ -15,7 +15,6 @@ export default class SketchScreen extends Component {
                     <TextInput style={styles.textArea} placeholder="Name of the story..."/>
                     <TextInput style={styles.textArea} placeholder="Category of the story (medieval, cyberpunk)..."/>
                     <TextInput style={styles.textArea} placeholder="System used (Storyteller, D20)... "/>
-                    <TextInput style={styles.textArea} placeholder="Name of the possible NPCs used..."/>
                     <TextInput style={styles.textArea}
                                placeholder="Type here a basic sketch of your storyboard..."
                                multiline = {true} //textinput will be multiline

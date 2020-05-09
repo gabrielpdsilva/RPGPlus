@@ -11,6 +11,6 @@ import SketchScreen from './screens/SketchScreen';
 
 export default function App() {
   return (
-    <SketchScreen/>
+    <NameGeneratorScreen/>
   );
 }

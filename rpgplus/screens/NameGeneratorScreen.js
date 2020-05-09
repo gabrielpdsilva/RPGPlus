@@ -86,7 +86,7 @@ var options =["Home","Savings","Car","GirlFriend"];
 
             firstName = ["Ax", "Zyx"];
             lastName = ["Yow","D'ella"];
-
+        
         break;
 
         case "cyberpunk":
@@ -95,10 +95,24 @@ var options =["Home","Savings","Car","GirlFriend"];
             lastName = ["Zeke","dr0id"];
 
         break;
+
+        case "elvish":
+
+            firstName = ["Legolas"];
+            lastName = ["..."];
+
+        break;
   
         case "lovecraft":
             firstName = ["Edmund","Francis","Carla","Xavier"];
             lastName = ["Newton", "Kennedy"];
+        
+        break;
+
+        case "mage":
+
+            firstName = ["Radagast", "Gandalf"];
+            lastName = ["the White", "the Green"];
         
         break;
   
@@ -150,13 +164,16 @@ var options =["Home","Savings","Car","GirlFriend"];
         <Text style={styles.texts}>Select a category and press the button to generate random names, you can copy it to your clipboard by clicking on it.</Text>
 
         <Picker
-          style={{width:'80%'}}
+          style={styles.pickerStyle}
+          //mode = "dropdown"     //used if you want the user to scroll up the options
           selectedValue={this.state.pickerValue}
           onValueChange={(itemValue, itemIndex) => this.setState({pickerValue: itemValue})}
         >
             <Picker.Item label="Changeling: The Dreaming" value="changeling"/>
             <Picker.Item label="Cyberpunk" value="cyberpunk"/>
+            <Picker.Item label="Elvish" value="elvish"/>
             <Picker.Item label="Lovecraft Mythos" value="lovecraft"/>
+            <Picker.Item label="Mage: The Ascension" value="mage"/>
             <Picker.Item label="Medieval" value="medieval"/>
             <Picker.Item label="Vampire: the Masquerade" value="vampire" />
             <Picker.Item label="Werewolf: the Apocalypse" value="werewolf" />
@@ -177,11 +194,12 @@ var options =["Home","Savings","Car","GirlFriend"];
 }
 
 const styles = StyleSheet.create({
+
   container: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    backgroundColor: '#2d3042', //'#F5FCFF',
   },
   welcome: {
     fontSize: 20,
@@ -194,10 +212,12 @@ const styles = StyleSheet.create({
     marginBottom: 5,
   },
   title: {
+    color: 'white',
     fontWeight: 'bold',
     fontSize: 20
   },
   texts: {
+    color: 'white',
     margin: 15,
     fontSize: 15,
     textAlign: 'center'
@@ -209,7 +229,13 @@ const styles = StyleSheet.create({
   },
   button: {
     padding:10,
-    backgroundColor: '#202646',
+    backgroundColor: '#fc870a',
     borderRadius:5
-  }
+  },
+  pickerStyle:{  
+    //height: 150,
+    width: "70%",  
+    color: 'white',  
+    justifyContent: 'center',  
+}  
 });
