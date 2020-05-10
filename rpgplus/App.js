@@ -6,11 +6,10 @@ version: 1.2.1
 
 import React from 'react';
 
-import NameGeneratorScreen from './screens/NameGeneratorScreen';
-import SketchScreen from './screens/SketchScreen';
+import Navigator from './routes/homeStack';
 
 export default function App() {
   return (
-    <NameGeneratorScreen/>
+    <Navigator/>
   );
 }
