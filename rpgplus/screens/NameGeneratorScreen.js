@@ -24,6 +24,11 @@ export default class NameGeneratorScreen extends Component {
 		}	
     };
 
+    static navigationOptions = {
+      drawerLabel: 'Home',
+    }
+            
+
   //still finishing
 /*  =====================================
 

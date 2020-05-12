@@ -5,14 +5,12 @@ import {
     Button
 } from 'react-native';
 
-const HomeScreen = ({navigation}) => {   
-    
+const DetailsScreen = ({navigation}) => {   
     return(
         <View>
-            <Text>Home</Text>
-            
+            <Text>Details</Text>
         </View>
     );
 }
 
-export default HomeScreen;
+export default DetailsScreen;

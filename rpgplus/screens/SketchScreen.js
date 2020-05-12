@@ -8,6 +8,7 @@ import {
 } from 'react-native';
 
 export default class SketchScreen extends Component {
+                
     render(){
         return(
             <View style={styles.container}>
