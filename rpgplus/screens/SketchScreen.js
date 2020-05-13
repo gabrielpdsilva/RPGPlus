@@ -23,7 +23,7 @@ export default class SketchScreen extends Component {
                                textAlignVertical= 'top'/>
                 </View>
 
-                <TouchableOpacity style={styles.button} onPress={() => alert("hue")}>
+                <TouchableOpacity style={styles.button} onPress={() => this.props.navigation.navigate("Test")}>
                     <Text style={styles.buttonText}>CREATE SKETCH</Text>
                 </TouchableOpacity>
             </View>
