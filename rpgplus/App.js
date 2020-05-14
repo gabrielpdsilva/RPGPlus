@@ -7,43 +7,11 @@ version: 1.3.1
 import React from 'react';
 
 import {NavigationContainer} from '@react-navigation/native';
-import {createStackNavigator} from '@react-navigation/stack';
 
-import {createDrawerNavigator} from '@react-navigation/drawer';
 
-import HomeScreen from './screens/HomeScreen';
-import DetailsScreen from './screens/DetailsScreen';
-import SketchScreen from './screens/SketchScreen';
-import NameGeneratorScreen from './screens/NameGeneratorScreen';
-import TestScreen from './screens/TestScreen';
-import LoginScreen from './screens/LoginScreen';
-import RegisterScreen from './screens/RegisterScreen';
+import {MyDrawer, MyStack} from './Navigations';
 
-//const Stack = createStackNavigator();
-const Drawer = createDrawerNavigator();
 
-const Stack = createStackNavigator();
-
-function MyStack() {
-  return (
-    <Stack.Navigator>
-      <Stack.Screen name="Login" component={LoginScreen} />
-      <Stack.Screen name="Register" component={RegisterScreen} />
-    </Stack.Navigator>
-  );
-}
-
-function MyDrawer() {
-  return(
-    <Drawer.Navigator initialRouteName="Home">
-      <Drawer.Screen name="Home" component={HomeScreen}/>    
-      <Drawer.Screen name="Name Generator" component={NameGeneratorScreen}/>
-      <Drawer.Screen name="Sketch" component={SketchScreen}/>
-      <Drawer.Screen name="Details" component={DetailsScreen}/>
-      <Drawer.Screen name="Test" component={TestScreen}/>
-    </Drawer.Navigator>
-  );
-}
 
 /*
 export default function App() {
@@ -51,9 +19,27 @@ export default function App() {
     <Navigator/>
   );
 }*/
+let isLoggedIn = true;
+
 const App = () => {
 
-  let isLogged = false;
+  return(
+
+    <NavigationContainer>
+      {
+        isLoggedIn ? (
+          <MyDrawer/>
+
+        ) : (
+          <MyStack/>
+        )
+      }
+    </NavigationContainer>
+     
+  );
+
+/*
+  let isLogged = true;
 
   if(isLogged){
     return(
@@ -67,7 +53,7 @@ const App = () => {
         <MyStack/>
       </NavigationContainer>
     );
-  }
+  }*/
 }
 
 export default App;

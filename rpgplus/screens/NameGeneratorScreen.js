@@ -17,11 +17,11 @@ https://teasnake.wordpress.com/2016/03/03/how-to-build-a-simple-javascript-name-
 
 export default class NameGeneratorScreen extends Component {
 	constructor(props){
-	    super(props);
-		this.state={
-            pickerValue:'medieval',
-            name: ''	
-		}	
+    super(props);
+      this.state={
+              pickerValue:'medieval',
+              name: ''	
+      }	
     };
 
     static navigationOptions = {
