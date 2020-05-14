@@ -33,6 +33,18 @@ function MyStack() {
   );
 }
 
+function MyDrawer() {
+  return(
+    <Drawer.Navigator initialRouteName="Home">
+      <Drawer.Screen name="Home" component={HomeScreen}/>    
+      <Drawer.Screen name="Name Generator" component={NameGeneratorScreen}/>
+      <Drawer.Screen name="Sketch" component={SketchScreen}/>
+      <Drawer.Screen name="Details" component={DetailsScreen}/>
+      <Drawer.Screen name="Test" component={TestScreen}/>
+    </Drawer.Navigator>
+  );
+}
+
 /*
 export default function App() {
   return (
@@ -40,24 +52,22 @@ export default function App() {
   );
 }*/
 const App = () => {
-  
-  return (
-    <NavigationContainer>
-      <MyStack/>
-    </NavigationContainer>
-    
-    /*
-    <NavigationContainer>
-      <Drawer.Navigator initialRouteName="Home">
-        <Drawer.Screen name="Home" component={HomeScreen}/>
-        
-        <Drawer.Screen name="Name Generator" component={NameGeneratorScreen}/>
-        <Drawer.Screen name="Sketch" component={SketchScreen}/>
-        <Drawer.Screen name="Details" component={DetailsScreen}/>
-        <Drawer.Screen name="Test" component={TestScreen}/>
-      </Drawer.Navigator>
-    </NavigationContainer>*/
-  );
+
+  let isLogged = false;
+
+  if(isLogged){
+    return(
+      <NavigationContainer>
+        <MyDrawer/>
+      </NavigationContainer>
+    );
+  }else{
+    return(
+      <NavigationContainer>
+        <MyStack/>
+      </NavigationContainer>
+    );
+  }
 }
 
 export default App;
