@@ -12,6 +12,7 @@ import NameGeneratorScreen from './screens/NameGeneratorScreen';
 import TestScreen from './screens/TestScreen';
 import LoginScreen from './screens/LoginScreen';
 import RegisterScreen from './screens/RegisterScreen';
+import DrawerContent from './screens/DrawerContent';
 
 const Drawer = createDrawerNavigator();
 
@@ -25,10 +26,10 @@ export function MyStack() {
     </Stack.Navigator>
   );
 }
-
+/*initialRouteName="Home">*/
 export function MyDrawer() {
   return(
-    <Drawer.Navigator initialRouteName="Home">
+    <Drawer.Navigator drawerContent={props => <DrawerContent {... props}/>}> 
       <Drawer.Screen name="Home" component={HomeScreen}/>    
       <Drawer.Screen name="Name Generator" component={NameGeneratorScreen}/>
       <Drawer.Screen name="Sketch" component={SketchScreen}/>

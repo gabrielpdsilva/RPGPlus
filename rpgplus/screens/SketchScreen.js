@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: '#F5FCFF',
+        backgroundColor: '#2d3042',
     },
 
     textAreaContainer: {
@@ -51,16 +51,17 @@ const styles = StyleSheet.create({
         height: 40,
         borderColor: '#7a42f4',
         borderWidth: 1,
+        backgroundColor: 'white',
     },
     buttonText: {
         color: '#ffffff',
         textAlign: 'center'
-    },
-    button: {
+      },
+      button: {
+        padding: 10,
         margin: 10,
-        padding:10,
-        backgroundColor: '#202646',
+        backgroundColor: '#fc870a',
         borderRadius:5
-    }
+      },
     
 });

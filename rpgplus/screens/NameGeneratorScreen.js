@@ -242,5 +242,5 @@ const styles = StyleSheet.create({
     width: "70%",  
     color: 'white',  
     justifyContent: 'center',  
-}  
+  }  
 });

@@ -8,17 +8,9 @@ import React from 'react';
 
 import {NavigationContainer} from '@react-navigation/native';
 
-
 import {MyDrawer, MyStack} from './Navigations';
 
 
-
-/*
-export default function App() {
-  return (
-    <Navigator/>
-  );
-}*/
 let isLoggedIn = true;
 
 const App = () => {
@@ -37,23 +29,6 @@ const App = () => {
     </NavigationContainer>
      
   );
-
-/*
-  let isLogged = true;
-
-  if(isLogged){
-    return(
-      <NavigationContainer>
-        <MyDrawer/>
-      </NavigationContainer>
-    );
-  }else{
-    return(
-      <NavigationContainer>
-        <MyStack/>
-      </NavigationContainer>
-    );
-  }*/
 }
 
 export default App;
