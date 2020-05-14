@@ -3,6 +3,11 @@ import {View, Text, StyleSheet} from 'react-native';
 import {DrawerContentScrollView, DrawerItem} from '@react-navigation/drawer';
 import { Drawer, Avatar, Title, Caption, Paragraph } from 'react-native-paper';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import NameGeneratorScreen from './NameGeneratorScreen';
+
+//All credits goes to Pradip Debnath
+//https://github.com/itzpradip
+//https://www.youtube.com/watch?v=ayxRtBHw754
 
 export default function DrawerContent(props) {
     return(
@@ -27,31 +32,55 @@ export default function DrawerContent(props) {
                         <View style={styles.row}>
 
                             <View style={styles.section}>
-                                <Paragraph style={[styles.paragraph, styles.caption]}>100</Paragraph>
+                                <Paragraph style={[styles.paragraph, styles.caption]}>0</Paragraph>
                                 <Caption style={styles.caption}>sessions</Caption>
                             </View>
                             <View style={styles.section}>
-                                <Paragraph style={[styles.paragraph, styles.caption]}>100</Paragraph>
+                                <Paragraph style={[styles.paragraph, styles.caption]}>0</Paragraph>
                                 <Caption style={styles.caption}>friends</Caption>
                             </View>
 
                         </View>
 
                     </View>
+                    <Drawer.Section style={styles.drawerSection}>
+                        <DrawerItem
+                            label="Home"
+                            onPress={()=>props.navigation.navigate('Home')}
+                        />
+                        <DrawerItem
+                            label="Name Generator"
+                            onPress={()=> props.navigation.navigate('Name Generator')}
+                        />
+                        <DrawerItem
+                            label="Sketch"
+                            onPress={()=>props.navigation.navigate('Sketch')}
+                        />
+                    </Drawer.Section>
+                    <Drawer.Section title="Settings">
+                    <DrawerItem
+                            label="Details"
+                            onPress={()=>props.navigation.navigate('Details')}
+                        />
+                    </Drawer.Section>
                 </View>
 
             </DrawerContentScrollView>
             <Drawer.Section style={styles.bottomDrawerSection}>
                 <DrawerItem
-                    icon={({color, size}) => (
+
+                /*
+                * ICONS AREN'T WORKING
+                */
+                    /*icon={({color, size}) => (
                         <Icon
                         name="exit-to-app"
                         color={color}
                         size={size}
                         />
-                    )}
+                    )}*/
                     label="Sign out"
-                    onPress={()=>alert("hmm")}
+                    onPress={()=>alert("Logout...")}
                 />
             </Drawer.Section>
         </View>
