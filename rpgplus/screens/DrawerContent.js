@@ -11,7 +11,7 @@ import NameGeneratorScreen from './NameGeneratorScreen';
 
 export default function DrawerContent(props) {
     return(
-        <View style={{flex:1}}>
+        <View style={{flex:1}} backgroundColor = '#2d3042'>
             <DrawerContentScrollView {...props}>
                 <View style={styles.drawerContent}>
                     <View style={styles.userInfoSection}>
@@ -24,7 +24,7 @@ export default function DrawerContent(props) {
                                 size={80}
                             />
                             <View style={{marginLeft: 15, flexDirection: 'column'}}>
-                                <Title style={styles.title}>Your Name</Title>
+                            <Title style={styles.title}>Your name</Title>
                                 <Caption style={styles.caption}>Your description...</Caption>
                             </View>
                         </View>
@@ -32,7 +32,7 @@ export default function DrawerContent(props) {
                         <View style={styles.row}>
 
                             <View style={styles.section}>
-                                <Paragraph style={[styles.paragraph, styles.caption]}>0</Paragraph>
+                            <Paragraph style={[styles.paragraph, styles.caption]}>0</Paragraph>
                                 <Caption style={styles.caption}>sessions</Caption>
                             </View>
                             <View style={styles.section}>
@@ -45,90 +45,99 @@ export default function DrawerContent(props) {
                     </View>
                     <Drawer.Section style={styles.drawerSection}>
                         <DrawerItem
+                            labelStyle = {{color: 'white'}}
                             label="Home"
                             onPress={()=>props.navigation.navigate('Home')}
                         />
                         <DrawerItem
+                            labelStyle = {{color: 'white'}}
                             label="Name Generator"
                             onPress={()=> props.navigation.navigate('Name Generator')}
                         />
                         <DrawerItem
+                            labelStyle = {{color: 'white'}}
                             label="Sketch"
                             onPress={()=>props.navigation.navigate('Sketch')}
                         />
                     </Drawer.Section>
-                    <Drawer.Section title="Settings">
-                    <DrawerItem
+                    <Drawer.Section title="Settings" style={{textColor: 'white'}}>
+                        <DrawerItem
+                            labelStyle = {{color: 'white'}}
                             label="Details"
                             onPress={()=>props.navigation.navigate('Details')}
+                        />
+                        <DrawerItem
+                            labelStyle = {{color: 'white'}}
+                            label="Sign out"
+                            onPress={()=>alert("Logout...")}
                         />
                     </Drawer.Section>
                 </View>
 
             </DrawerContentScrollView>
-            <Drawer.Section style={styles.bottomDrawerSection}>
-                <DrawerItem
-
-                /*
-                * ICONS AREN'T WORKING
-                */
-                    /*icon={({color, size}) => (
-                        <Icon
-                        name="exit-to-app"
-                        color={color}
-                        size={size}
-                        />
-                    )}*/
-                    label="Sign out"
-                    onPress={()=>alert("Logout...")}
-                />
-            </Drawer.Section>
+           
         </View>
     );
 }
 
 const styles = StyleSheet.create({
     drawerContent: {
-      flex: 1,
+        flex: 1,
     },
     userInfoSection: {
       paddingLeft: 20,
+      //backgroundColor: 'red',
     },
     title: {
       fontSize: 16,
       marginTop: 3,
       fontWeight: 'bold',
+      color: 'white',
     },
     caption: {
       fontSize: 14,
       lineHeight: 14,
+      color: 'white',
+      
     },
     row: {
       marginTop: 20,
       flexDirection: 'row',
       alignItems: 'center',
+      
     },
     section: {
       flexDirection: 'row',
       alignItems: 'center',
       marginRight: 15,
+      color: 'red',
+      
     },
     paragraph: {
       fontWeight: 'bold',
       marginRight: 3,
+      color: 'red',
+      
     },
     drawerSection: {
       marginTop: 15,
+
+      //backgroundColor: 'red',
     },
     bottomDrawerSection: {
         marginBottom: 15,
         borderTopColor: '#f4f4f4',
-        borderTopWidth: 1
+        borderTopWidth: 1,
+        color: 'red',
+
+        //backgroundColor: 'red',
     },
     preference: {
       flexDirection: 'row',
       justifyContent: 'space-between',
       paddingVertical: 12,
       paddingHorizontal: 16,
+      //color: 'white',
+
     },
   });

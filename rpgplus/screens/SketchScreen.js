@@ -8,10 +8,18 @@ import {
 } from 'react-native';
 
 export default class SketchScreen extends Component {
+    constructor(props){
+        super(props);
+            this.state = {
+                cont: 1,
+        }
+
+    };
                 
     render(){
         return(
             <View style={styles.container}>
+                <Text>{this.state.cont}</Text>
                 <View style={styles.textAreaContainer}>
                     <TextInput style={styles.textArea} placeholder="Name of the story..."/>
                     <TextInput style={styles.textArea} placeholder="Category of the story (medieval, cyberpunk)..."/>
@@ -23,7 +31,7 @@ export default class SketchScreen extends Component {
                                textAlignVertical= 'top'/>
                 </View>
 
-                <TouchableOpacity style={styles.button} onPress={() => this.props.navigation.navigate("Test")}>
+                <TouchableOpacity style={styles.button} onPress={() => this.setState({cont: this.state.cont + 1})}/*this.props.navigation.navigate("Test")}>*/>
                     <Text style={styles.buttonText}>CREATE SKETCH</Text>
                 </TouchableOpacity>
             </View>

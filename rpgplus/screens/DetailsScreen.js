@@ -10,6 +10,7 @@ const DetailsScreen = ({navigation}) => {
         <View style={styles.container}>
             <Text style={styles.texts}>
                 RPG+ (RPGPlus) is a project made for tests and studies using React Native technology.
+                You may see bugs, problems with styles, etc.
             </Text>
         </View>
     );
