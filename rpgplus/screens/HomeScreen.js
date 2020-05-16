@@ -4,12 +4,19 @@ import {
     View,
     StyleSheet
 } from 'react-native';
+import CustomButton from '../components/CustomButton';
 
 const HomeScreen = ({navigation}) => {   
     
     return(
         <View style={styles.container}>
             <Text style={styles.title}>Home</Text>
+            <CustomButton
+                title="Click me!"
+                onPress={() => alert(`Why you opened me? Go away, it's mine!`)}
+                style={{}}
+                textStyle={{}}
+            />
         </View>
     );
 }

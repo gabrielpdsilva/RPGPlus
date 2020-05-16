@@ -4,8 +4,9 @@ import {
     Text,
     View,
     TextInput,
-    TouchableOpacity
 } from 'react-native';
+
+import CustomButton from '../components/CustomButton';
 
 export default class LoginScreen extends Component {
 
@@ -15,9 +16,13 @@ export default class LoginScreen extends Component {
                 <Text>Login...</Text>
                 <TextInput style={styles.input} placeholder="E-mail..."/>
                 <TextInput style={styles.input} placeholder="Password..."/>
-                <TouchableOpacity onPress={() => this.props.navigation.navigate("Register")}>
-                    <Text> Go to Register </Text>
-                </TouchableOpacity>
+
+                <CustomButton
+                    title="GO TO REGISTER!"
+                    onPress={() => this.props.navigation.navigate("Register")}
+                    style={{}}
+                    textStyle={{}}
+                />
             </View>
         )
     }

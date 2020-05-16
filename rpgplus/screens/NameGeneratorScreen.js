@@ -19,14 +19,10 @@ export default class NameGeneratorScreen extends Component {
 	constructor(props){
     super(props);
       this.state={
-              pickerValue:'medieval',
-              name: ''	
+        pickerValue:'medieval',
+        name: ''	
       }	
     };
-
-    static navigationOptions = {
-      drawerLabel: 'Home',
-    }
             
 
   //still finishing
@@ -164,7 +160,13 @@ var options =["Home","Savings","Car","GirlFriend"];
 
   render() {
     return (
+
+      
+      
+
       <View style={styles.container}>
+
+        
         <Text style={styles.title}>Name Generator 2.0</Text>
         <Text style={styles.texts}>Select a category and press the button to generate random names, you can copy it to your clipboard by clicking on it.</Text>
 

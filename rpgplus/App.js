@@ -19,12 +19,7 @@ const App = () => {
 
     <NavigationContainer>
       {
-        isLoggedIn ? (
-          <MyDrawer/>
-
-        ) : (
-          <MyStack/>
-        )
+        isLoggedIn ? (<MyDrawer/>) : (<MyStack/>)
       }
     </NavigationContainer>
      

@@ -3,23 +3,17 @@ import {
     StyleSheet,
     Text,
     View,
-    TextInput,
-    TouchableOpacity
+    TextInput
 } from 'react-native';
 
-export default class SketchScreen extends Component {
-    constructor(props){
-        super(props);
-            this.state = {
-                cont: 1,
-        }
+import CustomButton from '../components/CustomButton';
 
-    };
+export default class SketchScreen extends Component {
                 
     render(){
         return(
             <View style={styles.container}>
-                <Text>{this.state.cont}</Text>
+                <Text>...</Text>
                 <View style={styles.textAreaContainer}>
                     <TextInput style={styles.textArea} placeholder="Name of the story..."/>
                     <TextInput style={styles.textArea} placeholder="Category of the story (medieval, cyberpunk)..."/>
@@ -31,9 +25,12 @@ export default class SketchScreen extends Component {
                                textAlignVertical= 'top'/>
                 </View>
 
-                <TouchableOpacity style={styles.button} onPress={() => this.setState({cont: this.state.cont + 1})}/*this.props.navigation.navigate("Test")}>*/>
-                    <Text style={styles.buttonText}>CREATE SKETCH</Text>
-                </TouchableOpacity>
+                <CustomButton
+                    title="CREATE"
+                    onPress={() => alert("Clicked.")}
+                    style={{}}
+                    textStyle={{}}
+                />
             </View>
         );
     }
@@ -61,15 +58,5 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         backgroundColor: 'white',
     },
-    buttonText: {
-        color: '#ffffff',
-        textAlign: 'center'
-      },
-      button: {
-        padding: 10,
-        margin: 10,
-        backgroundColor: '#fc870a',
-        borderRadius:5
-      },
     
 });

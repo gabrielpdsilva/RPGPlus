@@ -24,7 +24,7 @@ export default function DrawerContent(props) {
                                 size={80}
                             />
                             <View style={{marginLeft: 15, flexDirection: 'column'}}>
-                            <Title style={styles.title}>Your name</Title>
+                            <Title style={styles.title}>Your name...</Title>
                                 <Caption style={styles.caption}>Your description...</Caption>
                             </View>
                         </View>
@@ -60,7 +60,10 @@ export default function DrawerContent(props) {
                             onPress={()=>props.navigation.navigate('Sketch')}
                         />
                     </Drawer.Section>
-                    <Drawer.Section title="Settings" style={{textColor: 'white'}}>
+
+                    <Text style={styles.submenuTitle}>Settings</Text>
+
+                    <Drawer.Section>
                         <DrawerItem
                             labelStyle = {{color: 'white'}}
                             label="Details"
@@ -138,6 +141,12 @@ const styles = StyleSheet.create({
       paddingVertical: 12,
       paddingHorizontal: 16,
       //color: 'white',
-
     },
+    submenuTitle: {
+        marginLeft: 15,
+        fontSize: 16,
+        marginTop: 3,
+        fontWeight: 'bold',
+        color: 'white',
+    }
   });
