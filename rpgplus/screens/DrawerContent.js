@@ -24,19 +24,19 @@ export default function DrawerContent(props) {
                                 size={80}
                             />
                             <View style={{marginLeft: 15, flexDirection: 'column'}}>
-                            <Title style={styles.title}>Your name...</Title>
-                                <Caption style={styles.caption}>Your description...</Caption>
+                            <Title style={styles.title}>{props.name}</Title>
+                            <Caption style={styles.caption}>{props.description}</Caption>
                             </View>
                         </View>
 
                         <View style={styles.row}>
 
                             <View style={styles.section}>
-                            <Paragraph style={[styles.paragraph, styles.caption]}>0</Paragraph>
+                            <Paragraph style={[styles.paragraph, styles.caption]}>{props.sessions}</Paragraph>
                                 <Caption style={styles.caption}>sessions</Caption>
                             </View>
                             <View style={styles.section}>
-                                <Paragraph style={[styles.paragraph, styles.caption]}>0</Paragraph>
+                            <Paragraph style={[styles.paragraph, styles.caption]}>{props.friends}</Paragraph>
                                 <Caption style={styles.caption}>friends</Caption>
                             </View>
 

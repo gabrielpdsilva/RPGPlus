@@ -26,16 +26,18 @@ export function MyStack() {
   );
 }
 
-const dados = {
-  perfil: {
-    nome: 'Teste'
-  }
-};
-
 /*initialRouteName="Home">*/
+
+//<Drawer.Navigator drawerContent={props => <DrawerContent {... props}/>}> 
 export function MyDrawer() {
+
   return(
-    <Drawer.Navigator drawerContent={props => <DrawerContent {... props}/>}> 
+    <Drawer.Navigator drawerContent={props => <DrawerContent
+                                                name = "Charles"
+                                                description = "My description...!"
+                                                sessions = "3"
+                                                friends = "0"
+                                                {... props}/>}>
       <Drawer.Screen name="Home" component={HomeScreen}/>    
       <Drawer.Screen name="Name Generator" component={NameGeneratorScreen}/>
       <Drawer.Screen name="Sketch" component={SketchScreen}/>
