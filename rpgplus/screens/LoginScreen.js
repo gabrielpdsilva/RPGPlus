@@ -7,6 +7,7 @@ import {
 } from 'react-native';
 
 import CustomButton from '../components/CustomButton';
+import CustomTextInput from '../components/CustomTextInput';
 
 export default class LoginScreen extends Component {
 
@@ -14,8 +15,9 @@ export default class LoginScreen extends Component {
         return(
             <View style={styles.container}>
                 <Text>Login...</Text>
-                <TextInput style={styles.input} placeholder="E-mail..."/>
-                <TextInput style={styles.input} placeholder="Password..."/>
+                
+                <CustomTextInput placeholder="E-mail..."/>
+                <CustomTextInput placeholder="Password..."/>
 
                 <CustomButton
                     title="GO TO REGISTER!"
@@ -24,7 +26,7 @@ export default class LoginScreen extends Component {
                     textStyle={{}}
                 />
             </View>
-        )
+        );
     }
 }
 
@@ -35,7 +37,12 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         backgroundColor: '#F5FCFF',
     },
-    input: {
-        backgroundColor: 'red',
+    textArea: {
+        padding: 5,
+        margin: 5,
+        height: 40,
+        borderColor: '#7a42f4',
+        borderWidth: 1,
+        backgroundColor: 'white',
     },
 });

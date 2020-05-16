@@ -11,7 +11,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import {MyDrawer, MyStack} from './Navigations';
 
 
-let isLoggedIn = true;
+let isLoggedIn = false;
 
 const App = () => {
 

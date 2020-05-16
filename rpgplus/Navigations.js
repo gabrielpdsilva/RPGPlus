@@ -34,9 +34,9 @@ export function MyDrawer() {
   return(
     <Drawer.Navigator drawerContent={props => <DrawerContent
                                                 name = "Charles"
-                                                description = "My description...!"
-                                                sessions = "3"
-                                                friends = "0"
+                                                description = "Hm...!"
+                                                sessions = {0}
+                                                friends = {5}
                                                 {... props}/>}>
       <Drawer.Screen name="Home" component={HomeScreen}/>    
       <Drawer.Screen name="Name Generator" component={NameGeneratorScreen}/>
