@@ -6,7 +6,7 @@ const CustomTextInput = (props) => {
     const {placeholder} = props;
 
     return(
-            <TextInput style={styles.textArea} placeholder={props.placeholder}/>
+        <TextInput style={styles.textArea} placeholder={props.placeholder}/>
     );
 }
 

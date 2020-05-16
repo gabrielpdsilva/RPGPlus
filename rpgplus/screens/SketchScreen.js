@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
     textAreaContainer: {
         borderColor: '#7a42f4',
         borderWidth: 1,
-        padding: 10,
+        padding: 15,
       },
 
     textArea: {

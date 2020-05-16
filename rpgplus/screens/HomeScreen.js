@@ -5,11 +5,21 @@ import {
     StyleSheet
 } from 'react-native';
 import CustomButton from '../components/CustomButton';
+import CustomTextInput from '../components/CustomTextInput';
+import CustomText from '../components/CustomText';
 
 const HomeScreen = ({navigation}) => {   
     
     return(
         <View style={styles.container}>
+
+            <CustomText>Hm...</CustomText>
+            <CustomTextInput placeholder="hue"/>
+
+            <CustomTextInput placeholder="hue"/>
+
+            <CustomButton title="haha" onPres={() => alert("ok")}/>
+
             <Text style={styles.title}>Home</Text>
             <CustomButton
                 title="Click me!"
@@ -39,6 +49,11 @@ const styles = StyleSheet.create({
         fontSize: 15,
         textAlign: 'center'
     
+      },
+      textAreaContainer: {
+        borderColor: '#7a42f4',
+        borderWidth: 1,
+        padding: 15,
       },
 });
 

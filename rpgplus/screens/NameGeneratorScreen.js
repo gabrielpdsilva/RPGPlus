@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
 import {
   StyleSheet,
-  Text,
   View,
   TouchableOpacity,
   Picker,
   ToastAndroid,
   Clipboard
 } from 'react-native';
+
+import CustomTitle from '../components/CustomTitle';
+import CustomText from '../components/CustomText';
+import CustomButton from '../components/CustomButton';
 
 /*
 Name Generator algorithm by RyanGoslingsBugle
@@ -161,14 +164,10 @@ var options =["Home","Savings","Car","GirlFriend"];
   render() {
     return (
 
-      
-      
-
       <View style={styles.container}>
-
         
-        <Text style={styles.title}>Name Generator 2.0</Text>
-        <Text style={styles.texts}>Select a category and press the button to generate random names, you can copy it to your clipboard by clicking on it.</Text>
+        <CustomTitle>Name Generator 2.0</CustomTitle>
+        <CustomText>Select a category and press the button to generate random names, you can copy it to your clipboard by clicking on it.</CustomText>
 
         <Picker
           style={styles.pickerStyle}
@@ -176,24 +175,27 @@ var options =["Home","Savings","Car","GirlFriend"];
           selectedValue={this.state.pickerValue}
           onValueChange={(itemValue, itemIndex) => this.setState({pickerValue: itemValue})}
         >
-            <Picker.Item label="Changeling: The Dreaming" value="changeling"/>
-            <Picker.Item label="Cyberpunk" value="cyberpunk"/>
-            <Picker.Item label="Elvish" value="elvish"/>
-            <Picker.Item label="Lovecraft Mythos" value="lovecraft"/>
-            <Picker.Item label="Mage: The Ascension" value="mage"/>
-            <Picker.Item label="Medieval" value="medieval"/>
-            <Picker.Item label="Vampire: the Masquerade" value="vampire" />
-            <Picker.Item label="Werewolf: the Apocalypse" value="werewolf" />
+          <Picker.Item label="Changeling: The Dreaming" value="changeling"/>
+          <Picker.Item label="Cyberpunk" value="cyberpunk"/>
+          <Picker.Item label="Elvish" value="elvish"/>
+          <Picker.Item label="Lovecraft Mythos" value="lovecraft"/>
+          <Picker.Item label="Mage: The Ascension" value="mage"/>
+          <Picker.Item label="Medieval" value="medieval"/>
+          <Picker.Item label="Vampire: the Masquerade" value="vampire" />
+          <Picker.Item label="Werewolf: the Apocalypse" value="werewolf" />
 		
 		    </Picker>
 
         <TouchableOpacity onPress={this.copyToClipboard}>
-          <Text style={styles.texts}>{this.state.name}</Text>
+          <CustomText>{this.state.name}</CustomText>
         </TouchableOpacity>
-        
-        <TouchableOpacity style={styles.button} onPress={() => this.buttonOnClickListener(this.state.pickerValue)}>
-          <Text style={styles.buttonText}>GENERATE!</Text>
-        </TouchableOpacity>
+    
+        <CustomButton
+          title="GENERATE!"
+          onPress={() => this.buttonOnClickListener(this.state.pickerValue)}
+          style={{}}
+          textStyle={{}}
+        />
         
       </View>
     );
@@ -217,18 +219,6 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     color: '#333333',
     marginBottom: 5,
-  },
-  title: {
-    color: 'white',
-    fontWeight: 'bold',
-    fontSize: 20
-  },
-  texts: {
-    color: 'white',
-    margin: 15,
-    fontSize: 15,
-    textAlign: 'center'
-
   },
   buttonText: {
     color: '#ffffff',
