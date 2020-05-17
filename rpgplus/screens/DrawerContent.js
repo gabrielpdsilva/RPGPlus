@@ -9,7 +9,13 @@ import NameGeneratorScreen from './NameGeneratorScreen';
 //https://github.com/itzpradip
 //https://www.youtube.com/watch?v=ayxRtBHw754
 
+
 export default function DrawerContent(props) {
+
+    //signOutUser = () => {
+        //firebase.auth().signOut();
+    //}
+
     return(
         <View style={{flex:1}} backgroundColor = '#2d3042'>
             <DrawerContentScrollView {...props}>
@@ -49,11 +55,24 @@ export default function DrawerContent(props) {
                             label="Home"
                             onPress={()=>props.navigation.navigate('Home')}
                         />
+                    </Drawer.Section>
+
+                        <Text style={styles.submenuTitle}>Tools</Text>
+
+                    <Drawer.Section>
+
                         <DrawerItem
                             labelStyle = {{color: 'white'}}
                             label="Name Generator"
                             onPress={()=> props.navigation.navigate('Name Generator')}
                         />
+
+                        <DrawerItem
+                            labelStyle = {{color: 'white'}}
+                            label="Roll Dices"
+                            onPress={()=> alert("not working yet")}
+                        />
+
                         <DrawerItem
                             labelStyle = {{color: 'white'}}
                             label="Sketch"
@@ -72,7 +91,7 @@ export default function DrawerContent(props) {
                         <DrawerItem
                             labelStyle = {{color: 'white'}}
                             label="Sign out"
-                            onPress={()=>alert("Logout...")}
+                            onPress={()=> alert("logout")}
                         />
                     </Drawer.Section>
                 </View>
