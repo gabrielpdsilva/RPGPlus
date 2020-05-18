@@ -55,6 +55,18 @@ export default function DrawerContent(props) {
                             label="Home"
                             onPress={()=>props.navigation.navigate('Home')}
                         />
+
+                        <DrawerItem
+                            labelStyle = {{color: 'white'}}
+                            label="My sessions"
+                            onPress={()=> alert("still working on it.")}
+                        />
+
+                        <DrawerItem
+                            labelStyle = {{color: 'white'}}
+                            label="My friends"
+                            onPress={()=> alert("still working on it.")}
+                        />
                     </Drawer.Section>
 
                         <Text style={styles.submenuTitle}>Tools</Text>

@@ -24,7 +24,7 @@ export default class SketchScreen extends Component {
 
     addSketch = () => {
 
-        if(this.state.name == '' || this.state.name == '' || this.state.name == '' || this.state.name == '' ){
+        if(this.state.name == '' || this.state.category == '' || this.state.system == '' || this.state.text == '' ){
             alert("All fields must be filled.");
             return;
         }
