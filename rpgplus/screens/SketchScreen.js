@@ -24,6 +24,11 @@ export default class SketchScreen extends Component {
 
     addSketch = () => {
 
+        if(this.state.name == '' || this.state.name == '' || this.state.name == '' || this.state.name == '' ){
+            alert("All fields must be filled.");
+            return;
+        }
+
         const dbh = firebase.firestore();
 
         dbh.collection("sketchs").doc(this.state.name).set({
@@ -35,7 +40,7 @@ export default class SketchScreen extends Component {
             alert("Sketch created!")
         })
         .catch(function(error) {
-            alert("Could not add the doc, error: ", error);
+            alert("Could not add the doc, error:\n" + error);
         });
     }
    
