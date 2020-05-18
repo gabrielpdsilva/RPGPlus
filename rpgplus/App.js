@@ -39,17 +39,6 @@ let isLoggedIn = true;
 
 const App = () => {
 
-  /*
-  FIRST STEPS WITH FIRESTORE
-  const dbh = firebase.firestore();
-
-  dbh.collection("characters").doc("mario").set({
-    employment: "plumber",
-    outfitColor: "red",
-    specialAttack: "fireball"
-  })
-  */
-
   return(
 
     <NavigationContainer>

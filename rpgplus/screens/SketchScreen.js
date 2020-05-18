@@ -8,26 +8,60 @@ import {
 
 import CustomButton from '../components/CustomButton';
 
+import * as firebase from 'firebase';
+import 'firebase/firestore';
+
 export default class SketchScreen extends Component {
-                
+    constructor(){
+        super();
+        this.state = {
+            name: '',
+            category: '',
+            system: '',
+            text: ''
+        }
+    }
+
+    addSketch = () => {
+
+        const dbh = firebase.firestore();
+
+        dbh.collection("sketchs").doc(this.state.name).set({
+            name: this.state.name,
+            category: this.state.category,
+            system: this.state.system,
+            text: this.state.text,
+        }).then(function() {
+            alert("Sketch created!")
+        })
+        .catch(function(error) {
+            alert("Could not add the doc, error: ", error);
+        });
+    }
+   
     render(){
         return(
             <View style={styles.container}>
-                <Text>...</Text>
                 <View style={styles.textAreaContainer}>
-                    <TextInput style={styles.textArea} placeholder="Name of the story..."/>
-                    <TextInput style={styles.textArea} placeholder="Category of the story (medieval, cyberpunk)..."/>
-                    <TextInput style={styles.textArea} placeholder="System used (Storyteller, D20)... "/>
+                    <TextInput style={styles.textArea} value={this.state.name} onChangeText={ (txt) => this.setState({name: txt}) } placeholder="Name of the story..." />
+
+                    <TextInput style={styles.textArea} value={this.state.category} onChangeText={ (txt) => this.setState({category: txt}) } placeholder="Category of the story (medieval, cyberpunk)..."/>
+
+                    <TextInput style={styles.textArea} value={this.state.system} onChangeText={ (txt) => this.setState({system: txt}) } placeholder="System used (Storyteller, D20)..." />
+
                     <TextInput style={styles.textArea}
-                               placeholder="Type here a basic sketch of your storyboard..."
-                               multiline = {true} //textinput will be multiline
-                               height = {150}
-                               textAlignVertical= 'top'/>
+                    value={this.state.text}
+                    multiline = {true} //textinput will be multiline
+                    height = {150}
+                    textAlignVertical= 'top'
+                    onChangeText={ (txt) => this.setState({text: txt}) }
+                    placeholder="Type here a basic sketch of your storyboard..." />
+
                 </View>
 
                 <CustomButton
                     title="CREATE"
-                    onPress={() => alert("Clicked.")}
+                    onPress={this.addSketch}
                     style={{}}
                     textStyle={{}}
                 />
