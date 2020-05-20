@@ -35,7 +35,7 @@ if (!firebase.apps.length) {
   firebase.initializeApp(firebaseConfig);
 }
 
-let isLoggedIn = true;
+let isLoggedIn = false;
 
 const App = () => {
 

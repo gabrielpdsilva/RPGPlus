@@ -2,30 +2,44 @@ import React, { Component } from 'react';
 import {
     StyleSheet,
     View,
+    TextInput,
+    TouchableOpacity
 } from 'react-native';
 
 import CustomButton from '../components/CustomButton';
-import CustomTextInput from '../components/CustomTextInput';
 import CustomText from '../components/CustomText';
 import CustomTitle from '../components/CustomTitle';
 
 export default class LoginScreen extends Component {
+
+    constructor(props){
+        super(props);
+        this.state = {
+            email: '',
+            password: '',
+        }
+    }
 
     render(){
         return(
             <View style={styles.container}>
                 <CustomTitle>Login</CustomTitle>
                 <CustomText>Hello there!</CustomText>
-                
-                <CustomTextInput placeholder="E-mail..."/>
-                <CustomTextInput placeholder="Password..."/>
+
+                <TextInput style={styles.textinput} value={this.state.email} onChangeText={ (txt) => this.setState({email: txt}) } placeholder="E-mail..." />
+
+                <TextInput style={styles.textinput} value={this.state.password} onChangeText={ (txt) => this.setState({password: txt}) } placeholder="Password..." />
 
                 <CustomButton
-                    title="GO TO REGISTER!"
-                    onPress={() => this.props.navigation.navigate("Register")}
+                    title="LOGIN"
+                    onPress={() => alert("...")}
                     style={{}}
                     textStyle={{}}
                 />
+
+                <TouchableOpacity onPress={() => this.props.navigation.navigate("Register")}>
+                    <CustomText>New here? Create an account!</CustomText>
+                </TouchableOpacity>
             </View>
         );
     }
@@ -37,5 +51,14 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         backgroundColor: '#2d3042',
-    }
+    },
+    textinput: {
+        width: 280,
+        padding: 5,
+        margin: 5,
+        height: 40,
+        borderColor: '#7a42f4',
+        borderWidth: 1,
+        backgroundColor: 'white',
+    },
 });

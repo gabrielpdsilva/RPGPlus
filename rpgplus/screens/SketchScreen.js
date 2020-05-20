@@ -12,8 +12,8 @@ import * as firebase from 'firebase';
 import 'firebase/firestore';
 
 export default class SketchScreen extends Component {
-    constructor(){
-        super();
+    constructor(props){
+        super(props);
         this.state = {
             name: '',
             category: '',
@@ -48,13 +48,13 @@ export default class SketchScreen extends Component {
         return(
             <View style={styles.container}>
                 <View style={styles.textAreaContainer}>
-                    <TextInput style={styles.textArea} value={this.state.name} onChangeText={ (txt) => this.setState({name: txt}) } placeholder="Name of the story..." />
+                    <TextInput style={styles.textinput} value={this.state.name} onChangeText={ (txt) => this.setState({name: txt}) } placeholder="Name of the story..." />
 
-                    <TextInput style={styles.textArea} value={this.state.category} onChangeText={ (txt) => this.setState({category: txt}) } placeholder="Category of the story (medieval, cyberpunk)..."/>
+                    <TextInput style={styles.textinput} value={this.state.category} onChangeText={ (txt) => this.setState({category: txt}) } placeholder="Category of the story (medieval, cyberpunk)..."/>
 
-                    <TextInput style={styles.textArea} value={this.state.system} onChangeText={ (txt) => this.setState({system: txt}) } placeholder="System used (Storyteller, D20)..." />
+                    <TextInput style={styles.textinput} value={this.state.system} onChangeText={ (txt) => this.setState({system: txt}) } placeholder="System used (Storyteller, D20)..." />
 
-                    <TextInput style={styles.textArea}
+                    <TextInput style={styles.textinput}
                     value={this.state.text}
                     multiline = {true} //textinput will be multiline
                     height = {150}
@@ -89,7 +89,7 @@ const styles = StyleSheet.create({
         padding: 15,
       },
 
-    textArea: {
+    textinput: {
         padding: 5,
         margin: 5,
         height: 40,

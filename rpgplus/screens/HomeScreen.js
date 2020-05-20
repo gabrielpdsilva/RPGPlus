@@ -6,8 +6,6 @@ import {
     TouchableOpacity,
     Image
 } from 'react-native';
-import CustomButton from '../components/CustomButton';
-import CustomTextInput from '../components/CustomTextInput';
 import CustomText from '../components/CustomText';
 import CustomTitle from '../components/CustomTitle';
 

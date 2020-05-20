@@ -13,7 +13,7 @@ const CustomText = (props) => {
 const styles = StyleSheet.create({
       text: {
         color: 'white',
-        margin: 15,
+        margin: 5,
         fontSize: 15,
         textAlign: 'center'
       },
