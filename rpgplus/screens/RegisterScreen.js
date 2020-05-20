@@ -28,23 +28,33 @@ export default class RegisterScreen extends Component {
     render(){
         return(
             <View style={styles.container}>
-                <CustomTitle>Register Screen</CustomTitle>
+                <View style={styles.childcontainer}>
+                    <CustomTitle>Register</CustomTitle>
 
-                <CustomText>...</CustomText>
+                    <CustomText>Register your account!</CustomText>
+                    
+                    <TextInput style={styles.textinput} value={this.state.name} onChangeText={ (txt) => this.setState({name: txt}) } placeholder="Type here your nickname..." />
+
+                    <TextInput style={styles.textinput} value={this.state.email} onChangeText={ (txt) => this.setState({email: txt}) } placeholder="Type here your e-mail..." />
+
+                    <TextInput style={styles.textinput} value={this.state.password} onChangeText={ (txt) => this.setState({password: txt}) } secureTextEntry={true} placeholder="Confirm your password..." />
                 
-                <TextInput style={styles.textinput} value={this.state.name} onChangeText={ (txt) => this.setState({name: txt}) } placeholder="Type here your nickname..." />
-
-                <TextInput style={styles.textinput} value={this.state.email} onChangeText={ (txt) => this.setState({email: txt}) } placeholder="Type here your e-mail..." />
-
-                <TextInput style={styles.textinput} value={this.state.password} onChangeText={ (txt) => this.setState({password: txt}) } placeholder="Confirm your password..." />
-                
-                <CustomButton title="REGISTER" onPress={this.registerUser}/>
+                    <CustomButton title="REGISTER" onPress={this.registerUser}/>
+                </View>
             </View>
         )
     }
 }
 
 const styles = StyleSheet.create({
+    childcontainer: {
+        
+        justifyContent: 'center',
+        alignItems: 'center',
+        padding: 10,
+        backgroundColor: '#232635',
+
+    },
     container: {
         flex: 1,
         justifyContent: 'center',
@@ -58,6 +68,7 @@ const styles = StyleSheet.create({
         height: 40,
         borderColor: '#7a42f4',
         borderWidth: 1,
-        backgroundColor: 'white',
+        backgroundColor: '#2d3042',
+        color: 'white'
     },
 });

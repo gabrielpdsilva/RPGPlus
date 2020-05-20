@@ -22,6 +22,7 @@ export function MyStack() {
     <Stack.Navigator>
       <Stack.Screen name="Login" component={LoginScreen}/>
       <Stack.Screen name="Register" component={RegisterScreen} />
+      <Stack.Screen name="RPG+" component={MyDrawer} />
     </Stack.Navigator>
   );
 }
