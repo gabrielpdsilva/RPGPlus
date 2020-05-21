@@ -3,7 +3,8 @@ import {
     StyleSheet,
     Text,
     View,
-    TextInput
+    TextInput,
+    ToastAndroid
 } from 'react-native';
 
 import CustomButton from '../components/CustomButton';
@@ -32,14 +33,18 @@ export default class SketchScreen extends Component {
         const dbh = firebase.firestore();
 
         dbh.collection("sketchs").doc(this.state.name).set({
+
             name: this.state.name,
             category: this.state.category,
             system: this.state.system,
             text: this.state.text,
-        }).then(function() {
-            alert("Sketch created!")
-        })
-        .catch(function(error) {
+
+        }).then(() => {
+
+            ToastAndroid.show("Sketch created!", ToastAndroid.SHORT);
+            this.setState({name: '', category: '', system: '', text: ''});
+
+        }).catch((error) => {
             alert("Could not add the doc, error:\n" + error);
         });
     }

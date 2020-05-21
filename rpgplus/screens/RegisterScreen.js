@@ -3,6 +3,7 @@ import {
     StyleSheet,
     View,
     TextInput,
+    ToastAndroid
 } from 'react-native';
 import CustomTitle from '../components/CustomTitle';
 import CustomButton from '../components/CustomButton';
@@ -17,23 +18,24 @@ export default class RegisterScreen extends Component {
             name: '',
             email: '',
             password: '',
-            isValid: false
-        }
-    }
-
-    registerUser = () => {
-        if(this.state.isValid){
-            alert("Created!");
+            confirmPassword: '',
         }
     }
 
     handleSignUp = () => {
+
+        if(this.state.password !== this.state.confirmPassword){
+
+            alert("Password and Confirm Password fields cannot be different!");
+            return;
+
+        }
         firebase.auth()
         .createUserWithEmailAndPassword(this.state.email, this.state.password)
-        /*.then(userCredentials => {
-            return userCredentials.user.updateProfile({
-                displayName: this.state.name});
-        })*/.catch(error => alert("falhastes, klein" + error));
+        .then(() => {
+            this.props.navigation.navigate('Login');  
+            ToastAndroid.show("User created!", ToastAndroid.SHORT);
+        }).catch(error => alert("falhastes, klein" + error));
     };
 
     render(){
@@ -48,7 +50,9 @@ export default class RegisterScreen extends Component {
 
                     <TextInput style={styles.textinput} value={this.state.email} onChangeText={ (txt) => this.setState({email: txt}) } placeholder="Type here your e-mail..." />
 
-                    <TextInput style={styles.textinput} value={this.state.password} onChangeText={ (txt) => this.setState({password: txt}) } secureTextEntry={true} placeholder="Confirm your password..." />
+                    <TextInput style={styles.textinput} value={this.state.password} onChangeText={ (txt) => this.setState({password: txt}) } secureTextEntry={true} placeholder="Type your password..." />
+            
+                    <TextInput style={styles.textinput} value={this.state.confirmPassword} onChangeText={ (txt) => this.setState({confirmPassword: txt}) } secureTextEntry={true} placeholder="Confirm your password..." />
                 
                     <CustomButton title="REGISTER" onPress={this.handleSignUp}/>
                 </View>

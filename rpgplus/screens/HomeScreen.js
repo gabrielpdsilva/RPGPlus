@@ -7,19 +7,38 @@ import {
 } from 'react-native';
 import CustomText from '../components/CustomText';
 import CustomTitle from '../components/CustomTitle';
-import CustomAppBar from '../components/CustomAppBar';
+import CustomButton from '../components/CustomButton';
+
+import * as firebase from 'firebase';
 
 const HomeScreen = ({navigation}) => {
 /*
     componentDidMount = () => {
         const {email} = firebase.auth().currentUser;
     }*/
+
     
     return(
         <View style={styles.container}>
 
             <CustomTitle>Home</CustomTitle>
             <CustomText>Hm......</CustomText>
+            <CustomButton
+                    title="SIGN OUT"
+                    onPress={() => {
+                        firebase
+                            .auth()
+                            .signOut()
+                            .then(() => {
+                                //navigation.goBack(null);
+                                navigation.navigate("Login");
+                                
+                                alert("Successfully logged out!");
+                            }).catch(error => alert("opa, erro aqui: " + error));
+                    }}
+                    style={{}}
+                    textStyle={{}}
+                />
             
         </View>
     );

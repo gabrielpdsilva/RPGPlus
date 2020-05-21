@@ -3,13 +3,19 @@ import {
     StyleSheet,
     View,
     TextInput,
-    TouchableOpacity
+    TouchableOpacity,
+    ToastAndroid
 } from 'react-native';
 import CustomButton from '../components/CustomButton';
 import CustomText from '../components/CustomText';
 import CustomTitle from '../components/CustomTitle';
 
 import * as firebase from 'firebase';
+
+/*Useful site about login
+*https://medium.com/better-programming/react-native-firebase-authentication-7652e1d2c8a2
+*
+*/
 
 export default class LoginScreen extends Component {
 
@@ -29,9 +35,9 @@ export default class LoginScreen extends Component {
             .signInWithEmailAndPassword(email, password)
             .then(() => {
                 this.props.navigation.navigate("RPG+");
-                alert("User logged in!");
-            }).catch(error => alert("error: " + error));
-           
+                this.setState({email: '', password: ''});
+                ToastAndroid.show("Successfully logged!", ToastAndroid.SHORT);
+            }).catch(error => alert("error: " + error));   
     }
 
     render(){
