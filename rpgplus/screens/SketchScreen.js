@@ -9,7 +9,7 @@ import {
 
 import CustomButton from '../components/CustomButton';
 
-import * as firebase from 'firebase';
+import firebase from '../controller/Firebase';
 import 'firebase/firestore';
 
 export default class SketchScreen extends Component {

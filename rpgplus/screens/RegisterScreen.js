@@ -9,7 +9,7 @@ import CustomTitle from '../components/CustomTitle';
 import CustomButton from '../components/CustomButton';
 import CustomText from '../components/CustomText';
 
-import * as firebase from 'firebase';
+import firebase from '../controller/Firebase';
 
 export default class RegisterScreen extends Component {
     constructor(props){

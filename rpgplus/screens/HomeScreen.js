@@ -9,7 +9,7 @@ import CustomText from '../components/CustomText';
 import CustomTitle from '../components/CustomTitle';
 import CustomButton from '../components/CustomButton';
 
-import * as firebase from 'firebase';
+import firebase from '../controller/Firebase';
 
 const HomeScreen = ({navigation}) => {
 /*

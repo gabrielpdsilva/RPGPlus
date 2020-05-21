@@ -10,7 +10,8 @@ import CustomButton from '../components/CustomButton';
 import CustomText from '../components/CustomText';
 import CustomTitle from '../components/CustomTitle';
 
-import * as firebase from 'firebase';
+
+import firebase from '../controller/Firebase';
 
 /*Useful site about login
 *https://medium.com/better-programming/react-native-firebase-authentication-7652e1d2c8a2
