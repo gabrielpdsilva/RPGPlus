@@ -4,6 +4,7 @@ import {
     View,
     Button
 } from 'react-native';
+import CustomAppBar from '../components/CustomAppBar';
 
 /*
 It is used functions (not classes) on some tutorials, functions
@@ -20,6 +21,7 @@ const TestScreen = ({navigation}) => {
    
     return(
         <View>
+            <CustomAppBar/>
             <Text>Details = function</Text>
             <Button onPress={() => navigation.navigate("Details")} title="Go to Details"/>
             <Text>Sketch Screen = Class</Text>

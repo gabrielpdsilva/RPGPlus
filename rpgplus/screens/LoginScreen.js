@@ -5,7 +5,6 @@ import {
     TextInput,
     TouchableOpacity
 } from 'react-native';
-
 import CustomButton from '../components/CustomButton';
 import CustomText from '../components/CustomText';
 import CustomTitle from '../components/CustomTitle';
@@ -34,7 +33,9 @@ export default class LoginScreen extends Component {
 
     render(){
         return(
+
             <View style={styles.container}>
+
                 <CustomTitle>Login</CustomTitle>
                 <CustomText>Hello there!</CustomText>
 

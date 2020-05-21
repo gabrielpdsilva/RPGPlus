@@ -3,7 +3,6 @@ import {View, Text, StyleSheet} from 'react-native';
 import {DrawerContentScrollView, DrawerItem} from '@react-navigation/drawer';
 import { Drawer, Avatar, Title, Caption, Paragraph } from 'react-native-paper';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-import NameGeneratorScreen from './NameGeneratorScreen';
 
 //All credits goes to Pradip Debnath
 //https://github.com/itzpradip
@@ -70,7 +69,7 @@ export default function DrawerContent(props) {
                         <DrawerItem
                             labelStyle = {{color: 'white'}}
                             label="Roll Dices"
-                            onPress={()=> alert("not working yet")}
+                            onPress={()=> props.navigation.navigate("Test")}
                         />
 
                         <DrawerItem

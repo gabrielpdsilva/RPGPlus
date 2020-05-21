@@ -87,6 +87,7 @@ const styles = StyleSheet.create({
         borderColor: '#7a42f4',
         borderWidth: 1,
         padding: 15,
+        backgroundColor: '#232635',
       },
 
     textinput: {
@@ -96,6 +97,8 @@ const styles = StyleSheet.create({
         borderColor: '#7a42f4',
         borderWidth: 1,
         backgroundColor: 'white',
+        backgroundColor: '#2d3042',
+        color: 'white'
     },
     
 });
