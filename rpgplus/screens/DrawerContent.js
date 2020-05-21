@@ -4,6 +4,7 @@ import {DrawerContentScrollView, DrawerItem} from '@react-navigation/drawer';
 import { Drawer, Avatar, Title, Caption, Paragraph } from 'react-native-paper';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
+
 //All credits goes to Pradip Debnath
 //https://github.com/itzpradip
 //https://www.youtube.com/watch?v=ayxRtBHw754
@@ -11,9 +12,6 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 export default function DrawerContent(props) {
 
-    //signOutUser = () => {
-        //firebase.auth().signOut();
-    //}
 
     return(
         <View style={{flex:1}} backgroundColor = '#2d3042'>
@@ -90,7 +88,7 @@ export default function DrawerContent(props) {
                         <DrawerItem
                             labelStyle = {{color: 'white'}}
                             label="Sign out"
-                            onPress={()=> alert("logout")}
+                            onPress={() => alert("ok")}
                         />
                     </Drawer.Section>
                 </View>

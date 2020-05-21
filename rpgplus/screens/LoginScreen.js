@@ -9,6 +9,8 @@ import CustomButton from '../components/CustomButton';
 import CustomText from '../components/CustomText';
 import CustomTitle from '../components/CustomTitle';
 
+import * as firebase from 'firebase';
+
 export default class LoginScreen extends Component {
 
     constructor(props){
@@ -19,16 +21,17 @@ export default class LoginScreen extends Component {
         }
     }
 
-    userLoggedIn = () => {
+    handleLogin = () => {
+        const {email, password} = this.state;
 
-        if(this.state.email == '123' && this.state.password == "123"){
-            alert("User logged in!")
-            this.props.navigation.navigate("RPG+");
-            
-        }else{
-            this.setState({email: '', password: ''});
-            alert("Error");
-        }
+        firebase
+            .auth()
+            .signInWithEmailAndPassword(email, password)
+            .then(() => {
+                this.props.navigation.navigate("RPG+");
+                alert("User logged in!");
+            }).catch(error => alert("error: " + error));
+           
     }
 
     render(){
@@ -45,7 +48,7 @@ export default class LoginScreen extends Component {
 
                 <CustomButton
                     title="LOGIN"
-                    onPress={this.userLoggedIn}
+                    onPress={this.handleLogin}
                     style={{}}
                     textStyle={{}}
                 />

@@ -3,14 +3,17 @@ import {
     Text,
     View,
     StyleSheet,
-    TouchableOpacity,
-    Image
+
 } from 'react-native';
 import CustomText from '../components/CustomText';
 import CustomTitle from '../components/CustomTitle';
 import CustomAppBar from '../components/CustomAppBar';
 
-const HomeScreen = ({navigation}) => {   
+const HomeScreen = ({navigation}) => {
+/*
+    componentDidMount = () => {
+        const {email} = firebase.auth().currentUser;
+    }*/
     
     return(
         <View style={styles.container}>
