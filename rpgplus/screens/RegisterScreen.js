@@ -8,6 +8,8 @@ import CustomTitle from '../components/CustomTitle';
 import CustomButton from '../components/CustomButton';
 import CustomText from '../components/CustomText';
 
+import * as firebase from 'firebase';
+
 export default class RegisterScreen extends Component {
     constructor(props){
         super(props);
@@ -25,6 +27,15 @@ export default class RegisterScreen extends Component {
         }
     }
 
+    handleSignUp = () => {
+        firebase.auth()
+        .createUserWithEmailAndPassword(this.state.email, this.state.password)
+        /*.then(userCredentials => {
+            return userCredentials.user.updateProfile({
+                displayName: this.state.name});
+        })*/.catch(error => alert("falhastes, klein" + error));
+    };
+
     render(){
         return(
             <View style={styles.container}>
@@ -39,7 +50,7 @@ export default class RegisterScreen extends Component {
 
                     <TextInput style={styles.textinput} value={this.state.password} onChangeText={ (txt) => this.setState({password: txt}) } secureTextEntry={true} placeholder="Confirm your password..." />
                 
-                    <CustomButton title="REGISTER" onPress={this.registerUser}/>
+                    <CustomButton title="REGISTER" onPress={this.handleSignUp}/>
                 </View>
             </View>
         )
