@@ -34,7 +34,7 @@ const HomeScreen = ({navigation}) => {
                                 navigation.navigate("Login");
                                 
                                 alert("Successfully logged out!");
-                            }).catch(error => alert("opa, erro aqui: " + error));
+                            }).catch(error => alert("Ops, error: " + error));
                     }}
                     style={{}}
                     textStyle={{}}

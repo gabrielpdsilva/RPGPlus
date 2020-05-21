@@ -3,6 +3,7 @@ import {View, Text, StyleSheet} from 'react-native';
 import {DrawerContentScrollView, DrawerItem} from '@react-navigation/drawer';
 import { Drawer, Avatar, Title, Caption, Paragraph } from 'react-native-paper';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import firebase from '../controller/Firebase';
 
 
 //All credits goes to Pradip Debnath
@@ -88,7 +89,18 @@ export default function DrawerContent(props) {
                         <DrawerItem
                             labelStyle = {{color: 'white'}}
                             label="Sign out"
-                            onPress={() => alert("ok")}
+                            onPress={() => {
+
+                            firebase
+                                .auth()
+                                .signOut()
+                                .then(() => {
+                                    //navigation.goBack(null);
+                                    
+                                    alert("Successfully logged out!");
+                                }).catch(error => alert("Ops, error: " + error));
+
+                            }}
                         />
                     </Drawer.Section>
                 </View>
