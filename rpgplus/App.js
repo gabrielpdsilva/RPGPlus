@@ -21,6 +21,7 @@ const App = () => {
         this.props.navigation.navigate(user ? 'Main' : 'SignUp')
       })
     }*/
+
   return(
 
     <NavigationContainer>
