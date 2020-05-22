@@ -32,7 +32,8 @@ export default class SketchScreen extends Component {
 
         const dbh = firebase.firestore();
 
-        dbh.collection("sketchs").doc(this.state.name).set({
+        //create a sketch to the doc of the user collection
+        dbh.collection("users").doc("RandomPerson").collection("sketchs").doc(this.state.name).set({
 
             name: this.state.name,
             category: this.state.category,
@@ -50,9 +51,11 @@ export default class SketchScreen extends Component {
     }
    
     render(){
+
         return(
             <View style={styles.container}>
                 <View style={styles.textAreaContainer}>
+       
                     <TextInput style={styles.textinput} value={this.state.name} onChangeText={ (txt) => this.setState({name: txt}) } placeholder="Name of the story..." />
 
                     <TextInput style={styles.textinput} value={this.state.category} onChangeText={ (txt) => this.setState({category: txt}) } placeholder="Category of the story (medieval, cyberpunk)..."/>

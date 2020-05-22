@@ -10,16 +10,33 @@ import CustomButton from '../components/CustomButton';
 import CustomText from '../components/CustomText';
 
 import firebase from '../controller/Firebase';
+import 'firebase/firestore';
 
 export default class RegisterScreen extends Component {
     constructor(props){
         super(props);
         this.state = {
-            name: '',
+            nickname: '',
             email: '',
             password: '',
             confirmPassword: '',
         }
+    }
+
+    handleCreateUser = () => {
+
+        const dbh = firebase.firestore();
+
+        dbh.collection("users").doc(this.state.nickname).set({
+
+            nickname: this.state.nickname,
+            email: this.state.email,
+            
+        }).then(() => {
+            ToastAndroid.show("User created!", ToastAndroid.SHORT);
+        }).catch((error) => {
+            alert("Could not add the doc, error:\n" + error);
+        });
     }
 
     handleSignUp = () => {
@@ -30,12 +47,14 @@ export default class RegisterScreen extends Component {
             return;
 
         }
-        firebase.auth()
-        .createUserWithEmailAndPassword(this.state.email, this.state.password)
-        .then(() => {
-            this.props.navigation.navigate('Login');  
-            ToastAndroid.show("User created!", ToastAndroid.SHORT);
-        }).catch(error => alert("falhastes, klein" + error));
+        firebase
+            .auth()
+            .createUserWithEmailAndPassword(this.state.email, this.state.password)
+            .then(() => {
+                this.handleCreateUser();                                            //creates a doc user to the 'users'  collection
+                this.props.navigation.navigate('Login');                            //goes to Login screen after create the user
+                ToastAndroid.show("Successfully Registered!", ToastAndroid.SHORT);
+            }).catch(error => alert("falhastes, klein" + error));
     };
 
     render(){
@@ -46,7 +65,7 @@ export default class RegisterScreen extends Component {
 
                     <CustomText>Register your account!</CustomText>
                     
-                    <TextInput style={styles.textinput} value={this.state.name} onChangeText={ (txt) => this.setState({name: txt}) } placeholder="Type here your nickname..." />
+                    <TextInput style={styles.textinput} value={this.state.nickname} onChangeText={ (txt) => this.setState({nickname: txt}) } placeholder="Type here your nickname..." />
 
                     <TextInput style={styles.textinput} value={this.state.email} onChangeText={ (txt) => this.setState({email: txt}) } placeholder="Type here your e-mail..." />
 
