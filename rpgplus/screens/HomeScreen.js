@@ -51,7 +51,6 @@ const styles = StyleSheet.create({
         //backgroundColor:'black'
       },
 
-
       /*CONFIG OF FLOATING ACTION BUTTON
 
       <TouchableOpacity
