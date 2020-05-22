@@ -11,7 +11,7 @@ import firebase from '../controller/Firebase';
 //https://www.youtube.com/watch?v=ayxRtBHw754
 
 
-export default function DrawerContent(props) {
+export default function DrawerContent({navigation}, ...props) {
 
 
     return(
@@ -96,7 +96,7 @@ export default function DrawerContent(props) {
                                 .signOut()
                                 .then(() => {
                                     //navigation.goBack(null);
-                                    
+                                    navigation.navigate("Login");
                                     alert("Successfully logged out!");
                                 }).catch(error => alert("Ops, error: " + error));
 
