@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import {View, Text, StyleSheet, Alert, ToastAndroid} from 'react-native';
 import {DrawerContentScrollView, DrawerItem} from '@react-navigation/drawer';
 import { Drawer, Avatar, Title, Caption, Paragraph } from 'react-native-paper';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -11,7 +11,7 @@ import firebase from '../controller/Firebase';
 //https://www.youtube.com/watch?v=ayxRtBHw754
 
 
-export default function DrawerContent({navigation}, ...props) {
+export default function DrawerContent(props) {
 
 
     return(
@@ -91,15 +91,29 @@ export default function DrawerContent({navigation}, ...props) {
                             label="Sign out"
                             onPress={() => {
 
-                            firebase
-                                .auth()
-                                .signOut()
-                                .then(() => {
-                                    //navigation.goBack(null);
-                                    navigation.navigate("Login");
-                                    alert("Successfully logged out!");
-                                }).catch(error => alert("Ops, error: " + error));
+                                Alert.alert(
+                                    'Logout', //title
+                                    'Are you sure you want to logout?', //message
+                                    [
+                                      {
+                                        text: 'Cancel',
+                                        onPress: () => ToastAndroid.show("Logout canceled.", ToastAndroid.SHORT),
+                                        style: 'cancel'
+                                      },
+                                      { text: 'OK', onPress: () => {
+                                        firebase
+                                        .auth()
+                                        .signOut()
+                                        .then(() => {
 
+                                            props.navigation.navigate("Login"); //goes to Login screen
+                                            ToastAndroid.show("Successfully logged out!", ToastAndroid.SHORT); //make a toast
+                                            
+                                        }).catch(error => alert("Ops, error: " + error));
+                                      } }
+                                    ],
+                                    { cancelable: false }
+                                  );
                             }}
                         />
                     </Drawer.Section>
