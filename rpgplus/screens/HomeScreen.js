@@ -9,17 +9,21 @@ import {
 import CustomText from '../components/CustomText';
 import CustomTitle from '../components/CustomTitle';
 
+import firebase from '../controller/Firebase';
+
 const HomeScreen = ({navigation}) => {
 /*
     componentDidMount = () => {
         const {email} = firebase.auth().currentUser;
     }*/
+
+    const user = firebase.auth().currentUser;
     
     return(
         <View style={styles.container}>
 
             <CustomTitle>Home</CustomTitle>
-            <CustomText>Hm......</CustomText>
+            <CustomText>Hello, {user.displayName}</CustomText>
             
         </View>
     );

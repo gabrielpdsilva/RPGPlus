@@ -13,6 +13,8 @@ import LoginScreen from './screens/LoginScreen';
 import RegisterScreen from './screens/RegisterScreen';
 import DrawerContent from './screens/DrawerContent';
 
+import firebase from './controller/Firebase';
+
 const Drawer = createDrawerNavigator();
 
 const Stack = createStackNavigator();
@@ -32,9 +34,11 @@ export function MyStack() {
 //<Drawer.Navigator drawerContent={props => <DrawerContent {... props}/>}> 
 export function MyDrawer() {
 
+  const user = firebase.auth().currentUser;
+
   return(
     <Drawer.Navigator drawerContent={props => <DrawerContent
-                                                name = "Charles"
+                                                name = {user.displayName}
                                                 description = "Hm...!"
                                                 sessions = {0}
                                                 friends = {5}

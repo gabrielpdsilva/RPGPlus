@@ -24,14 +24,18 @@ export default class RegisterScreen extends Component {
         }
     }
 
-
     handleSignUp = () => {
 
-        if(this.state.password !== this.state.confirmPassword){
+        //if at least one field is empty
+        if(this.state.name == '' || this.state.nickname == '' || this.state.email == '' || this.state.password == '' || this.state.confirmPassword == ''){
+            alert("You have to fill all the fields!");
+            return;
+        }
 
+        //if password is different from confirmPassord
+        if(this.state.password !== this.state.confirmPassword){
             alert("Password and Confirm Password fields cannot be different!");
             return;
-
         }
 
         const dbh = firebase.firestore();
