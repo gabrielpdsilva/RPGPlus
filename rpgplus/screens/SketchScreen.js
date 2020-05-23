@@ -23,6 +23,7 @@ export default class SketchScreen extends Component {
         }
     }
 
+    //add sketch to firestore
     addSketch = () => {
 
         if(this.state.name == '' || this.state.category == '' || this.state.system == '' || this.state.text == '' ){
@@ -55,6 +56,8 @@ export default class SketchScreen extends Component {
         return(
             <View style={styles.container}>
                 <View style={styles.textAreaContainer}>
+
+                    <Text>...</Text>
        
                     <TextInput style={styles.textinput} value={this.state.name} onChangeText={ (txt) => this.setState({name: txt}) } placeholder="Name of the story..." />
 
