@@ -12,6 +12,9 @@ import CustomButton from '../components/CustomButton';
 import firebase from '../controller/Firebase';
 import 'firebase/firestore';
 
+//useful link about user collection on firestore
+//https://www.youtube.com/watch?v=qWy9ylc3f9U
+
 export default class SketchScreen extends Component {
     constructor(props){
         super(props);
@@ -31,10 +34,11 @@ export default class SketchScreen extends Component {
             return;
         }
 
+        const user = firebase.auth().currentUser;
         const dbh = firebase.firestore();
 
         //create a sketch to the doc of the user collection
-        dbh.collection("users").doc("RandomPerson").collection("sketchs").doc(this.state.name).set({
+        dbh.collection("users").doc(user.uid).collection("sketchs").doc(this.state.name).set({
 
             name: this.state.name,
             category: this.state.category,
