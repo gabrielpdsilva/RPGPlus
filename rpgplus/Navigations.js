@@ -22,12 +22,47 @@ const Stack = createStackNavigator();
 export function MyStack() {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="Login" options={{headerShown: false}} component={LoginScreen}/>
-      <Stack.Screen name="Register" options={{headerShown: false}} component={RegisterScreen} />
-      <Stack.Screen name="RPG+" options={{headerShown: false}} component={MyDrawer} />
+      <Stack.Screen
+      name="Login"
+      component={LoginScreen}
+      options={{
+                headerShown: true,
+                headerStyle: {backgroundColor: '#f75605'},
+                headerTintColor: '#fff',
+                }}/>
+
+      <Stack.Screen
+      name="Register"
+      component={RegisterScreen}
+      options={{
+                headerShown: true,
+                headerStyle: {backgroundColor: '#f75605'},
+                headerTintColor: '#fff',
+                }}/>
+
+      <Stack.Screen
+      name="RPG+"
+      component={MyDrawer}
+      options={{
+                headerShown: true,
+                headerLeft: null,
+                headerStyle: {backgroundColor: '#f75605'},
+                headerTintColor: '#fff',
+                }}/>
     </Stack.Navigator>
   );
 }
+//about the options of the screen:
+
+/*
+headerShown -> if true, it will show the appbar
+headerLeft -> hides the back button
+
+headerTitleStyle: {
+  fontWeight: 'bold', -> changes the style of the title of the appbar to bold style
+}
+
+*/
 
 /*initialRouteName="Home">*/
 

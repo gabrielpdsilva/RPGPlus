@@ -38,7 +38,7 @@ export default class SketchScreen extends Component {
         const dbh = firebase.firestore();
 
         //create a sketch to the doc of the user collection
-        dbh.collection("users").doc(user.uid).collection("sketchs").doc(this.state.name).set({
+        dbh.collection("users").doc(user.uid).collection("sketchs").doc(this.state.name).set({  //need to change the 'this.state.name' in the future
 
             name: this.state.name,
             category: this.state.category,
@@ -46,9 +46,14 @@ export default class SketchScreen extends Component {
             text: this.state.text,
 
         }).then(() => {
-
+            //toast a message
             ToastAndroid.show("Sketch created!", ToastAndroid.SHORT);
+
+            //set all states to ''
             this.setState({name: '', category: '', system: '', text: ''});
+
+            //goes to home screen
+            this.props.navigation.navigate("Home");
 
         }).catch((error) => {
             alert("Could not add the doc, error:\n" + error);
@@ -60,6 +65,10 @@ export default class SketchScreen extends Component {
         return(
             <View style={styles.container}>
                 <View style={styles.textAreaContainer}>
+
+                    <Text style={styles.title}>Sketch</Text>
+
+                    <Text style={styles.text}>Create a sketch for your future campaign!</Text>
        
                     <TextInput style={styles.textinput} value={this.state.name} onChangeText={ (txt) => this.setState({name: txt}) } placeholder="Name of the story..." />
 
@@ -114,4 +123,16 @@ const styles = StyleSheet.create({
         backgroundColor: '#2d3042',
         color: 'white'
     },  
+    title: {
+        color: 'white',
+        fontWeight: 'bold',
+        fontSize: 20
+      },
+
+    text: {
+    color: 'white',
+    margin: 5,
+    fontSize: 15,
+    textAlign: 'center'
+    },
 });
