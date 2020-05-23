@@ -53,11 +53,13 @@ export default class SketchScreen extends Component {
    
     render(){
 
+        const user = firebase.auth().currentUser;
+
         return(
             <View style={styles.container}>
                 <View style={styles.textAreaContainer}>
 
-                    <Text>...</Text>
+                    <Text>Hello, {user.displayName}</Text>
        
                     <TextInput style={styles.textinput} value={this.state.name} onChangeText={ (txt) => this.setState({name: txt}) } placeholder="Name of the story..." />
 

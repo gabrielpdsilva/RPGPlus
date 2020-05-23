@@ -50,10 +50,15 @@ export default class RegisterScreen extends Component {
         firebase
             .auth()
             .createUserWithEmailAndPassword(this.state.email, this.state.password)
-            .then(() => {
+            .then(userCredentials => {
+                    
                 this.handleCreateUser();                                            //creates a doc user to the 'users'  collection
                 this.props.navigation.navigate('Login');                            //goes to Login screen after create the user
                 ToastAndroid.show("Successfully Registered!", ToastAndroid.SHORT);
+
+                return userCredentials.user.updateProfile({
+                    displayName: this.state.nickname});                             //set the displayName of the user
+
             }).catch(error => alert("falhastes, klein" + error));
     };
 
