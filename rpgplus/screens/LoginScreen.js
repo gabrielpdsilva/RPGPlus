@@ -4,12 +4,10 @@ import {
     View,
     TextInput,
     TouchableOpacity,
-    ToastAndroid
+    ToastAndroid,
+    Text
 } from 'react-native';
 import CustomButton from '../components/CustomButton';
-import CustomText from '../components/CustomText';
-import CustomTitle from '../components/CustomTitle';
-
 
 import firebase from '../controller/Firebase';
 
@@ -51,8 +49,9 @@ export default class LoginScreen extends Component {
 
             <View style={styles.container}>
 
-                <CustomTitle>Login</CustomTitle>
-                <CustomText>Hello there!</CustomText>
+                <Text style={styles.title}>Login</Text>
+
+                <Text style={styles.text}>Hello there!</Text>
 
                 <TextInput style={styles.textinput} value={this.state.email} onChangeText={ (txt) => this.setState({email: txt})} placeholder="E-mail..." />
 
@@ -66,7 +65,7 @@ export default class LoginScreen extends Component {
                 />
 
                 <TouchableOpacity onPress={() => this.props.navigation.navigate("Register")}>
-                    <CustomText>New here? Create an account!</CustomText>
+                    <Text style={styles.text}>New here? Create an account!</Text>
                 </TouchableOpacity>
             </View>
         );
@@ -80,8 +79,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         backgroundColor: '#2d3042',
     },
-    textinput: {
-        
+    textinput: {  
         width: 280,
         padding: 5,
         margin: 5,
@@ -90,5 +88,17 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         backgroundColor: '#232635',
         color: 'white'
+    },
+    title: {
+        color: 'white',
+        fontWeight: 'bold',
+        fontSize: 20
+      },
+
+    text: {
+    color: 'white',
+    margin: 5,
+    fontSize: 15,
+    textAlign: 'center'
     },
 });

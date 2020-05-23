@@ -39,7 +39,7 @@ export function MyDrawer() {
   return(
     <Drawer.Navigator drawerContent={props => <DrawerContent
                                                 name = {user.displayName}
-                                                description = "Hm...!"
+                                                description = {user.email}
                                                 sessions = {0}
                                                 friends = {5}
                                                 {... props}/>}>

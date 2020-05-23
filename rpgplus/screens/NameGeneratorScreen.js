@@ -5,11 +5,10 @@ import {
   TouchableOpacity,
   Picker,
   ToastAndroid,
-  Clipboard
+  Clipboard,
+  Text
 } from 'react-native';
 
-import CustomTitle from '../components/CustomTitle';
-import CustomText from '../components/CustomText';
 import CustomButton from '../components/CustomButton';
 
 /*
@@ -165,9 +164,10 @@ var options =["Home","Savings","Car","GirlFriend"];
     return (
 
       <View style={styles.container}>
-        
-        <CustomTitle>Name Generator 2.0</CustomTitle>
-        <CustomText>Select a category and press the button to generate random names, you can copy it to your clipboard by clicking on it.</CustomText>
+      
+        <Text style={styles.title}>Name Generator 2.0</Text>
+
+        <Text style={styles.text}>Select a category and press the button to generate random names, you can copy it to your clipboard by clicking on it.</Text>
 
         <Picker
           style={styles.pickerStyle}
@@ -187,7 +187,7 @@ var options =["Home","Savings","Car","GirlFriend"];
 		    </Picker>
 
         <TouchableOpacity onPress={this.copyToClipboard}>
-          <CustomText>{this.state.name}</CustomText>
+          <Text style={styles.text}>{this.state.name}</Text>
         </TouchableOpacity>
     
         <CustomButton
@@ -210,20 +210,24 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#2d3042', //'#F5FCFF',
   },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
+  title: {
+    color: 'white',
+    fontWeight: 'bold',
+    fontSize: 20
   },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
+
+  text: {
+  color: 'white',
+  margin: 5,
+  fontSize: 15,
+  textAlign: 'center'
   },
+
   buttonText: {
     color: '#ffffff',
     textAlign: 'center'
   },
+
   button: {
     padding:10,
     backgroundColor: '#fc870a',

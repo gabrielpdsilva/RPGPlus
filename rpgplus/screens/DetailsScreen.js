@@ -1,17 +1,16 @@
 import React from 'react';
 import {
     View,
-    StyleSheet
+    StyleSheet,
+    Text
 } from 'react-native';
-import CustomText from '../components/CustomText';
 
 const DetailsScreen = ({navigation}) => {   
     return(
         <View style={styles.container}>
-            <CustomText>
-            RPG+ (RPGPlus) is a project made for tests and studies using React Native technology.
-                You may see bugs, problems with styles, etc.
-            </CustomText>
+            
+            <Text style={styles.text}>RPG+ (RPGPlus) is a project made for tests and studies using React Native technology.
+                You may see bugs, problems with styles, etc.</Text>
         </View>
     );
 }
@@ -22,7 +21,19 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         backgroundColor: '#2d3042',
-    }
+    },
+    title: {
+        color: 'white',
+        fontWeight: 'bold',
+        fontSize: 20
+    },
+
+    text: {
+    color: 'white',
+    margin: 5,
+    fontSize: 15,
+    textAlign: 'center'
+    },
 });
 
 export default DetailsScreen;

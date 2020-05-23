@@ -113,6 +113,5 @@ const styles = StyleSheet.create({
         backgroundColor: 'white',
         backgroundColor: '#2d3042',
         color: 'white'
-    },
-    
+    },  
 });

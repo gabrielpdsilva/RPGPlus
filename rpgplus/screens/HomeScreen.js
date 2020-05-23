@@ -3,11 +3,7 @@ import {
     Text,
     View,
     StyleSheet,
-    Alert
-
 } from 'react-native';
-import CustomText from '../components/CustomText';
-import CustomTitle from '../components/CustomTitle';
 
 import firebase from '../controller/Firebase';
 
@@ -22,8 +18,9 @@ const HomeScreen = ({navigation}) => {
     return(
         <View style={styles.container}>
 
-            <CustomTitle>Home</CustomTitle>
-            <CustomText>Hello, {user.displayName}</CustomText>
+            <Text style={styles.title}>Home</Text>
+
+            <Text style={styles.text}>Welcome, {user.displayName}</Text>
             
         </View>
     );
@@ -37,23 +34,19 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         backgroundColor: '#2d3042',
     },
-    
-    TouchableOpacityStyle: {
-        position: 'absolute',
-        width: 50,
-        height: 50,
-        alignItems: 'center',
-        justifyContent: 'center',
-        right: 30,
-        bottom: 30,
+
+    title: {
+        color: 'white',
+        fontWeight: 'bold',
+        fontSize: 20
       },
-    
-      FloatingButtonStyle: {
-        resizeMode: 'contain',
-        width: 50,
-        height: 50,
-        //backgroundColor:'black'
-      },
+
+    text: {
+    color: 'white',
+    margin: 5,
+    fontSize: 15,
+    textAlign: 'center'
+    },
 
       /*CONFIG OF FLOATING ACTION BUTTON
 
@@ -72,6 +65,26 @@ const styles = StyleSheet.create({
                 style={styles.FloatingButtonStyle}
             />
         </TouchableOpacity>
+
+
+
+        ************************stylesheet of the floating action button...************************
+
+         TouchableOpacityStyle: {
+        position: 'absolute',
+        width: 50,
+        height: 50,
+        alignItems: 'center',
+        justifyContent: 'center',
+        right: 30,
+        bottom: 30,
+      },
+    
+      FloatingButtonStyle: {
+        resizeMode: 'contain',
+        width: 50,
+        height: 50,
+      },
 
 
       */

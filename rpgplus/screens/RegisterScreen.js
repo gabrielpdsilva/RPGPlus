@@ -3,11 +3,10 @@ import {
     StyleSheet,
     View,
     TextInput,
-    ToastAndroid
+    ToastAndroid,
+    Text
 } from 'react-native';
-import CustomTitle from '../components/CustomTitle';
 import CustomButton from '../components/CustomButton';
-import CustomText from '../components/CustomText';
 
 import firebase from '../controller/Firebase';
 import 'firebase/firestore';
@@ -69,10 +68,11 @@ export default class RegisterScreen extends Component {
         return(
             <View style={styles.container}>
                 <View style={styles.childcontainer}>
-                    <CustomTitle>Register</CustomTitle>
 
-                    <CustomText>Register your account!</CustomText>
-                    
+                    <Text style={styles.title}>Register</Text>
+
+                    <Text style={styles.text}>Register your account!</Text>
+
                     <TextInput style={styles.textinput} value={this.state.name} onChangeText={ (txt) => this.setState({name: txt}) } placeholder="Type here your name..." />
 
                     <TextInput style={styles.textinput} value={this.state.nickname} onChangeText={ (txt) => this.setState({nickname: txt}) } placeholder="Type here your nickname..." />
@@ -114,5 +114,17 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         backgroundColor: '#2d3042',
         color: 'white'
+    },
+    title: {
+        color: 'white',
+        fontWeight: 'bold',
+        fontSize: 20
+      },
+
+    text: {
+    color: 'white',
+    margin: 5,
+    fontSize: 15,
+    textAlign: 'center'
     },
 });
