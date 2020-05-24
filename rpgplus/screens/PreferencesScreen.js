@@ -30,8 +30,19 @@ export default class PreferencesScreen extends Component {
 
         const user = firebase.auth().currentUser;
 
+        user
+        .delete()
+        .then(() => {
 
-        this.props.navigation.navigate("Login");
+            //toast a message
+            ToastAndroid.show("Your account has been deleted!", ToastAndroid.SHORT);
+
+            //goes to login screen
+            this.props.navigation.navigate("Login");
+        })
+        .catch((error) => {
+            alert("Something went wrong: \n" + error);
+        });
 
     }
 
@@ -39,16 +50,23 @@ export default class PreferencesScreen extends Component {
 
         const user = firebase.auth().currentUser;
 
-        user.updateProfile({
+        //updates de user profile
+        user
+        .updateProfile({
+            
+            //updates the displayName of the user
             displayName: this.state.name,
-          }).then(() => {
-                //toast a message
-                ToastAndroid.show("Done!", ToastAndroid.SHORT);
-          }).catch((error) => {
-              alert("Error: \n" + error);
-          });
+        })
+        .then(() => {
 
-          this.setState({isSwitchOn: false});
+            //toast a message
+            ToastAndroid.show("Done!", ToastAndroid.SHORT);
+        })
+        .catch((error) => {
+            alert("Something went wrong: \n" + error);
+        });
+
+        this.setState({isSwitchOn: false});
 
     }
 
@@ -61,7 +79,7 @@ export default class PreferencesScreen extends Component {
         return(
             <View style={styles.container}>
 
-                <Text style={styles.title}>Preferences</Text>
+                <Text style={styles.title}>Profile Preferences</Text>
                 <Text style={styles.text}>Change your name</Text>
 
                 <View style={{flexDirection: 'row'}}>
@@ -79,12 +97,14 @@ export default class PreferencesScreen extends Component {
                 </View>
 
                 <CustomButton title="RENAME ACCOUNT" onPress={this.updateName}/>
+
+                <Text>────────────────────────</Text>
                 
                 <Text style={styles.dangerTitle}>Danger Zone</Text>
                 
                 <Text style={styles.dangerText}>If you delete your account, you will lose everything about it.</Text>
 
-                <CustomButton title="DELETE ACCOUNT" onPress={() => alert("clicou em delete")}/>
+                <CustomButton title="DELETE ACCOUNT" onPress={this.deleteAccount}/>
             </View>
         );
     }
