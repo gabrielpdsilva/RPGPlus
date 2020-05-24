@@ -5,16 +5,17 @@ import {
     View,
     TextInput,
     ToastAndroid,
-    Switch
+    Switch,
+    Alert
 } from 'react-native';
 
 import CustomButton from '../components/CustomButton';
 
 import firebase from '../controller/Firebase';
+import 'firebase/firestore';
 
 export default class PreferencesScreen extends Component {
     constructor(props){
-        
         super(props);
 
         const user = firebase.auth().currentUser;
@@ -26,10 +27,57 @@ export default class PreferencesScreen extends Component {
         }
     }
 
+    buttonDelete = () => {
+        Alert.alert(
+            'Delete Account', //title
+            'Are you sure you want to delete your account?', //message
+            [
+                {
+                    text: 'Cancel',
+                    onPress: () => ToastAndroid.show("Delete canceled.", ToastAndroid.SHORT),
+                    style: 'cancel'
+                },
+                {
+                    text: 'OK', onPress: () => {
+                    this.deleteAccount();
+                    }
+                }
+            ],
+            { cancelable: false }
+          );
+    }
+
     deleteAccount = () => {
 
         const user = firebase.auth().currentUser;
+        const dbh = firebase.firestore();
 
+        dbh.collection("users").doc(user.uid).delete().then(() => {
+
+            //toast a message
+            ToastAndroid.show("Document successfully deleted!", ToastAndroid.SHORT);
+
+
+            user
+            .delete()
+            .then(() => {
+    
+                //toast a message
+                ToastAndroid.show("Your account has been deleted!", ToastAndroid.SHORT);
+    
+                //goes to login screen
+                this.props.navigation.navigate("Login");
+            })
+            .catch((error) => {
+                alert("Something went wrong: \n" + error);
+            });
+
+
+        }).catch((error) => {
+            alert("Error removing document: " + error);
+        });
+
+/*
         user
         .delete()
         .then(() => {
@@ -39,10 +87,17 @@ export default class PreferencesScreen extends Component {
 
             //goes to login screen
             this.props.navigation.navigate("Login");
+
+            dbh.collection("users").doc(user.uid).delete().then(() => {
+                alert("Document successfully deleted!");
+            }).catch((error) => {
+                alert("Error removing document: " + error);
+            });
         })
         .catch((error) => {
             alert("Something went wrong: \n" + error);
         });
+        */
 
     }
 
@@ -104,7 +159,7 @@ export default class PreferencesScreen extends Component {
                 
                 <Text style={styles.dangerText}>If you delete your account, you will lose everything about it.</Text>
 
-                <CustomButton title="DELETE ACCOUNT" onPress={this.deleteAccount}/>
+                <CustomButton title="DELETE ACCOUNT" onPress={this.buttonDelete}/>
             </View>
         );
     }
