@@ -35,6 +35,23 @@ export default class PreferencesScreen extends Component {
 
     }
 
+    updateName = () => {
+
+        const user = firebase.auth().currentUser;
+
+        user.updateProfile({
+            displayName: this.state.name,
+          }).then(() => {
+                //toast a message
+                ToastAndroid.show("Done!", ToastAndroid.SHORT);
+          }).catch((error) => {
+              alert("Error: \n" + error);
+          });
+
+          this.setState({isSwitchOn: false});
+
+    }
+
     _onToggleSwitch = () =>  this.setState(state => ({ isSwitchOn: !state.isSwitchOn }));
 
     render(){
@@ -43,16 +60,30 @@ export default class PreferencesScreen extends Component {
 
         return(
             <View style={styles.container}>
-                <Switch
-                    trackColor={{ false: "#767577", true: "#f75605" }}
-                    thumbColor={isSwitchOn ? "#f4f3f4" : "#f4f3f4"}
-                    ios_backgroundColor="#3e3e3e"
-                    onValueChange={this._onToggleSwitch}
-                    value={isSwitchOn}
-                />
-                <TextInput style={styles.textinput} editable={isSwitchOn} value={this.state.name} onChangeText={ (txt) => this.setState({name: txt}) } placeholder="..."/>
-                <Text style={styles.title}>Danger Zone</Text>
-                <Text style={styles.text}>If you delete your account, you will lose everything about it.</Text>
+
+                <Text style={styles.title}>Preferences</Text>
+                <Text style={styles.text}>Change your name</Text>
+
+                <View style={{flexDirection: 'row'}}>
+
+                    <TextInput style={styles.textinput} editable={isSwitchOn} value={this.state.name} width={235} onChangeText={ (txt) => this.setState({name: txt}) } placeholder="..."/>
+
+                    <Switch
+                        trackColor={{ false: "#767577", true: "#f75605" }}
+                        thumbColor={isSwitchOn ? "#f4f3f4" : "#f4f3f4"}
+                        ios_backgroundColor="#3e3e3e"
+                        onValueChange={this._onToggleSwitch}
+                        value={isSwitchOn}
+                    />
+
+                </View>
+
+                <CustomButton title="RENAME ACCOUNT" onPress={this.updateName}/>
+                
+                <Text style={styles.dangerTitle}>Danger Zone</Text>
+                
+                <Text style={styles.dangerText}>If you delete your account, you will lose everything about it.</Text>
+
                 <CustomButton title="DELETE ACCOUNT" onPress={() => alert("clicou em delete")}/>
             </View>
         );
@@ -77,16 +108,29 @@ const styles = StyleSheet.create({
         color: 'white'
     },
 
-    title: {
+    dangerTitle: {
         color: '#f91818',
         fontWeight: 'bold',
         fontSize: 20
     },
 
+    dangerText: {
+        color: '#f91818',
+        margin: 5,
+        fontSize: 15,
+        textAlign: 'center'
+    },
+
+    title: {
+        color: 'white',
+        fontWeight: 'bold',
+        fontSize: 20
+    },
+
     text: {
-    color: '#f91818',
-    margin: 5,
-    fontSize: 15,
-    textAlign: 'center'
+        color: 'white',
+        margin: 5,
+        fontSize: 15,
+        textAlign: 'center'
     },
 });
