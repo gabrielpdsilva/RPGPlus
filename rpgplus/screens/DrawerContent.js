@@ -13,7 +13,6 @@ import firebase from '../controller/Firebase';
 
 export default function DrawerContent(props) {
 
-
     return(
         <View style={{flex:1}} backgroundColor = '#2d3042'>
             <DrawerContentScrollView {...props}>
@@ -73,6 +72,13 @@ export default function DrawerContent(props) {
                             label="Details"
                             onPress={()=>props.navigation.navigate('Details')}
                         />
+
+                        <DrawerItem
+                            labelStyle = {{color: 'white'}}
+                            label="Preferences"
+                            onPress={()=>props.navigation.navigate('Preferences')}
+                        />
+
                         <DrawerItem
                             labelStyle = {{color: 'white'}}
                             label="Sign out"

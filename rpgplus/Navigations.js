@@ -11,6 +11,7 @@ import NameGeneratorScreen from './screens/NameGeneratorScreen';
 import TestScreen from './screens/TestScreen';
 import LoginScreen from './screens/LoginScreen';
 import RegisterScreen from './screens/RegisterScreen';
+import PreferencesScreen from './screens/PreferencesScreen';
 import DrawerContent from './screens/DrawerContent';
 
 import firebase from './controller/Firebase';
@@ -44,7 +45,7 @@ export function MyStack() {
       name="RPG+"
       component={MyDrawer}
       options={{
-                headerShown: true,
+                headerShown: false,
                 headerLeft: null,
                 headerStyle: {backgroundColor: '#f75605'},
                 headerTintColor: '#fff',
@@ -82,6 +83,7 @@ export function MyDrawer() {
       <Drawer.Screen name="Name Generator" component={NameGeneratorScreen}/>
       <Drawer.Screen name="Sketch" component={SketchScreen}/>
       <Drawer.Screen name="Details" component={DetailsScreen}/>
+      <Drawer.Screen name="Preferences" component={PreferencesScreen}/>
       <Drawer.Screen name="Test" component={TestScreen}/>
     </Drawer.Navigator>
   );
