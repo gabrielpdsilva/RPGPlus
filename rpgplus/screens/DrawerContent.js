@@ -54,7 +54,7 @@ export default function DrawerContent(props) {
                         <DrawerItem
                             labelStyle = {{color: 'white'}}
                             label="Roll Dices"
-                            onPress={()=> props.navigation.navigate("RollDices")}
+                            onPress={()=> props.navigation.navigate("Roll Dices")}
                         />
 
                         <DrawerItem

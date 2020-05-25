@@ -13,6 +13,7 @@ import RegisterScreen from './screens/RegisterScreen';
 import PreferencesScreen from './screens/PreferencesScreen';
 import DrawerContent from './screens/DrawerContent';
 import RollDices from './screens/RollDicesScreen';
+import ForgotPasswordScreen from './screens/ForgotPasswordScreen';
 
 import firebase from './controller/Firebase';
 
@@ -35,6 +36,15 @@ export function MyStack() {
       <Stack.Screen
       name="Register"
       component={RegisterScreen}
+      options={{
+                headerShown: true,
+                headerStyle: {backgroundColor: '#f75605'},
+                headerTintColor: '#fff',
+                }}/>
+
+<Stack.Screen
+      name="Forgot Password"
+      component={ForgotPasswordScreen}
       options={{
                 headerShown: true,
                 headerStyle: {backgroundColor: '#f75605'},
@@ -81,7 +91,7 @@ export function MyDrawer() {
                                                 {... props}/>}>
       <Drawer.Screen name="Home" component={HomeScreen}/>    
       <Drawer.Screen name="Name Generator" component={NameGeneratorScreen}/>
-      <Drawer.Screen name="RollDices" component={RollDices}/>
+      <Drawer.Screen name="Roll Dices" component={RollDices}/>
       <Drawer.Screen name="Sketch" component={SketchScreen}/>
       <Drawer.Screen name="Details" component={DetailsScreen}/>
       <Drawer.Screen name="Preferences" component={PreferencesScreen}/>
