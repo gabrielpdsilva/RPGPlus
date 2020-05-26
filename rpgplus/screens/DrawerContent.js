@@ -81,6 +81,12 @@ export default function DrawerContent(props) {
 
                         <DrawerItem
                             labelStyle = {{color: 'white'}}
+                            label="List"
+                            onPress={()=>props.navigation.navigate('TestScreen')}
+                        />
+
+                        <DrawerItem
+                            labelStyle = {{color: 'white'}}
                             label="Sign out"
                             onPress={() => {
 
