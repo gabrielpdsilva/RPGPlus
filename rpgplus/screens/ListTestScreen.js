@@ -6,29 +6,45 @@ import {
     FlatList
 } from 'react-native';
 
-const DATA = [
-    {
-      id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
-      title: 'First Item',
-      name: '1...'
-    },
-    {
-      id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f63',
-      title: 'Second Item',
-      name: '2...'
-    },
-    {
-      id: '58694a0f-3da1-471f-bd96-145571e29d72',
-      title: 'Third Item',
-      name: '3...'
-    },
-    {
-        id: '58694a0f-3da1-471f-bd96-145571e29d72',
-        title: 'Another Item',
-        name: '4...'
-      },
+//https://blog.rocketseat.com.br/scroll-infinito-no-react-native/
+
+export default class ListTestScreen extends Component {
+    state = {
+        data: [
+          { id: 0, name: 'Repo 1', category: 'Hm...', system: '', text: ''},
+          { id: 1, name: 'Repo 2', category: '...', system: '', text: ''},
+          { id: 2, name: 'Repo 3', category: 'O.O...' , system: '', text: ''},
+        ],
+      };
     
-];
+      renderItem = ({ item }) => (
+        <View style={styles.listItem}>
+            <Text style={styles.textItem}>Id: {item.id}</Text>
+            <Text style={styles.textItem}>Name: {item.name}</Text>
+            <Text style={styles.textItem}>Category: {item.category}</Text>
+            <Text style={styles.textItem}>System: {item.system}</Text>
+            <Text style={styles.textItem}>Text: {item.text}</Text>
+        </View>
+      );
+
+    render(){
+        return(
+            <View style={styles.container}>
+                <Text style={styles.title}>List Test screen</Text>
+                <Text style={styles.text}>...</Text>
+                
+                <FlatList
+                    data={this.state.data}
+                    renderItem={this.renderItem}
+                    keyExtractor={item => item.id}
+                />
+
+            </View>
+        );
+    }
+}
+
+/*
 
 function Item({ title, name }) {
 return (
@@ -39,30 +55,39 @@ return (
 );
 }
 
-export default class ListTestScreen extends Component {
-    render(){
-        return(
-            <View style={styles.container}>
-                <Text style={styles.title}>List Test screen</Text>
-                <Text style={styles.text}>...</Text>
-                <FlatList
+<FlatList
                     data={DATA}
                     renderItem={({ item, name }) => <Item title={item.title} name={item.name}/>}
                     keyExtractor={item => item.id}
                 />
-            </View>
-        );
-    }
-}
+
+*/
 
 const styles = StyleSheet.create({
 
+    list: {
+        paddingHorizontal: 20,
+    },
+    
+    listItem: {
+        backgroundColor: '#f75605',
+        width: 250,
+        marginVertical: 2,
+        marginHorizontal: 2,
+    },
+
+    textItem: {
+        color: 'white',
+        margin: 5,
+        fontSize: 15,
+    },
+
     item: {
-    backgroundColor: 'red',
-    padding: 10,
-    marginVertical: 2,
-    marginHorizontal: 2,
-    width: 250,
+        backgroundColor: 'red',
+        padding: 10,
+        marginVertical: 2,
+        marginHorizontal: 2,
+        width: 250,
     },
     
     container: {
@@ -79,9 +104,9 @@ const styles = StyleSheet.create({
     },
 
     text: {
-    color: 'white',
-    margin: 5,
-    fontSize: 15,
-    textAlign: 'center'
+        color: 'white',
+        margin: 5,
+        fontSize: 15,
+        textAlign: 'center'
     },
 });
