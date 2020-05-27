@@ -38,16 +38,16 @@ export default class SketchScreen extends Component {
         const dbh = firebase.firestore();
 
         //create a sketch to the doc of the user collection
-        dbh.collection("users").doc(user.uid).collection("sketchs").doc(this.state.name).set({  //need to change the 'this.state.name' in the future
+        dbh.collection("users").doc(user.uid).collection("sketchs").add({ //add is used so Firestore can generate a unique ID to the doc
 
             name: this.state.name,
             category: this.state.category,
             system: this.state.system,
             text: this.state.text,
 
-        }).then(() => {
+        }).then((docRef) => {
             //toast a message
-            ToastAndroid.show("Sketch created!", ToastAndroid.SHORT);
+            ToastAndroid.show("Sketch created! " + docRef.id, ToastAndroid.SHORT);
 
             //set all states to ''
             this.setState({name: '', category: '', system: '', text: ''});

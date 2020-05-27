@@ -9,7 +9,9 @@ import {
 import firebase from '../controller/Firebase';
 import 'firebase/firestore';
 
+//Useful links:
 //https://blog.rocketseat.com.br/scroll-infinito-no-react-native/
+//https://stackoverflow.com/questions/53861022/rendering-react-components-mapped-from-firebase-firestore
 
 export default class ListTestScreen extends Component {
     constructor(props) {
@@ -26,6 +28,7 @@ export default class ListTestScreen extends Component {
             snapshot.forEach((doc) => (
                 this.setState((prevState) => ({
                     data: [...prevState.data, {
+                        id: doc.id,
                         name: doc.data().name,
                         category: doc.data().category,
                         system: doc.data().system,
@@ -38,6 +41,7 @@ export default class ListTestScreen extends Component {
     
       renderItem = ({ item }) => (
         <View style={styles.listItem}>
+            <Text style={styles.textItem}>ID: {item.id}</Text>
             <Text style={styles.textItem}>Name: {item.name}</Text>
             <Text style={styles.textItem}>Category: {item.category}</Text>
             <Text style={styles.textItem}>System: {item.system}</Text>
