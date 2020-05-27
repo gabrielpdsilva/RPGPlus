@@ -6,20 +6,38 @@ import {
     FlatList
 } from 'react-native';
 
+import firebase from '../controller/Firebase';
+import 'firebase/firestore';
+
 //https://blog.rocketseat.com.br/scroll-infinito-no-react-native/
 
 export default class ListTestScreen extends Component {
-    state = {
-        data: [
-          { id: 0, name: 'Repo 1', category: 'Hm...', system: '', text: ''},
-          { id: 1, name: 'Repo 2', category: '...', system: '', text: ''},
-          { id: 2, name: 'Repo 3', category: 'O.O...' , system: '', text: ''},
-        ],
-      };
+    constructor(props) {
+        super(props);
+        this.state = {
+            data: []
+        };
+    }
+
+    componentDidMount = () => {
+        const user = firebase.auth().currentUser;
+        const dbh = firebase.firestore();
+        dbh.collection("users").doc(user.uid).collection("sketchs").get().then((snapshot) => (
+            snapshot.forEach((doc) => (
+                this.setState((prevState) => ({
+                    data: [...prevState.data, {
+                        name: doc.data().name,
+                        category: doc.data().category,
+                        system: doc.data().system,
+                        text: doc.data().text,
+                    }]
+                }))
+            ))
+        ))
+    }
     
       renderItem = ({ item }) => (
         <View style={styles.listItem}>
-            <Text style={styles.textItem}>Id: {item.id}</Text>
             <Text style={styles.textItem}>Name: {item.name}</Text>
             <Text style={styles.textItem}>Category: {item.category}</Text>
             <Text style={styles.textItem}>System: {item.system}</Text>
@@ -36,7 +54,8 @@ export default class ListTestScreen extends Component {
                 <FlatList
                     data={this.state.data}
                     renderItem={this.renderItem}
-                    keyExtractor={item => item.id}
+                    onPress={() => alert("ok")}
+                    keyExtractor={item => item.id} //need to fix this
                 />
 
             </View>
