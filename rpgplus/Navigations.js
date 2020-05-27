@@ -14,7 +14,7 @@ import PreferencesScreen from './screens/PreferencesScreen';
 import DrawerContent from './screens/DrawerContent';
 import RollDices from './screens/RollDicesScreen';
 import ForgotPasswordScreen from './screens/ForgotPasswordScreen';
-import ListTestScreen from './screens/ListTestScreen';
+import ListSketchScreen from './screens/ListSketchScreen';
 
 import firebase from './controller/Firebase';
 
@@ -95,7 +95,7 @@ export function MyDrawer() {
       <Drawer.Screen name="Roll Dices" component={RollDices}/>
       <Drawer.Screen name="Sketch" component={SketchScreen}/>
       <Drawer.Screen name="Details" component={DetailsScreen}/>
-      <Drawer.Screen name="TestScreen" component={ListTestScreen}/>
+      <Drawer.Screen name="List Sketch" component={ListSketchScreen}/>
       <Drawer.Screen name="Preferences" component={PreferencesScreen}/>
     </Drawer.Navigator>
   );

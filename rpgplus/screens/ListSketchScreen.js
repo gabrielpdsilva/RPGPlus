@@ -13,7 +13,7 @@ import 'firebase/firestore';
 //https://blog.rocketseat.com.br/scroll-infinito-no-react-native/
 //https://stackoverflow.com/questions/53861022/rendering-react-components-mapped-from-firebase-firestore
 
-export default class ListTestScreen extends Component {
+export default class ListSketchScreen extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -87,14 +87,11 @@ return (
 */
 
 const styles = StyleSheet.create({
-
-    list: {
-        paddingHorizontal: 20,
-    },
     
     listItem: {
         backgroundColor: '#f75605',
         width: 250,
+        margin: 10,
         marginVertical: 2,
         marginHorizontal: 2,
     },
