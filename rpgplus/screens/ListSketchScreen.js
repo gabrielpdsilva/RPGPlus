@@ -52,8 +52,6 @@ export default class ListSketchScreen extends Component {
     render(){
         return(
             <View style={styles.container}>
-                <Text style={styles.title}>List Test screen</Text>
-                <Text style={styles.text}>...</Text>
                 
                 <FlatList
                     data={this.state.data}

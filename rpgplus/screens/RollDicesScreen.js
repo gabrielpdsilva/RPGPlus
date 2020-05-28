@@ -95,6 +95,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#2d3042',
     },
     textAreaContainer: {
+        margin: 10,
         borderColor: 'black',
         borderWidth: 2,
         width: 300,
@@ -122,7 +123,7 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         backgroundColor: '#1d1f2b',
         color: 'white',
-        width: 150,
+        width: 250,
     },
     
     pickerStyle:{  

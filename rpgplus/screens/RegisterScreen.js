@@ -67,9 +67,10 @@ export default class RegisterScreen extends Component {
     render(){
         return(
             <View style={styles.container}>
+                <Text style={styles.title}>Register</Text>
                 <View style={styles.childcontainer}>
 
-                    <Text style={styles.title}>Register</Text>
+                    
 
                     <Text style={styles.text}>Register your account!</Text>
 
@@ -92,11 +93,13 @@ export default class RegisterScreen extends Component {
 
 const styles = StyleSheet.create({
     childcontainer: {
-        
+        margin: 10,
         justifyContent: 'center',
         alignItems: 'center',
         padding: 10,
         backgroundColor: '#232635',
+        borderColor: 'black',
+        borderWidth: 2,
 
     },
     container: {
@@ -110,7 +113,7 @@ const styles = StyleSheet.create({
         padding: 5,
         margin: 5,
         height: 40,
-        borderColor: '#7a42f4',
+        borderColor: 'black',
         borderWidth: 1,
         backgroundColor: '#2d3042',
         color: 'white'
@@ -122,9 +125,9 @@ const styles = StyleSheet.create({
       },
 
     text: {
-    color: 'white',
-    margin: 5,
-    fontSize: 15,
-    textAlign: 'center'
+        color: 'white',
+        margin: 5,
+        fontSize: 15,
+        textAlign: 'center'
     },
 });

@@ -13,6 +13,7 @@ import firebase from '../controller/Firebase';
 
 export default function DrawerContent(props) {
 
+
     return(
         <View style={{flex:1}} backgroundColor = '#2d3042'>
             <DrawerContentScrollView {...props}>
@@ -37,7 +38,7 @@ export default function DrawerContent(props) {
                         <DrawerItem
                             labelStyle = {{color: 'white'}}
                             label="Home"
-                            onPress={()=>props.navigation.navigate('Home')}
+                            onPress={() => props.navigation.navigate('Home')}
                         />
                     </Drawer.Section>
 
@@ -59,8 +60,14 @@ export default function DrawerContent(props) {
 
                         <DrawerItem
                             labelStyle = {{color: 'white'}}
-                            label="Sketch"
+                            label="Create Sketch"
                             onPress={()=>props.navigation.navigate('Sketch')}
+                        />
+
+                        <DrawerItem
+                            labelStyle = {{color: 'white'}}
+                            label="My Sketches"
+                            onPress={()=>props.navigation.navigate('List Sketch')}
                         />
                     </Drawer.Section>
 
@@ -79,11 +86,6 @@ export default function DrawerContent(props) {
                             onPress={()=>props.navigation.navigate('Preferences')}
                         />
 
-                        <DrawerItem
-                            labelStyle = {{color: 'white'}}
-                            label="List"
-                            onPress={()=>props.navigation.navigate('List Sketch')}
-                        />
 
                         <DrawerItem
                             labelStyle = {{color: 'white'}}
@@ -94,22 +96,22 @@ export default function DrawerContent(props) {
                                     'Logout', //title
                                     'Are you sure you want to logout?', //message
                                     [
-                                      {
-                                        text: 'Cancel',
-                                        onPress: () => ToastAndroid.show("Logout canceled.", ToastAndroid.SHORT),
-                                        style: 'cancel'
-                                      },
-                                      { text: 'OK', onPress: () => {
-                                        firebase
-                                        .auth()
-                                        .signOut()
-                                        .then(() => {
+                                        {
+                                            text: 'Cancel',
+                                            onPress: () => ToastAndroid.show("Logout canceled.", ToastAndroid.SHORT),
+                                            style: 'cancel'
+                                        },
+                                        {
+                                            text: 'OK', onPress: () => {
+                                                firebase
+                                                    .auth().signOut().then(() => {
 
-                                            props.navigation.navigate("Login"); //goes to Login screen
-                                            ToastAndroid.show("Successfully logged out!", ToastAndroid.SHORT); //make a toast
-                                            
-                                        }).catch(error => alert("Ops, error: " + error));
-                                      } }
+                                                props.navigation.navigate("Login"); //goes to Login screen
+                                                ToastAndroid.show("Successfully logged out!", ToastAndroid.SHORT); //make a toast
+                                                
+                                                }).catch(error => alert("Ops, error: " + error));
+                                            }
+                                       }
                                     ],
                                     { cancelable: false }
                                   );

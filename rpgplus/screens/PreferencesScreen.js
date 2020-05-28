@@ -139,11 +139,18 @@ export default class PreferencesScreen extends Component {
 
                 <View style={{flexDirection: 'row'}}>
 
-                    <TextInput style={styles.textinput} editable={isSwitchOn} value={this.state.name} width={235} onChangeText={ (txt) => this.setState({name: txt}) } placeholder="..."/>
+                    <TextInput style={styles.textinput}
+                        backgroundColor = {isSwitchOn ? '#232635' : '#14161f'}
+                        editable={isSwitchOn}
+                        value={this.state.name}
+                        width={235}
+                        onChangeText={ (txt) => this.setState({name: txt}) }
+                        placeholder="..."
+                    />
 
                     <Switch
                         trackColor={{ false: "#767577", true: "#f75605" }}
-                        thumbColor={isSwitchOn ? "#f4f3f4" : "#f4f3f4"}
+                        thumbColor="#f4f3f4"
                         ios_backgroundColor="#3e3e3e"
                         onValueChange={this._onToggleSwitch}
                         value={isSwitchOn}
@@ -176,10 +183,9 @@ const styles = StyleSheet.create({
         padding: 5,
         margin: 5,
         height: 40,
-        borderColor: '#7a42f4',
+        borderColor: 'black',
         borderWidth: 1,
-        backgroundColor: 'white',
-        backgroundColor: '#2d3042',
+        backgroundColor: '#232635',
         color: 'white'
     },
 
