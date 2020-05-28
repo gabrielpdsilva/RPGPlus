@@ -15,10 +15,10 @@ RPGPlus is a project made for tests and studies using React Native technology.
 - [x] Edit username
 - [x] Delete user
 - [x] Forgot password
+- [x] Roll dice system
 
 #### Features that have not been added to the app yet:
 - [ ] View sketch
 - [ ] Edit sketch
 - [ ] Delete sketch
-- [ ] Roll dice system
 - [ ] Generate names using firestore

@@ -77,12 +77,13 @@ export default class SketchScreen extends Component {
                     <TextInput style={styles.textinput} value={this.state.system} onChangeText={ (txt) => this.setState({system: txt}) } placeholder="System used (Storyteller, D20)..." />
 
                     <TextInput style={styles.textinput}
-                    value={this.state.text}
-                    multiline = {true} //textinput will be multiline
-                    height = {150}
-                    textAlignVertical= 'top'
-                    onChangeText={ (txt) => this.setState({text: txt}) }
-                    placeholder="Type here a basic sketch of your storyboard..." />
+                        value={this.state.text}
+                        multiline = {true} //textinput will be multiline
+                        height = {150}
+                        textAlignVertical= 'top'
+                        onChangeText={ (txt) => this.setState({text: txt}) }
+                        placeholder="Type here a basic sketch of your storyboard..."
+                    />
 
                 </View>
 
@@ -130,9 +131,9 @@ const styles = StyleSheet.create({
       },
 
     text: {
-    color: 'white',
-    margin: 5,
-    fontSize: 15,
-    textAlign: 'center'
+        color: 'white',
+        margin: 5,
+        fontSize: 15,
+        textAlign: 'center'
     },
 });
