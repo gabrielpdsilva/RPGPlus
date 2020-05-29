@@ -5,6 +5,9 @@ import {
     StyleSheet,
 } from 'react-native';
 
+import { Appbar } from 'react-native-paper';
+import CustomAppBar from '../components/CustomAppBar';
+
 import firebase from '../controller/Firebase';
 
 const HomeScreen = ({navigation}) => {
@@ -16,22 +19,32 @@ const HomeScreen = ({navigation}) => {
     const user = firebase.auth().currentUser;
     
     return(
+
         <View style={styles.container}>
 
-            <Text style={styles.title}>Home</Text>
+            <CustomAppBar title="Home" subtitle="Hey!"/>
 
-            <Text style={styles.text}>Welcome, {user.displayName}</Text>
+            <View style={styles.childContainer}>
+
+                <Text style={styles.title}>Home</Text>
+
+                <Text style={styles.text}>Welcome, {user.displayName}</Text>
+
+            </View>
             
         </View>
     );
 }
 
 const styles = StyleSheet.create({
+
+    childContainer: {
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
     
     container: {
         flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
         backgroundColor: '#2d3042',
     },
 

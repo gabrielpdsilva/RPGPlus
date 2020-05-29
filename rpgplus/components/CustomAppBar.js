@@ -12,7 +12,7 @@ export default class CustomAppBar extends React.Component {
             />
             <Appbar.Content
             title= {this.props.title}
-            subtitle=""
+            subtitle={this.props.subtitle}
             />
             <Appbar.Action icon="magnify" onPress={() => alert("hm?")} />
             <Appbar.Action icon="dots-vertical" onPress={() => alert("dots?")} />

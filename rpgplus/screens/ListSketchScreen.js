@@ -88,7 +88,7 @@ const styles = StyleSheet.create({
     
     listItem: {
         backgroundColor: '#f75605',
-        width: 250,
+        width: 200,
         margin: 10,
         marginVertical: 2,
         marginHorizontal: 2,
@@ -96,7 +96,7 @@ const styles = StyleSheet.create({
 
     textItem: {
         color: 'white',
-        margin: 5,
+        margin: 3,
         fontSize: 15,
     },
 
