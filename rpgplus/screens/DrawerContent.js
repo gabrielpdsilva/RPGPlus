@@ -13,7 +13,6 @@ import firebase from '../controller/Firebase';
 
 export default function DrawerContent(props) {
 
-
     return(
         <View style={{flex:1}} backgroundColor = '#2d3042'>
             <DrawerContentScrollView {...props}>

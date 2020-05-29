@@ -11,6 +11,8 @@ import {
 
 import CustomButton from '../components/CustomButton';
 
+import CustomAppBar from '../components/CustomAppBar';
+
 import firebase from '../controller/Firebase';
 import 'firebase/firestore';
 
@@ -57,10 +59,7 @@ export default class PreferencesScreen extends Component {
             //toast a message
             ToastAndroid.show("Document successfully deleted!", ToastAndroid.SHORT);
 
-
-            user
-            .delete()
-            .then(() => {
+            user.delete().then(() => {
     
                 //toast a message
                 ToastAndroid.show("Your account has been deleted!", ToastAndroid.SHORT);
@@ -76,28 +75,6 @@ export default class PreferencesScreen extends Component {
         }).catch((error) => {
             alert("Error removing document: " + error);
         });
-
-/*
-        user
-        .delete()
-        .then(() => {
-
-            //toast a message
-            ToastAndroid.show("Your account has been deleted!", ToastAndroid.SHORT);
-
-            //goes to login screen
-            this.props.navigation.navigate("Login");
-
-            dbh.collection("users").doc(user.uid).delete().then(() => {
-                alert("Document successfully deleted!");
-            }).catch((error) => {
-                alert("Error removing document: " + error);
-            });
-        })
-        .catch((error) => {
-            alert("Something went wrong: \n" + error);
-        });
-        */
 
     }
 
@@ -134,39 +111,43 @@ export default class PreferencesScreen extends Component {
         return(
             <View style={styles.container}>
 
-                <Text style={styles.title}>Profile Preferences</Text>
-                <Text style={styles.text}>Change your name</Text>
+                <CustomAppBar title="My Preferences"/>
 
-                <View style={{flexDirection: 'row'}}>
+                <View style={styles.childContainer}>
+                    
+                    <Text style={styles.text}>Change your name</Text>
 
-                    <TextInput style={styles.textinput}
-                        backgroundColor = {isSwitchOn ? '#232635' : '#14161f'}
-                        editable={isSwitchOn}
-                        value={this.state.name}
-                        width={235}
-                        onChangeText={ (txt) => this.setState({name: txt}) }
-                        placeholder="..."
-                    />
+                    <View style={{flexDirection: 'row'}}>
 
-                    <Switch
-                        trackColor={{ false: "#767577", true: "#f75605" }}
-                        thumbColor="#f4f3f4"
-                        ios_backgroundColor="#3e3e3e"
-                        onValueChange={this._onToggleSwitch}
-                        value={isSwitchOn}
-                    />
+                        <TextInput style={styles.textinput}
+                            backgroundColor = {isSwitchOn ? '#232635' : '#14161f'}
+                            editable={isSwitchOn}
+                            value={this.state.name}
+                            width={235}
+                            onChangeText={ (txt) => this.setState({name: txt}) }
+                            placeholder="..."
+                        />
 
+                        <Switch
+                            trackColor={{ false: "#767577", true: "#f75605" }}
+                            thumbColor="#f4f3f4"
+                            ios_backgroundColor="#3e3e3e"
+                            onValueChange={this._onToggleSwitch}
+                            value={isSwitchOn}
+                        />
+
+                    </View>
+
+                    <CustomButton title="RENAME ACCOUNT" onPress={this.updateName}/>
+
+                    <Text>────────────────────────</Text>
+                    
+                    <Text style={styles.dangerTitle}>Danger Zone</Text>
+                    
+                    <Text style={styles.dangerText}>If you delete your account, you will lose everything about it.</Text>
+
+                    <CustomButton title="DELETE ACCOUNT" onPress={this.buttonDelete}/>
                 </View>
-
-                <CustomButton title="RENAME ACCOUNT" onPress={this.updateName}/>
-
-                <Text>────────────────────────</Text>
-                
-                <Text style={styles.dangerTitle}>Danger Zone</Text>
-                
-                <Text style={styles.dangerText}>If you delete your account, you will lose everything about it.</Text>
-
-                <CustomButton title="DELETE ACCOUNT" onPress={this.buttonDelete}/>
             </View>
         );
     }
@@ -175,10 +156,15 @@ const styles = StyleSheet.create({
 
     container: {
         flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
         backgroundColor: '#2d3042',
     },
+
+    childContainer: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+
     textinput: {
         padding: 5,
         margin: 5,
@@ -215,3 +201,25 @@ const styles = StyleSheet.create({
         textAlign: 'center'
     },
 });
+
+/*
+        user
+        .delete()
+        .then(() => {
+
+            //toast a message
+            ToastAndroid.show("Your account has been deleted!", ToastAndroid.SHORT);
+
+            //goes to login screen
+            this.props.navigation.navigate("Login");
+
+            dbh.collection("users").doc(user.uid).delete().then(() => {
+                alert("Document successfully deleted!");
+            }).catch((error) => {
+                alert("Error removing document: " + error);
+            });
+        })
+        .catch((error) => {
+            alert("Something went wrong: \n" + error);
+        });
+        */

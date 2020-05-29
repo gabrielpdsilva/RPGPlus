@@ -1,7 +1,7 @@
 /*
 author: G.P.
 RPG+ (RPGPlus) is a project made for tests and studies using React Native technology
-version: 1.9.20
+version: 1.9.21
 */
 
 import React from 'react';
@@ -16,14 +16,6 @@ const App = () => {
 
   const user = firebase.auth().currentUser;
 
-/*
-  export default class Loading extends React.Component {
-    componentDidMount() {
-      firebase.auth().onAuthStateChanged(user => {
-        this.props.navigation.navigate(user ? 'Main' : 'SignUp')
-      })
-    }*/
-
   return(
 
     <NavigationContainer>
@@ -36,3 +28,11 @@ const App = () => {
 }
 
 export default App;
+
+/*
+  export default class Loading extends React.Component {
+    componentDidMount() {
+      firebase.auth().onAuthStateChanged(user => {
+        this.props.navigation.navigate(user ? 'Main' : 'SignUp')
+      })
+    }*/

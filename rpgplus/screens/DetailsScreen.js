@@ -5,23 +5,38 @@ import {
     Text
 } from 'react-native';
 
+
+import CustomAppBar from '../components/CustomAppBar';
+
 const DetailsScreen = ({navigation}) => {   
     return(
         <View style={styles.container}>
-            
-            <Text style={styles.text}>RPG+ (RPGPlus) is a project made for tests and studies using React Native technology.
-                You may see bugs, problems with styles, etc.</Text>
+
+            <CustomAppBar title="Details"/>
+
+            <View style={styles.childContainer}>
+        
+                <Text style={styles.text}>
+                    RPG+ (RPGPlus) is a project made for tests and studies using React Native technology. You may see bugs, problems with styles, etc.
+                </Text>
+
+            </View>
         </View>
     );
 }
 
 const styles = StyleSheet.create({
-    container: {
+    childContainer: {
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
+    },
+    
+    container: {
+        flex: 1,
         backgroundColor: '#2d3042',
     },
+
     title: {
         color: 'white',
         fontWeight: 'bold',
@@ -29,10 +44,10 @@ const styles = StyleSheet.create({
     },
 
     text: {
-    color: 'white',
-    margin: 5,
-    fontSize: 15,
-    textAlign: 'center'
+        color: 'white',
+        margin: 5,
+        fontSize: 15,
+        textAlign: 'center'
     },
 });
 

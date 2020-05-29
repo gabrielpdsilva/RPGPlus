@@ -68,11 +68,9 @@ export default class SketchScreen extends Component {
 
             <View style={styles.container}>
                 
-                <CustomAppBar title="My Sketches" subtitle="Below is the list of all of your sketches"/>
+                <CustomAppBar title="New Sketch" subtitle=""/>
                 
                 <View style={styles.textAreaContainer}>
-
-                    <Text style={styles.title}>Sketch</Text>
 
                     <Text style={styles.text}>Create a sketch for your future campaign!</Text>
        
@@ -101,7 +99,7 @@ export default class SketchScreen extends Component {
                         style={{}}
                         textStyle={{}}
                     />
-                    
+
                 </View>
             </View>
         );
@@ -137,11 +135,6 @@ const styles = StyleSheet.create({
         backgroundColor: '#2d3042',
         color: 'white'
     },  
-    title: {
-        color: 'white',
-        fontWeight: 'bold',
-        fontSize: 20
-      },
 
     text: {
         color: 'white',

@@ -64,21 +64,7 @@ export function MyStack() {
     </Stack.Navigator>
   );
 }
-//about the options of the screen:
 
-/*
-headerShown -> if true, it will show the appbar
-headerLeft -> hides the back button
-
-headerTitleStyle: {
-  fontWeight: 'bold', -> changes the style of the title of the appbar to bold style
-}
-
-*/
-
-/*initialRouteName="Home">*/
-
-//<Drawer.Navigator drawerContent={props => <DrawerContent {... props}/>}> 
 export function MyDrawer() {
 
   const user = firebase.auth().currentUser;
@@ -100,3 +86,19 @@ export function MyDrawer() {
     </Drawer.Navigator>
   );
 }
+
+//about the options of the screen:
+
+/*
+headerShown -> if true, it will show the appbar
+headerLeft -> hides the back button
+
+headerTitleStyle: {
+  fontWeight: 'bold', -> changes the style of the title of the appbar to bold style
+}
+
+*/
+
+/*initialRouteName="Home">*/
+
+//<Drawer.Navigator drawerContent={props => <DrawerContent {... props}/>}> 
