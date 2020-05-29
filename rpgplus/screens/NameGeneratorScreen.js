@@ -9,6 +9,8 @@ import {
   Text
 } from 'react-native';
 
+
+import CustomAppBar from '../components/CustomAppBar';
 import CustomButton from '../components/CustomButton';
 
 /*
@@ -25,46 +27,6 @@ export default class NameGeneratorScreen extends Component {
         name: ''	
       }	
     };
-            
-
-  //still finishing
-/*  =====================================
-
-var options ={
-    "1": "Home",
-    "2": "Food",
-    "3": "Car",
-    "4": "Bank",
-};
-
-<Picker
-    style={{your_style}}
-    mode="dropdown"
-    selectedValue={this.state.selected}
-    onValueChange={()=>{}}>
-    {Object.keys(options).map((key) => {
-        return (<Picker.Item label={this.props.options[key]} value={key} key={key}/>) //if you have a bunch of keys value pair
-    })}
-</Picker>
-
--------------
-
-2) When you have an array of values
-
-var options =["Home","Savings","Car","GirlFriend"];
-
-<Picker
-    style={{your_style}}
-    mode="dropdown"
-    selectedValue={this.state.selected}
-    onValueChange={()=>{}}> //add your function to handle picker state change
-    {options.map((item, index) => {
-        return (<Picker.Item label={item} value={index} key={index}/>) 
-    })}
-</Picker>
-
-
-  =====================================*/
 
   //generateName function
   generateName = (firstName, lastName) => {
@@ -164,6 +126,10 @@ var options =["Home","Savings","Car","GirlFriend"];
     return (
 
       <View style={styles.container}>
+
+        <CustomAppBar title="Name Generator" subtitle=""/>
+
+        <View style={styles.childContainer}>
       
         <Text style={styles.title}>Name Generator 2.0</Text>
 
@@ -196,7 +162,7 @@ var options =["Home","Savings","Car","GirlFriend"];
           style={{}}
           textStyle={{}}
         />
-        
+        </View>
       </View>
     );
   }
@@ -206,10 +172,17 @@ const styles = StyleSheet.create({
 
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+    //justifyContent: 'center',
+    //alignItems: 'center',
     backgroundColor: '#2d3042', //'#F5FCFF',
   },
+  
+  childContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  
   title: {
     color: 'white',
     fontWeight: 'bold',
@@ -240,3 +213,45 @@ const styles = StyleSheet.create({
     justifyContent: 'center',  
   }  
 });
+
+
+
+
+  //still finishing
+/*  =====================================
+
+var options ={
+    "1": "Home",
+    "2": "Food",
+    "3": "Car",
+    "4": "Bank",
+};
+
+<Picker
+    style={{your_style}}
+    mode="dropdown"
+    selectedValue={this.state.selected}
+    onValueChange={()=>{}}>
+    {Object.keys(options).map((key) => {
+        return (<Picker.Item label={this.props.options[key]} value={key} key={key}/>) //if you have a bunch of keys value pair
+    })}
+</Picker>
+
+-------------
+
+2) When you have an array of values
+
+var options =["Home","Savings","Car","GirlFriend"];
+
+<Picker
+    style={{your_style}}
+    mode="dropdown"
+    selectedValue={this.state.selected}
+    onValueChange={()=>{}}> //add your function to handle picker state change
+    {options.map((item, index) => {
+        return (<Picker.Item label={item} value={index} key={index}/>) 
+    })}
+</Picker>
+
+
+  =====================================*/

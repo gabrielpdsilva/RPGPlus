@@ -21,7 +21,7 @@ const HomeScreen = ({navigation}) => {
 
         <View style={styles.container}>
 
-            <CustomAppBar title="Home" subtitle="Hey!"/>
+            <CustomAppBar title="Home" subtitle=""/>
 
             <View style={styles.childContainer}>
 
@@ -38,6 +38,7 @@ const HomeScreen = ({navigation}) => {
 const styles = StyleSheet.create({
 
     childContainer: {
+        flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
     },
