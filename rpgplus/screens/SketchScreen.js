@@ -9,6 +9,8 @@ import {
 
 import CustomButton from '../components/CustomButton';
 
+import CustomAppBar from '../components/CustomAppBar';
+
 import firebase from '../controller/Firebase';
 import 'firebase/firestore';
 
@@ -63,7 +65,11 @@ export default class SketchScreen extends Component {
     render(){
 
         return(
+
             <View style={styles.container}>
+                
+                <CustomAppBar title="My Sketches" subtitle="Below is the list of all of your sketches"/>
+                
                 <View style={styles.textAreaContainer}>
 
                     <Text style={styles.title}>Sketch</Text>
@@ -87,12 +93,16 @@ export default class SketchScreen extends Component {
 
                 </View>
 
-                <CustomButton
-                    title="CREATE"
-                    onPress={this.addSketch}
-                    style={{}}
-                    textStyle={{}}
-                />
+                <View style={styles.center}>
+            
+                    <CustomButton    //I've made another view because I couldn't center the Button without it, need to fix it later.
+                        title="CREATE"
+                        onPress={this.addSketch}
+                        style={{}}
+                        textStyle={{}}
+                    />
+                    
+                </View>
             </View>
         );
     }
@@ -100,10 +110,13 @@ export default class SketchScreen extends Component {
 
 const styles = StyleSheet.create({
 
-    container: {
-        flex: 1,
+    center: {
         justifyContent: 'center',
         alignItems: 'center',
+    },
+
+    container: {
+        flex: 1,
         backgroundColor: '#2d3042',
     },
 

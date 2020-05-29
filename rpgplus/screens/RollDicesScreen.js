@@ -9,6 +9,8 @@ import {
 
 import CustomButton from '../components/CustomButton';
 
+import CustomAppBar from '../components/CustomAppBar';
+
 export default class SketchScreen extends Component {
     constructor(props){
         super(props);
@@ -35,14 +37,13 @@ export default class SketchScreen extends Component {
 
         return(
             <View style={styles.container}>
-                <Text style={styles.title}>Roll Dices</Text>
-               
-                <View style={styles.textAreaContainer}>
-                    
-                   <Text style={styles.text}>Please, select:</Text>
-                   <Text style={{textAlign: 'center'}}>________________________________________</Text>
-                    
-                    <Text style={styles.text}>Type of the dice (D10, D20...)</Text>
+                
+                <CustomAppBar title="Roll Dices" subtitle=""/>
+                <View style={styles.childContainer}>
+                
+                    <Text style={styles.title}>Roll Dices</Text>
+                    <Text style={styles.text}>Please, select the type of the dice and the modifier:</Text>
+                 
 
                     <Picker
                         style={styles.pickerStyle}
@@ -59,28 +60,24 @@ export default class SketchScreen extends Component {
             
                     </Picker>
 
-                    <Text style={{textAlign: 'center'}}>________________________________________</Text>
-                    <Text style={styles.text}>The modifier:</Text>
-
                     <TextInput
                         style={styles.textinput}
                         value={this.state.modifier}
                         maxLength={2}
                         keyboardType = 'numeric'
                         onChangeText={ (txt) => this.setState({modifier: txt}) }
-                        placeholder="0"
+                        placeholder="Modifier..."
                     />
 
                     <Text style={styles.text}>Result: {this.state.result}</Text>
 
+                    <CustomButton
+                        title="ROLL"
+                        onPress={() => this.roll(type, modifier)}
+                        style={{}}
+                        textStyle={{}}
+                    />
                 </View>
-
-                <CustomButton
-                    title="ROLL"
-                    onPress={() => this.roll(type, modifier)}
-                    style={{}}
-                    textStyle={{}}
-                />
             </View>
         );
     }
@@ -88,10 +85,14 @@ export default class SketchScreen extends Component {
 
 const styles = StyleSheet.create({
     
-    container: {
+    childContainer: {
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
+    },
+    
+    container: {
+        flex: 1,
         backgroundColor: '#2d3042',
     },
     textAreaContainer: {
@@ -128,7 +129,7 @@ const styles = StyleSheet.create({
     
     pickerStyle:{  
         //height: 150,
-        width: "90%",  
+        width: "70%",  
         color: 'white',  
         justifyContent: 'center',  
     }  

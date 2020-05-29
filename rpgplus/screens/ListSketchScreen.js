@@ -6,6 +6,8 @@ import {
     FlatList
 } from 'react-native';
 
+import CustomAppBar from '../components/CustomAppBar';
+
 import firebase from '../controller/Firebase';
 import 'firebase/firestore';
 
@@ -53,36 +55,21 @@ export default class ListSketchScreen extends Component {
         return(
             <View style={styles.container}>
                 
+                <CustomAppBar title="My Sketches" subtitle="Below is the list of all of your sketches"/>
+                <View style={styles.childContainer}>
+                
                 <FlatList
                     data={this.state.data}
                     renderItem={this.renderItem}
                     onPress={() => alert("ok")}
                     keyExtractor={item => item.id} //need to fix this
                 />
+                </View>
 
             </View>
         );
     }
 }
-
-/*
-
-function Item({ title, name }) {
-return (
-    <View style={styles.item}>
-        <Text style={styles.title}>{title}</Text>
-        <Text style={styles.title}>{name}</Text>
-    </View>
-);
-}
-
-<FlatList
-                    data={DATA}
-                    renderItem={({ item, name }) => <Item title={item.title} name={item.name}/>}
-                    keyExtractor={item => item.id}
-                />
-
-*/
 
 const styles = StyleSheet.create({
     
@@ -108,10 +95,14 @@ const styles = StyleSheet.create({
         width: 250,
     },
     
-    container: {
+    childContainer: {
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
+    },
+    
+    container: {
+        flex: 1,
         backgroundColor: '#2d3042',
     },
 
@@ -128,3 +119,22 @@ const styles = StyleSheet.create({
         textAlign: 'center'
     },
 });
+
+/*
+
+function Item({ title, name }) {
+return (
+    <View style={styles.item}>
+        <Text style={styles.title}>{title}</Text>
+        <Text style={styles.title}>{name}</Text>
+    </View>
+);
+}
+
+<FlatList
+                    data={DATA}
+                    renderItem={({ item, name }) => <Item title={item.title} name={item.name}/>}
+                    keyExtractor={item => item.id}
+                />
+
+*/
