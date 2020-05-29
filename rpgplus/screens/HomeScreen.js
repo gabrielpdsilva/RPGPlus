@@ -5,7 +5,6 @@ import {
     StyleSheet,
 } from 'react-native';
 
-import { Appbar } from 'react-native-paper';
 import CustomAppBar from '../components/CustomAppBar';
 
 import firebase from '../controller/Firebase';
