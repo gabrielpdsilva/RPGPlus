@@ -28,6 +28,32 @@ export default class SketchScreen extends Component {
         }
     }
 
+    getSketch = () => {
+
+        const user = firebase.auth().currentUser;
+        const dbh = firebase.firestore();
+
+        let sketchRef = dbh.collection("users").doc(user.uid).collection("sketchs").doc('test'); //Yjvt0Xf5AxbZBvlF6mCr
+        sketchRef.get()
+        .then(doc => {
+            if (!doc.exists) {
+                alert('No such document!');
+            } else {
+                alert('Done');
+                this.setState({
+                    name: doc.data().name,
+                    category: doc.data().category,
+                    system: doc.data().system,
+                    text: doc.data().text
+                });
+            }
+        })
+        .catch(err => {
+            alert('Error getting document' + err);
+        });
+
+    }
+
     //add sketch to firestore
     addSketch = () => {
 
@@ -99,6 +125,8 @@ export default class SketchScreen extends Component {
                         style={{}}
                         textStyle={{}}
                     />
+
+                    <CustomButton title="GET" onPress={this.getSketch}/>
 
                 </View>
             </View>

@@ -49,9 +49,9 @@ export default class LoginScreen extends Component {
 
             <View style={styles.container}>
 
-                <Text style={styles.title}>Login</Text>
+                <Text style={styles.title}>Welcome!</Text>
 
-                <Text style={styles.text}>Hello there!</Text>
+                <Text style={styles.text}>Please, Sign In to continue</Text>
 
                 <TextInput style={styles.textinput} value={this.state.email} onChangeText={ (txt) => this.setState({email: txt})} placeholder="E-mail..." />
 
