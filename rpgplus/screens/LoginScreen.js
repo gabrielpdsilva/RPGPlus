@@ -57,16 +57,9 @@ export default class LoginScreen extends Component {
 
                 <TextInput style={styles.textinput} value={this.state.password} onChangeText={ (txt) => this.setState({password: txt})} secureTextEntry={true} placeholder="Password..." />
 
-                <CustomButton
-                    title="LOGIN"
-                    onPress={this.handleLogin}
-                    style={{}}
-                    textStyle={{}}
-                />
+                <CustomButton title="LOGIN" onPress={this.handleLogin}/>
 
-                <TouchableOpacity onPress={() => this.props.navigation.navigate("Register")}>
-                    <Text style={styles.text}>New here? Create an account!</Text>
-                </TouchableOpacity>
+                <CustomButton title="SIGN UP" style={{backgroundColor: '#e62600'}} onPress={() => this.props.navigation.navigate("Register")}/>
 
                 <TouchableOpacity onPress={() => this.props.navigation.navigate("Forgot Password")}>
                     <Text style={styles.text}>Forgot your password?</Text>
@@ -100,9 +93,9 @@ const styles = StyleSheet.create({
       },
 
     text: {
-    color: 'white',
-    margin: 5,
-    fontSize: 15,
-    textAlign: 'center'
+        color: 'white',
+        margin: 5,
+        fontSize: 15,
+        textAlign: 'center'
     },
 });

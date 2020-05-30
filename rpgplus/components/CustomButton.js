@@ -16,15 +16,15 @@ const styles = StyleSheet.create({
     buttonText: {
         color: '#ffffff',
         textAlign: 'center'
-      },
-      button: {
+    },
+
+    button: {
         width: 280,
         padding: 10,
-        margin: 10,
+        margin: 5,
         backgroundColor: '#f75605',
-        borderRadius:5
-      },
-    
+        borderRadius: 25
+    },
 });
 
 export default CustomButton;
