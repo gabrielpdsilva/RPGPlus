@@ -42,12 +42,15 @@ export default class ListDraftScreen extends Component {
         ))
     }
 
+    //when user clicks on item
     onClickItem = (item) => {
-        alert("..." + item.id);
+
+        //navigates to draft model and send the ID of the item to the new screen
+        this.props.navigation.navigate("Draft Model", {itemId: item.id});
     }
     
     renderItem = ({ item }) => (
-        <TouchableOpacity onPress={() => this.props.navigation.navigate("Draft Model", {test: "..."})}>
+        <TouchableOpacity onPress={() => this.onClickItem(item)}>
             <View style={styles.listItem}>
                 <Text style={styles.textItem}>ID: {item.id}</Text>
                 <Text style={styles.textItem}>Name: {item.name}</Text>

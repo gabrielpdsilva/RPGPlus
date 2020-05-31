@@ -94,11 +94,11 @@ export default class CreateDraftScreen extends Component {
 
             <View style={styles.container}>
                 
-                <CustomAppBar title="New Sketch" subtitle=""/>
+                <CustomAppBar title="New Draft" subtitle=""/>
                 
                 <View style={styles.textAreaContainer}>
 
-                    <Text style={styles.text}>Create a sketch for your future campaign!</Text>
+                    <Text style={styles.text}>Create a draft for your future campaign!</Text>
        
                     <TextInput style={styles.textinput} value={this.state.name} onChangeText={ (txt) => this.setState({name: txt}) } placeholder="Name of the story..." />
 
@@ -112,7 +112,7 @@ export default class CreateDraftScreen extends Component {
                         height = {150}
                         textAlignVertical= 'top'
                         onChangeText={ (txt) => this.setState({text: txt}) }
-                        placeholder="Type here a basic sketch of your storyboard..."
+                        placeholder="Type here a basic draft of your storyboard..."
                     />
 
                 </View>
