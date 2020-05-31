@@ -75,7 +75,7 @@ export default class CreateDraftScreen extends Component {
 
         }).then((docRef) => {
             //toast a message
-            ToastAndroid.show("Sketch created! " + docRef.id, ToastAndroid.SHORT);
+            ToastAndroid.show("Draft created! " + docRef.id, ToastAndroid.SHORT);
 
             //set all states to ''
             this.setState({name: '', category: '', system: '', text: ''});

@@ -28,6 +28,27 @@ export default class DraftModelScreen extends Component {
         }
     }
 
+    deleteDraft = () => {
+
+        const draftId = this.state.id;
+
+        //gets the current user
+        const user = firebase.auth().currentUser;
+
+        //var of firestore database
+        const dbh = firebase.firestore();
+
+        //delete the doc
+        dbh.collection("users").doc(user.uid).collection("sketchs").doc(draftId).delete();
+        
+        //toast a message
+        ToastAndroid.show("Draft deleted! ", ToastAndroid.SHORT);
+
+
+        //goes to the previous screen
+        this.props.navigation.goBack();
+    }
+
     //function that will execute before render method
     componentWillMount = () => {
 
@@ -41,8 +62,8 @@ export default class DraftModelScreen extends Component {
         const itemID = this.props.route.params.itemId;
 
         let draftRef = dbh.collection("users").doc(user.uid).collection("sketchs").doc(itemID);
-        draftRef.get()
-        .then(doc => {
+
+        draftRef.get().then(doc => {
             if (!doc.exists) {
                 alert("No docs here.");
             } else {
@@ -52,7 +73,6 @@ export default class DraftModelScreen extends Component {
                     category: doc.data().category,
                     system: doc.data().system,
                     text: doc.data().text,
-                    
                 });
             }
         })
@@ -65,17 +85,17 @@ export default class DraftModelScreen extends Component {
         return(
             <View style={styles.container}>
                 
-                <CustomAppBar title="New Draft" subtitle=""/>
+                <CustomAppBar title="Edit Draft" subtitle=""/>
                 
                 <View style={styles.textAreaContainer}>
 
-                    <Text style={styles.text}>Create a draft for your future campaign!</Text>
+                    <Text style={styles.text}>Here you can edit or delete your draft.</Text>
        
-                    <TextInput style={styles.textinput} value={this.state.name} editable={false} onChangeText={ (txt) => this.setState({name: txt}) } placeholder="Name of the story..." />
+                    <TextInput style={styles.textinput} value={this.state.name} editable={false} onChangeText={ (txt) => this.setState({name: txt}) } placeholder="Loading..." />
 
-                    <TextInput style={styles.textinput} value={this.state.category} editable={false} onChangeText={ (txt) => this.setState({category: txt}) } placeholder="Category of the story (medieval, cyberpunk)..."/>
+                    <TextInput style={styles.textinput} value={this.state.category} editable={false} onChangeText={ (txt) => this.setState({category: txt}) } placeholder="Loading..."/>
 
-                    <TextInput style={styles.textinput} value={this.state.system} editable={false} onChangeText={ (txt) => this.setState({system: txt}) } placeholder="System used (Storyteller, D20)..." />
+                    <TextInput style={styles.textinput} value={this.state.system} editable={false} onChangeText={ (txt) => this.setState({system: txt}) } placeholder="Loading..." />
 
                     <TextInput style={styles.textinput}
                         value={this.state.text}
@@ -84,21 +104,14 @@ export default class DraftModelScreen extends Component {
                         textAlignVertical= 'top'
                         editable={false}
                         onChangeText={ (txt) => this.setState({text: txt}) }
-                        placeholder="Type here a basic sketch of your storyboard..."
+                        placeholder="Loading..."
                     />
 
                 </View>
 
                 <View style={styles.center}>
-            
-                    <CustomButton    //I've made another view because I couldn't center the Button without it, need to fix it later.
-                        title="EDIT DRAFT"
-                        onPress={this.addSketch}
-                        style={{}}
-                        textStyle={{}}
-                    />
 
-                    <CustomButton title="DELETE DRAFT" onPress={this.getSketch}/>
+                    <CustomButton title="DELETE DRAFT" onPress={this.deleteDraft}/>
 
                 </View>
             </View>
