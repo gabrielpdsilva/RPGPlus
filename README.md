@@ -7,8 +7,8 @@ RPGPlus is a project made for tests and studies using React Native technology.
 ## Features
 #### Features of the app for now:
 - [x] Generate a name based on different categories (medieval, cyberpunk etc)
-- [x] Create sketch
-- [x] List sketch
+- [x] Create draft
+- [x] List draft
 - [x] Register user
 - [x] Login
 - [x] Logout
@@ -18,7 +18,7 @@ RPGPlus is a project made for tests and studies using React Native technology.
 - [x] Roll dice system
 
 #### Features that have not been added to the app yet:
-- [ ] View sketch
-- [ ] Edit sketch
-- [ ] Delete sketch
+- [ ] View draft
+- [ ] Edit draft
+- [ ] Delete draft
 - [ ] Generate names using firestore

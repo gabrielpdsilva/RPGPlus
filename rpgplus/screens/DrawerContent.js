@@ -59,14 +59,14 @@ export default function DrawerContent(props) {
 
                         <DrawerItem
                             labelStyle = {{color: 'white'}}
-                            label="Create Sketch"
-                            onPress={()=>props.navigation.navigate('Sketch')}
+                            label="Create Draft"
+                            onPress={()=>props.navigation.navigate('Create Draft')}
                         />
 
                         <DrawerItem
                             labelStyle = {{color: 'white'}}
-                            label="My Sketches"
-                            onPress={()=>props.navigation.navigate('List Sketch')}
+                            label="My Drafts"
+                            onPress={()=>props.navigation.navigate('List Drafts')}
                         />
                     </Drawer.Section>
 

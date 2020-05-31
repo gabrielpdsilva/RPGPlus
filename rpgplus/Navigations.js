@@ -6,7 +6,7 @@ import {createDrawerNavigator} from '@react-navigation/drawer';
 
 import HomeScreen from './screens/HomeScreen';
 import DetailsScreen from './screens/DetailsScreen';
-import SketchScreen from './screens/SketchScreen';
+import CreateDraftScreen from './screens/CreateDraftScreen';
 import NameGeneratorScreen from './screens/NameGeneratorScreen';
 import LoginScreen from './screens/LoginScreen';
 import RegisterScreen from './screens/RegisterScreen';
@@ -14,9 +14,10 @@ import PreferencesScreen from './screens/PreferencesScreen';
 import DrawerContent from './screens/DrawerContent';
 import RollDices from './screens/RollDicesScreen';
 import ForgotPasswordScreen from './screens/ForgotPasswordScreen';
-import ListSketchScreen from './screens/ListSketchScreen';
+import ListDraftScreen from './screens/ListDraftScreen';
 
 import firebase from './controller/Firebase';
+import DraftModelScreen from './screens/DraftModelScreen';
 
 const Drawer = createDrawerNavigator();
 
@@ -79,10 +80,13 @@ export function MyDrawer() {
       <Drawer.Screen name="Home" component={HomeScreen}/>    
       <Drawer.Screen name="Name Generator" component={NameGeneratorScreen}/>
       <Drawer.Screen name="Roll Dices" component={RollDices}/>
-      <Drawer.Screen name="Sketch" component={SketchScreen}/>
+      <Drawer.Screen name="Create Draft" component={CreateDraftScreen}/>
       <Drawer.Screen name="Details" component={DetailsScreen}/>
-      <Drawer.Screen name="List Sketch" component={ListSketchScreen}/>
+      <Drawer.Screen name="List Drafts" component={ListDraftScreen}/>
       <Drawer.Screen name="Preferences" component={PreferencesScreen}/>
+
+      <Drawer.Screen name="Draft Model" component={DraftModelScreen}/>
+
     </Drawer.Navigator>
   );
 }

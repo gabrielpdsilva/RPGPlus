@@ -3,7 +3,8 @@ import {
     StyleSheet,
     Text,
     View,
-    FlatList
+    FlatList,
+    TouchableOpacity
 } from 'react-native';
 
 import CustomAppBar from '../components/CustomAppBar';
@@ -15,7 +16,7 @@ import 'firebase/firestore';
 //https://blog.rocketseat.com.br/scroll-infinito-no-react-native/
 //https://stackoverflow.com/questions/53861022/rendering-react-components-mapped-from-firebase-firestore
 
-export default class ListSketchScreen extends Component {
+export default class ListDraftScreen extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -40,28 +41,34 @@ export default class ListSketchScreen extends Component {
             ))
         ))
     }
+
+    onClickItem = (item) => {
+        alert("..." + item.id);
+    }
     
-      renderItem = ({ item }) => (
-        <View style={styles.listItem}>
-            <Text style={styles.textItem}>ID: {item.id}</Text>
-            <Text style={styles.textItem}>Name: {item.name}</Text>
-            <Text style={styles.textItem}>Category: {item.category}</Text>
-            <Text style={styles.textItem}>System: {item.system}</Text>
-            <Text style={styles.textItem}>Text: {item.text}</Text>
-        </View>
-      );
+    renderItem = ({ item }) => (
+        <TouchableOpacity onPress={() => this.props.navigation.navigate("Draft Model", {test: "..."})}>
+            <View style={styles.listItem}>
+                <Text style={styles.textItem}>ID: {item.id}</Text>
+                <Text style={styles.textItem}>Name: {item.name}</Text>
+                <Text style={styles.textItem}>Category: {item.category}</Text>
+                <Text style={styles.textItem}>System: {item.system}</Text>
+                <Text style={styles.textItem}>Text: {item.text}</Text>
+            </View>
+        </TouchableOpacity>
+    );
 
     render(){
         return(
             <View style={styles.container}>
                 
-                <CustomAppBar title="My Sketches" subtitle="Below is the list of all of your sketches"/>
+                <CustomAppBar title="My Drafts" subtitle="Below is the list of all of your drafts"/>
                 <View style={styles.childContainer}>
                 
                 <FlatList
                     data={this.state.data}
                     renderItem={this.renderItem}
-                    onPress={() => alert("ok")}
+            
                     keyExtractor={item => item.id} //need to fix this
                 />
                 </View>
