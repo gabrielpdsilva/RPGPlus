@@ -15,7 +15,6 @@ import CustomAppBar from '../components/CustomAppBar';
 import firebase from '../controller/Firebase';
 import 'firebase/firestore';
 
-
 export default class DraftModelScreen extends Component {
     constructor(props){
         super(props);
@@ -44,9 +43,9 @@ export default class DraftModelScreen extends Component {
         //toast a message
         ToastAndroid.show("Draft deleted! ", ToastAndroid.SHORT);
 
-
         //goes to the previous screen
         this.props.navigation.goBack();
+        
     }
 
     //function that will execute before render method
@@ -89,14 +88,22 @@ export default class DraftModelScreen extends Component {
                 
                 <View style={styles.textAreaContainer}>
 
-                    <Text style={styles.text}>Here you can edit or delete your draft.</Text>
+                    <Text style={styles.title}>Here you can edit or delete your draft.</Text>
+
+                    <Text style={styles.text}>Name:</Text>
        
                     <TextInput style={styles.textinput} value={this.state.name} editable={false} onChangeText={ (txt) => this.setState({name: txt}) } placeholder="Loading..." />
 
+                    <Text style={styles.text}>Category:</Text>
+                    
                     <TextInput style={styles.textinput} value={this.state.category} editable={false} onChangeText={ (txt) => this.setState({category: txt}) } placeholder="Loading..."/>
-
+                    
+                    <Text style={styles.text}>System:</Text>
+                    
                     <TextInput style={styles.textinput} value={this.state.system} editable={false} onChangeText={ (txt) => this.setState({system: txt}) } placeholder="Loading..." />
-
+                    
+                    <Text style={styles.text}>Text:</Text>
+                    
                     <TextInput style={styles.textinput}
                         value={this.state.text}
                         multiline = {true} //textinput will be multiline
@@ -136,7 +143,15 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         padding: 15,
         backgroundColor: '#232635',
-      },
+    },
+
+    title: {
+        color: 'white',
+        fontWeight: 'bold',
+        fontSize: 20,
+        alignItems: 'center',
+        textAlign: 'center'
+    },
 
     textinput: {
         padding: 5,
@@ -153,6 +168,5 @@ const styles = StyleSheet.create({
         color: 'white',
         margin: 5,
         fontSize: 15,
-        textAlign: 'center'
     },
 });
