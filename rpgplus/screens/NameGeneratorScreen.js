@@ -9,7 +9,7 @@ import {
   Text
 } from 'react-native';
 
-
+import styles from '../styles/styles';
 import CustomAppBar from '../components/CustomAppBar';
 import CustomButton from '../components/CustomButton';
 
@@ -167,54 +167,6 @@ export default class NameGeneratorScreen extends Component {
     );
   }
 }
-
-const styles = StyleSheet.create({
-
-  container: {
-    flex: 1,
-    //justifyContent: 'center',
-    //alignItems: 'center',
-    backgroundColor: '#2d3042', //'#F5FCFF',
-  },
-  
-  childContainer: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  
-  title: {
-    color: 'white',
-    fontWeight: 'bold',
-    fontSize: 20
-  },
-
-  text: {
-  color: 'white',
-  margin: 5,
-  fontSize: 15,
-  textAlign: 'center'
-  },
-
-  buttonText: {
-    color: '#ffffff',
-    textAlign: 'center'
-  },
-
-  button: {
-    padding:10,
-    backgroundColor: '#fc870a',
-    borderRadius:5
-  },
-  pickerStyle:{  
-    //height: 150,
-    width: "70%",  
-    color: 'white',  
-    justifyContent: 'center',  
-  }  
-});
-
-
 
 
   //still finishing

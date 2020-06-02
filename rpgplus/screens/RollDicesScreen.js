@@ -9,15 +9,17 @@ import {
 
 import CustomButton from '../components/CustomButton';
 
+import styles from '../styles/styles';
+
 import CustomAppBar from '../components/CustomAppBar';
 
 export default class SketchScreen extends Component {
     constructor(props){
         super(props);
         this.state = {
-            result: 0,
-            modifier: 0,
-            type: 4,
+            result: 0,      //final result
+            modifier: 0,    //modifier, if the player has for example +1 or -2 of bonus points
+            type: 4,        //type of the dice (D10, D20...)
         }
     }
 
@@ -82,55 +84,3 @@ export default class SketchScreen extends Component {
         );
     }
 }
-
-const styles = StyleSheet.create({
-    
-    childContainer: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
-    
-    container: {
-        flex: 1,
-        backgroundColor: '#2d3042',
-    },
-    textAreaContainer: {
-        margin: 10,
-        borderColor: 'black',
-        borderWidth: 2,
-        width: 300,
-        padding: 10,
-        backgroundColor: '#232635',
-    },
-
-    title: {
-        color: 'white',
-        fontWeight: 'bold',
-        fontSize: 20
-    },
-
-    text: {
-        color: 'white',
-        margin: 5,
-        fontSize: 15,
-    },
-    
-    textinput: {
-        padding: 5,
-        margin: 5,
-        height: 40,
-        borderColor: 'black',
-        borderWidth: 1,
-        backgroundColor: '#1d1f2b',
-        color: 'white',
-        width: 250,
-    },
-    
-    pickerStyle:{  
-        //height: 150,
-        width: "70%",  
-        color: 'white',  
-        justifyContent: 'center',  
-    }  
-});

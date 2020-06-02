@@ -2,12 +2,26 @@ import {StyleSheet} from 'react-native';
 
 const styles = StyleSheet.create({
 
+    container: {
+        flex: 1,
+        backgroundColor: '#2d3042',
+    },
+
+    childContainer: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+
+    //common text
     text: {
         color: 'white',
         margin: 5,
         fontSize: 15,
+        textAlign: 'center',
     },
 
+    //textinput style
     textinput: {  
         width: 280,
         padding: 5,
@@ -19,12 +33,12 @@ const styles = StyleSheet.create({
         color: 'white'
     },
 
+    //text title
     title: {
         color: 'white',
         fontWeight: 'bold',
         fontSize: 20
     },
-
 
     listItem: {
         backgroundColor: '#f75605',
@@ -48,19 +62,13 @@ const styles = StyleSheet.create({
         width: 250,
     },
 
-    //style of the child container that has custom app bar
-    childContainer: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
-    
-    //style of the container that has custom app bar
-    container: {
-        flex: 1,
-        backgroundColor: '#2d3042',
-    },
-
+    //picker used in roll dices screen and name generator screen
+    pickerStyle: {  
+        //height: 150,
+        width: "70%",  
+        color: 'white',  
+        justifyContent: 'center',  
+    }
 });
 
 export default styles;
