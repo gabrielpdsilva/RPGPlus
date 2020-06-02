@@ -68,7 +68,20 @@ const styles = StyleSheet.create({
         width: "70%",  
         color: 'white',  
         justifyContent: 'center',  
-    }
+    },
+
+    dangerTitle: {
+        color: '#f91818',
+        fontWeight: 'bold',
+        fontSize: 20
+    },
+
+    dangerText: {
+        color: '#f91818',
+        margin: 5,
+        fontSize: 15,
+        textAlign: 'center'
+    },
 });
 
 export default styles;

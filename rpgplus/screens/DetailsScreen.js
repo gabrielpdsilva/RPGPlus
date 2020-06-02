@@ -1,11 +1,10 @@
 import React from 'react';
 import {
     View,
-    StyleSheet,
     Text
 } from 'react-native';
 
-
+import styles from '../styles/styles';
 import CustomAppBar from '../components/CustomAppBar';
 
 const DetailsScreen = ({navigation}) => {   
@@ -24,31 +23,5 @@ const DetailsScreen = ({navigation}) => {
         </View>
     );
 }
-
-const styles = StyleSheet.create({
-    childContainer: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
-    
-    container: {
-        flex: 1,
-        backgroundColor: '#2d3042',
-    },
-
-    title: {
-        color: 'white',
-        fontWeight: 'bold',
-        fontSize: 20
-    },
-
-    text: {
-        color: 'white',
-        margin: 5,
-        fontSize: 15,
-        textAlign: 'center'
-    },
-});
 
 export default DetailsScreen;
