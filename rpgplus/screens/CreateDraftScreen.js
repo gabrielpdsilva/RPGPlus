@@ -151,7 +151,7 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         padding: 15,
         backgroundColor: '#232635',
-      },
+    },
 
     textinput: {
         padding: 5,
