@@ -8,13 +8,6 @@ const styles = StyleSheet.create({
         fontSize: 15,
     },
 
-    container: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: '#2d3042',
-    },
-
     textinput: {  
         width: 280,
         padding: 5,
@@ -32,15 +25,6 @@ const styles = StyleSheet.create({
         fontSize: 20
     },
 
-    childContainer: {
-        margin: 10,
-        justifyContent: 'center',
-        alignItems: 'center',
-        padding: 10,
-        backgroundColor: '#232635',
-        borderColor: 'black',
-        borderWidth: 2,
-    },
 
     listItem: {
         backgroundColor: '#f75605',
@@ -65,14 +49,14 @@ const styles = StyleSheet.create({
     },
 
     //style of the child container that has custom app bar
-    childContainerBar: {
+    childContainer: {
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
     },
     
     //style of the container that has custom app bar
-    containerBar: {
+    container: {
         flex: 1,
         backgroundColor: '#2d3042',
     },

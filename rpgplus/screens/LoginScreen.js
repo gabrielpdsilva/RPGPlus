@@ -9,7 +9,6 @@ import {
 import CustomButton from '../components/CustomButton';
 import styles from '../styles/styles';
 
-
 import CustomAppBar from '../components/CustomAppBar';
 
 import firebase from '../controller/Firebase';
@@ -51,11 +50,11 @@ export default class LoginScreen extends Component {
     render(){
         return(
 
-            <View style={styles.containerBar}>
+            <View style={styles.container}>
 
                 <CustomAppBar title="Login" subtitle=""/>
 
-                <View style={styles.childContainerBar}>
+                <View style={styles.childContainer}>
 
                     <Text style={styles.title}>Welcome!</Text>
 
@@ -72,6 +71,7 @@ export default class LoginScreen extends Component {
                     <TouchableOpacity onPress={() => this.props.navigation.navigate("Forgot Password")}>
                         <Text style={styles.text}>Forgot your password?</Text>
                     </TouchableOpacity>
+
                 </View>
             </View>
         );

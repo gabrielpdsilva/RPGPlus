@@ -27,41 +27,28 @@ export function MyStack() {
   return (
     <Stack.Navigator>
       <Stack.Screen
-      name="Login"
-      component={LoginScreen}
-      options={{
-                headerShown: false,
-                headerStyle: {backgroundColor: '#f75605'},
-                headerTintColor: '#fff',
-                }}/>
+        name="Login"
+        component={LoginScreen}
+        options={{headerShown: false}} //the default app bar won't show
+      />
 
       <Stack.Screen
-      name="Register"
-      component={RegisterScreen}
-      options={{
-                headerShown: false,
-                headerStyle: {backgroundColor: '#f75605'},
-                headerTintColor: '#fff',
-                }}/>
-
-<Stack.Screen
-      name="Forgot Password"
-      component={ForgotPasswordScreen}
-      options={{
-                headerShown: false,
-                headerStyle: {backgroundColor: '#f75605'},
-                headerTintColor: '#fff',
-                }}/>
+        name="Register"
+        component={RegisterScreen}
+        options={{headerShown: false}}
+      />
 
       <Stack.Screen
-      name="RPG+"
-      component={MyDrawer}
-      options={{
-                headerShown: false,
-                headerLeft: null,
-                headerStyle: {backgroundColor: '#f75605'},
-                headerTintColor: '#fff',
-                }}/>
+        name="Forgot Password"
+        component={ForgotPasswordScreen}
+        options={{headerShown: false}}
+      />
+
+      <Stack.Screen
+        name="RPG+"
+        component={MyDrawer}
+        options={{headerShown: false}}
+      />
     </Stack.Navigator>
   );
 }

@@ -64,10 +64,10 @@ export default class ListDraftScreen extends Component {
 
     render(){
         return(
-            <View style={styles.containerBar}>
+            <View style={styles.container}>
                 
                 <CustomAppBar title="My Drafts" subtitle="Below is the list of all of your drafts"/>
-                <View style={styles.childContainerBar}>
+                <View style={styles.childContainer}>
                 
                 <FlatList
                     data={this.state.data}

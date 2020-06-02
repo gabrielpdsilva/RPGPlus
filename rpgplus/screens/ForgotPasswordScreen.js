@@ -10,6 +10,8 @@ import CustomButton from '../components/CustomButton';
 
 import styles from '../styles/styles';
 
+import CustomAppBar from '../components/CustomAppBar';
+
 import firebase from '../controller/Firebase';
 
 export default class ForgotPasswordScreen extends Component {
@@ -34,17 +36,24 @@ export default class ForgotPasswordScreen extends Component {
 
     render(){
         return(
-            <View style={styles.container}>
-                <Text style={styles.title}>Forgot your password?</Text>
-                <Text style={styles.text}>Type below your e-mail to recover your password.</Text>
-                <TextInput style={styles.textinput} value={this.state.email} onChangeText={ (txt) => this.setState({email: txt})} placeholder="Your e-mail here..." />
 
-                <CustomButton
-                    title="RESET PASSWORD"
-                    onPress={this.resetPassword}
-                    style={{}}
-                    textStyle={{}}
-                />
+            <View style={styles.container}>
+
+                <CustomAppBar title="Forgot Password" subtitle=""/>
+
+                <View style={styles.childContainer}>
+
+                    <Text style={styles.title}>Forgot your password?</Text>
+                    <Text style={styles.text}>Type below your e-mail to recover your password.</Text>
+                    <TextInput style={styles.textinput} value={this.state.email} onChangeText={ (txt) => this.setState({email: txt})} placeholder="Your e-mail here..." />
+
+                    <CustomButton
+                        title="RESET PASSWORD"
+                        onPress={this.resetPassword}
+                        style={{}}
+                        textStyle={{}}
+                    />
+                </View>
             </View>
         );
     }

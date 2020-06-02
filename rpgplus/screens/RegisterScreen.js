@@ -9,6 +9,8 @@ import CustomButton from '../components/CustomButton';
 
 import styles from '../styles/styles';
 
+import CustomAppBar from '../components/CustomAppBar';
+
 import firebase from '../controller/Firebase';
 import 'firebase/firestore';
 
@@ -67,9 +69,14 @@ export default class RegisterScreen extends Component {
 
     render(){
         return(
+
             <View style={styles.container}>
-                <Text style={styles.title}>Register</Text>
+
+                <CustomAppBar title="Register" subtitle=""/>
+
                 <View style={styles.childContainer}>
+
+                <Text style={styles.title}>Register</Text>
 
                     <Text style={styles.text}>Register your account!</Text>
 
