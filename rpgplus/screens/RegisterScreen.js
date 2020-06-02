@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import {
-    StyleSheet,
     View,
     TextInput,
     ToastAndroid,
     Text
 } from 'react-native';
 import CustomButton from '../components/CustomButton';
+
+import styles from '../styles/styles';
 
 import firebase from '../controller/Firebase';
 import 'firebase/firestore';
@@ -68,9 +69,7 @@ export default class RegisterScreen extends Component {
         return(
             <View style={styles.container}>
                 <Text style={styles.title}>Register</Text>
-                <View style={styles.childcontainer}>
-
-                    
+                <View style={styles.childContainer}>
 
                     <Text style={styles.text}>Register your account!</Text>
 
@@ -90,44 +89,3 @@ export default class RegisterScreen extends Component {
         )
     }
 }
-
-const styles = StyleSheet.create({
-    childcontainer: {
-        margin: 10,
-        justifyContent: 'center',
-        alignItems: 'center',
-        padding: 10,
-        backgroundColor: '#232635',
-        borderColor: 'black',
-        borderWidth: 2,
-
-    },
-    container: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: '#2d3042',
-    },
-    textinput: {
-        width: 280,
-        padding: 5,
-        margin: 5,
-        height: 40,
-        borderColor: 'black',
-        borderWidth: 1,
-        backgroundColor: '#2d3042',
-        color: 'white'
-    },
-    title: {
-        color: 'white',
-        fontWeight: 'bold',
-        fontSize: 20
-      },
-
-    text: {
-        color: 'white',
-        margin: 5,
-        fontSize: 15,
-        textAlign: 'center'
-    },
-});

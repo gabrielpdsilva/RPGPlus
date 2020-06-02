@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import {
-    StyleSheet,
     View,
     TextInput,
     TouchableOpacity,
@@ -8,6 +7,7 @@ import {
     Text
 } from 'react-native';
 import CustomButton from '../components/CustomButton';
+import styles from '../styles/styles'
 
 import firebase from '../controller/Firebase';
 
@@ -29,6 +29,7 @@ export default class LoginScreen extends Component {
     handleLogin = () => {
         const {email, password} = this.state;
 
+        //if email or password is empty
         if(email == '' || password == ''){
             alert("Please, fill all the fields.");
             return;
@@ -68,34 +69,3 @@ export default class LoginScreen extends Component {
         );
     }
 }
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: '#2d3042',
-    },
-    textinput: {  
-        width: 280,
-        padding: 5,
-        margin: 5,
-        height: 40,
-        borderColor: 'black',
-        borderWidth: 1,
-        backgroundColor: '#232635',
-        color: 'white'
-    },
-    title: {
-        color: 'white',
-        fontWeight: 'bold',
-        fontSize: 20
-      },
-
-    text: {
-        color: 'white',
-        margin: 5,
-        fontSize: 15,
-        textAlign: 'center'
-    },
-});
