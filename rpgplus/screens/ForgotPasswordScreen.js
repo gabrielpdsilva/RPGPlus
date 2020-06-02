@@ -8,6 +8,8 @@ import {
 } from 'react-native';
 import CustomButton from '../components/CustomButton';
 
+import styles from '../styles/styles';
+
 import firebase from '../controller/Firebase';
 
 export default class ForgotPasswordScreen extends Component {
@@ -47,36 +49,3 @@ export default class ForgotPasswordScreen extends Component {
         );
     }
 }
-
-const styles = StyleSheet.create({
-    
-    container: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: '#2d3042',
-    },
-    textinput: {  
-        width: 280,
-        padding: 5,
-        margin: 5,
-        height: 40,
-        borderColor: 'black',
-        borderWidth: 1,
-        backgroundColor: '#232635',
-        color: 'white'
-    },
-
-    title: {
-        color: 'white',
-        fontWeight: 'bold',
-        fontSize: 20
-    },
-
-    text: {
-        color: 'white',
-        margin: 5,
-        fontSize: 15,
-        textAlign: 'center'
-    },
-});

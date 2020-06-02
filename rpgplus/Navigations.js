@@ -30,7 +30,7 @@ export function MyStack() {
       name="Login"
       component={LoginScreen}
       options={{
-                headerShown: true,
+                headerShown: false,
                 headerStyle: {backgroundColor: '#f75605'},
                 headerTintColor: '#fff',
                 }}/>
@@ -39,7 +39,7 @@ export function MyStack() {
       name="Register"
       component={RegisterScreen}
       options={{
-                headerShown: true,
+                headerShown: false,
                 headerStyle: {backgroundColor: '#f75605'},
                 headerTintColor: '#fff',
                 }}/>
@@ -48,7 +48,7 @@ export function MyStack() {
       name="Forgot Password"
       component={ForgotPasswordScreen}
       options={{
-                headerShown: true,
+                headerShown: false,
                 headerStyle: {backgroundColor: '#f75605'},
                 headerTintColor: '#fff',
                 }}/>

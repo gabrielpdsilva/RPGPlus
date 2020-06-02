@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import {
-    StyleSheet,
     Text,
     View,
     FlatList,
     TouchableOpacity
 } from 'react-native';
+
+import styles from '../styles/styles';
 
 import CustomAppBar from '../components/CustomAppBar';
 
@@ -63,15 +64,14 @@ export default class ListDraftScreen extends Component {
 
     render(){
         return(
-            <View style={styles.container}>
+            <View style={styles.containerBar}>
                 
                 <CustomAppBar title="My Drafts" subtitle="Below is the list of all of your drafts"/>
-                <View style={styles.childContainer}>
+                <View style={styles.childContainerBar}>
                 
                 <FlatList
                     data={this.state.data}
                     renderItem={this.renderItem}
-            
                     keyExtractor={item => item.id} //need to fix this
                 />
                 </View>
@@ -80,55 +80,6 @@ export default class ListDraftScreen extends Component {
         );
     }
 }
-
-const styles = StyleSheet.create({
-    
-    listItem: {
-        backgroundColor: '#f75605',
-        width: 200,
-        margin: 10,
-        marginVertical: 2,
-        marginHorizontal: 2,
-    },
-
-    textItem: {
-        color: 'white',
-        margin: 3,
-        fontSize: 15,
-    },
-
-    item: {
-        backgroundColor: 'red',
-        padding: 10,
-        marginVertical: 2,
-        marginHorizontal: 2,
-        width: 250,
-    },
-    
-    childContainer: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
-    
-    container: {
-        flex: 1,
-        backgroundColor: '#2d3042',
-    },
-
-    title: {
-        color: 'white',
-        fontWeight: 'bold',
-        fontSize: 20
-    },
-
-    text: {
-        color: 'white',
-        margin: 5,
-        fontSize: 15,
-        textAlign: 'center'
-    },
-});
 
 /*
 

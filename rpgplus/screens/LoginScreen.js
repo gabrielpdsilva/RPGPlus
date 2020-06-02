@@ -7,7 +7,10 @@ import {
     Text
 } from 'react-native';
 import CustomButton from '../components/CustomButton';
-import styles from '../styles/styles'
+import styles from '../styles/styles';
+
+
+import CustomAppBar from '../components/CustomAppBar';
 
 import firebase from '../controller/Firebase';
 
@@ -48,23 +51,28 @@ export default class LoginScreen extends Component {
     render(){
         return(
 
-            <View style={styles.container}>
+            <View style={styles.containerBar}>
 
-                <Text style={styles.title}>Welcome!</Text>
+                <CustomAppBar title="Login" subtitle=""/>
 
-                <Text style={styles.text}>Please, Sign In to continue</Text>
+                <View style={styles.childContainerBar}>
 
-                <TextInput style={styles.textinput} value={this.state.email} onChangeText={ (txt) => this.setState({email: txt})} placeholder="E-mail..." />
+                    <Text style={styles.title}>Welcome!</Text>
 
-                <TextInput style={styles.textinput} value={this.state.password} onChangeText={ (txt) => this.setState({password: txt})} secureTextEntry={true} placeholder="Password..." />
+                    <Text style={styles.text}>Please, Sign In to continue</Text>
 
-                <CustomButton title="LOGIN" onPress={this.handleLogin}/>
+                    <TextInput style={styles.textinput} value={this.state.email} onChangeText={ (txt) => this.setState({email: txt})} placeholder="E-mail..." />
 
-                <CustomButton title="SIGN UP" style={{backgroundColor: '#e62600'}} onPress={() => this.props.navigation.navigate("Register")}/>
+                    <TextInput style={styles.textinput} value={this.state.password} onChangeText={ (txt) => this.setState({password: txt})} secureTextEntry={true} placeholder="Password..." />
 
-                <TouchableOpacity onPress={() => this.props.navigation.navigate("Forgot Password")}>
-                    <Text style={styles.text}>Forgot your password?</Text>
-                </TouchableOpacity>
+                    <CustomButton title="LOGIN" onPress={this.handleLogin}/>
+
+                    <CustomButton title="SIGN UP" style={{backgroundColor: '#e62600'}} onPress={() => this.props.navigation.navigate("Register")}/>
+
+                    <TouchableOpacity onPress={() => this.props.navigation.navigate("Forgot Password")}>
+                        <Text style={styles.text}>Forgot your password?</Text>
+                    </TouchableOpacity>
+                </View>
             </View>
         );
     }
