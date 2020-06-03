@@ -38,14 +38,36 @@ export default class DraftModelScreen extends Component {
         const dbh = firebase.firestore();
 
         //delete the doc
-        dbh.collection("users").doc(user.uid).collection("sketchs").doc(draftId).delete();
         
+        dbh.collection("users").doc(user.uid).collection("sketchs").doc(draftId).delete();
+
         //toast a message
         ToastAndroid.show("Draft deleted! ", ToastAndroid.SHORT);
 
         //goes to the previous screen
         this.props.navigation.goBack();
-        
+
+    }
+
+    btnDeleteDraft = () => {
+
+        Alert.alert(
+            'Delete Draft', //title
+            'Are you sure you want to delete your draft?', //message
+            [
+                {
+                    text: 'Cancel',
+                    onPress: () => ToastAndroid.show("Delete canceled.", ToastAndroid.SHORT),
+                    style: 'cancel'
+                },
+                {
+                    text: 'OK', onPress: () => {
+                    this.deleteDraft();
+                    }
+                }
+            ],
+            { cancelable: false }
+        );
     }
 
     //function that will execute before render method
@@ -118,7 +140,7 @@ export default class DraftModelScreen extends Component {
 
                 <View style={styles.center}>
 
-                    <CustomButton title="DELETE DRAFT" onPress={this.deleteDraft}/>
+                    <CustomButton title="DELETE DRAFT" onPress={this.btnDeleteDraft}/>
 
                 </View>
             </View>

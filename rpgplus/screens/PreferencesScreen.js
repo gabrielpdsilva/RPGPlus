@@ -47,7 +47,7 @@ export default class PreferencesScreen extends Component {
                 }
             ],
             { cancelable: false }
-          );
+        );
     }
 
     deleteAccount = () => {

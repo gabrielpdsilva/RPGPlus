@@ -104,6 +104,7 @@ export default class NameGeneratorScreen extends Component {
             alert("No options.");
      }
 
+     //after user choose a category, the name will be generated
      this.generateName(firstName, lastName);
 
   }
@@ -112,9 +113,8 @@ export default class NameGeneratorScreen extends Component {
   copyToClipboard = () => {
 
     //if user touches a region without name yet
-    if(this.state.name == '') {
-        return;
-    }
+    if(this.state.name == '') return;
+  
     //copy the name to clipboard
     Clipboard.setString(this.state.name);
 

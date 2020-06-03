@@ -26,8 +26,11 @@ export default class ListDraftScreen extends Component {
     }
 
     componentDidMount = () => {
+        
         const user = firebase.auth().currentUser;
         const dbh = firebase.firestore();
+
+        //gets all the drafts from firestore and store it in the state
         dbh.collection("users").doc(user.uid).collection("sketchs").get().then((snapshot) => (
             snapshot.forEach((doc) => (
                 this.setState((prevState) => ({
@@ -41,6 +44,7 @@ export default class ListDraftScreen extends Component {
                 }))
             ))
         ))
+        
     }
 
     //when user clicks on item
