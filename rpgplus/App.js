@@ -1,7 +1,7 @@
 /*
 author: G.P.
 RPG+ (RPGPlus) is a project made for tests and studies using React Native technology
-version: 1.11.27
+version: 1.11.28
 */
 
 import React from 'react';

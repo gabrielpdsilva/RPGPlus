@@ -106,7 +106,7 @@ export default class DraftModelScreen extends Component {
         return(
             <View style={styles.container}>
                 
-                <CustomAppBar title="Edit Draft" subtitle=""/>
+                <CustomAppBar title="Edit Draft" subtitle="" backIsVisible={true} navigation={this.props.navigation}/>
                 
                 <View style={styles.textAreaContainer}>
 

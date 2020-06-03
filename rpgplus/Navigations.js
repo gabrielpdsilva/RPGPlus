@@ -16,8 +16,6 @@ import RollDices from './screens/RollDicesScreen';
 import ForgotPasswordScreen from './screens/ForgotPasswordScreen';
 import ListDraftScreen from './screens/ListDraftScreen';
 
-import CustomAppBar from './components/CustomAppBar';
-
 import firebase from './controller/Firebase';
 import DraftModelScreen from './screens/DraftModelScreen';
 

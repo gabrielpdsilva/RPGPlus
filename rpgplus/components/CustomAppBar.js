@@ -2,7 +2,6 @@ import * as React from 'react';
 import { Appbar } from 'react-native-paper';
 import styles from '../styles/styles';
 
-
 export default class CustomAppBar extends React.Component {
     constructor(props){
         super(props);
@@ -16,7 +15,7 @@ export default class CustomAppBar extends React.Component {
         
             <Appbar.Header style={styles.headerAppBar}>
                 <Appbar.BackAction
-                    onPress={() => alert("hm...")}
+                    onPress={() => this.props.navigation.goBack()}
                 />
                 <Appbar.Content
                     title= {this.props.title}
