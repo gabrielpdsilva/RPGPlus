@@ -28,34 +28,8 @@ export default class CreateDraftScreen extends Component {
         }
     }
 
-    getSketch = () => {
-
-        const user = firebase.auth().currentUser;
-        const dbh = firebase.firestore();
-
-        let sketchRef = dbh.collection("users").doc(user.uid).collection("sketchs").doc('test'); //Yjvt0Xf5AxbZBvlF6mCr
-        sketchRef.get()
-        .then(doc => {
-            if (!doc.exists) {
-                alert('No such document!');
-            } else {
-                alert('Done');
-                this.setState({
-                    name: doc.data().name,
-                    category: doc.data().category,
-                    system: doc.data().system,
-                    text: doc.data().text
-                });
-            }
-        })
-        .catch(err => {
-            alert('Error getting document' + err);
-        });
-
-    }
-
-    //add sketch to firestore
-    addSketch = () => {
+    //add draft to firestore
+    addDraft = () => {
 
         if(this.state.name == '' || this.state.category == '' || this.state.system == '' || this.state.text == '' ){
             alert("All fields must be filled.");
@@ -65,7 +39,7 @@ export default class CreateDraftScreen extends Component {
         const user = firebase.auth().currentUser;
         const dbh = firebase.firestore();
 
-        //create a sketch to the doc of the user collection
+        //create a draft to the doc of the user collection
         dbh.collection("users").doc(user.uid).collection("sketchs").add({ //add is used so Firestore can generate a unique ID to the doc
 
             name: this.state.name,
@@ -121,12 +95,12 @@ export default class CreateDraftScreen extends Component {
             
                     <CustomButton    //I've made another view because I couldn't center the Button without it, need to fix it later.
                         title="CREATE"
-                        onPress={this.addSketch}
+                        onPress={this.addDraft}
                         style={{}}
                         textStyle={{}}
                     />
 
-                    <CustomButton title="GET" onPress={this.getSketch}/>
+                    <CustomButton title="GET" onPress={this.getDraft}/>
 
                 </View>
             </View>
