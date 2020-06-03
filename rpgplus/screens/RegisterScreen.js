@@ -72,7 +72,7 @@ export default class RegisterScreen extends Component {
 
             <View style={styles.container}>
 
-                <CustomAppBar title="Register" subtitle=""/>
+                <CustomAppBar title="Register" subtitle="" backIsVisible={true}/>
 
                 <View style={styles.childContainer}>
 

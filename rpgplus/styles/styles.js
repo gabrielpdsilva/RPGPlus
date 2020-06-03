@@ -82,6 +82,10 @@ const styles = StyleSheet.create({
         fontSize: 15,
         textAlign: 'center'
     },
+
+    headerAppBar: {
+        backgroundColor: '#f75605'
+    },
 });
 
 export default styles;

@@ -52,7 +52,7 @@ export default class LoginScreen extends Component {
 
             <View style={styles.container}>
 
-                <CustomAppBar title="Login" subtitle=""/>
+                <CustomAppBar title="Login" subtitle="" backIsVisible={false}/>
 
                 <View style={styles.childContainer}>
 
