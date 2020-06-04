@@ -6,7 +6,8 @@ import {
     TextInput,
     ToastAndroid,
     Alert,
-    ScrollView
+    ScrollView,
+    Switch
 } from 'react-native';
 
 import CustomButton from '../components/CustomButton';
@@ -108,7 +109,12 @@ export default class DraftModelScreen extends Component {
         });
     }
 
+    _onToggleSwitch = () =>  this.setState(state => ({ isSwitchOn: !state.isSwitchOn }));
+
     render(){
+
+        const { isSwitchOn } = this.state;
+
         return(
             <View style={styles.container}>
                 
@@ -120,26 +126,56 @@ export default class DraftModelScreen extends Component {
 
                     <Text style={styles.title}>Here you can edit or delete your draft.</Text>
 
+                    <Switch
+                        trackColor={{ false: "#767577", true: "#f75605" }}
+                        thumbColor="#f4f3f4"
+                        ios_backgroundColor="#3e3e3e"
+                        onValueChange={this._onToggleSwitch}
+                        value={isSwitchOn}
+                    />
+
                     <Text style={styles.text}>Name:</Text>
        
-                    <TextInput style={styles.textinput} value={this.state.name} editable={false} onChangeText={ (txt) => this.setState({name: txt}) } placeholder="Loading..." />
+                    <TextInput
+                        style={styles.textinput}
+                        backgroundColor = {isSwitchOn ? '#232635' : '#14161f'}
+                        value={this.state.name} editable={isSwitchOn}
+                        onChangeText={ (txt) => this.setState({name: txt}) }
+                        placeholder="Loading..."
+                    />
 
                     <Text style={styles.text}>Category:</Text>
                     
-                    <TextInput style={styles.textinput} value={this.state.category} editable={false} onChangeText={ (txt) => this.setState({category: txt}) } placeholder="Loading..."/>
+                    <TextInput
+                        style={styles.textinput}
+                        backgroundColor = {isSwitchOn ? '#232635' : '#14161f'}
+                        value={this.state.category}
+                        editable={isSwitchOn}
+                        onChangeText={ (txt) => this.setState({category: txt}) }
+                        placeholder="Loading..."
+                    />
                     
                     <Text style={styles.text}>System:</Text>
                     
-                    <TextInput style={styles.textinput} value={this.state.system} editable={false} onChangeText={ (txt) => this.setState({system: txt}) } placeholder="Loading..." />
+                    <TextInput
+                        style={styles.textinput}
+                        backgroundColor = {isSwitchOn ? '#232635' : '#14161f'}
+                        value={this.state.system}
+                        editable={isSwitchOn}
+                        onChangeText={ (txt) => this.setState({system: txt}) }
+                        placeholder="Loading..."
+                    />
                     
                     <Text style={styles.text}>Text:</Text>
                     
-                    <TextInput style={styles.textinput}
+                    <TextInput
+                        style={styles.textinput}
+                        backgroundColor = {isSwitchOn ? '#232635' : '#14161f'}
                         value={this.state.text}
                         multiline = {true} //textinput will be multiline
                         height = {150}
                         textAlignVertical= 'top'
-                        editable={false}
+                        editable={isSwitchOn}
                         onChangeText={ (txt) => this.setState({text: txt}) }
                         placeholder="Loading..."
                     />
