@@ -5,7 +5,8 @@ import {
     View,
     TextInput,
     ToastAndroid,
-    Alert
+    Alert,
+    ScrollView
 } from 'react-native';
 
 import CustomButton from '../components/CustomButton';
@@ -24,7 +25,12 @@ export default class DraftModelScreen extends Component {
             system: '',
             text: '',
             id: '',
+            isSwitchOn: false,
         }
+    }
+
+    btnEditDraft = () => {
+        alert("ok")
     }
 
     deleteDraft = () => {
@@ -107,6 +113,8 @@ export default class DraftModelScreen extends Component {
             <View style={styles.container}>
                 
                 <CustomAppBar title="Edit Draft" subtitle="" backIsVisible={true} navigation={this.props.navigation}/>
+
+                <ScrollView>
                 
                 <View style={styles.textAreaContainer}>
 
@@ -140,9 +148,13 @@ export default class DraftModelScreen extends Component {
 
                 <View style={styles.center}>
 
+                    <CustomButton title="EDIT DRAFT" onPress={this.btnEditDraft}/>
+
                     <CustomButton title="DELETE DRAFT" onPress={this.btnDeleteDraft}/>
 
                 </View>
+
+                </ScrollView>
             </View>
         );
     }

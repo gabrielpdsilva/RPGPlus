@@ -153,25 +153,3 @@ export default class PreferencesScreen extends Component {
         );
     }
 }
-
-/*
-        user
-        .delete()
-        .then(() => {
-
-            //toast a message
-            ToastAndroid.show("Your account has been deleted!", ToastAndroid.SHORT);
-
-            //goes to login screen
-            this.props.navigation.navigate("Login");
-
-            dbh.collection("users").doc(user.uid).delete().then(() => {
-                alert("Document successfully deleted!");
-            }).catch((error) => {
-                alert("Error removing document: " + error);
-            });
-        })
-        .catch((error) => {
-            alert("Something went wrong: \n" + error);
-        });
-        */

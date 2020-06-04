@@ -39,7 +39,7 @@ export default class ForgotPasswordScreen extends Component {
 
             <View style={styles.container}>
 
-                <CustomAppBar title="Forgot Password" subtitle=""/>
+                <CustomAppBar title="Forgot Password" subtitle="" backIsVisible={true} navigation={this.props.navigation}/>
 
                 <View style={styles.childContainer}>
 
