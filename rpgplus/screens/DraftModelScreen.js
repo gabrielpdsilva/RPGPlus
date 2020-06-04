@@ -31,7 +31,31 @@ export default class DraftModelScreen extends Component {
     }
 
     btnEditDraft = () => {
-        alert("ok")
+
+        const draftId = this.state.id;
+
+        //gets the current user
+        const user = firebase.auth().currentUser;
+
+        //var of firestore database
+        const dbh = firebase.firestore();
+
+        //gets the current draft
+        let docRef = dbh.collection("users").doc(user.uid).collection("sketchs").doc(draftId);
+
+        //update data
+        docRef.update({
+            name: this.state.name,
+            category: this.state.category,
+            system: this.state.system,
+            text: this.state.text,
+        });
+
+        //switch is off again
+        this.setState({isSwitchOn: false});
+
+        //toast a message
+        ToastAndroid.show("Draft updated! ", ToastAndroid.SHORT);
     }
 
     deleteDraft = () => {
@@ -45,7 +69,6 @@ export default class DraftModelScreen extends Component {
         const dbh = firebase.firestore();
 
         //delete the doc
-        
         dbh.collection("users").doc(user.uid).collection("sketchs").doc(draftId).delete();
 
         //toast a message
