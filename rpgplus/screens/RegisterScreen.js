@@ -23,6 +23,7 @@ export default class RegisterScreen extends Component {
             email: '',
             password: '',
             confirmPassword: '',
+            pic: '',
         }
     }
 
@@ -48,7 +49,10 @@ export default class RegisterScreen extends Component {
             .then(cred => {
 
                 //set the displayName of the user
-                cred.user.updateProfile({displayName: this.state.name});
+                cred.user.updateProfile({
+                    displayName: this.state.name,
+                    photoURL: "https://www.w3schools.com/w3images/avatar2.png" // this.state.pic,
+                });
 
                 //creates a doc of the user, here we can add to the doc whatever we want
                 return dbh.collection("users").doc(cred.user.uid).set({

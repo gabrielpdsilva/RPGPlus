@@ -13,6 +13,8 @@ import firebase from '../controller/Firebase';
 
 export default function DrawerContent(props) {
 
+    const user = firebase.auth().currentUser;
+
     return(
         <View style={{flex:1}} backgroundColor = '#2d3042'>
             <DrawerContentScrollView {...props}>
@@ -22,13 +24,13 @@ export default function DrawerContent(props) {
                         <View style={{flexDirection: 'row', marginTop: 15}}>
                             <Avatar.Image
                                 source={{
-                                    uri: 'https://i.pinimg.com/originals/96/b9/98/96b9986f4d3b256cf889f5ae4202ac2f.jpg'
+                                    uri: user.photoURL !== null ? user.photoURL : 'https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png'
                                 }}
                                 size={80}
                             />
                             <View style={{marginLeft: 15, flexDirection: 'column'}}>
-                                <Title style={styles.title}>{props.name}</Title>
-                                <Caption style={styles.caption}>{props.description}</Caption>
+                                <Title style={styles.title}>{user.displayName}</Title>
+                                <Caption style={styles.caption}>{user.email}</Caption>  
                             </View>
                         </View>
 

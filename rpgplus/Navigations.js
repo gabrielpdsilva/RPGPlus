@@ -59,12 +59,7 @@ export function MyDrawer() {
   const user = firebase.auth().currentUser;
 
   return(
-    <Drawer.Navigator drawerContent={props => <DrawerContent
-                                                name = {user.displayName}
-                                                description = {user.email}
-                                                sessions = {0}
-                                                friends = {5}
-                                                {... props}/>}>
+    <Drawer.Navigator drawerContent={props => <DrawerContent {... props}/>}>
       <Drawer.Screen name="Home" component={HomeScreen}/>    
       <Drawer.Screen name="Name Generator" component={NameGeneratorScreen}/>
       <Drawer.Screen name="Roll Dices" component={RollDices}/>
