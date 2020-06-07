@@ -21,7 +21,6 @@ export default class CustomAppBar extends React.Component {
                     title= {this.props.title}
                     subtitle={this.props.subtitle}
                 />
-                <Appbar.Action icon="dots-vertical" onPress={() => alert("Not working yet")} />
             </Appbar.Header>
         
                 :
@@ -31,7 +30,6 @@ export default class CustomAppBar extends React.Component {
                     title= {this.props.title}
                     subtitle={this.props.subtitle}
                 />
-                <Appbar.Action icon="dots-vertical" onPress={() => alert("Not working yet")} />
             </Appbar.Header>
         );
    }
