@@ -11,6 +11,8 @@ import CustomButton from '../components/CustomButton';
 
 import CustomAppBar from '../components/CustomAppBar';
 
+import styles from '../styles/styles';
+
 import firebase from '../controller/Firebase';
 import 'firebase/firestore';
 
@@ -70,17 +72,17 @@ export default class CreateDraftScreen extends Component {
                 
                 <CustomAppBar title="New Draft" subtitle=""/>
                 
-                <View style={styles.textAreaContainer}>
+                <View>
 
                     <Text style={styles.text}>Create a draft for your future campaign!</Text>
        
-                    <TextInput style={styles.textinput} value={this.state.name} onChangeText={ (txt) => this.setState({name: txt}) } placeholder="Name of the story..." />
+                    <TextInput style={styles.customtextinput} value={this.state.name} onChangeText={ (txt) => this.setState({name: txt}) } placeholder="Name of the story..." />
 
-                    <TextInput style={styles.textinput} value={this.state.category} onChangeText={ (txt) => this.setState({category: txt}) } placeholder="Category of the story (medieval, cyberpunk)..."/>
+                    <TextInput style={styles.customtextinput} value={this.state.category} onChangeText={ (txt) => this.setState({category: txt}) } placeholder="Category of the story (medieval, cyberpunk)..."/>
 
-                    <TextInput style={styles.textinput} value={this.state.system} onChangeText={ (txt) => this.setState({system: txt}) } placeholder="System used (Storyteller, D20)..." />
+                    <TextInput style={styles.customtextinput} value={this.state.system} onChangeText={ (txt) => this.setState({system: txt}) } placeholder="System used (Storyteller, D20)..." />
 
-                    <TextInput style={styles.textinput}
+                    <TextInput style={styles.customtextinput}
                         value={this.state.text}
                         multiline = {true} //textinput will be multiline
                         height = {150}
@@ -91,7 +93,7 @@ export default class CreateDraftScreen extends Component {
 
                 </View>
 
-                <View style={styles.center}>
+                <View style={{justifyContent:'center', alignItems: 'center'}}>
             
                     <CustomButton    //I've made another view because I couldn't center the Button without it, need to fix it later.
                         title="CREATE"
@@ -107,41 +109,3 @@ export default class CreateDraftScreen extends Component {
         );
     }
 }
-
-const styles = StyleSheet.create({
-
-    center: {
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
-
-    container: {
-        flex: 1,
-        backgroundColor: '#2d3042',
-    },
-
-    textAreaContainer: {
-        borderColor: 'black',
-        borderWidth: 1,
-        padding: 15,
-        backgroundColor: '#232635',
-    },
-
-    textinput: {
-        padding: 5,
-        margin: 5,
-        height: 40,
-        borderColor: 'black',
-        borderWidth: 1,
-        backgroundColor: 'white',
-        backgroundColor: '#2d3042',
-        color: 'white'
-    },  
-
-    text: {
-        color: 'white',
-        margin: 5,
-        fontSize: 15,
-        textAlign: 'center'
-    },
-});

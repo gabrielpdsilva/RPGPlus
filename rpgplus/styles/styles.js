@@ -86,6 +86,19 @@ const styles = StyleSheet.create({
     headerAppBar: {
         backgroundColor: '#f75605'
     },
+
+
+    //textinput of CreateDraftScreen, need to change it
+    customtextinput: {
+        padding: 5,
+        margin: 5,
+        height: 40,
+        borderColor: 'black',
+        borderWidth: 1,
+        backgroundColor: 'white',
+        backgroundColor: '#2d3042',
+        color: 'white'
+    },
 });
 
 export default styles;
