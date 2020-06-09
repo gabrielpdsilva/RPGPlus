@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
 
     //textinput style
     textinput: {  
-        width: 280,
+        width: 290,
         padding: 5,
         margin: 5,
         height: 40,

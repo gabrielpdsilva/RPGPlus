@@ -141,7 +141,7 @@ export default class DraftModelScreen extends Component {
         const { isSwitchOn } = this.state;
 
         return(
-            <View style={styles.container}>
+            <View style={test.container}>
                 
                 <CustomAppBar title="Edit Draft" subtitle="" backIsVisible={true} navigation={this.props.navigation}/>
 
@@ -162,7 +162,7 @@ export default class DraftModelScreen extends Component {
                     <Text style={test.textForm}>Name:</Text>
        
                     <TextInput
-                        style={styles.textinput}
+                        style={test.textinput}
                         backgroundColor = {isSwitchOn ? '#232635' : '#14161f'}
                         value={this.state.name} editable={isSwitchOn}
                         onChangeText={ (txt) => this.setState({name: txt}) }
@@ -172,7 +172,7 @@ export default class DraftModelScreen extends Component {
                     <Text style={test.textForm}>Category:</Text>
                     
                     <TextInput
-                        style={styles.textinput}
+                        style={test.textinput}
                         backgroundColor = {isSwitchOn ? '#232635' : '#14161f'}
                         value={this.state.category}
                         editable={isSwitchOn}
@@ -183,7 +183,7 @@ export default class DraftModelScreen extends Component {
                     <Text style={test.textForm}>System:</Text>
                     
                     <TextInput
-                        style={styles.textinput}
+                        style={test.textinput}
                         backgroundColor = {isSwitchOn ? '#232635' : '#14161f'}
                         value={this.state.system}
                         editable={isSwitchOn}
@@ -194,7 +194,7 @@ export default class DraftModelScreen extends Component {
                     <Text style={test.textForm}>Text:</Text>
                     
                     <TextInput
-                        style={styles.textinput}
+                        style={test.textinput}
                         backgroundColor = {isSwitchOn ? '#232635' : '#14161f'}
                         value={this.state.text}
                         multiline = {true} //textinput will be multiline
@@ -207,7 +207,7 @@ export default class DraftModelScreen extends Component {
 
                 </View>
 
-                <View style={styles.center}>
+                <View style={{justifyContent: 'center', alignItems: 'center'}}>
 
                     <CustomButton title="EDIT DRAFT" onPress={this.btnEditDraft}/>
 
@@ -223,37 +223,10 @@ export default class DraftModelScreen extends Component {
 
 const styles = StyleSheet.create({
 
-    center: {
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
-
-    container: {
-        flex: 1,
-        backgroundColor: '#2d3042',
-    },
-
     textAreaContainer: {
         borderColor: 'black',
         borderWidth: 1,
         padding: 15,
         backgroundColor: '#232635',
-    },
-
-    textinput: {
-        padding: 5,
-        margin: 5,
-        height: 40,
-        borderColor: 'black',
-        borderWidth: 1,
-        backgroundColor: 'white',
-        backgroundColor: '#2d3042',
-        color: 'white'
-    },  
-
-    text: {
-        color: 'white',
-        margin: 5,
-        fontSize: 15,
     },
 });
