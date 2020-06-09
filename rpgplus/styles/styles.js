@@ -18,7 +18,14 @@ const styles = StyleSheet.create({
         color: 'white',
         margin: 5,
         fontSize: 15,
-        textAlign: 'center',
+        textAlign: 'center'
+    },
+
+    //text used on forms
+    textForm: {
+        color: 'white',
+        margin: 5,
+        fontSize: 15,
     },
 
     //textinput style
@@ -37,7 +44,9 @@ const styles = StyleSheet.create({
     title: {
         color: 'white',
         fontWeight: 'bold',
-        fontSize: 20
+        fontSize: 20,
+        alignItems: 'center',
+        textAlign: 'center'
     },
 
     listItem: {

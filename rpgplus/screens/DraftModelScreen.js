@@ -14,6 +14,8 @@ import CustomButton from '../components/CustomButton';
 
 import CustomAppBar from '../components/CustomAppBar';
 
+import test from '../styles/styles';
+
 import firebase from '../controller/Firebase';
 import 'firebase/firestore';
 
@@ -147,7 +149,7 @@ export default class DraftModelScreen extends Component {
                 
                 <View style={styles.textAreaContainer}>
 
-                    <Text style={styles.title}>Here you can edit or delete your draft.</Text>
+                    <Text style={test.title}> Here you can edit or delete your draft.</Text>
 
                     <Switch
                         trackColor={{ false: "#767577", true: "#f75605" }}
@@ -157,7 +159,7 @@ export default class DraftModelScreen extends Component {
                         value={isSwitchOn}
                     />
 
-                    <Text style={styles.text}>Name:</Text>
+                    <Text style={test.textForm}>Name:</Text>
        
                     <TextInput
                         style={styles.textinput}
@@ -167,7 +169,7 @@ export default class DraftModelScreen extends Component {
                         placeholder="Loading..."
                     />
 
-                    <Text style={styles.text}>Category:</Text>
+                    <Text style={test.textForm}>Category:</Text>
                     
                     <TextInput
                         style={styles.textinput}
@@ -178,7 +180,7 @@ export default class DraftModelScreen extends Component {
                         placeholder="Loading..."
                     />
                     
-                    <Text style={styles.text}>System:</Text>
+                    <Text style={test.textForm}>System:</Text>
                     
                     <TextInput
                         style={styles.textinput}
@@ -189,7 +191,7 @@ export default class DraftModelScreen extends Component {
                         placeholder="Loading..."
                     />
                     
-                    <Text style={styles.text}>Text:</Text>
+                    <Text style={test.textForm}>Text:</Text>
                     
                     <TextInput
                         style={styles.textinput}
@@ -236,14 +238,6 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         padding: 15,
         backgroundColor: '#232635',
-    },
-
-    title: {
-        color: 'white',
-        fontWeight: 'bold',
-        fontSize: 20,
-        alignItems: 'center',
-        textAlign: 'center'
     },
 
     textinput: {
