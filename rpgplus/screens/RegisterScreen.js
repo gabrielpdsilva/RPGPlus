@@ -50,8 +50,7 @@ export default class RegisterScreen extends Component {
 
                 //set the displayName of the user
                 cred.user.updateProfile({
-                    displayName: this.state.name,
-                    photoURL: "https://www.w3schools.com/w3images/avatar2.png" // this.state.pic,
+                    displayName: this.state.name
                 });
 
                 //creates a doc of the user, here we can add to the doc whatever we want
