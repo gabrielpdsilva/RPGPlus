@@ -3,9 +3,9 @@ import {
     Text,
     View,
     TextInput,
+    TouchableOpacity,
     ToastAndroid
 } from 'react-native';
-import CustomButton from '../components/CustomButton';
 
 import styles from '../styles/styles';
 
@@ -47,12 +47,9 @@ export default class ForgotPasswordScreen extends Component {
                     <Text style={styles.text}>Type below your e-mail to recover your password.</Text>
                     <TextInput style={styles.textinput} value={this.state.email} onChangeText={ (txt) => this.setState({email: txt})} placeholder="Your e-mail here..." />
 
-                    <CustomButton
-                        title="RESET PASSWORD"
-                        onPress={this.resetPassword}
-                        style={{}}
-                        textStyle={{}}
-                    />
+                    <TouchableOpacity onPress={this.resetPassword} style={styles.button}>
+                        <Text style={styles.buttonText}>RESET PASSWORD</Text>
+                    </TouchableOpacity>
                     
                 </View>
             </View>

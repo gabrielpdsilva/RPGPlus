@@ -3,9 +3,9 @@ import {
     View,
     TextInput,
     ToastAndroid,
-    Text
+    Text,
+    TouchableOpacity
 } from 'react-native';
-import CustomButton from '../components/CustomButton';
 
 import styles from '../styles/styles';
 
@@ -80,7 +80,7 @@ export default class RegisterScreen extends Component {
 
                 <View style={styles.childContainer}>
 
-                <Text style={styles.title}>Register</Text>
+                    <Text style={styles.title}>Register</Text>
 
                     <Text style={styles.text}>Register your account!</Text>
 
@@ -94,7 +94,9 @@ export default class RegisterScreen extends Component {
             
                     <TextInput style={styles.textinput} value={this.state.confirmPassword} onChangeText={ (txt) => this.setState({confirmPassword: txt}) } secureTextEntry={true} placeholder="Confirm your password..." />
                 
-                    <CustomButton title="REGISTER" onPress={this.handleSignUp}/>
+                    <TouchableOpacity onPress={() => this.handleSignUp} style={styles.button}>
+                        <Text style={styles.buttonText}>REGISTER</Text>
+                    </TouchableOpacity>
                 </View>
             </View>
         )
