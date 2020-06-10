@@ -14,7 +14,7 @@ import CustomButton from '../components/CustomButton';
 
 import CustomAppBar from '../components/CustomAppBar';
 
-import test from '../styles/styles';
+import styles from '../styles/styles';
 
 import firebase from '../controller/Firebase';
 import 'firebase/firestore';
@@ -141,15 +141,15 @@ export default class DraftModelScreen extends Component {
         const { isSwitchOn } = this.state;
 
         return(
-            <View style={test.container}>
+            <View style={styles.container}>
                 
                 <CustomAppBar title="Edit Draft" subtitle="" backIsVisible={true} navigation={this.props.navigation}/>
 
                 <ScrollView>
                 
-                <View style={styles.textAreaContainer}>
+                <View style={styles.childCenterContainer}>
 
-                    <Text style={test.title}> Here you can edit or delete your draft.</Text>
+                    <Text style={styles.title}> Here you can edit or delete your draft.</Text>
 
                     <Switch
                         trackColor={{ false: "#767577", true: "#f75605" }}
@@ -159,20 +159,20 @@ export default class DraftModelScreen extends Component {
                         value={isSwitchOn}
                     />
 
-                    <Text style={test.textForm}>Name:</Text>
+                    <Text style={styles.textForm}>Name:</Text>
        
                     <TextInput
-                        style={test.textinput}
+                        style={styles.textinput}
                         backgroundColor = {isSwitchOn ? '#232635' : '#14161f'}
                         value={this.state.name} editable={isSwitchOn}
                         onChangeText={ (txt) => this.setState({name: txt}) }
                         placeholder="Loading..."
                     />
 
-                    <Text style={test.textForm}>Category:</Text>
+                    <Text style={styles.textForm}>Category:</Text>
                     
                     <TextInput
-                        style={test.textinput}
+                        style={styles.textinput}
                         backgroundColor = {isSwitchOn ? '#232635' : '#14161f'}
                         value={this.state.category}
                         editable={isSwitchOn}
@@ -180,10 +180,10 @@ export default class DraftModelScreen extends Component {
                         placeholder="Loading..."
                     />
                     
-                    <Text style={test.textForm}>System:</Text>
+                    <Text style={styles.textForm}>System:</Text>
                     
                     <TextInput
-                        style={test.textinput}
+                        style={styles.textinput}
                         backgroundColor = {isSwitchOn ? '#232635' : '#14161f'}
                         value={this.state.system}
                         editable={isSwitchOn}
@@ -191,10 +191,10 @@ export default class DraftModelScreen extends Component {
                         placeholder="Loading..."
                     />
                     
-                    <Text style={test.textForm}>Text:</Text>
+                    <Text style={styles.textForm}>Text:</Text>
                     
                     <TextInput
-                        style={test.textinput}
+                        style={styles.textinput}
                         backgroundColor = {isSwitchOn ? '#232635' : '#14161f'}
                         value={this.state.text}
                         multiline = {true} //textinput will be multiline
@@ -220,13 +220,3 @@ export default class DraftModelScreen extends Component {
         );
     }
 };
-
-const styles = StyleSheet.create({
-
-    textAreaContainer: {
-        borderColor: 'black',
-        borderWidth: 1,
-        padding: 15,
-        backgroundColor: '#232635',
-    },
-});

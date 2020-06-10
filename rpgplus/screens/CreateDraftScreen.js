@@ -102,8 +102,6 @@ export default class CreateDraftScreen extends Component {
                         textStyle={{}}
                     />
 
-                    <CustomButton title="GET" onPress={this.getDraft}/>
-
                 </View>
             </View>
         );
