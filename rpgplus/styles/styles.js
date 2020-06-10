@@ -13,6 +13,14 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
 
+    //container for drafts
+    childCenterContainer: {
+        borderColor: 'black',
+        borderWidth: 1,
+        padding: 15,
+        backgroundColor: '#232635',
+    },
+
     //common text
     text: {
         color: 'white',
@@ -106,6 +114,19 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         backgroundColor: '#2d3042',
         color: 'white'
+    },
+
+    buttonText: {
+        color: '#ffffff',
+        textAlign: 'center'
+    },
+
+    button: {
+        width: 280,
+        padding: 10,
+        margin: 5,
+        backgroundColor: '#f75605',
+        borderRadius: 25
     },
 });
 
