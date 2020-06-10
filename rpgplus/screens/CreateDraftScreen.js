@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
 import {
-    StyleSheet,
+    TouchableOpacity,
     Text,
     View,
     TextInput,
     ToastAndroid
 } from 'react-native';
-
-import CustomButton from '../components/CustomButton';
 
 import CustomAppBar from '../components/CustomAppBar';
 
@@ -95,12 +93,9 @@ export default class CreateDraftScreen extends Component {
 
                 <View style={{justifyContent:'center', alignItems: 'center'}}>
             
-                    <CustomButton    //I've made another view because I couldn't center the Button without it, need to fix it later.
-                        title="CREATE"
-                        onPress={this.addDraft}
-                        style={{}}
-                        textStyle={{}}
-                    />
+                    <TouchableOpacity onPress={this.addDraft} style={styles.button}>
+                        <Text style={styles.buttonText}>CREATE</Text>
+                    </TouchableOpacity>
 
                 </View>
             </View>

@@ -2,11 +2,10 @@ import React, { Component } from 'react';
 import {
     Text,
     View,
+    TouchableOpacity,
     TextInput,
     Picker,
 } from 'react-native';
-
-import CustomButton from '../components/CustomButton';
 
 import styles from '../styles/styles';
 
@@ -72,13 +71,12 @@ export default class SketchScreen extends Component {
 
                     <Text style={styles.text}>Result: {this.state.result}</Text>
 
-                    <CustomButton
-                        title="ROLL"
-                        onPress={() => this.roll(type, modifier)}
-                        style={{}}
-                        textStyle={{}}
-                    />
+                    <TouchableOpacity onPress={() => this.roll(type, modifier)} style={styles.button}>
+                        <Text style={styles.buttonText}>ROLL</Text>
+                    </TouchableOpacity>
+
                 </View>
+
             </View>
         );
     }

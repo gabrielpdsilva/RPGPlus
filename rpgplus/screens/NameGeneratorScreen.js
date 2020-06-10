@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import {
-  StyleSheet,
   View,
   TouchableOpacity,
   Picker,
@@ -11,7 +10,6 @@ import {
 
 import styles from '../styles/styles';
 import CustomAppBar from '../components/CustomAppBar';
-import CustomButton from '../components/CustomButton';
 
 /*
 Name Generator algorithm by RyanGoslingsBugle
@@ -156,12 +154,10 @@ export default class NameGeneratorScreen extends Component {
           <Text style={styles.text}>{this.state.name}</Text>
         </TouchableOpacity>
     
-        <CustomButton
-          title="GENERATE!"
-          onPress={() => this.buttonOnClickListener(this.state.pickerValue)}
-          style={{}}
-          textStyle={{}}
-        />
+        <TouchableOpacity onPress={() => this.buttonOnClickListener(this.state.pickerValue)} style={styles.button}>
+          <Text style={styles.buttonText}>GENERATE!</Text>
+        </TouchableOpacity>
+
         </View>
       </View>
     );

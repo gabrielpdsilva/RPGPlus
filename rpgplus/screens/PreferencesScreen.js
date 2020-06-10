@@ -5,10 +5,9 @@ import {
     TextInput,
     ToastAndroid,
     Switch,
-    Alert
+    Alert,
+    TouchableOpacity
 } from 'react-native';
-
-import CustomButton from '../components/CustomButton';
 
 import CustomAppBar from '../components/CustomAppBar';
 
@@ -139,7 +138,9 @@ export default class PreferencesScreen extends Component {
 
                     </View>
 
-                    <CustomButton title="RENAME ACCOUNT" onPress={this.updateName}/>
+                    <TouchableOpacity onPress={this.updateName} style={styles.button}>
+                        <Text style={styles.buttonText}>RENAME ACCOUNT</Text>
+                    </TouchableOpacity>
 
                     <Text>────────────────────────</Text>
                     
@@ -147,7 +148,9 @@ export default class PreferencesScreen extends Component {
                     
                     <Text style={styles.dangerText}>If you delete your account, you will lose everything about it.</Text>
 
-                    <CustomButton title="DELETE ACCOUNT" onPress={this.buttonDelete}/>
+                    <TouchableOpacity onPress={this.buttonDelete} style={styles.button}>
+                        <Text style={styles.buttonText}>DELETE ACCOUNT</Text>
+                    </TouchableOpacity>
                 </View>
             </View>
         );

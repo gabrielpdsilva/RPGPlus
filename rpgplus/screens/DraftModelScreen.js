@@ -10,8 +10,6 @@ import {
     Switch
 } from 'react-native';
 
-import CustomButton from '../components/CustomButton';
-
 import CustomAppBar from '../components/CustomAppBar';
 
 import styles from '../styles/styles';

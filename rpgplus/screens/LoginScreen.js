@@ -6,7 +6,7 @@ import {
     ToastAndroid,
     Text
 } from 'react-native';
-import CustomButton from '../components/CustomButton';
+
 import styles from '../styles/styles';
 
 import CustomAppBar from '../components/CustomAppBar';
