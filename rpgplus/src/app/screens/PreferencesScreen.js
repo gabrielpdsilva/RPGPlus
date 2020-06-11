@@ -140,7 +140,11 @@ export default class PreferencesScreen extends Component {
 
                     </View>
 
-                    <TouchableOpacity onPress={this.updateName} style={styles.button}>
+                    <TouchableOpacity
+                        onPress={this.updateName}
+                        disabled = {!isSwitchOn}
+                        style={[styles.button, {backgroundColor: isSwitchOn ? colors.orange : colors.DarkestOrange}]}
+                    >
                         <Text style={styles.buttonText}>RENAME ACCOUNT</Text>
                     </TouchableOpacity>
 
