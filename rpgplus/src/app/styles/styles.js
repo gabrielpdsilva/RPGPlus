@@ -1,10 +1,13 @@
 import {StyleSheet} from 'react-native';
 
+import colors from './colors';
+import { color } from 'react-native-reanimated';
+
 const styles = StyleSheet.create({
 
     container: {
         flex: 1,
-        backgroundColor: '#2d3042',
+        backgroundColor: colors.darkTheme,
     },
 
     childContainer: {
@@ -18,12 +21,12 @@ const styles = StyleSheet.create({
         borderColor: 'black',
         borderWidth: 1,
         padding: 15,
-        backgroundColor: '#232635',
+        backgroundColor: colors.darkContainer,
     },
 
     //common text
     text: {
-        color: 'white',
+        color: colors.white,
         margin: 5,
         fontSize: 15,
         textAlign: 'center'
@@ -31,7 +34,7 @@ const styles = StyleSheet.create({
 
     //text used on forms
     textForm: {
-        color: 'white',
+        color: colors.white,
         margin: 5,
         fontSize: 15,
     },
@@ -42,15 +45,15 @@ const styles = StyleSheet.create({
         padding: 5,
         margin: 5,
         height: 40,
-        borderColor: 'black',
+        borderColor: colors.black,
         borderWidth: 1,
-        backgroundColor: '#232635',
-        color: 'white'
+        backgroundColor: colors.darkContainer,
+        color: colors.white,
     },
 
     //text title
     title: {
-        color: 'white',
+        color: colors.white,
         fontWeight: 'bold',
         fontSize: 20,
         alignItems: 'center',
@@ -58,7 +61,7 @@ const styles = StyleSheet.create({
     },
 
     listItem: {
-        backgroundColor: '#f75605',
+        backgroundColor: colors.orange,
         width: 200,
         margin: 10,
         marginVertical: 2,
@@ -66,13 +69,13 @@ const styles = StyleSheet.create({
     },
 
     textItem: {
-        color: 'white',
+        color: colors.white,
         margin: 3,
         fontSize: 15,
     },
 
     item: {
-        backgroundColor: 'red',
+        backgroundColor: colors.red,
         padding: 10,
         marginVertical: 2,
         marginHorizontal: 2,
@@ -83,25 +86,25 @@ const styles = StyleSheet.create({
     pickerStyle: {  
         //height: 150,
         width: "70%",  
-        color: 'white',  
+        color: colors.white,  
         justifyContent: 'center',  
     },
 
     dangerTitle: {
-        color: '#f91818',
+        color: colors.red,
         fontWeight: 'bold',
         fontSize: 20
     },
 
     dangerText: {
-        color: '#f91818',
+        color: colors.red,
         margin: 5,
         fontSize: 15,
         textAlign: 'center'
     },
 
     headerAppBar: {
-        backgroundColor: '#f75605'
+        backgroundColor: colors.orange,
     },
 
 
@@ -110,14 +113,14 @@ const styles = StyleSheet.create({
         padding: 5,
         margin: 5,
         height: 40,
-        borderColor: 'black',
+        borderColor: colors.black,
         borderWidth: 1,
-        backgroundColor: '#2d3042',
-        color: 'white'
+        backgroundColor: colors.darkTheme,
+        color: colors.white
     },
 
     buttonText: {
-        color: '#ffffff',
+        color: colors.white,
         textAlign: 'center'
     },
 
@@ -125,7 +128,7 @@ const styles = StyleSheet.create({
         width: 280,
         padding: 10,
         margin: 5,
-        backgroundColor: '#f75605',
+        backgroundColor: colors.orange,
         borderRadius: 25
     },
 });
