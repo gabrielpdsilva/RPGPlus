@@ -93,7 +93,7 @@ export default class RegisterScreen extends Component {
             
                     <TextInput style={styles.textinput} value={this.state.confirmPassword} onChangeText={ (txt) => this.setState({confirmPassword: txt}) } secureTextEntry={true} placeholder="Confirm your password..." />
                 
-                    <TouchableOpacity onPress={() => this.handleSignUp} style={styles.button}>
+                    <TouchableOpacity onPress={this.handleSignUp} style={styles.button}>
                         <Text style={styles.buttonText}>REGISTER</Text>
                     </TouchableOpacity>
                 </View>

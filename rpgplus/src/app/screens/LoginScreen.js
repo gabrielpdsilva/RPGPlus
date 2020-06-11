@@ -8,6 +8,7 @@ import {
 } from 'react-native';
 
 import styles from '../styles/styles';
+import colors from '../styles/colors';
 
 import CustomAppBar from '../components/CustomAppBar';
 
@@ -71,7 +72,7 @@ export default class LoginScreen extends Component {
                     </TouchableOpacity>
 
 
-                    <TouchableOpacity onPress={() => this.props.navigation.navigate("Register")} style={[styles.button, {backgroundColor: '#e62600'}]}>
+                    <TouchableOpacity onPress={() => this.props.navigation.navigate("Register")} style={[styles.button, {backgroundColor: colors.deepOrange}]}>
                         <Text style={styles.buttonText}>SIGN UP</Text>
                     </TouchableOpacity>
 
