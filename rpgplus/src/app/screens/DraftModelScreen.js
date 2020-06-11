@@ -18,7 +18,6 @@ import firebase from '../controller/Firebase';
 import 'firebase/firestore';
 
 import colors from '../styles/colors';
-import { color } from 'react-native-reanimated';
 
 export default class DraftModelScreen extends Component {
     constructor(props){

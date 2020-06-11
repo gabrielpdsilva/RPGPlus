@@ -13,6 +13,8 @@ import CustomAppBar from '../components/CustomAppBar';
 
 import styles from '../styles/styles';
 
+import colors from '../styles/colors';
+
 import firebase from '../controller/Firebase';
 import 'firebase/firestore';
 
@@ -120,7 +122,7 @@ export default class PreferencesScreen extends Component {
                     <View style={{flexDirection: 'row'}}>
 
                         <TextInput style={styles.textinput}
-                            backgroundColor = {isSwitchOn ? '#232635' : '#14161f'}
+                            backgroundColor = {isSwitchOn ? colors.darkContainer : colors.deepGray}
                             editable={isSwitchOn}
                             value={this.state.name}
                             width={235}
@@ -129,9 +131,9 @@ export default class PreferencesScreen extends Component {
                         />
 
                         <Switch
-                            trackColor={{ false: "#767577", true: "#f75605" }}
-                            thumbColor="#f4f3f4"
-                            ios_backgroundColor="#3e3e3e"
+                            trackColor={{ false: colors.lightGray, true: colors.orange }}
+                            thumbColor={colors.alternativeWhite}
+                            ios_backgroundColor={colors.darkGray}
                             onValueChange={this._onToggleSwitch}
                             value={isSwitchOn}
                         />
