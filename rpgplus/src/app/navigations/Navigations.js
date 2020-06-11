@@ -4,20 +4,20 @@ import {createStackNavigator} from '@react-navigation/stack';
 
 import {createDrawerNavigator} from '@react-navigation/drawer';
 
-import HomeScreen from './screens/HomeScreen';
-import DetailsScreen from './screens/DetailsScreen';
-import CreateDraftScreen from './screens/CreateDraftScreen';
-import NameGeneratorScreen from './screens/NameGeneratorScreen';
-import LoginScreen from './screens/LoginScreen';
-import RegisterScreen from './screens/RegisterScreen';
-import PreferencesScreen from './screens/PreferencesScreen';
-import DrawerContent from './screens/DrawerContent';
-import RollDices from './screens/RollDicesScreen';
-import ForgotPasswordScreen from './screens/ForgotPasswordScreen';
-import ListDraftScreen from './screens/ListDraftScreen';
+import HomeScreen from '../screens/HomeScreen';
+import DetailsScreen from '../screens/DetailsScreen';
+import CreateDraftScreen from '../screens/CreateDraftScreen';
+import NameGeneratorScreen from '../screens/NameGeneratorScreen';
+import LoginScreen from '../screens/LoginScreen';
+import RegisterScreen from '../screens/RegisterScreen';
+import PreferencesScreen from '../screens/PreferencesScreen';
+import DrawerContent from '../screens/DrawerContent';
+import RollDices from '../screens/RollDicesScreen';
+import ForgotPasswordScreen from '../screens/ForgotPasswordScreen';
+import ListDraftScreen from '../screens/ListDraftScreen';
+import DraftModelScreen from '../screens/DraftModelScreen';
 
-import firebase from './controller/Firebase';
-import DraftModelScreen from './screens/DraftModelScreen';
+import firebase from '../controller/Firebase';
 
 const Drawer = createDrawerNavigator();
 

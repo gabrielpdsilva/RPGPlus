@@ -1,16 +1,16 @@
 /*
 author: G.P.
 RPG+ (RPGPlus) is a project made for tests and studies using React Native technology
-version: 1.12.34
+version: 1.12.35
 */
 
 import React from 'react';
 
 import {NavigationContainer} from '@react-navigation/native';
 
-import {MyDrawer, MyStack} from './Navigations';
+import {MyDrawer, MyStack} from './src/app/navigations/Navigations';
 
-import firebase from './controller/Firebase';
+import firebase from './src/app/controller/Firebase';
 
 const App = () => {
 
