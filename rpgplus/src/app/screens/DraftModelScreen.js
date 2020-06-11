@@ -17,6 +17,9 @@ import styles from '../styles/styles';
 import firebase from '../controller/Firebase';
 import 'firebase/firestore';
 
+import colors from '../styles/colors';
+import { color } from 'react-native-reanimated';
+
 export default class DraftModelScreen extends Component {
     constructor(props){
         super(props);
@@ -150,9 +153,9 @@ export default class DraftModelScreen extends Component {
                         <Text style={styles.title}> Here you can edit or delete your draft.</Text>
 
                         <Switch
-                            trackColor={{ false: "#767577", true: "#f75605" }}
-                            thumbColor="#f4f3f4"
-                            ios_backgroundColor="#3e3e3e"
+                            trackColor={{ false: colors.lightGray, true: colors.orange }}
+                            thumbColor={colors.alternativeWhite}
+                            ios_backgroundColor={colors.darkGray}
                             onValueChange={this._onToggleSwitch}
                             value={isSwitchOn}
                         />
@@ -161,7 +164,7 @@ export default class DraftModelScreen extends Component {
         
                         <TextInput
                             style={styles.textinput}
-                            backgroundColor = {isSwitchOn ? '#232635' : '#14161f'}
+                            backgroundColor = {isSwitchOn ? colors.darkContainer : colors.deepGray}
                             value={this.state.name} editable={isSwitchOn}
                             onChangeText={ (txt) => this.setState({name: txt}) }
                             placeholder="Loading..."
@@ -171,7 +174,7 @@ export default class DraftModelScreen extends Component {
                         
                         <TextInput
                             style={styles.textinput}
-                            backgroundColor = {isSwitchOn ? '#232635' : '#14161f'}
+                            backgroundColor = {isSwitchOn ? colors.darkContainer : colors.deepGray}
                             value={this.state.category}
                             editable={isSwitchOn}
                             onChangeText={ (txt) => this.setState({category: txt}) }
@@ -182,7 +185,7 @@ export default class DraftModelScreen extends Component {
                         
                         <TextInput
                             style={styles.textinput}
-                            backgroundColor = {isSwitchOn ? '#232635' : '#14161f'}
+                            backgroundColor = {isSwitchOn ? colors.darkContainer : colors.deepGray}
                             value={this.state.system}
                             editable={isSwitchOn}
                             onChangeText={ (txt) => this.setState({system: txt}) }
@@ -193,7 +196,7 @@ export default class DraftModelScreen extends Component {
                         
                         <TextInput
                             style={styles.textinput}
-                            backgroundColor = {isSwitchOn ? '#232635' : '#14161f'}
+                            backgroundColor = {isSwitchOn ? colors.darkContainer : colors.deepGray}
                             value={this.state.text}
                             multiline = {true} //textinput will be multiline
                             height = {150}
@@ -207,11 +210,19 @@ export default class DraftModelScreen extends Component {
 
                     <View style={{justifyContent: 'center', alignItems: 'center'}}>
 
-                        <TouchableOpacity onPress={this.btnEditDraft} style={styles.button} disabled = {!isSwitchOn}>
+                        <TouchableOpacity
+                            onPress={this.btnEditDraft}
+                            disabled = {!isSwitchOn}
+                            style={[styles.button, {backgroundColor: isSwitchOn ? colors.orange : colors.DarkestOrange}]}
+                        >
                             <Text style={styles.buttonText}>EDIT DRAFT</Text>
                         </TouchableOpacity>
 
-                        <TouchableOpacity onPress={this.btnDeleteDraft} style={styles.button} disabled = {!isSwitchOn}>
+                        <TouchableOpacity
+                            onPress={this.btnDeleteDraft}
+                            disabled = {!isSwitchOn}
+                            style={[styles.button, {backgroundColor: isSwitchOn ? colors.orange : colors.DarkestOrange}]}
+                        >
                             <Text style={styles.buttonText}>DELETE DRAFT</Text>
                         </TouchableOpacity>
 

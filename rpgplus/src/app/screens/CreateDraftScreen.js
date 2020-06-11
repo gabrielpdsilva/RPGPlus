@@ -70,11 +70,11 @@ export default class CreateDraftScreen extends Component {
                 
                 <CustomAppBar title="New Draft" subtitle=""/>
                 
-                <View>
+                <View style={styles.childCenterContainer}>
 
                     <Text style={styles.text}>Create a draft for your future campaign!</Text>
        
-                    <TextInput style={styles.customtextinput} value={this.state.name} onChangeText={ (txt) => this.setState({name: txt}) } placeholder="Name of the story..." />
+                    <TextInput style={styles.textinput} value={this.state.name} onChangeText={ (txt) => this.setState({name: txt}) } placeholder="Name of the story..." />
 
                     <TextInput style={styles.customtextinput} value={this.state.category} onChangeText={ (txt) => this.setState({category: txt}) } placeholder="Category of the story (medieval, cyberpunk)..."/>
 
