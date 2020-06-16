@@ -4,6 +4,7 @@ import {DrawerContentScrollView, DrawerItem} from '@react-navigation/drawer';
 import { Drawer, Avatar, Title, Caption } from 'react-native-paper';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import firebase from '../controller/Firebase';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
 
 //All credits goes to Pradip Debnath
@@ -22,12 +23,16 @@ export default function DrawerContent(props) {
                     <View style={styles.userInfoSection}>
 
                         <View style={{flexDirection: 'row', marginTop: 15}}>
-                            <Avatar.Image
-                                source={{
-                                    uri: user.photoURL !== null ? user.photoURL : 'https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png'
-                                }}
-                                size={80}
-                            />
+
+                            <TouchableOpacity onPress={() => alert("ops!")}>
+                                <Avatar.Image
+                                    source={{
+                                        uri: user.photoURL ? user.photoURL : 'https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png'
+                                    }}
+                                    size={80}
+                                />
+                            </TouchableOpacity>
+                            
                             <View style={{marginLeft: 15, flexDirection: 'column'}}>
                                 <Title style={styles.title}>{user.displayName}</Title>
                                 <Caption style={styles.caption}>{user.email}</Caption>  

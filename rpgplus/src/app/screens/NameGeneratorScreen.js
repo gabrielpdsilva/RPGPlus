@@ -23,7 +23,7 @@ export default class NameGeneratorScreen extends Component {
         super(props);
         this.state={
             pickerValue:'medieval',
-            name: ''	
+            name: ''
         }	
     };
     

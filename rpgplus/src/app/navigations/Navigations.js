@@ -11,7 +11,7 @@ import NameGeneratorScreen from '../screens/NameGeneratorScreen';
 import LoginScreen from '../screens/LoginScreen';
 import RegisterScreen from '../screens/RegisterScreen';
 import PreferencesScreen from '../screens/PreferencesScreen';
-import DrawerContent from '../screens/DrawerContent';
+import DrawerContent from '../components/DrawerContent';
 import RollDices from '../screens/RollDicesScreen';
 import ForgotPasswordScreen from '../screens/ForgotPasswordScreen';
 import ListDraftScreen from '../screens/ListDraftScreen';
