@@ -31,7 +31,8 @@ export default class ListDraftScreen extends Component {
         const dbh = firebase.firestore();
 
         //gets all the drafts from firestore and store it in the state
-        dbh.collection("users").doc(user.uid).collection("sketchs").get().then((snapshot) => (
+        dbh.collection("users").doc(user.uid).collection("sketchs").get().then((snapshot) => /*(   
+                 
             snapshot.forEach((doc) => (
                 this.setState((prevState) => ({
                     data: [...prevState.data, {
@@ -42,8 +43,27 @@ export default class ListDraftScreen extends Component {
                         text: doc.data().text,
                     }]
                 }))
-            ))
-        ))
+            ))*/
+            {
+                if(snapshot.empty){
+                    alert("no docs...");
+                }else{
+
+                    snapshot.forEach((doc) => (
+                        this.setState((prevState) => ({
+                            data: [...prevState.data, {
+                                id: doc.id,
+                                name: doc.data().name,
+                                category: doc.data().category,
+                                system: doc.data().system,
+                                text: doc.data().text,
+                            }]
+                        }))
+                    ))
+
+                }
+            }
+        )
         
     }
 
@@ -68,7 +88,19 @@ export default class ListDraftScreen extends Component {
 
     render(){
         return(
-            <View style={styles.container}>
+        this.state.data ? (<View style={styles.container}>
+                
+            <CustomAppBar title="My Drafts" subtitle="Below is the list of all of your drafts"/>
+            <View style={styles.childContainer}>
+            
+            <FlatList
+                data={this.state.data}
+                renderItem={this.renderItem}
+                keyExtractor={item => item.id} //need to fix this
+            />
+            </View>
+
+        </View>) : (<View style={styles.container}>
                 
                 <CustomAppBar title="My Drafts" subtitle="Below is the list of all of your drafts"/>
                 <View style={styles.childContainer}>
@@ -79,8 +111,10 @@ export default class ListDraftScreen extends Component {
                     keyExtractor={item => item.id} //need to fix this
                 />
                 </View>
-
-            </View>
+    
+            </View>)
+        
+            
         );
     }
 }
