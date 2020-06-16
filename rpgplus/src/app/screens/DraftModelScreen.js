@@ -70,6 +70,9 @@ export default class DraftModelScreen extends Component {
         //var of firestore database
         const dbh = firebase.firestore();
 
+        //disable switch
+        this.setState({isSwitchOn: false});
+ 
         //delete the doc
         dbh.collection("users").doc(user.uid).collection("sketchs").doc(draftId).delete();
 
