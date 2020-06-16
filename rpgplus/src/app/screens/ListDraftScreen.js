@@ -82,38 +82,19 @@ export default class ListDraftScreen extends Component {
            <View style={styles.container}>
                 
                 <CustomAppBar title="My Drafts" subtitle=""/>
+
                 <View style={styles.childContainer}>
 
                     <Text style={styles.text}>{this.state.message}</Text>
-                
-                <FlatList
-                    data={this.state.data}
-                    renderItem={this.renderItem}
-                    keyExtractor={item => item.id} //need to fix this
-                />
+                    
+                    <FlatList
+                        data={this.state.data}
+                        renderItem={this.renderItem}
+                        keyExtractor={item => item.id} //need to fix this
+                    />
                 </View>
     
-            </View>        
-            
+            </View>
         );
     }
 }
-
-/*
-
-function Item({ title, name }) {
-return (
-    <View style={styles.item}>
-        <Text style={styles.title}>{title}</Text>
-        <Text style={styles.title}>{name}</Text>
-    </View>
-);
-}
-
-<FlatList
-                    data={DATA}
-                    renderItem={({ item, name }) => <Item title={item.title} name={item.name}/>}
-                    keyExtractor={item => item.id}
-                />
-
-*/
