@@ -21,6 +21,7 @@ export default class ListDraftScreen extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            message: '',
             data: []
         };
     }
@@ -31,8 +32,17 @@ export default class ListDraftScreen extends Component {
         const dbh = firebase.firestore();
 
         //gets all the drafts from firestore and store it in the state
-        dbh.collection("users").doc(user.uid).collection("sketchs").get().then((snapshot) => /*(   
-                 
+        dbh.collection("users").doc(user.uid).collection("sketchs").get().then((snapshot) => {
+
+            //if user has no docs
+            if(snapshot.empty){
+                this.setState({message: 'Sorry, but you have no drafts.'}); //shows a message that the user has no drafts
+                return;
+            }
+
+            this.setState({message: 'Below is the list of all of your drafts'});
+
+            //gets the docs and stores it inside the 'data' state
             snapshot.forEach((doc) => (
                 this.setState((prevState) => ({
                     data: [...prevState.data, {
@@ -43,27 +53,8 @@ export default class ListDraftScreen extends Component {
                         text: doc.data().text,
                     }]
                 }))
-            ))*/
-            {
-                if(snapshot.empty){
-                    alert("no docs...");
-                }else{
-
-                    snapshot.forEach((doc) => (
-                        this.setState((prevState) => ({
-                            data: [...prevState.data, {
-                                id: doc.id,
-                                name: doc.data().name,
-                                category: doc.data().category,
-                                system: doc.data().system,
-                                text: doc.data().text,
-                            }]
-                        }))
-                    ))
-
-                }
-            }
-        )
+            ))
+        })
         
     }
 
@@ -88,22 +79,12 @@ export default class ListDraftScreen extends Component {
 
     render(){
         return(
-        this.state.data ? (<View style={styles.container}>
+           <View style={styles.container}>
                 
-            <CustomAppBar title="My Drafts" subtitle="Below is the list of all of your drafts"/>
-            <View style={styles.childContainer}>
-            
-            <FlatList
-                data={this.state.data}
-                renderItem={this.renderItem}
-                keyExtractor={item => item.id} //need to fix this
-            />
-            </View>
-
-        </View>) : (<View style={styles.container}>
-                
-                <CustomAppBar title="My Drafts" subtitle="Below is the list of all of your drafts"/>
+                <CustomAppBar title="My Drafts" subtitle=""/>
                 <View style={styles.childContainer}>
+
+                    <Text style={styles.text}>{this.state.message}</Text>
                 
                 <FlatList
                     data={this.state.data}
@@ -112,8 +93,7 @@ export default class ListDraftScreen extends Component {
                 />
                 </View>
     
-            </View>)
-        
+            </View>        
             
         );
     }
