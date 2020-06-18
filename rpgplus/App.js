@@ -8,8 +8,8 @@ import React from 'react';
 
 import {NavigationContainer} from '@react-navigation/native';
 
-import {MyDrawer, MyStack} from './src/app/navigations/Navigations';
-
+import MyStack from './src/app/navigations/MyStack';
+import MyDrawer from './src/app/navigations/MyDrawer';
 import firebase from './src/app/controller/Firebase';
 
 const App = () => {
