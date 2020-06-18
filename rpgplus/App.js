@@ -1,7 +1,7 @@
 /*
 author: G.P.
 RPG+ (RPGPlus) is a project made for tests and studies using React Native technology
-version: 1.12.39
+version: 1.12.40
 */
 
 import React from 'react';
@@ -14,17 +14,16 @@ import firebase from './src/app/controller/Firebase';
 
 const App = () => {
 
-  const user = firebase.auth().currentUser;
+    const user = firebase.auth().currentUser;
 
-  return(
+    return(
 
-    <NavigationContainer>
-      {
-        user ? (<MyDrawer/>) : (<MyStack/>)
-      }
-    </NavigationContainer>
-     
-  );
+        <NavigationContainer>
+            {
+                user ? (<MyDrawer/>) : (<MyStack/>)
+            }
+        </NavigationContainer>
+    );
 }
 
 export default App;
