@@ -37,29 +37,40 @@ export default class CreateDraftScreen extends Component {
         }
 
         const user = firebase.auth().currentUser;
+
         const dbh = firebase.firestore();
 
-        //create a draft to the doc of the user collection
-        dbh.collection("users").doc(user.uid).collection("sketchs").add({ //add is used so Firestore can generate a unique ID to the doc
+        //draft collection reference
+        const collectionRef = dbh.collection("users").doc(user.uid).collection("sketchs");
 
-            name: this.state.name,
-            category: this.state.category,
-            system: this.state.system,
-            text: this.state.text,
+        collectionRef.get().then(snap => {
+            if(snap.size >= 10){
+                alert("You have reached the maximum number of drafts allowed. You will have to delete at least one draft to continue.");
+            }else{
 
-        }).then((docRef) => {
-            //toast a message
-            ToastAndroid.show("Draft created! " + docRef.id, ToastAndroid.SHORT);
+                //create a draft to the doc of the user collection
+                collectionRef.add({ //add is used so Firestore can generate a unique ID to the doc
 
-            //set all states to ''
-            this.setState({name: '', category: '', system: '', text: ''});
-
-            //goes to home screen
-            this.props.navigation.navigate("Home");
-
-        }).catch((error) => {
-            alert("Could not add the doc, error:\n" + error);
-        });
+                    name: this.state.name,
+                    category: this.state.category,
+                    system: this.state.system,
+                    text: this.state.text,
+        
+                }).then((docRef) => {
+                    //toast a message
+                    ToastAndroid.show("Draft created! ", ToastAndroid.SHORT);
+        
+                    //set all states to ''
+                    this.setState({name: '', category: '', system: '', text: ''});
+        
+                    //goes to home screen
+                    this.props.navigation.navigate("Home");
+        
+                }).catch((error) => {
+                    alert("Could not add the doc, error:\n" + error);
+                });
+            }
+        }); 
     }
    
     render(){
@@ -72,7 +83,8 @@ export default class CreateDraftScreen extends Component {
                 
                 <View style={styles.childCenterContainer}>
 
-                    <Text style={styles.text}>Create a draft for your future campaign!</Text>
+                    <Text style={styles.text}>Create a draft for your future campaign! </Text>
+                    <Text style={styles.text}>Max allowed: 10</Text>
        
                     <TextInput style={styles.textinput} value={this.state.name} onChangeText={ (txt) => this.setState({name: txt}) } placeholder="Name of the story..." />
 
@@ -95,6 +107,10 @@ export default class CreateDraftScreen extends Component {
             
                     <TouchableOpacity onPress={this.addDraft} style={styles.button}>
                         <Text style={styles.buttonText}>CREATE</Text>
+                    </TouchableOpacity>
+
+                    <TouchableOpacity onPress={this.test} style={styles.button}>
+                        <Text style={styles.buttonText}>CHECK</Text>
                     </TouchableOpacity>
 
                 </View>

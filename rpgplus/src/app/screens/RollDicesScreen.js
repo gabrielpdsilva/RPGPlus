@@ -45,7 +45,6 @@ export default class SketchScreen extends Component {
                     <Text style={styles.title}>Roll Dices</Text>
                     <Text style={styles.text}>Please, select the type of the dice and the modifier:</Text>
                  
-
                     <Picker
                         style={styles.pickerStyle}
                         selectedValue={this.state.type}
