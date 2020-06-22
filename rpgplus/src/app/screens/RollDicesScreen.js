@@ -15,9 +15,10 @@ export default class SketchScreen extends Component {
     constructor(props){
         super(props);
         this.state = {
-            result: 0,      //final result
-            modifier: 0,    //modifier, if the player has for example +1 or -2 of bonus points
             type: 4,        //type of the dice (D10, D20...)
+            quantity: 0,
+            modifier: 0,    //modifier, if the player has for example +1 or -2 of bonus points
+            result: 0,      //final result
         }
     }
 
@@ -59,6 +60,15 @@ export default class SketchScreen extends Component {
                         <Picker.Item label="D100" value={100}/>
             
                     </Picker>
+
+                    <TextInput
+                        style={styles.textinput}
+                        value={this.state.quantity}
+                        maxLength={2}
+                        keyboardType = 'numeric'
+                        onChangeText={ (txt) => this.setState({modifier: txt}) }
+                        placeholder="Quantity..."
+                    />
 
                     <TextInput
                         style={styles.textinput}
