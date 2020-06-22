@@ -109,10 +109,6 @@ export default class CreateDraftScreen extends Component {
                         <Text style={styles.buttonText}>CREATE</Text>
                     </TouchableOpacity>
 
-                    <TouchableOpacity onPress={this.test} style={styles.button}>
-                        <Text style={styles.buttonText}>CHECK</Text>
-                    </TouchableOpacity>
-
                 </View>
             </View>
         );
