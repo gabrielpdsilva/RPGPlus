@@ -3,7 +3,6 @@ import React from 'react';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 
 import HomeScreen from '../screens/HomeScreen';
-import DetailsScreen from '../screens/DetailsScreen';
 import CreateDraftScreen from '../screens/CreateDraftScreen';
 import NameGeneratorScreen from '../screens/NameGeneratorScreen';
 import PreferencesScreen from '../screens/PreferencesScreen';
@@ -23,7 +22,6 @@ const MyDrawer = () => {
             <Drawer.Screen name="Name Generator" component={NameGeneratorScreen}/>
             <Drawer.Screen name="Roll Dices" component={RollDices}/>
             <Drawer.Screen name="Create Draft" component={CreateDraftScreen}/>
-            <Drawer.Screen name="Details" component={DetailsScreen}/>
             <Drawer.Screen name="List Drafts" component={ListDraftScreen}/>
             <Drawer.Screen name="Preferences" component={PreferencesScreen}/>
             <Drawer.Screen name="Draft Model" component={DraftModelScreen}/>

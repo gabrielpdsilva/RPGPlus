@@ -80,18 +80,12 @@ export default function DrawerContent(props) {
                     <Text style={styles.submenuTitle}>Settings</Text>
 
                     <Drawer.Section>
-                        <DrawerItem
-                            labelStyle = {{color: 'white'}}
-                            label="Details"
-                            onPress={()=>props.navigation.navigate('Details')}
-                        />
-
+                        
                         <DrawerItem
                             labelStyle = {{color: 'white'}}
                             label="Preferences"
                             onPress={()=>props.navigation.navigate('Preferences')}
                         />
-
 
                         <DrawerItem
                             labelStyle = {{color: 'white'}}
