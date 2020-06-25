@@ -7,8 +7,6 @@ import RegisterScreen from '../screens/RegisterScreen';
 import ForgotPasswordScreen from '../screens/ForgotPasswordScreen';
 import MyDrawer from './MyDrawer';
 
-import Test from '../screens/Test';
-
 const Stack = createStackNavigator();
 
 const MyStack = () => {
@@ -37,12 +35,6 @@ const MyStack = () => {
                 component={MyDrawer}
                 options={{headerShown: false}}
             />
-
-            <Stack.Screen
-                name="Test"
-                component={Test}
-                options={{headerShown: false}}
-            /> 
         </Stack.Navigator>
     );
 }
