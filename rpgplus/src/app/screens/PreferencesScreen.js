@@ -33,7 +33,6 @@ export default class PreferencesScreen extends Component {
             name: user.displayName,
             isSwitchOn: false,
             image: null,
-           
         }
     }
 
@@ -43,14 +42,12 @@ export default class PreferencesScreen extends Component {
 
     getPermissionAsync = async () => {
         if (Constants.platform.ios) {
-          const { status } = await Permissions.askAsync(Permissions.CAMERA_ROLL);
-          if (status !== 'granted') {
-            alert('Sorry, we need camera roll permissions to make this work!');
-          }
+            const { status } = await Permissions.askAsync(Permissions.CAMERA_ROLL);
+            if (status !== 'granted') alert('Sorry, we need camera roll permissions to make this work!');
         }
-      };
+    };
     
-      _pickImage = async () => {
+    _pickImage = async () => {
         try {
             let result = await ImagePicker.launchImageLibraryAsync({
                 mediaTypes: ImagePicker.MediaTypeOptions.All,
@@ -59,15 +56,25 @@ export default class PreferencesScreen extends Component {
                 quality: 1,
             });
             
+            //if user didnt cancel the action
             if (!result.cancelled) {
                 this.setState({ image: result.uri });
             }
-    
-            alert("It works", result);
+
+            const user = firebase.auth().currentUser;
+
+            user.updateProfile({
+                photoURL: this.state.image
+            }).then(() => {
+                //...
+            }).catch((error) => {
+                alert("Something went wrong:\n"+ error);
+            });
+
         } catch (E) {
-            alert(E);
+            alert("Oops, error when picking image:\n" + E);
         }
-      };
+    };
 
     buttonDelete = () => {
         Alert.alert(
@@ -198,7 +205,7 @@ export default class PreferencesScreen extends Component {
                     </TouchableOpacity>
 
                     <TouchableOpacity onPress={this._pickImage} style={styles.button}>
-                        <Text style={styles.buttonText}>REEEE</Text>
+                        <Text style={styles.buttonText}>Test with image</Text>
                     </TouchableOpacity>
 
                     {image && <Image source={{ uri: image }} style={{ width: 200, height: 200 }} />}
