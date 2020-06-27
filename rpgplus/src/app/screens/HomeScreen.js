@@ -10,10 +10,6 @@ import CustomAppBar from '../components/CustomAppBar';
 import firebase from '../controller/Firebase';
 
 const HomeScreen = ({navigation}) => {
-/*
-    componentDidMount = () => {
-        const {email} = firebase.auth().currentUser;
-    }*/
 
     const user = firebase.auth().currentUser;
     
