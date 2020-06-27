@@ -16,28 +16,18 @@ export default class SketchScreen extends Component {
         super(props);
         this.state = {
             type: 4,        //type of the dice (D10, D20...)
-            quantity: 1,
+            quantity: 1,    //quantity of dices to get rolled
             modifier: 0,    //modifier, if the player has for example +1 or -2 of bonus points
-            result: 0,      //final result
-            res: ["haha", "ok"],
+            results: [],    //final results
         }
     }
 
     //roll dice function
     roll = (type, quantity, modifier) => {
 
-        let value = Math.floor((Math.random() * type) + 1); //rolls 1 dice
-
-        value += parseInt(modifier); //will make a sum of the result with the modifier
-
-        this.setState({result: value});
-    }
-
-    teste = (type, quantity, modifier) => {
-
         let value;
 
-        let resultados = [];
+        let results = [];
 
         for(let i = 0; i < quantity; i++){        
 
@@ -45,35 +35,18 @@ export default class SketchScreen extends Component {
 
             value += parseInt(modifier); //will make a sum of the result with the modifier
 
-            resultados[i] = value;
-/*
-            this.setState({result: value});
-          
-            this.setState(prevState => ({
-                res: [...prevState.res, i]
-            }))
-*/
+            results[i] = value; //will keep the value at that current index
         }
 
-        this.setState({
-            res: resultados
-        })
-
+        this.setState({results: results});
     }
 
-    SampleFunction=(item)=>{
- 
-        alert(item);
-     
-      }
-
     render(){
+
         let type = this.state.type;
         let quantity = this.state.quantity;
         let modifier = this.state.modifier;
-
-        let SampleNameArray = [ "Pankaj", "Rita", "Mohan", "Amit", "Babulal", "Sakshi", "ok" ];
- 
+        let results = this.state.results;
 
         return(
             <View style={styles.container}>
@@ -105,7 +78,7 @@ export default class SketchScreen extends Component {
                         maxLength={2}
                         keyboardType = 'numeric'
                         onChangeText={ (txt) => this.setState({quantity: txt}) }
-                        placeholder="Quantity..."
+                        placeholder="Quantity... (default value = 1)"
                     />
 
                     <TextInput
@@ -114,24 +87,17 @@ export default class SketchScreen extends Component {
                         maxLength={2}
                         keyboardType = 'numeric'
                         onChangeText={ (txt) => this.setState({modifier: txt}) }
-                        placeholder="Modifier..."
+                        placeholder="Modifier... (default value = 0)"
                     />
 
-                    <Text style={styles.text}>Result: {this.state.result}</Text>
-                    <Text style={styles.text}>Test: {this.state.res}</Text>
-
-                    { SampleNameArray.map((item, key)=>
-                            (<Text key={key} style={styles.TextStyle} > { item } </Text>)
+                    {
+                        results.map((item, key)=>
+                            (<Text key={key} style={styles.text}>{key + 1} º dice: { item } </Text>)
                         )
                     }
  
-
                     <TouchableOpacity onPress={() => this.roll(type, quantity, modifier)} style={styles.button}>
                         <Text style={styles.buttonText}>ROLL</Text>
-                    </TouchableOpacity>
-
-                    <TouchableOpacity onPress={() => this.teste(type, quantity, modifier)} style={styles.button}>
-                        <Text style={styles.buttonText}>TESTE</Text>
                     </TouchableOpacity>
 
                 </View>
