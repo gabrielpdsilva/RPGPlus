@@ -38,6 +38,12 @@ export default class SketchScreen extends Component {
             results[i] = value; //will keep the value at that current index
         }
 
+        /************
+        **IMPORTANT**
+        ************/
+         
+         //modifier is being applied to all dices; need to fix it later.         
+
         this.setState({results: results});
     }
 
@@ -55,7 +61,7 @@ export default class SketchScreen extends Component {
                 <View style={styles.childContainer}>
                 
                     <Text style={styles.title}>Roll Dices</Text>
-                    <Text style={styles.text}>Please, select the type of the dice and the modifier:</Text>
+                    <Text style={styles.text}>Please, select the type of the dice, quantity of dices to be rolled and the modifier:</Text>
                  
                     <Picker
                         style={styles.pickerStyle}
