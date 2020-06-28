@@ -19,6 +19,7 @@ export default class SketchScreen extends Component {
             quantity: 1,    //quantity of dices to get rolled
             modifier: 0,    //modifier, if the player has for example +1 or -2 of bonus points
             results: [],    //final results
+            sum: 0,
         }
     }
 
@@ -33,23 +34,17 @@ export default class SketchScreen extends Component {
 
             value = Math.floor((Math.random() * type) + 1); //rolls 1 dice
 
-            value += parseInt(modifier); //will make a sum of the result with the modifier
-
             results[i] = value; //will keep the value at that current index
         }
 
         let sumOfResults = results.reduce((a, b) => a + b, 0);
         
-        sumOfResults += parseInt(modifier);
+        sumOfResults += parseInt(modifier); //will make a sum of the results with the modifier      
 
-
-        /************
-        **IMPORTANT**
-        ************/
-         
-         //modifier is being applied to all dices; need to fix it later.         
-
-        this.setState({results: results});
+        this.setState({
+            results: results,
+            sum: sumOfResults
+        });
     }
 
     render(){
@@ -58,6 +53,7 @@ export default class SketchScreen extends Component {
         let quantity = this.state.quantity;
         let modifier = this.state.modifier;
         let results = this.state.results;
+        let sum = this.state.sum;
 
         return(
             <View style={styles.container}>
@@ -106,6 +102,8 @@ export default class SketchScreen extends Component {
                             (<Text key={key} style={styles.text}>{key + 1} º dice: { item } </Text>)
                         )
                     }
+
+                    <Text style={styles.text}>Sum of values: {sum}</Text>
  
                     <TouchableOpacity onPress={() => this.roll(type, quantity, modifier)} style={styles.button}>
                         <Text style={styles.buttonText}>ROLL</Text>
