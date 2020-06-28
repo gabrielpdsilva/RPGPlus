@@ -29,7 +29,7 @@ export default class SketchScreen extends Component {
 
         let results = [];
 
-        for(let i = 0; i < quantity; i++){        
+        for(let i = 0; i < quantity; i++){
 
             value = Math.floor((Math.random() * type) + 1); //rolls 1 dice
 
@@ -37,6 +37,11 @@ export default class SketchScreen extends Component {
 
             results[i] = value; //will keep the value at that current index
         }
+
+        let sumOfResults = results.reduce((a, b) => a + b, 0);
+        
+        sumOfResults += parseInt(modifier);
+
 
         /************
         **IMPORTANT**
