@@ -107,7 +107,6 @@ const styles = StyleSheet.create({
         backgroundColor: colors.orange,
     },
 
-
     //textinput of CreateDraftScreen, need to change it
     customtextinput: {
         padding: 5,
@@ -131,6 +130,73 @@ const styles = StyleSheet.create({
         backgroundColor: colors.orange,
         borderRadius: 25
     },
+
+    /**********************
+     * drawerContent style*
+     **********************/
+    drawerContent: {
+        flex: 1,
+    },
+    
+    draweUserInfoSection: {
+        paddingLeft: 20,
+        //backgroundColor: 'red',
+    },
+    
+    drawerTitle: {
+        fontSize: 16,
+        marginTop: 3,
+        fontWeight: 'bold',
+        color: 'white',
+    },
+
+    drawerCaption: {
+        fontSize: 14,
+        lineHeight: 14,
+        color: 'white',
+        
+    },
+
+    drawerRow: {
+        marginTop: 20,
+        flexDirection: 'row',
+        alignItems: 'center',
+        
+    },
+
+    drawerParagraph: {
+        fontWeight: 'bold',
+        marginRight: 3,
+        color: 'red',    
+    },
+
+    drawerSection: {
+        marginTop: 15,
+    },
+
+    drawerBottomDrawerSection: {
+        marginBottom: 15,
+        borderTopColor: '#f4f4f4',
+        borderTopWidth: 1,
+        color: 'red',
+    },
+    drawerPreference: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        paddingVertical: 12,
+        paddingHorizontal: 16,
+    },
+
+    drawerSubmenuTitle: {
+        marginLeft: 15,
+        fontSize: 16,
+        marginTop: 3,
+        fontWeight: 'bold',
+        color: 'white',
+    },
+    /**********************
+     * drawerContent style ends here*
+     **********************/
 });
 
 export default styles;
