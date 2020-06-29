@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Appbar } from 'react-native-paper';
-import styles from '../styles/styles';
+import styles from '../style/styles';
 
 export default class CustomAppBar extends React.Component {
     constructor(props){

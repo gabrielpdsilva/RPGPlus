@@ -9,7 +9,7 @@ import {
 
 import CustomAppBar from '../components/CustomAppBar';
 
-import styles from '../styles/styles';
+import styles from '../style/styles';
 
 import firebase from '../controller/Firebase';
 import 'firebase/firestore';

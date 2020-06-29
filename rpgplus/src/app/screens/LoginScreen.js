@@ -7,8 +7,8 @@ import {
     Text
 } from 'react-native';
 
-import styles from '../styles/styles';
-import colors from '../styles/colors';
+import styles from '../style/styles';
+import colors from '../style/colors';
 
 import CustomAppBar from '../components/CustomAppBar';
 

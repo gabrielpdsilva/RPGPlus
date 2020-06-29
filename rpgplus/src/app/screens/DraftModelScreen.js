@@ -12,12 +12,12 @@ import {
 
 import CustomAppBar from '../components/CustomAppBar';
 
-import styles from '../styles/styles';
+import styles from '../style/styles';
 
 import firebase from '../controller/Firebase';
 import 'firebase/firestore';
 
-import colors from '../styles/colors';
+import colors from '../style/colors';
 
 export default class DraftModelScreen extends Component {
     constructor(props){

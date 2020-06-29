@@ -4,7 +4,7 @@ import {
     View,
 } from 'react-native';
 
-import styles from '../styles/styles';
+import styles from '../style/styles';
 import CustomAppBar from '../components/CustomAppBar';
 
 import firebase from '../controller/Firebase';

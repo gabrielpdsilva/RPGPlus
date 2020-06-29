@@ -5,7 +5,7 @@ import { Drawer, Avatar, Title, Caption } from 'react-native-paper';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import firebase from '../controller/Firebase';
 import { TouchableOpacity } from 'react-native-gesture-handler';
-import styles from '../styles/styles';
+import styles from '../style/styles';
 
 //All credits goes to Pradip Debnath
 //https://github.com/itzpradip
