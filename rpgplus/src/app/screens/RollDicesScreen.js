@@ -19,7 +19,7 @@ export default class SketchScreen extends Component {
             quantity: 1,    //quantity of dices to get rolled
             modifier: 0,    //modifier, if the player has for example +1 or -2 of bonus points
             results: [],    //final results
-            sum: 0,
+            sum: 0,         //sum of the final results
         }
     }
 

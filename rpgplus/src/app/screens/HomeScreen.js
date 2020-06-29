@@ -21,9 +21,9 @@ const HomeScreen = ({navigation}) => {
 
             <View style={styles.childContainer}>
 
-                <Text style={styles.title}>Home</Text>
+                <Text style={styles.title}>Welcome, {user.displayName}</Text>
 
-                <Text style={styles.text}>Welcome, {user.displayName}</Text>
+                <Text style={styles.text}>Thank you for using RPG+! Please, select the menu at the upper left corner and check out all the available tools.</Text>
 
             </View>
             
