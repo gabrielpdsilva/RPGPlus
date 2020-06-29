@@ -138,7 +138,7 @@ const styles = StyleSheet.create({
         flex: 1,
     },
     
-    draweUserInfoSection: {
+    drawerUserInfoSection: {
         paddingLeft: 20,
         //backgroundColor: 'red',
     },
@@ -154,37 +154,10 @@ const styles = StyleSheet.create({
         fontSize: 14,
         lineHeight: 14,
         color: 'white',
-        
-    },
-
-    drawerRow: {
-        marginTop: 20,
-        flexDirection: 'row',
-        alignItems: 'center',
-        
-    },
-
-    drawerParagraph: {
-        fontWeight: 'bold',
-        marginRight: 3,
-        color: 'red',    
     },
 
     drawerSection: {
         marginTop: 15,
-    },
-
-    drawerBottomDrawerSection: {
-        marginBottom: 15,
-        borderTopColor: '#f4f4f4',
-        borderTopWidth: 1,
-        color: 'red',
-    },
-    drawerPreference: {
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        paddingVertical: 12,
-        paddingHorizontal: 16,
     },
 
     drawerSubmenuTitle: {

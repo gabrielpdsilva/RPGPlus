@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, StyleSheet, Alert, ToastAndroid} from 'react-native';
+import {View, Text, Alert, ToastAndroid} from 'react-native';
 import {DrawerContentScrollView, DrawerItem} from '@react-navigation/drawer';
 import { Drawer, Avatar, Title, Caption } from 'react-native-paper';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
