@@ -19,7 +19,7 @@ export default function DrawerContent(props) {
         <View style={{flex:1}} backgroundColor = '#2d3042'>
             <DrawerContentScrollView {...props}>
                 <View style={styles.drawerContent}>
-                    <View style={styles.userInfoSection}>
+                    <View style={styles.drawerUserInfoSection}>
 
                         <View style={{flexDirection: 'row', marginTop: 15}}>
 
@@ -33,8 +33,8 @@ export default function DrawerContent(props) {
                             </TouchableOpacity>
                             
                             <View style={{marginLeft: 15, flexDirection: 'column'}}>
-                                <Title style={styles.title}>{user.displayName}</Title>
-                                <Caption style={styles.caption}>{user.email}</Caption>  
+                                <Title style={styles.drawerTitle}>{user.displayName}</Title>
+                                <Caption style={styles.drawerCaption}>{user.email}</Caption>  
                             </View>
                         </View>
 
@@ -47,7 +47,7 @@ export default function DrawerContent(props) {
                         />
                     </Drawer.Section>
 
-                        <Text style={styles.submenuTitle}>Tools</Text>
+                        <Text style={styles.drawerSubmenuTitle}>Tools</Text>
 
                     <Drawer.Section>
 
@@ -76,7 +76,7 @@ export default function DrawerContent(props) {
                         />
                     </Drawer.Section>
 
-                    <Text style={styles.submenuTitle}>Settings</Text>
+                    <Text style={styles.drawerSubmenuTitle}>Settings</Text>
 
                     <Drawer.Section>
                         
