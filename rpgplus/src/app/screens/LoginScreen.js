@@ -14,6 +14,8 @@ import CustomAppBar from '../components/CustomAppBar';
 
 import firebase from '../controller/Firebase';
 
+import {translate} from '../locales/localeConfig';
+
 /*Useful site about login
 *https://medium.com/better-programming/react-native-firebase-authentication-7652e1d2c8a2
 *
@@ -58,7 +60,7 @@ export default class LoginScreen extends Component {
 
                 <View style={styles.childContainer}>
 
-                    <Text style={styles.title}>Welcome!</Text>
+                    <Text style={styles.title}>{translate('welcome')}</Text>
 
                     <Text style={styles.text}>Please, Sign In to continue</Text>
 

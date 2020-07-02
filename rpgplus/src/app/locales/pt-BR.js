@@ -1,5 +1,5 @@
 const pt = {
-    message: 'teste',
+    welcome: 'Bem-vindo!',
 };
   
 export default pt;

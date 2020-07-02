@@ -1,5 +1,5 @@
 const en = {
-    message: 'test',
+    welcome: 'Welcome!',
 };
   
 export default en;
