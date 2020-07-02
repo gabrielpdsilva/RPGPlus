@@ -12,6 +12,7 @@ import styles from '../style/styles';
 import CustomAppBar from '../components/CustomAppBar';
 
 import firebase from '../controller/Firebase';
+import { translate } from '../locales/localeConfig';
 
 export default class ForgotPasswordScreen extends Component {
     constructor(props){
@@ -39,7 +40,7 @@ export default class ForgotPasswordScreen extends Component {
 
             <View style={styles.container}>
 
-                <CustomAppBar title="Forgot Password" subtitle="" backIsVisible={true} navigation={this.props.navigation}/>
+                <CustomAppBar title={translate('appBarForgot')} subtitle="" backIsVisible={true} navigation={this.props.navigation}/>
 
                 <View style={styles.childContainer}>
 
