@@ -44,12 +44,18 @@ export default class ForgotPasswordScreen extends Component {
 
                 <View style={styles.childContainer}>
 
-                    <Text style={styles.title}>Forgot your password?</Text>
-                    <Text style={styles.text}>Type below your e-mail to recover your password.</Text>
-                    <TextInput style={styles.textinput} value={this.state.email} onChangeText={ (txt) => this.setState({email: txt})} placeholder="Your e-mail here..." />
+                    <Text style={styles.title}>{translate('forgotPassword')}</Text>
+                    <Text style={styles.text}>{translate('forgotMessage')}</Text>
+
+                    <TextInput
+                        style={styles.textinput}
+                        value={this.state.email}
+                        onChangeText={ (txt) => this.setState({email: txt})}
+                        placeholder={translate('forgotInput')}
+                    />
 
                     <TouchableOpacity onPress={this.resetPassword} style={styles.button}>
-                        <Text style={styles.buttonText}>RESET PASSWORD</Text>
+                        <Text style={styles.buttonText}>{translate('buttonForgotPassword')}</Text>
                     </TouchableOpacity>
                     
                 </View>

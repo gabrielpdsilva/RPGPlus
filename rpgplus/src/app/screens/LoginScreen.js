@@ -14,7 +14,7 @@ import CustomAppBar from '../components/CustomAppBar';
 
 import firebase from '../controller/Firebase';
 
-import {translate} from '../locales/localeConfig';
+import { translate } from '../locales/localeConfig';
 
 /*Useful site about login
 *https://medium.com/better-programming/react-native-firebase-authentication-7652e1d2c8a2
@@ -62,25 +62,35 @@ export default class LoginScreen extends Component {
 
                     <Text style={styles.title}>{translate('welcome')}</Text>
 
-                    <Text style={styles.text}>Please, Sign In to continue</Text>
+                    <Text style={styles.text}>{translate('loginMessage')}</Text>
 
-                    <TextInput style={styles.textinput} value={this.state.email} onChangeText={ (txt) => this.setState({email: txt})} placeholder="E-mail..." />
+                    <TextInput
+                        style={styles.textinput}
+                        value={this.state.email}
+                        onChangeText={ (txt) => this.setState({email: txt})}
+                        placeholder={translate('emailInput')}
+                    />
 
-                    <TextInput style={styles.textinput} value={this.state.password} onChangeText={ (txt) => this.setState({password: txt})} secureTextEntry={true} placeholder="Password..." />
-
+                    <TextInput
+                        style={styles.textinput}
+                        value={this.state.password}
+                        onChangeText={ (txt) => this.setState({password: txt})}
+                        secureTextEntry={true}
+                        placeholder={translate('passwordInput')}
+                    />
 
                     <TouchableOpacity onPress={this.handleLogin} style={styles.button}>
-                        <Text style={styles.buttonText}>LOGIN</Text>
+                        <Text style={styles.buttonText}>{translate('buttonLogin')}</Text>
                     </TouchableOpacity>
 
 
                     <TouchableOpacity onPress={() => this.props.navigation.navigate("Register")} style={[styles.button, {backgroundColor: colors.alternativeOrange}]}>
-                        <Text style={styles.buttonText}>SIGN UP</Text>
+                        <Text style={styles.buttonText}>{translate('buttonSignUp')}</Text>
                     </TouchableOpacity>
 
 
                     <TouchableOpacity onPress={() => this.props.navigation.navigate("Forgot Password")}>
-                        <Text style={styles.text}>Forgot your password?</Text>
+                        <Text style={styles.text}>{translate('forgotPassword')}</Text>
                     </TouchableOpacity>
 
                 </View>

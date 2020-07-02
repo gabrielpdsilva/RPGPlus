@@ -4,6 +4,7 @@ const pt = {
     welcome: 'Bem-vindo!',
     loginMessage: 'Por favor, faça Login para continuar',
     buttonSignUp: 'REGISTRAR',
+    buttonLogin: 'LOGIN',
     forgotPassword: 'Esqueceu a senha?',
     emailInput: 'E-mail...',
     passwordInput: 'Senha...',

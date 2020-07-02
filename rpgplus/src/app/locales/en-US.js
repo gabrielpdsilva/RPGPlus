@@ -4,6 +4,7 @@ const en = {
     welcome: 'Welcome!',
     loginMessage: 'Please, Sign In to continue',
     buttonSignUp: 'SIGN UP',
+    buttonLogin: 'LOGIN',
     forgotPassword: 'Forgot your password?',
     emailInput: 'E-mail...',
     passwordInput: 'Password...',
