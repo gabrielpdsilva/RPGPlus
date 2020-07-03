@@ -19,6 +19,8 @@ import 'firebase/firestore';
 
 import colors from '../style/colors';
 
+import { withNavigationFocus } from "react-navigation";
+
 export default class DraftModelScreen extends Component {
     constructor(props){
         super(props);
@@ -31,6 +33,13 @@ export default class DraftModelScreen extends Component {
             isSwitchOn: false,
         }
     }
+
+    componentDidUpdate(prevProps) {
+        if (prevProps.isFocused !== this.props.isFocused) {
+          // Use the `this.props.isFocused` boolean
+          // Call any action
+        }
+      }
 
     btnEditDraft = () => {
 
@@ -60,6 +69,8 @@ export default class DraftModelScreen extends Component {
         ToastAndroid.show("Draft updated! ", ToastAndroid.SHORT);
     }
 
+
+
     deleteDraft = () => {
 
         const draftId = this.state.id;
@@ -74,10 +85,14 @@ export default class DraftModelScreen extends Component {
         this.setState({isSwitchOn: false});
  
         //delete the doc
-        dbh.collection("users").doc(user.uid).collection("sketchs").doc(draftId).delete();
-
-        //toast a message
-        ToastAndroid.show("Draft deleted! ", ToastAndroid.SHORT);
+        dbh
+            .collection("users")
+            .doc(user.uid)
+            .collection("sketchs")
+            .doc(draftId)
+            .delete()
+            .then(() => alert("Draft deleted!"))
+            .catch((error) => alert("Something went wrong:" + error));
 
         //goes to the previous screen
         this.props.navigation.goBack();
