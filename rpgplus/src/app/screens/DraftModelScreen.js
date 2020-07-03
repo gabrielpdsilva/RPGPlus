@@ -19,8 +19,6 @@ import 'firebase/firestore';
 
 import colors from '../style/colors';
 
-import { withNavigationFocus } from "react-navigation";
-
 export default class DraftModelScreen extends Component {
     constructor(props){
         super(props);
@@ -33,13 +31,6 @@ export default class DraftModelScreen extends Component {
             isSwitchOn: false,
         }
     }
-
-    componentDidUpdate(prevProps) {
-        if (prevProps.isFocused !== this.props.isFocused) {
-          // Use the `this.props.isFocused` boolean
-          // Call any action
-        }
-      }
 
     btnEditDraft = () => {
 
@@ -112,7 +103,7 @@ export default class DraftModelScreen extends Component {
                 },
                 {
                     text: 'OK', onPress: () => {
-                    this.deleteDraft();
+                        this.deleteDraft();
                     }
                 }
             ],
