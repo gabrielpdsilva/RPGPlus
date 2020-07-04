@@ -26,6 +26,16 @@ export default class SketchScreen extends Component {
     //roll dice function
     roll = (type, quantity, modifier) => {
 
+        if(quantity < 1 || quantity > 10){
+            alert("The quantity must be a value between 1 and 10.");
+            return;
+        }
+
+        if(modifier > 30 || modifier < (-30)){
+            alert("The modifier must be a value between -30 and 30.");
+            return;
+        }
+
         let value;
 
         let results = [];
