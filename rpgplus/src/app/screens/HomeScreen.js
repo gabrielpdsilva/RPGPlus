@@ -25,10 +25,6 @@ const HomeScreen = ({navigation}) => {
 
                 <Text style={styles.text}>Thank you for using RPG+! Please, select the menu at the upper left corner and check out all the available tools.</Text>
 
-                <TouchableOpacity onPress={()=> navigation.openDrawer()} style={styles.button}>
-                    <Text style={styles.buttonText}>Ok</Text>
-                </TouchableOpacity>
-
             </View>
             
         </View>
