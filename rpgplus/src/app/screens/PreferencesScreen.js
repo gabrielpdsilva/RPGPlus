@@ -159,7 +159,7 @@ export default class PreferencesScreen extends Component {
         return(
             <View style={styles.container}>
 
-                <CustomAppBar title="My Preferences"/>
+                <CustomAppBar title="My Preferences" navigation={this.props.navigation}/>
 
                 <View style={styles.childContainer}>
                     

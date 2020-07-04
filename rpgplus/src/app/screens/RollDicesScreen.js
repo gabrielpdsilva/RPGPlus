@@ -58,7 +58,7 @@ export default class SketchScreen extends Component {
         return(
             <View style={styles.container}>
                 
-                <CustomAppBar title="Roll Dices" subtitle=""/>
+                <CustomAppBar title="Roll Dices" subtitle="" navigation={this.props.navigation}/>
                 <View style={styles.childContainer}>
                 
                     <Text style={styles.title}>Roll Dices</Text>

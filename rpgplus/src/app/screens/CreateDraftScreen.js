@@ -79,7 +79,7 @@ export default class CreateDraftScreen extends Component {
 
             <View style={styles.container}>
                 
-                <CustomAppBar title="New Draft" subtitle=""/>
+                <CustomAppBar title="New Draft" subtitle="" navigation={this.props.navigation}/>
                 
                 <View style={styles.childCenterContainer}>
 

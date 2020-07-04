@@ -26,6 +26,7 @@ export default class CustomAppBar extends React.Component {
                 :
         
             <Appbar.Header style={styles.headerAppBar}>
+                <Appbar.Action icon="menu" onPress={() => this.props.navigation.openDrawer()} />
                 <Appbar.Content
                     title= {this.props.title}
                     subtitle={this.props.subtitle}

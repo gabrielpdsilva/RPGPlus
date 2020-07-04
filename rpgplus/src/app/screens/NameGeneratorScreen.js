@@ -126,7 +126,7 @@ export default class NameGeneratorScreen extends Component {
 
             <View style={styles.container}>
 
-                <CustomAppBar title="Name Generator" subtitle=""/>
+                <CustomAppBar title="Name Generator" subtitle="" navigation={this.props.navigation}/>
 
                 <View style={styles.childContainer}>
       

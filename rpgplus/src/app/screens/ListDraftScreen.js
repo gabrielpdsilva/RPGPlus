@@ -81,7 +81,7 @@ export default class ListDraftScreen extends Component {
         return(
            <View style={styles.container}>
                 
-                <CustomAppBar title="My Drafts" subtitle=""/>
+                <CustomAppBar title="My Drafts" subtitle="" navigation={this.props.navigation}/>
 
                 <View style={styles.childContainer}>
 

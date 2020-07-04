@@ -1,7 +1,7 @@
 import React from 'react';
 import {
     Text,
-    View,
+    View,TouchableOpacity
 } from 'react-native';
 
 import styles from '../style/styles';
@@ -17,13 +17,17 @@ const HomeScreen = ({navigation}) => {
 
         <View style={styles.container}>
 
-            <CustomAppBar title="Home" subtitle=""/>
+            <CustomAppBar title="Home" subtitle="" navigation={navigation}/>
 
             <View style={styles.childContainer}>
 
                 <Text style={styles.title}>Welcome, {user.displayName}</Text>
 
                 <Text style={styles.text}>Thank you for using RPG+! Please, select the menu at the upper left corner and check out all the available tools.</Text>
+
+                <TouchableOpacity onPress={()=> navigation.openDrawer()} style={styles.button}>
+                    <Text style={styles.buttonText}>Ok</Text>
+                </TouchableOpacity>
 
             </View>
             
