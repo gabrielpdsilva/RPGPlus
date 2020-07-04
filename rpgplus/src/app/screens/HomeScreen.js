@@ -1,7 +1,7 @@
 import React from 'react';
 import {
     Text,
-    View,TouchableOpacity
+    View,
 } from 'react-native';
 
 import styles from '../style/styles';

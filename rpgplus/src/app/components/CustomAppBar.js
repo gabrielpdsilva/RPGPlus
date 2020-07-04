@@ -10,6 +10,7 @@ export default class CustomAppBar extends React.Component {
     render() {
 
         const canUserGoBack = this.props.backIsVisible;
+        const isLogin = this.props.isLoginScreen; //if it is LoginScreen, dont show menu at the appbar to the user
 
         return (canUserGoBack ?
         
@@ -26,7 +27,7 @@ export default class CustomAppBar extends React.Component {
                 :
         
             <Appbar.Header style={styles.headerAppBar}>
-                <Appbar.Action icon="menu" onPress={() => this.props.navigation.openDrawer()} />
+                { !isLogin && <Appbar.Action icon="menu" onPress={() => this.props.navigation.openDrawer()} />}
                 <Appbar.Content
                     title= {this.props.title}
                     subtitle={this.props.subtitle}
