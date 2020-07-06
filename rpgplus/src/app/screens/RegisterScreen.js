@@ -66,8 +66,8 @@ export default class RegisterScreen extends Component {
                     //toast a message
                     ToastAndroid.show("Successfully Registered!", ToastAndroid.SHORT);
 
-                }).catch(error => alert("falhastes no then navigate" + error));
-            }).catch(error => alert("falhastes no create user with email" + error));
+                }).catch(error => alert("Something went wrong:\n" + error));
+            }).catch(error => alert("Could not create an user:\n" + error));
     }
 
     render(){

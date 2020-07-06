@@ -23,14 +23,12 @@ export default function DrawerContent(props) {
 
                         <View style={{flexDirection: 'row', marginTop: 15}}>
 
-                            <TouchableOpacity onPress={() => alert("ops!")}>
-                                <Avatar.Image
-                                    source={{
-                                        uri: user.photoURL ? user.photoURL : 'https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png'
-                                    }}
-                                    size={80}
-                                />
-                            </TouchableOpacity>
+                            <Avatar.Image
+                                source={{
+                                    uri: user.photoURL ? user.photoURL : 'https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png'
+                                }}
+                                size={80}
+                            />
                             
                             <View style={{marginLeft: 15, flexDirection: 'column'}}>
                                 <Title style={styles.drawerTitle}>{user.displayName}</Title>
