@@ -162,6 +162,15 @@ export default class PreferencesScreen extends Component {
                 <CustomAppBar title="My Preferences" navigation={this.props.navigation}/>
 
                 <View style={styles.childContainer}>
+
+                <TouchableOpacity onPress={this._pickImage}>
+                    <Image
+                        source={{
+                            uri: image ? image : 'https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png'
+                        }}
+                        style={{ width: 120, height: 120 }}
+                    />
+                </TouchableOpacity>
                     
                     <Text style={styles.text}>Change your name</Text>
 
@@ -204,13 +213,6 @@ export default class PreferencesScreen extends Component {
                         <Text style={styles.buttonText}>DELETE ACCOUNT</Text>
                     </TouchableOpacity>
 
-                    <TouchableOpacity onPress={this._pickImage} style={styles.button}>
-                        <Text style={styles.buttonText}>Test with image</Text>
-                    </TouchableOpacity>
-
-                    {/*image && <Image source={{ uri: image }} style={{ width: 200, height: 200 }} />*/}
-
-                    <Image source={{ uri: image ? image : 'https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png' }} style={{ width: 120, height: 120 }} />
                 </View>
             </View>
         );
