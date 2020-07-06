@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {View, Text, Alert, ToastAndroid} from 'react-native';
 import {DrawerContentScrollView, DrawerItem} from '@react-navigation/drawer';
 import { Drawer, Avatar, Title, Caption } from 'react-native-paper';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import firebase from '../controller/Firebase';
-import { TouchableOpacity } from 'react-native-gesture-handler';
+import 'firebase/firestore';
 import styles from '../style/styles';
 
 //All credits goes to Pradip Debnath
@@ -13,8 +13,25 @@ import styles from '../style/styles';
 
 export default function DrawerContent(props) {
 
+    const [nickname, setNickname] = useState(null);
+
     const user = firebase.auth().currentUser;
 
+    let userFirestoreRef = firebase.firestore().collection("users").doc(user.uid);
+
+    userFirestoreRef.get()
+    .then(doc => {
+        if (!doc.exists) {
+            alert("It seems that there is no document here!");
+        } else {
+            console.log('Document data:', doc.data());
+            setNickname(doc.data().nickname);
+        }
+    })
+    .catch(err => {
+        console.log('Error getting document:\n' + err);
+    });
+    
     return(
         <View style={{flex:1}} backgroundColor = '#2d3042'>
             <DrawerContentScrollView {...props}>
@@ -31,7 +48,8 @@ export default function DrawerContent(props) {
                             />
                             
                             <View style={{marginLeft: 15, flexDirection: 'column'}}>
-                                <Title style={styles.drawerTitle}>{user.displayName}</Title>
+                                <Title style={styles.drawerTitle}>Name: {user.displayName}</Title>
+                                <Title style={styles.drawerTitle}>Nickname: {nickname}</Title>
                                 <Caption style={styles.drawerCaption}>{user.email}</Caption>  
                             </View>
                         </View>
