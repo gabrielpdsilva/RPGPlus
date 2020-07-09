@@ -6,7 +6,7 @@ const styles = StyleSheet.create({
 
     container: {
         flex: 1,
-        backgroundColor: colors.darkTheme,
+        backgroundColor: colors.lightTheme,
     },
 
     childContainer: {
@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
 
     //common text
     text: {
-        color: colors.white,
+        color: colors.black,
         margin: 5,
         fontSize: 15,
         textAlign: 'center'
@@ -52,7 +52,7 @@ const styles = StyleSheet.create({
 
     //text title
     title: {
-        color: colors.white,
+        color: colors.black,
         fontWeight: 'bold',
         fontSize: 20,
         alignItems: 'center',
@@ -103,7 +103,7 @@ const styles = StyleSheet.create({
     },
 
     headerAppBar: {
-        backgroundColor: colors.orange,
+        backgroundColor: colors.purple,
     },
 
     //textinput of CreateDraftScreen, need to change it
@@ -126,7 +126,7 @@ const styles = StyleSheet.create({
         width: 280,
         padding: 10,
         margin: 5,
-        backgroundColor: colors.orange,
+        backgroundColor: colors.purple,
         borderRadius: 25
     },
 

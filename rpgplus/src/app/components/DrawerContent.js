@@ -13,24 +13,7 @@ import styles from '../style/styles';
 
 export default function DrawerContent(props) {
 
-    const [nickname, setNickname] = useState(null);
-
     const user = firebase.auth().currentUser;
-
-    let userFirestoreRef = firebase.firestore().collection("users").doc(user.uid);
-
-    userFirestoreRef.get()
-    .then(doc => {
-        if (!doc.exists) {
-            alert("It seems that there is no document here!");
-        } else {
-            console.log('Document data:', doc.data());
-            setNickname(doc.data().nickname);
-        }
-    })
-    .catch(err => {
-        console.log('Error getting document:\n' + err);
-    });
     
     return(
         <View style={{flex:1}} backgroundColor = '#2d3042'>
@@ -48,8 +31,7 @@ export default function DrawerContent(props) {
                             />
                             
                             <View style={{marginLeft: 15, flexDirection: 'column'}}>
-                                <Title style={styles.drawerTitle}>Name: {user.displayName}</Title>
-                                <Title style={styles.drawerTitle}>Nickname: {nickname}</Title>
+                                <Title style={styles.drawerTitle}>{user.displayName}</Title>
                                 <Caption style={styles.drawerCaption}>{user.email}</Caption>  
                             </View>
                         </View>

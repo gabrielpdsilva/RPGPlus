@@ -52,7 +52,7 @@ export default class TestLogin extends Component {
 
                     
                 <TouchableOpacity style={hue.button}>
-                    <Text style={{color: "FFF", fontWeight: "500"}}>Sign</Text>
+                    <Text style={{color: "#FFF", fontWeight: "500"}}>Sign</Text>
                 </TouchableOpacity>
 
                 <TouchableOpacity style={{alignSelf: "center", marginTop: 30}}>
@@ -93,6 +93,7 @@ const hue = StyleSheet.create({
 
     container: {
         flex: 1,
+        backgroundColor: colors.lightTheme,
     },
     
 
@@ -105,7 +106,7 @@ const hue = StyleSheet.create({
     
     button: {
         marginHorizontal: 30,
-        backgroundColor: "#E9446A",
+        backgroundColor: colors.orange,
         borderRadius: 4,
         height: 52,
         alignItems: "center",

@@ -9,6 +9,7 @@ const en = {
     emailInput: 'E-mail...',
     passwordInput: 'Password...',
     appBarLogin: 'Login',
+    clickHere: 'Click here',
 
     //forgot password
     forgotMessage: 'Type below your e-mail to recover your password.',

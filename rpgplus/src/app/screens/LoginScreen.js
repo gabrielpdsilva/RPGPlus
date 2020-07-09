@@ -90,7 +90,9 @@ export default class LoginScreen extends Component {
 
 
                     <TouchableOpacity onPress={() => this.props.navigation.navigate("Forgot Password")}>
-                        <Text style={styles.text}>{translate('forgotPassword')}</Text>
+                        <Text style={styles.text}>
+                            {translate('forgotPassword')} <Text style={{fontWeight: "500", color: colors.purple, fontWeight: 'bold'}}>{translate('clickHere')}</Text>
+                        </Text>
                     </TouchableOpacity>
 
 
