@@ -90,7 +90,7 @@ export default class SketchScreen extends Component {
                     </Picker>
 
                     <TextInput
-                        style={styles.textinput}
+                        style={styles.textInput}
                         value={this.state.quantity}
                         maxLength={2}
                         keyboardType = 'numeric'
@@ -99,7 +99,7 @@ export default class SketchScreen extends Component {
                     />
 
                     <TextInput
-                        style={styles.textinput}
+                        style={styles.textInput}
                         value={this.state.modifier}
                         maxLength={2}
                         keyboardType = 'numeric'

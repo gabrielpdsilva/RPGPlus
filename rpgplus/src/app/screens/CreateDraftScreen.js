@@ -86,7 +86,7 @@ export default class CreateDraftScreen extends Component {
                     <Text style={styles.text}>Create a draft for your future campaign! </Text>
                     <Text style={styles.text}>Max allowed: 10</Text>
        
-                    <TextInput style={styles.textinput} value={this.state.name} onChangeText={ (txt) => this.setState({name: txt}) } placeholder="Name of the story..." />
+                    <TextInput style={styles.textInput} value={this.state.name} onChangeText={ (txt) => this.setState({name: txt}) } placeholder="Name of the story..." />
 
                     <TextInput style={styles.customtextinput} value={this.state.category} onChangeText={ (txt) => this.setState({category: txt}) } placeholder="Category of the story (medieval, cyberpunk)..."/>
 

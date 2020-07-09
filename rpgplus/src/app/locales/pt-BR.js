@@ -3,8 +3,8 @@ const pt = {
     //login
     welcome: 'Bem-vindo!',
     loginMessage: 'Por favor, faça Login para continuar',
-    buttonSignUp: 'REGISTRAR',
-    buttonLogin: 'LOGIN',
+    buttonSignUp: 'Registrar',
+    buttonLogin: 'Login',
     forgotPassword: 'Esqueceu a senha?',
     emailInput: 'E-mail...',
     passwordInput: 'Senha...',
@@ -14,7 +14,7 @@ const pt = {
     //forgot password
     forgotMessage: 'Digite abaixo seu e-mail para recuperar sua senha.',
     forgotInput: 'Digite o e-mail aqui...',
-    buttonForgotPassword: 'RESETAR SENHA',
+    buttonForgotPassword: 'Resetar Senha',
     appBarForgot: 'Esqueceu a Senha',
 };
   

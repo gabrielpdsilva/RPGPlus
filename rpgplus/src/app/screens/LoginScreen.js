@@ -4,7 +4,7 @@ import {
     TextInput,
     TouchableOpacity,
     ToastAndroid,
-    Text
+    Text,
 } from 'react-native';
 
 import styles from '../style/styles';
@@ -64,40 +64,48 @@ export default class LoginScreen extends Component {
 
                     <Text style={styles.text}>{translate('loginMessage')}</Text>
 
-                    <TextInput
-                        style={styles.textinput}
-                        value={this.state.email}
-                        onChangeText={ (txt) => this.setState({email: txt})}
-                        placeholder={translate('emailInput')}
-                    />
+                    <View style={styles.loginForm}>
 
-                    <TextInput
-                        style={styles.textinput}
-                        value={this.state.password}
-                        onChangeText={ (txt) => this.setState({password: txt})}
-                        secureTextEntry={true}
-                        placeholder={translate('passwordInput')}
-                    />
+                        <View>
 
+                            <Text style={styles.inputTitle}>E-mail</Text>
+                            <TextInput
+                                style={styles.textInput}
+                                value={this.state.email}
+                                onChangeText={(txt) => this.setState({email: txt})}
+                            />
+                            
+                        </View>
+
+                        <View style={{marginTop: 14}}>
+                            
+                            <Text style={styles.inputTitle}>Senha</Text>
+                            <TextInput
+                                style={styles.textInput}
+                                value={this.state.password}
+                                onChangeText={(txt) => this.setState({password: txt})}
+                                secureTextEntry={true}
+                            />
+                            
+                        </View> 
+
+                    </View>
+
+                    
                     <TouchableOpacity onPress={this.handleLogin} style={styles.button}>
                         <Text style={styles.buttonText}>{translate('buttonLogin')}</Text>
                     </TouchableOpacity>
 
-
-                    <TouchableOpacity onPress={() => this.props.navigation.navigate("Register")} style={[styles.button, {backgroundColor: colors.alternativeOrange}]}>
-                        <Text style={styles.buttonText}>{translate('buttonSignUp')}</Text>
-                    </TouchableOpacity>
-
-
-                    <TouchableOpacity onPress={() => this.props.navigation.navigate("Forgot Password")}>
+                    <TouchableOpacity onPress={() => this.props.navigation.navigate("Register")}>
                         <Text style={styles.text}>
-                            {translate('forgotPassword')} <Text style={{fontWeight: "500", color: colors.purple, fontWeight: 'bold'}}>{translate('clickHere')}</Text>
+                            Primeira vez aqui? <Text style={{fontWeight: "500", color: colors.purple, fontWeight: 'bold'}}>Registre-se</Text>
                         </Text>
                     </TouchableOpacity>
 
-
-                    <TouchableOpacity onPress={() => this.props.navigation.navigate("TestLogin")}>
-                        <Text style={styles.text}>Clicaaaaaa</Text>
+                    <TouchableOpacity onPress={() => this.props.navigation.navigate("Forgot Password")}>
+                        <Text style={styles.text}>
+                            Esqueci a senha
+                        </Text>
                     </TouchableOpacity>
 
                 </View>

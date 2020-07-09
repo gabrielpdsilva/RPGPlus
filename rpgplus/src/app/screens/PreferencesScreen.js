@@ -176,7 +176,7 @@ export default class PreferencesScreen extends Component {
 
                     <View style={{flexDirection: 'row'}}>
 
-                        <TextInput style={styles.textinput}
+                        <TextInput style={styles.textInput}
                             backgroundColor = {isSwitchOn ? colors.darkContainer : colors.deepGray}
                             editable={isSwitchOn}
                             value={this.state.name}

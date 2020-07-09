@@ -171,7 +171,7 @@ export default class DraftModelScreen extends Component {
                         <Text style={styles.textForm}>Name:</Text>
         
                         <TextInput
-                            style={styles.textinput}
+                            style={styles.textInput}
                             backgroundColor = {isSwitchOn ? colors.darkContainer : colors.deepGray}
                             value={this.state.name} editable={isSwitchOn}
                             onChangeText={ (txt) => this.setState({name: txt}) }
@@ -181,7 +181,7 @@ export default class DraftModelScreen extends Component {
                         <Text style={styles.textForm}>Category:</Text>
                         
                         <TextInput
-                            style={styles.textinput}
+                            style={styles.textInput}
                             backgroundColor = {isSwitchOn ? colors.darkContainer : colors.deepGray}
                             value={this.state.category}
                             editable={isSwitchOn}
@@ -192,7 +192,7 @@ export default class DraftModelScreen extends Component {
                         <Text style={styles.textForm}>System:</Text>
                         
                         <TextInput
-                            style={styles.textinput}
+                            style={styles.textInput}
                             backgroundColor = {isSwitchOn ? colors.darkContainer : colors.deepGray}
                             value={this.state.system}
                             editable={isSwitchOn}
@@ -203,7 +203,7 @@ export default class DraftModelScreen extends Component {
                         <Text style={styles.textForm}>Text:</Text>
                         
                         <TextInput
-                            style={styles.textinput}
+                            style={styles.textInput}
                             backgroundColor = {isSwitchOn ? colors.darkContainer : colors.deepGray}
                             value={this.state.text}
                             multiline = {true} //textinput will be multiline

@@ -48,7 +48,7 @@ export default class ForgotPasswordScreen extends Component {
                     <Text style={styles.text}>{translate('forgotMessage')}</Text>
 
                     <TextInput
-                        style={styles.textinput}
+                        style={styles.textInput}
                         value={this.state.email}
                         onChangeText={ (txt) => this.setState({email: txt})}
                         placeholder={translate('forgotInput')}

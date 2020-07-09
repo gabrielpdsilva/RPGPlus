@@ -15,6 +15,18 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
 
+    loginForm: {
+        marginBottom: 25,
+        marginHorizontal: 30,
+    },
+
+    inputTitle: {
+
+        color: colors.black,
+        fontSize: 13,
+
+    },
+
     //container for drafts
     childCenterContainer: {
         borderColor: 'black',
@@ -39,15 +51,23 @@ const styles = StyleSheet.create({
     },
 
     //textinput style
-    textinput: {  
+    textInput: {  
         width: 290,
         padding: 5,
-        margin: 5,
         height: 40,
         borderColor: colors.black,
         borderWidth: 1,
-        backgroundColor: colors.darkContainer,
-        color: colors.white,
+        backgroundColor: colors.lightTheme,
+        color: colors.black,
+        borderRadius: 4,
+    },
+
+    newinput: {
+        borderBottomColor: 'red',
+        borderBottomWidth: StyleSheet.hairlineWidth,
+        height: 40,
+        fontSize: 15,
+        color: 'black',
     },
 
     //text title
@@ -123,11 +143,13 @@ const styles = StyleSheet.create({
     },
 
     button: {
-        width: 280,
-        padding: 10,
+        width: 290,
         margin: 5,
+        height: 50,
         backgroundColor: colors.purple,
-        borderRadius: 25
+        borderRadius: 4,
+        alignItems: "center",
+        justifyContent: "center",
     },
 
     /**********************

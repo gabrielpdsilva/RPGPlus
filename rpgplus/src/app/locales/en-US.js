@@ -3,8 +3,8 @@ const en = {
     //login
     welcome: 'Welcome!',
     loginMessage: 'Please, Sign In to continue',
-    buttonSignUp: 'SIGN UP',
-    buttonLogin: 'LOGIN',
+    buttonSignUp: 'Sign Up',
+    buttonLogin: 'Login',
     forgotPassword: 'Forgot your password?',
     emailInput: 'E-mail...',
     passwordInput: 'Password...',
@@ -14,7 +14,7 @@ const en = {
     //forgot password
     forgotMessage: 'Type below your e-mail to recover your password.',
     forgotInput: 'Your e-mail here...',
-    buttonForgotPassword: 'RESET PASSWORD',
+    buttonForgotPassword: 'Reset Password',
     appBarForgot: 'Forgot Password',
 };
   
