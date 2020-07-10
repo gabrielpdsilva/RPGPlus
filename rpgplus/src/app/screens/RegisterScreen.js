@@ -4,7 +4,7 @@ import {
     TextInput,
     ToastAndroid,
     Text,
-    TouchableOpacity
+    TouchableOpacity,
 } from 'react-native';
 
 import styles from '../style/styles';
@@ -83,19 +83,71 @@ export default class RegisterScreen extends Component {
 
                     <Text style={styles.text}>Register your account!</Text>
 
-                    <TextInput style={styles.textInput} value={this.state.name} onChangeText={ (txt) => this.setState({name: txt}) } placeholder="Type here your name..." />
+                    <View style={styles.loginForm}>
 
-                    <TextInput style={styles.textInput} value={this.state.nickname} onChangeText={ (txt) => this.setState({nickname: txt}) } placeholder="Type here your nickname..." />
+                        <View>
 
-                    <TextInput style={styles.textInput} value={this.state.email} onChangeText={ (txt) => this.setState({email: txt}) } placeholder="Type here your e-mail..." />
+                            <Text style={styles.inputTitle}>Nome</Text>
+                            <TextInput
+                                style={styles.textInput}
+                                value={this.state.name}
+                                onChangeText={(txt) => this.setState({name: txt})}
+                            />
+                            
+                        </View>
 
-                    <TextInput style={styles.textInput} value={this.state.password} onChangeText={ (txt) => this.setState({password: txt}) } secureTextEntry={true} placeholder="Type your password..." />
-            
-                    <TextInput style={styles.textInput} value={this.state.confirmPassword} onChangeText={ (txt) => this.setState({confirmPassword: txt}) } secureTextEntry={true} placeholder="Confirm your password..." />
-                
+                        <View style={{marginTop: 14}}>
+                            
+                            <Text style={styles.inputTitle}>Nickname</Text>
+                            <TextInput
+                                style={styles.textInput}
+                                value={this.state.nickname}
+                                onChangeText={(txt) => this.setState({nickname: txt})}
+                            />
+                            
+                        </View>
+
+                        <View style={{marginTop: 14}}>
+
+                            <Text style={styles.inputTitle}>E-mail</Text>
+                            <TextInput
+                                style={styles.textInput}
+                                value={this.state.email}
+                                onChangeText={(txt) => this.setState({email: txt})}
+                            />
+                            
+                        </View>
+
+                        <View style={{marginTop: 14}}>
+                            
+                            <Text style={styles.inputTitle}>Senha</Text>
+                            <TextInput
+                                style={styles.textInput}
+                                value={this.state.password}
+                                onChangeText={(txt) => this.setState({password: txt})}
+                                secureTextEntry={true}
+                            />
+                            
+                        </View>
+
+                        <View style={{marginTop: 14}}>
+                            
+                            <Text style={styles.inputTitle}>Confirme a senha</Text>
+                            <TextInput
+                                style={styles.textInput}
+                                value={this.state.confirmPassword}
+                                onChangeText={(txt) => this.setState({confirmPassword: txt})}
+                                secureTextEntry={true}
+                            />
+                            
+                        </View>
+
+                    </View>
+
                     <TouchableOpacity onPress={this.handleSignUp} style={styles.button}>
                         <Text style={styles.buttonText}>REGISTER</Text>
                     </TouchableOpacity>
+
                 </View>
             </View>
         )

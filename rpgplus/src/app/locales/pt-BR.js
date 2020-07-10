@@ -16,6 +16,17 @@ const pt = {
     forgotInput: 'Digite o e-mail aqui...',
     buttonForgotPassword: 'Resetar Senha',
     appBarForgot: 'Esqueceu a Senha',
+
+    //register account
+    registerTitle: '',
+    registerSubtitle: '',
+    registerName: '',
+    registerNickname: '',
+    registerEmail: '',
+    registerPassword: '',
+    registerConfirmPassword: '',   
+    registerBtnRegister: '',
+    appBarRegister: '',
 };
   
 export default pt;
