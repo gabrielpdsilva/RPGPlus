@@ -4,8 +4,8 @@ const pt = {
     appBarLogin: 'Login',
     loginTitle: 'Bem-vindo!',
     loginSubtitle: 'Por favor, faça Login para continuar',
-    loginEmail: 'E-mail...',
-    loginPassword: 'Senha...',
+    loginEmail: 'E-mail',
+    loginPassword: 'Senha',
     loginBtnLogin: 'Login',
     loginBtnFirstTimeHere: 'Primeira vez aqui?',
     loginBtnRegister: 'Registre-se',
@@ -15,6 +15,7 @@ const pt = {
     appBarForgot: 'Esqueceu a Senha',
     forgotTitle: 'Esqueceu a Senha',
     forgotSubtitle: 'Digite abaixo seu e-mail para recuperar sua senha.',
+    forgotEmail: 'E-mail',
     forgotInput: 'Digite o e-mail aqui...',
     forgotBtnPassword: 'Resetar Senha',
     

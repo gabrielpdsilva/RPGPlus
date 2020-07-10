@@ -86,9 +86,9 @@ export default class RegisterScreen extends Component {
 
                     <Text style={styles.text}>{translate('registerSubtitle')}</Text>
 
-                    <View style={styles.loginForm}>
+                    <View style={styles.inputForm}>
 
-                        <View>
+                        <View style={{marginTop: 14}}>
 
                             <Text style={styles.inputTitle}>{translate('registerName')}</Text>
                             <TextInput

@@ -4,18 +4,18 @@ const en = {
     appBarLogin: 'Login',
     loginTitle: 'Welcome!',
     loginSubtitle: 'Please, Sign In to continue',
-    loginEmail: 'E-mail...',
-    loginPassword: 'Password...',
+    loginEmail: 'E-mail',
+    loginPassword: 'Password',
     loginBtnLogin: 'Login',
     loginBtnFirstTimeHere: 'First time here?',
     loginBtnRegister: 'Register an account',
     loginBtnForgotPassword: 'Forgot your password?',
     
-
     //forgot password
     appBarForgot: 'Forgot Password',
     forgotTitle: 'Forgot Password',
     forgotSubtitle: 'Type below your e-mail to recover your password.',
+    forgotEmail: 'E-mail',
     forgotInput: 'Your e-mail here...',
     forgotBtnPassword: 'Reset Password',
     

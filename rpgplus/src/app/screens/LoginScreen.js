@@ -64,7 +64,7 @@ export default class LoginScreen extends Component {
 
                     <Text style={styles.text}>{translate('loginSubtitle')}</Text>
 
-                    <View style={styles.loginForm}>
+                    <View style={styles.inputForm}>
 
                         <View style={{marginTop: 14}}>
 

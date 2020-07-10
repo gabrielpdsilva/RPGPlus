@@ -15,7 +15,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
 
-    loginForm: {
+    inputForm: {
         marginBottom: 25,
         marginHorizontal: 30,
     },
