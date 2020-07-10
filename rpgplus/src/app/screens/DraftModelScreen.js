@@ -158,7 +158,7 @@ export default class DraftModelScreen extends Component {
                 
                     <View style={styles.childCenterContainer}>
 
-                        <Text style={styles.title}> Here you can edit or delete your draft.</Text>
+                        <Text style={styles.title}>Here you can edit or delete your draft.</Text>
 
                         <Switch
                             trackColor={{ false: colors.lightGray, true: colors.orange }}
