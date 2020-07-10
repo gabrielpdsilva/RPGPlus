@@ -60,15 +60,15 @@ export default class LoginScreen extends Component {
 
                 <View style={styles.childContainer}>
 
-                    <Text style={styles.title}>{translate('welcome')}</Text>
+                    <Text style={styles.title}>{translate('loginTitle')}</Text>
 
-                    <Text style={styles.text}>{translate('loginMessage')}</Text>
+                    <Text style={styles.text}>{translate('loginSubtitle')}</Text>
 
                     <View style={styles.loginForm}>
 
-                        <View>
+                        <View style={{marginTop: 14}}>
 
-                            <Text style={styles.inputTitle}>E-mail</Text>
+                            <Text style={styles.inputTitle}>{translate('loginEmail')}</Text>
                             <TextInput
                                 style={styles.textInput}
                                 value={this.state.email}
@@ -79,7 +79,7 @@ export default class LoginScreen extends Component {
 
                         <View style={{marginTop: 14}}>
                             
-                            <Text style={styles.inputTitle}>Senha</Text>
+                            <Text style={styles.inputTitle}>{translate('loginPassword')}</Text>
                             <TextInput
                                 style={styles.textInput}
                                 value={this.state.password}
@@ -90,22 +90,19 @@ export default class LoginScreen extends Component {
                         </View> 
 
                     </View>
-
                     
                     <TouchableOpacity onPress={this.handleLogin} style={styles.button}>
-                        <Text style={styles.buttonText}>{translate('buttonLogin')}</Text>
+                        <Text style={styles.buttonText}>{translate('loginBtnLogin')}</Text>
                     </TouchableOpacity>
 
                     <TouchableOpacity onPress={() => this.props.navigation.navigate("Register")}>
                         <Text style={styles.text}>
-                            Primeira vez aqui? <Text style={{fontWeight: "500", color: colors.purple, fontWeight: 'bold'}}>Registre-se</Text>
+                        {translate('loginBtnFirstTimeHere')} <Text style={{fontWeight: "500", color: colors.purple, fontWeight: 'bold'}}>{translate('loginBtnRegister')}</Text>
                         </Text>
                     </TouchableOpacity>
 
                     <TouchableOpacity onPress={() => this.props.navigation.navigate("Forgot Password")}>
-                        <Text style={styles.text}>
-                            Esqueci a senha
-                        </Text>
+                        <Text style={styles.text}>{translate('loginBtnForgotPassword')}</Text>
                     </TouchableOpacity>
 
                 </View>

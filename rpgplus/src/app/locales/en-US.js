@@ -1,22 +1,23 @@
 const en = {
 
     //login
-    welcome: 'Welcome!',
-    loginMessage: 'Please, Sign In to continue',
-    buttonSignUp: 'Sign Up',
-    buttonLogin: 'Login',
-    forgotPassword: 'Forgot your password?',
-    emailInput: 'E-mail...',
-    passwordInput: 'Password...',
     appBarLogin: 'Login',
-    clickHere: 'Click here',
+    loginTitle: 'Welcome!',
+    loginSubtitle: 'Please, Sign In to continue',
+    loginEmail: 'E-mail...',
+    loginPassword: 'Password...',
+    loginBtnLogin: 'Login',
+    loginBtnFirstTimeHere: 'First time here?',
+    loginBtnRegister: 'Register an account',
+    loginBtnForgotPassword: 'Forgot your password?',
+    
 
     //forgot password
     appBarForgot: 'Forgot Password',
-    forgotMessage: 'Type below your e-mail to recover your password.',
+    forgotTitle: 'Forgot Password',
+    forgotSubtitle: 'Type below your e-mail to recover your password.',
     forgotInput: 'Your e-mail here...',
     forgotBtnPassword: 'Reset Password',
-    
     
     //register account
     appBarRegister: 'Register',

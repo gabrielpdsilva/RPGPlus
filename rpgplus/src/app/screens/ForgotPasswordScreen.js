@@ -44,8 +44,8 @@ export default class ForgotPasswordScreen extends Component {
 
                 <View style={styles.childContainer}>
 
-                    <Text style={styles.title}>{translate('forgotPassword')}</Text>
-                    <Text style={styles.text}>{translate('forgotMessage')}</Text>
+                    <Text style={styles.title}>{translate('forgotTitle')}</Text>
+                    <Text style={styles.text}>{translate('forgotSubtitle')}</Text>
 
                     <TextInput
                         style={styles.textInput}
