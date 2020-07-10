@@ -55,7 +55,7 @@ export default class ForgotPasswordScreen extends Component {
                     />
 
                     <TouchableOpacity onPress={this.resetPassword} style={styles.button}>
-                        <Text style={styles.buttonText}>{translate('buttonForgotPassword')}</Text>
+                        <Text style={styles.buttonText}>{translate('forgotBtnPassword')}</Text>
                     </TouchableOpacity>
                     
                 </View>

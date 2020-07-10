@@ -12,10 +12,23 @@ const en = {
     clickHere: 'Click here',
 
     //forgot password
+    appBarForgot: 'Forgot Password',
     forgotMessage: 'Type below your e-mail to recover your password.',
     forgotInput: 'Your e-mail here...',
-    buttonForgotPassword: 'Reset Password',
-    appBarForgot: 'Forgot Password',
+    forgotBtnPassword: 'Reset Password',
+    
+    
+    //register account
+    appBarRegister: 'Register',
+    registerTitle: 'Register',
+    registerSubtitle: 'Register your account!',
+    registerName: 'Name',
+    registerNickname: 'Nickname',
+    registerEmail: 'E-mail',
+    registerPassword: 'Password',
+    registerConfirmPassword: 'Confirm your password',   
+    registerBtnRegister: 'Register',
+    
 };
   
 export default en;

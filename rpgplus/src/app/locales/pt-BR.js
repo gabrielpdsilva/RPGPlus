@@ -12,21 +12,23 @@ const pt = {
     clickHere: 'Clique aqui',
 
     //forgot password
+    appBarForgot: 'Esqueceu a Senha',
     forgotMessage: 'Digite abaixo seu e-mail para recuperar sua senha.',
     forgotInput: 'Digite o e-mail aqui...',
-    buttonForgotPassword: 'Resetar Senha',
-    appBarForgot: 'Esqueceu a Senha',
+    forgotBtnPassword: 'Resetar Senha',
+    
 
     //register account
-    registerTitle: '',
-    registerSubtitle: '',
-    registerName: '',
-    registerNickname: '',
-    registerEmail: '',
-    registerPassword: '',
-    registerConfirmPassword: '',   
-    registerBtnRegister: '',
-    appBarRegister: '',
+    appBarRegister: 'Registrar',
+    registerTitle: 'Registrar',
+    registerSubtitle: 'Registre sua conta!',
+    registerName: 'Nome',
+    registerNickname: 'Nickname',
+    registerEmail: 'E-mail',
+    registerPassword: 'Senha',
+    registerConfirmPassword: 'Confirme a senha',   
+    registerBtnRegister: 'Registrar',
+    
 };
   
 export default pt;

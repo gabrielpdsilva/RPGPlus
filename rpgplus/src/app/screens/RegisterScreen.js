@@ -12,7 +12,10 @@ import styles from '../style/styles';
 import CustomAppBar from '../components/CustomAppBar';
 
 import firebase from '../controller/Firebase';
+
 import 'firebase/firestore';
+
+import { translate } from '../locales/localeConfig';
 
 export default class RegisterScreen extends Component {
     constructor(props){
@@ -75,19 +78,19 @@ export default class RegisterScreen extends Component {
 
             <View style={styles.container}>
 
-                <CustomAppBar title="Register" subtitle="" backIsVisible={true} navigation={this.props.navigation}/>
+                <CustomAppBar title={translate('appBarRegister')} subtitle="" backIsVisible={true} navigation={this.props.navigation}/>
 
                 <View style={styles.childContainer}>
 
-                    <Text style={styles.title}>Register</Text>
+                    <Text style={styles.title}>{translate('registerTitle')}</Text>
 
-                    <Text style={styles.text}>Register your account!</Text>
+                    <Text style={styles.text}>{translate('registerSubtitle')}</Text>
 
                     <View style={styles.loginForm}>
 
                         <View>
 
-                            <Text style={styles.inputTitle}>Nome</Text>
+                            <Text style={styles.inputTitle}>{translate('registerName')}</Text>
                             <TextInput
                                 style={styles.textInput}
                                 value={this.state.name}
@@ -98,7 +101,7 @@ export default class RegisterScreen extends Component {
 
                         <View style={{marginTop: 14}}>
                             
-                            <Text style={styles.inputTitle}>Nickname</Text>
+                            <Text style={styles.inputTitle}>{translate('registerNickname')}</Text>
                             <TextInput
                                 style={styles.textInput}
                                 value={this.state.nickname}
@@ -109,7 +112,7 @@ export default class RegisterScreen extends Component {
 
                         <View style={{marginTop: 14}}>
 
-                            <Text style={styles.inputTitle}>E-mail</Text>
+                            <Text style={styles.inputTitle}>{translate('registerEmail')}</Text>
                             <TextInput
                                 style={styles.textInput}
                                 value={this.state.email}
@@ -120,7 +123,7 @@ export default class RegisterScreen extends Component {
 
                         <View style={{marginTop: 14}}>
                             
-                            <Text style={styles.inputTitle}>Senha</Text>
+                            <Text style={styles.inputTitle}>{translate('registerPassword')}</Text>
                             <TextInput
                                 style={styles.textInput}
                                 value={this.state.password}
@@ -132,7 +135,7 @@ export default class RegisterScreen extends Component {
 
                         <View style={{marginTop: 14}}>
                             
-                            <Text style={styles.inputTitle}>Confirme a senha</Text>
+                            <Text style={styles.inputTitle}>{translate('registerConfirmPassword')}</Text>
                             <TextInput
                                 style={styles.textInput}
                                 value={this.state.confirmPassword}
@@ -145,7 +148,7 @@ export default class RegisterScreen extends Component {
                     </View>
 
                     <TouchableOpacity onPress={this.handleSignUp} style={styles.button}>
-                        <Text style={styles.buttonText}>REGISTER</Text>
+                        <Text style={styles.buttonText}>{translate('registerBtnRegister')}</Text>
                     </TouchableOpacity>
 
                 </View>
