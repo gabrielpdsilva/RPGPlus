@@ -138,7 +138,7 @@ export default class NameGeneratorScreen extends Component {
                         style={styles.pickerStyle}
                         //mode = "dropdown"     //used if you want the user to scroll up the options
                         selectedValue={this.state.pickerValue}
-                        onValueChange={(itemValue, itemIndex) => this.setState({pickerValue: itemValue})}
+                        onValueChange={(itemValue) => this.setState({pickerValue: itemValue})}
                     >
                         <Picker.Item label="Changeling: The Dreaming" value="changeling"/>
                         <Picker.Item label="Cyberpunk" value="cyberpunk"/>
