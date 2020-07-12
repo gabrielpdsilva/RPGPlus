@@ -5,6 +5,7 @@ import {
     ToastAndroid,
     Text,
     TouchableOpacity,
+    ScrollView
 } from 'react-native';
 
 import styles from '../style/styles';
@@ -74,13 +75,14 @@ export default class RegisterScreen extends Component {
     }
 
     render(){
+        //<View style={styles.childContainer}>
         return(
 
             <View style={styles.container}>
 
                 <CustomAppBar title={translate('appBarRegister')} subtitle="" backIsVisible={true} navigation={this.props.navigation}/>
 
-                <View style={styles.childContainer}>
+                <ScrollView style={{marginTop: 14}}>
 
                     <Text style={styles.title}>{translate('registerTitle')}</Text>
 
@@ -147,11 +149,15 @@ export default class RegisterScreen extends Component {
 
                     </View>
 
+                    <View style={{justifyContent:'center', alignItems: 'center', marginBottom: 10}}>
+
                     <TouchableOpacity onPress={this.handleSignUp} style={styles.button}>
                         <Text style={styles.buttonText}>{translate('registerBtnRegister')}</Text>
                     </TouchableOpacity>
 
-                </View>
+                    </View>
+
+                </ScrollView>
             </View>
         )
     }
