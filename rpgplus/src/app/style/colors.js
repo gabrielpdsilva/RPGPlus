@@ -15,6 +15,8 @@ const colors = {
     deepGray: '#14161f',
     DarkestOrange: '#913000', //color of the button when switch is off
     black: '#1f1f1f',
+    //water: '#41D9AE',
+    water: '#16c493'
 
 }
 

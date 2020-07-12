@@ -21,7 +21,7 @@ import { translate } from '../locales/localeConfig';
 *
 */
 
-export default class LoginScreen extends Component {
+export default class Test extends Component {
 
     constructor(props){
         super(props);
@@ -58,17 +58,15 @@ export default class LoginScreen extends Component {
 
                 <CustomAppBar title={translate('appBarLogin')} subtitle="" backIsVisible={false} isLoginScreen = {true}/>
 
-                <View style={styles.childContainer}>
-
-                    <Text style={styles.title}>{translate('loginTitle')}</Text>
-
-                    <Text style={styles.text}>{translate('loginSubtitle')}</Text>
+                <View style={styles.draftBox}>
 
                     <View style={styles.inputForm}>
 
                         <View style={{marginTop: 14}}>
 
-                            <Text style={styles.inputTitle}>{translate('loginEmail')}</Text>
+                            <Text style={styles.title}>Olá</Text>
+
+                            <Text style={styles.inputTitle}>Nome</Text>
                             <TextInput
                                 style={styles.textInput}
                                 value={this.state.email}
@@ -79,9 +77,35 @@ export default class LoginScreen extends Component {
 
                         <View style={{marginTop: 14}}>
                             
-                            <Text style={styles.inputTitle}>{translate('loginPassword')}</Text>
+                            <Text style={styles.inputTitle}>Categoria</Text>
                             <TextInput
                                 style={styles.textInput}
+                                value={this.state.password}
+                                onChangeText={(txt) => this.setState({password: txt})}
+                                secureTextEntry={true}
+                            />
+                            
+                        </View>
+
+                        <View style={{marginTop: 14}}>
+
+                            <Text style={styles.inputTitle}>Sistema</Text>
+                            <TextInput
+                                style={styles.textInput}
+                                value={this.state.email}
+                                onChangeText={(txt) => this.setState({email: txt})}
+                            />
+                            
+                        </View>
+
+                        <View style={{marginTop: 14}}>
+                            
+                            <Text style={styles.inputTitle}>Texto</Text>
+                            <TextInput
+                                multiline = {true}
+                                height = {150}
+                                textAlignVertical = 'top'
+                                style={styles.textInputBox}
                                 value={this.state.password}
                                 onChangeText={(txt) => this.setState({password: txt})}
                                 secureTextEntry={true}
@@ -90,24 +114,6 @@ export default class LoginScreen extends Component {
                         </View> 
 
                     </View>
-                    
-                    <TouchableOpacity onPress={this.handleLogin} style={styles.button}>
-                        <Text style={styles.buttonText}>{translate('loginBtnLogin')}</Text>
-                    </TouchableOpacity>
-
-                    <TouchableOpacity onPress={() => this.props.navigation.navigate("Register")}>
-                        <Text style={styles.text}>
-                        {translate('loginBtnFirstTimeHere')} <Text style={{fontWeight: "500", color: colors.purple, fontWeight: 'bold'}}>{translate('loginBtnRegister')}</Text>
-                        </Text>
-                    </TouchableOpacity>
-
-                    <TouchableOpacity onPress={() => this.props.navigation.navigate("Forgot Password")}>
-                        <Text style={styles.text}>{translate('loginBtnForgotPassword')}</Text>
-                    </TouchableOpacity>
-
-                    <TouchableOpacity onPress={() => this.props.navigation.navigate("Test")}>
-                        <Text style={styles.text}>Testtttttt</Text>
-                    </TouchableOpacity>
 
                 </View>
             </View>

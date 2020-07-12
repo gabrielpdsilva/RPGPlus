@@ -62,6 +62,28 @@ const styles = StyleSheet.create({
         borderRadius: 4,
     },
 
+    //textinputBox style
+    textInputBox: {  
+        width: 290,
+        padding: 5,
+        height: 150,
+        borderColor: colors.black,
+        borderWidth: 1,
+        backgroundColor: colors.lightTheme,
+        color: colors.black,
+        borderRadius: 4,
+    },
+
+    //draft box style
+    draftBox: {
+        backgroundColor: colors.water,
+        alignItems: 'center',
+        margin: 10,
+        borderRadius: 10,
+        borderWidth: 1,
+        borderColor: colors.black,
+    },
+
     newinput: {
         borderBottomColor: 'red',
         borderBottomWidth: StyleSheet.hairlineWidth,
@@ -146,7 +168,7 @@ const styles = StyleSheet.create({
         width: 290,
         margin: 5,
         height: 50,
-        backgroundColor: colors.purple,
+        backgroundColor: colors.water,
         borderRadius: 4,
         alignItems: "center",
         justifyContent: "center",

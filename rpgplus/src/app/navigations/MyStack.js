@@ -5,6 +5,8 @@ import {createStackNavigator} from '@react-navigation/stack';
 import LoginScreen from '../screens/LoginScreen';
 import RegisterScreen from '../screens/RegisterScreen';
 import ForgotPasswordScreen from '../screens/ForgotPasswordScreen';
+import Test from '../screens/Test';
+
 import MyDrawer from './MyDrawer';
 
 const Stack = createStackNavigator();
@@ -33,6 +35,12 @@ const MyStack = () => {
             <Stack.Screen
                 name="RPG+"
                 component={MyDrawer}
+                options={{headerShown: false}}
+            />
+
+            <Stack.Screen
+                name="Test"
+                component={Test}
                 options={{headerShown: false}}
             />
         </Stack.Navigator>
