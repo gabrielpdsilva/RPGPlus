@@ -60,11 +60,12 @@ const en = {
     rollQuantityPlaceholder: 'Default value = 1',
     rollModifier: 'Modifier',
     rollModifierPlaceholder: 'Default value = 0',
+    rollCountingDices: 'º dice: ',
     rollSum: 'Sum of values: ',
     rollBtnRoll: 'Roll',
 
     //create draft
-    appBarRollDices: 'New Draft',
+    appBarCreateDraft: 'New Draft',
     createDraftTitle: 'Create a draft for your campaign!',
     createDraftSubtitle: 'You can create 10 drafts.',
     createDraftName: 'Name',

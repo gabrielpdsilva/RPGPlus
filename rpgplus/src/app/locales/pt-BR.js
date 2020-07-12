@@ -60,11 +60,12 @@ const pt = {
     rollQuantityPlaceholder: 'Valor padrão = 1',
     rollModifier: 'Modificador',
     rollModifierPlaceholder: 'Valor padrão = 0',
+    rollCountingDices: 'º dado: ',
     rollSum: 'Soma dos valores: ',
     rollBtnRoll: 'Rolar Dados',
 
     //create draft
-    appBarRollDices: 'Novo Rascunho',
+    appBarCreateDraft: 'Novo Rascunho',
     createDraftTitle: 'Crie um rascunho pra sua campanha!',
     createDraftSubtitle: 'Você pode criar até 10 rascunhos.',
     createDraftName: 'Nome',

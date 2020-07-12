@@ -14,7 +14,6 @@ import styles from '../style/styles';
 
 import firebase from '../controller/Firebase';
 import 'firebase/firestore';
-import DraftForm from './DraftForm';
 
 //useful link about user collection on firestore
 //https://www.youtube.com/watch?v=qWy9ylc3f9U

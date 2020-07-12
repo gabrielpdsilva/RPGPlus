@@ -10,6 +10,7 @@ import {
 import styles from '../style/styles';
 
 import CustomAppBar from '../components/CustomAppBar';
+import {translate} from '../locales/localeConfig';
 
 export default class SketchScreen extends Component {
     constructor(props){
@@ -68,16 +69,16 @@ export default class SketchScreen extends Component {
         return(
             <View style={styles.container}>
                 
-                <CustomAppBar title="Roll Dices" subtitle="" navigation={this.props.navigation}/>
+                <CustomAppBar title={translate('appBarRollDices')} subtitle="" navigation={this.props.navigation}/>
                 <View style={styles.childContainer}>
                 
-                    <Text style={styles.title}>Roll Dices</Text>
-                    <Text style={styles.text}>Please, select the type of the dice, quantity of dices to be rolled and the modifier:</Text>
+                    <Text style={styles.title}>{translate('rollTitle')}</Text>
+                    <Text style={styles.text}>{translate('rollSubtitle')}</Text>
                  
                     <Picker
                         style={styles.pickerStyle}
                         selectedValue={this.state.type}
-                        onValueChange={(itemValue, itemIndex) => this.setState({type: itemValue})}
+                        onValueChange={(itemValue) => this.setState({type: itemValue})}
                     >
                         <Picker.Item label="D4" value={4}/>
                         <Picker.Item label="D6" value={6}/>
@@ -95,7 +96,7 @@ export default class SketchScreen extends Component {
                         maxLength={2}
                         keyboardType = 'numeric'
                         onChangeText={ (txt) => this.setState({quantity: txt}) }
-                        placeholder="Quantity... (default value = 1)"
+                        placeholder={translate('rollQuantityPlaceholder')}
                     />
 
                     <TextInput
@@ -104,19 +105,19 @@ export default class SketchScreen extends Component {
                         maxLength={2}
                         keyboardType = 'numeric'
                         onChangeText={ (txt) => this.setState({modifier: txt}) }
-                        placeholder="Modifier... (default value = 0)"
+                        placeholder={translate('rollModifierPlaceholder')}
                     />
 
                     {
                         results.map((item, key)=>
-                            (<Text key={key} style={styles.text}>{key + 1} º dice: { item } </Text>)
+                            (<Text key={key} style={styles.text}>{key + 1} {translate('rollCountingDices')} { item }</Text>)
                         )
                     }
 
-                    <Text style={styles.text}>Sum of values: {sum}</Text>
+                    <Text style={styles.text}>{translate('rollSum')} {sum}</Text>
  
                     <TouchableOpacity onPress={() => this.roll(type, quantity, modifier)} style={styles.button}>
-                        <Text style={styles.buttonText}>ROLL</Text>
+                        <Text style={styles.buttonText}>{translate('rollBtnRoll')}</Text>
                     </TouchableOpacity>
 
                 </View>
