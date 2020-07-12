@@ -8,7 +8,7 @@ import styles from '../style/styles';
 import CustomAppBar from '../components/CustomAppBar';
 
 import firebase from '../controller/Firebase';
-
+import {translate} from '../locales/localeConfig';
 const HomeScreen = ({navigation}) => {
 
     const user = firebase.auth().currentUser;
@@ -17,13 +17,13 @@ const HomeScreen = ({navigation}) => {
 
         <View style={styles.container}>
 
-            <CustomAppBar title="Home" subtitle="" navigation={navigation}/>
+            <CustomAppBar title={translate('appBarHome')} subtitle="" navigation={navigation}/>
 
             <View style={styles.childContainer}>
 
-                <Text style={styles.title}>Welcome, {user.displayName}</Text>
+                <Text style={styles.title}>{translate('homeTitle')} {user.displayName}</Text>
 
-                <Text style={styles.text}>Thank you for using RPG+! Please, select the menu at the upper left corner and check out all the available tools.</Text>
+                <Text style={styles.text}>{translate('homeSubtitle')}</Text>
 
             </View>
             

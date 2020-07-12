@@ -8,9 +8,9 @@ import {
     Text
 } from 'react-native';
 
-
 import styles from '../style/styles';
 import CustomAppBar from '../components/CustomAppBar';
+import {translate} from '../locales/localeConfig';
 
 /*
 Name Generator algorithm by RyanGoslingsBugle
@@ -126,13 +126,13 @@ export default class NameGeneratorScreen extends Component {
 
             <View style={styles.container}>
 
-                <CustomAppBar title="Name Generator" subtitle="" navigation={this.props.navigation}/>
+                <CustomAppBar title={translate('appBarGenerate')} subtitle="" navigation={this.props.navigation}/>
 
                 <View style={styles.childContainer}>
       
-                    <Text style={styles.title}>Name Generator 2.0</Text>
+                    <Text style={styles.title}>{translate('generatorTitle')}</Text>
 
-                    <Text style={styles.text}>Select a category and press the button to generate random names, you can copy it to your clipboard by clicking on it.</Text>
+                    <Text style={styles.text}>{translate('generatorSubtitle')}</Text>
 
                     <Picker
                         style={styles.pickerStyle}
@@ -156,7 +156,7 @@ export default class NameGeneratorScreen extends Component {
                     </TouchableOpacity>
     
                     <TouchableOpacity onPress={() => this.buttonOnClickListener(this.state.pickerValue)} style={styles.button}>
-                    <Text style={styles.buttonText}>GENERATE!</Text>
+                    <Text style={styles.buttonText}>{translate('generatorBtnGenerate')}</Text>
                     </TouchableOpacity>
 
                 </View>

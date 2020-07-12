@@ -6,6 +6,7 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import firebase from '../controller/Firebase';
 import 'firebase/firestore';
 import styles from '../style/styles';
+import {translate} from '../locales/localeConfig';
 
 //All credits goes to Pradip Debnath
 //https://github.com/itzpradip
@@ -40,53 +41,53 @@ export default function DrawerContent(props) {
                     <Drawer.Section style={styles.drawerSection}>
                         <DrawerItem
                             labelStyle = {{color: 'white'}}
-                            label="Home"
+                            label={translate('drawerHome')}
                             onPress={() => props.navigation.navigate('Home')}
                         />
                     </Drawer.Section>
 
-                        <Text style={styles.drawerSubmenuTitle}>Tools</Text>
+                        <Text style={styles.drawerSubmenuTitle}>{translate('drawerTools')}</Text>
 
                     <Drawer.Section>
 
                         <DrawerItem
                             labelStyle = {{color: 'white'}}
-                            label="Name Generator"
+                            label={translate('drawerNameGenerator')}
                             onPress={()=> props.navigation.navigate('Name Generator')}
                         />
 
                         <DrawerItem
                             labelStyle = {{color: 'white'}}
-                            label="Roll Dices"
+                            label={translate('drawerRollDices')}
                             onPress={()=> props.navigation.navigate("Roll Dices")}
                         />
 
                         <DrawerItem
                             labelStyle = {{color: 'white'}}
-                            label="Create Draft"
+                            label={translate('drawerCreateDraft')}
                             onPress={()=>props.navigation.navigate('Create Draft')}
                         />
 
                         <DrawerItem
                             labelStyle = {{color: 'white'}}
-                            label="My Drafts"
+                            label={translate('drawerMyDrafts')}
                             onPress={()=>props.navigation.navigate('List Drafts')}
                         />
                     </Drawer.Section>
 
-                    <Text style={styles.drawerSubmenuTitle}>Settings</Text>
+                    <Text style={styles.drawerSubmenuTitle}>{translate('drawerSettings')}</Text>
 
                     <Drawer.Section>
                         
                         <DrawerItem
                             labelStyle = {{color: 'white'}}
-                            label="Preferences"
+                            label={translate('drawerPreferences')}
                             onPress={()=>props.navigation.navigate('Preferences')}
                         />
 
                         <DrawerItem
                             labelStyle = {{color: 'white'}}
-                            label="Sign out"
+                            label={translate('drawerSignOut')}
                             onPress={() => {
 
                                 Alert.alert(
