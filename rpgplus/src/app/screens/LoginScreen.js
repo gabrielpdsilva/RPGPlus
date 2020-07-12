@@ -59,11 +59,11 @@ export default class LoginScreen extends Component {
                 <CustomAppBar title={translate('appBarLogin')} subtitle="" backIsVisible={false} isLoginScreen = {true}/>
 
                 <View style={styles.childContainer}>
-
+                
                     <Text style={styles.title}>{translate('loginTitle')}</Text>
 
                     <Text style={styles.text}>{translate('loginSubtitle')}</Text>
-
+                    
                     <View style={styles.inputForm}>
 
                         <View style={{marginTop: 14}}>
@@ -105,9 +105,11 @@ export default class LoginScreen extends Component {
                         <Text style={styles.text}>{translate('loginBtnForgotPassword')}</Text>
                     </TouchableOpacity>
 
-                    <TouchableOpacity onPress={() => this.props.navigation.navigate("Test")}>
+                    <TouchableOpacity onPress={() => this.props.navigation.navigate("DraftForm")}>
                         <Text style={styles.text}>Testtttttt</Text>
                     </TouchableOpacity>
+
+                    
 
                 </View>
             </View>

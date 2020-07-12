@@ -4,7 +4,8 @@ import {
     Text,
     View,
     TextInput,
-    ToastAndroid
+    ToastAndroid,
+    ScrollView
 } from 'react-native';
 
 import CustomAppBar from '../components/CustomAppBar';
@@ -13,6 +14,7 @@ import styles from '../style/styles';
 
 import firebase from '../controller/Firebase';
 import 'firebase/firestore';
+import DraftForm from './DraftForm';
 
 //useful link about user collection on firestore
 //https://www.youtube.com/watch?v=qWy9ylc3f9U
@@ -81,29 +83,68 @@ export default class CreateDraftScreen extends Component {
                 
                 <CustomAppBar title="New Draft" subtitle="" navigation={this.props.navigation}/>
                 
-                <View style={styles.childCenterContainer}>
+                <ScrollView style={{marginTop: 14}}>
 
-                    <Text style={styles.text}>Create a draft for your future campaign! </Text>
-                    <Text style={styles.text}>Max allowed: 10</Text>
+                    <Text style={styles.title}>Create a draft for your campaign! </Text>
+                    <Text style={styles.text}>You can create 10 drafts.</Text>
        
-                    <TextInput style={styles.textInput} value={this.state.name} onChangeText={ (txt) => this.setState({name: txt}) } placeholder="Name of the story..." />
+                    <View style={styles.inputForm}>
 
-                    <TextInput style={styles.customtextinput} value={this.state.category} onChangeText={ (txt) => this.setState({category: txt}) } placeholder="Category of the story (medieval, cyberpunk)..."/>
+                        <View style={{marginTop: 14}}>
 
-                    <TextInput style={styles.customtextinput} value={this.state.system} onChangeText={ (txt) => this.setState({system: txt}) } placeholder="System used (Storyteller, D20)..." />
+                            <Text style={styles.inputTitle}>Nome</Text>
+                            <TextInput
+                                style={styles.newinput}
+                                value={this.state.name}
+                                onChangeText={(txt) => this.setState({name: txt})}
+                                placeholder = "Dance of the dragons..."
+                            />
 
-                    <TextInput style={styles.customtextinput}
-                        value={this.state.text}
-                        multiline = {true} //textinput will be multiline
-                        height = {150}
-                        textAlignVertical= 'top'
-                        onChangeText={ (txt) => this.setState({text: txt}) }
-                        placeholder="Type here a basic draft of your storyboard..."
-                    />
+                        </View>
 
-                </View>
+                        <View style={{marginTop: 14}}>
+                                
+                            <Text style={styles.inputTitle}>Categoria</Text>
+                            <TextInput
+                                style={styles.newinput}
+                                value={this.state.category}
+                                onChangeText={(txt) => this.setState({category: txt})}
+                                placeholder = "Medieval..."
+                            />
+                                
+                        </View>
 
-                <View style={{justifyContent:'center', alignItems: 'center'}}>
+                        <View style={{marginTop: 14}}>
+
+                            <Text style={styles.inputTitle}>Sistema</Text>
+                            <TextInput
+                                style={styles.newinput}
+                                value={this.state.system}
+                                onChangeText={(txt) => this.setState({system: txt})}
+                                placeholder = "D20..."
+                            />
+
+                        </View>
+                    
+                        <View style={{marginTop: 14}}>
+                                
+                            <Text style={styles.inputTitle}>Texto</Text>
+                            <TextInput
+                                multiline = {true}
+                                height = {150}
+                                textAlignVertical = 'top'
+                                style={styles.newinputBOX}
+                                value={this.state.text}
+                                onChangeText={(txt) => this.setState({text: txt})}
+                                placeholder = "This story starts when a..."
+                            />
+                                
+                        </View> 
+
+                    </View>
+                </ScrollView>
+
+                <View style={{justifyContent:'center', alignItems: 'center', marginBottom: 10}}>
             
                     <TouchableOpacity onPress={this.addDraft} style={styles.button}>
                         <Text style={styles.buttonText}>CREATE</Text>

@@ -203,8 +203,8 @@ export default class PreferencesScreen extends Component {
                         <Text style={styles.buttonText}>RENAME ACCOUNT</Text>
                     </TouchableOpacity>
 
-                    <Text>────────────────────────</Text>
-                    
+                    <View style = {styles.lineStyle}/>
+
                     <Text style={styles.dangerTitle}>Danger Zone</Text>
                     
                     <Text style={styles.dangerText}>If you delete your account, you will lose everything about it.</Text>

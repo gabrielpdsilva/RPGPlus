@@ -18,7 +18,7 @@ import firebase from '../controller/Firebase';
 import 'firebase/firestore';
 
 import colors from '../style/colors';
-
+import DraftForm from './DraftForm'
 export default class DraftModelScreen extends Component {
     constructor(props){
         super(props);
@@ -216,6 +216,8 @@ export default class DraftModelScreen extends Component {
 
                     </View>
 
+                    <DraftForm name={this.state.name}/>
+
                     <View style={{justifyContent: 'center', alignItems: 'center'}}>
 
                         <TouchableOpacity
@@ -235,6 +237,8 @@ export default class DraftModelScreen extends Component {
                         </TouchableOpacity>
 
                     </View>
+
+                    
 
                 </ScrollView>
             </View>
