@@ -90,23 +90,37 @@ export default class SketchScreen extends Component {
             
                     </Picker>
 
-                    <TextInput
-                        style={styles.textInput}
-                        value={this.state.quantity}
-                        maxLength={2}
-                        keyboardType = 'numeric'
-                        onChangeText={ (txt) => this.setState({quantity: txt}) }
-                        placeholder={translate('rollQuantityPlaceholder')}
-                    />
+                    <View style={styles.inputForm}>
 
-                    <TextInput
-                        style={styles.textInput}
-                        value={this.state.modifier}
-                        maxLength={2}
-                        keyboardType = 'numeric'
-                        onChangeText={ (txt) => this.setState({modifier: txt}) }
-                        placeholder={translate('rollModifierPlaceholder')}
-                    />
+                        <View style={{marginTop: 14}}>
+
+                            <Text style={styles.inputTitle}>{translate('rollQuantity')}</Text>
+                            <TextInput
+                                style={styles.textInput}
+                                value={this.state.quantity}
+                                maxLength={2}
+                                keyboardType = 'numeric'
+                                onChangeText={(txt) => this.setState({quantity: txt})}
+                                placeholder={translate('rollQuantityPlaceholder')}
+                            />
+                            
+                        </View>
+
+                        <View style={{marginTop: 14}}>
+                            
+                            <Text style={styles.inputTitle}>{translate('rollModifier')}</Text>
+                            <TextInput
+                                style={styles.textInput}
+                                value={this.state.modifier}
+                                maxLength={2}
+                                keyboardType = 'numeric'
+                                onChangeText={(txt) => this.setState({modifier: txt})}
+                                placeholder={translate('rollModifierPlaceholder')}
+                            />
+                            
+                        </View> 
+
+                    </View>
 
                     {
                         results.map((item, key)=>

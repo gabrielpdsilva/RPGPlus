@@ -144,7 +144,7 @@ const styles = StyleSheet.create({
     pickerStyle: {  
         //height: 150,
         width: "70%",  
-        color: colors.white,  
+        color: colors.black,  
         justifyContent: 'center',  
     },
 
