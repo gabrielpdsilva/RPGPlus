@@ -14,6 +14,7 @@ import styles from '../style/styles';
 
 import firebase from '../controller/Firebase';
 import 'firebase/firestore';
+import {translate} from '../locales/localeConfig';
 
 //useful link about user collection on firestore
 //https://www.youtube.com/watch?v=qWy9ylc3f9U
@@ -80,54 +81,54 @@ export default class CreateDraftScreen extends Component {
 
             <View style={styles.container}>
                 
-                <CustomAppBar title="New Draft" subtitle="" navigation={this.props.navigation}/>
+                <CustomAppBar title={translate('appBarCreateDraft')} subtitle="" navigation={this.props.navigation}/>
                 
                 <ScrollView style={{marginTop: 14}}>
 
-                    <Text style={styles.title}>Create a draft for your campaign! </Text>
-                    <Text style={styles.text}>You can create 10 drafts.</Text>
+                    <Text style={styles.title}>{translate('createDraftTitle')}</Text>
+                    <Text style={styles.text}>{translate('createDraftSubtitle')}</Text>
        
                     <View style={styles.inputForm}>
 
                         <View style={{marginTop: 14}}>
 
-                            <Text style={styles.inputTitle}>Nome</Text>
+                            <Text style={styles.inputTitle}>{translate('createDraftName')}</Text>
                             <TextInput
                                 style={styles.newinput}
                                 value={this.state.name}
                                 onChangeText={(txt) => this.setState({name: txt})}
-                                placeholder = "Dance of the dragons..."
+                                placeholder = {translate('createDraftNamePlaceholder')}
                             />
 
                         </View>
 
                         <View style={{marginTop: 14}}>
                                 
-                            <Text style={styles.inputTitle}>Categoria</Text>
+                            <Text style={styles.inputTitle}>{translate('createDraftCategory')}</Text>
                             <TextInput
                                 style={styles.newinput}
                                 value={this.state.category}
                                 onChangeText={(txt) => this.setState({category: txt})}
-                                placeholder = "Medieval..."
+                                placeholder = {translate('createDraftCategoryPlaceholder')}
                             />
                                 
                         </View>
 
                         <View style={{marginTop: 14}}>
 
-                            <Text style={styles.inputTitle}>Sistema</Text>
+                            <Text style={styles.inputTitle}>{translate('createDraftSystem')}</Text>
                             <TextInput
                                 style={styles.newinput}
                                 value={this.state.system}
                                 onChangeText={(txt) => this.setState({system: txt})}
-                                placeholder = "D20..."
+                                placeholder = {translate('createDraftSystemPlaceholder')}
                             />
 
                         </View>
                     
                         <View style={{marginTop: 14}}>
                                 
-                            <Text style={styles.inputTitle}>Texto</Text>
+                            <Text style={styles.inputTitle}>{translate('createDraftTextBox')}</Text>
                             <TextInput
                                 multiline = {true}
                                 height = {150}
@@ -135,7 +136,7 @@ export default class CreateDraftScreen extends Component {
                                 style={styles.newinputBOX}
                                 value={this.state.text}
                                 onChangeText={(txt) => this.setState({text: txt})}
-                                placeholder = "This story starts when a..."
+                                placeholder = {translate('createDraftTextBoxPlaceholder')}
                             />
                                 
                         </View> 
@@ -146,7 +147,7 @@ export default class CreateDraftScreen extends Component {
                 <View style={{justifyContent:'center', alignItems: 'center', marginBottom: 10}}>
             
                     <TouchableOpacity onPress={this.addDraft} style={styles.button}>
-                        <Text style={styles.buttonText}>CREATE</Text>
+                        <Text style={styles.buttonText}>{translate('createDraftBtnCreate')}</Text>
                     </TouchableOpacity>
 
                 </View>
