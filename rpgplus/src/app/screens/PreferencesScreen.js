@@ -157,7 +157,7 @@ export default class PreferencesScreen extends Component {
 
     render(){
 
-        let { image } = this.state.image;
+        const image = this.state.image;
 
         return(
             <View style={styles.container}>
