@@ -142,15 +142,18 @@ export default class CreateDraftScreen extends Component {
                         </View> 
 
                     </View>
+
+                    <View style={{justifyContent:'center', alignItems: 'center', marginBottom: 10}}>
+            
+                        <TouchableOpacity onPress={this.addDraft} style={styles.button}>
+                            <Text style={styles.buttonText}>{translate('createDraftBtnCreate')}</Text>
+                        </TouchableOpacity>
+
+                    </View>
+                    
                 </ScrollView>
 
-                <View style={{justifyContent:'center', alignItems: 'center', marginBottom: 10}}>
-            
-                    <TouchableOpacity onPress={this.addDraft} style={styles.button}>
-                        <Text style={styles.buttonText}>{translate('createDraftBtnCreate')}</Text>
-                    </TouchableOpacity>
-
-                </View>
+                
             </View>
         );
     }
