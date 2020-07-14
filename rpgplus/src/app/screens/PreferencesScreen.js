@@ -5,7 +5,6 @@ import {
     Image,
     TextInput,
     ToastAndroid,
-    Switch,
     Alert,
     TouchableOpacity
 } from 'react-native';
@@ -14,8 +13,6 @@ import CustomAppBar from '../components/CustomAppBar';
 
 import styles from '../style/styles';
 
-import colors from '../style/colors';
-
 import firebase from '../controller/Firebase';
 import 'firebase/firestore';
 
@@ -23,10 +20,8 @@ import * as ImagePicker from 'expo-image-picker';
 import Constants from 'expo-constants';
 import * as Permissions from 'expo-permissions';
 
-import DialogInput from 'react-native-dialog-input';
-
 export default class PreferencesScreen extends Component {
-    constructor(props){
+    constructor(props) {
         super(props);
 
         const user = firebase.auth().currentUser;
@@ -39,22 +34,6 @@ export default class PreferencesScreen extends Component {
             password: user.password,
             isDialogVisible: true,
         }
-    }
-
-    cancelAction = () => {
-        this.setState({isDialogVisible: false})
-    }
-
-    showaaaa = () => {
-        this.setState({isDialogVisible: true})
-       
-    }
-
-    sendInput = (inputText) => {
-
-        this.setState({name: inputText});
-        this.updateName;
-
     }
 
     componentDidMount() {
@@ -100,7 +79,7 @@ export default class PreferencesScreen extends Component {
     buttonDelete = () => {
         Alert.alert(
             'Delete Account', //title
-            'Are you sure you want to delete your account?', //message
+            'Are you sure you want to delete your account? This can\'t be undone.', //message
             [
                 {
                     text: 'Cancel',
@@ -139,43 +118,43 @@ export default class PreferencesScreen extends Component {
                 alert("Something went wrong: \n" + error);
             });
 
-
         }).catch((error) => {
             alert("Error removing document: " + error);
         });
 
     }
 
-    updateName = () => {
+    updateUserProfile = () => {
 
         const user = firebase.auth().currentUser;
 
-        //updates de user profile
-        user
-        .updateProfile({
-            
+        //updating name
+        user.updateProfile({
             //updates the displayName of the user
             displayName: this.state.name,
-        })
-        .then(() => {
-
-            //toast a message
-            ToastAndroid.show("Done!", ToastAndroid.SHORT);
-        })
-        .catch((error) => {
+        }).then(() => {
+            console.log("Name updated.");
+        }).catch((error) => {
             alert("Something went wrong: \n" + error);
         });
 
-        this.setState({isSwitchOn: false});
-        this.setState({isDialogVisible: false});
+        //updating email
+        user.updateEmail(this.state.email).then(() => {
+            // Update successful.
+            console.log("E-mail updated.");
+        }).catch((error) => {
+            // An error happened.
+            alert("Something went wrong: \n" + error);
+        });
 
+        ToastAndroid.show("Done!", ToastAndroid.SHORT);
+        this.props.navigation.navigate("Home");
     }
 
     _onToggleSwitch = () =>  this.setState(state => ({ isSwitchOn: !state.isSwitchOn }));
 
     render(){
 
-        const { isSwitchOn } = this.state;
         let { image } = this.state.image;
 
         return(
@@ -185,50 +164,30 @@ export default class PreferencesScreen extends Component {
 
                 <View style={styles.childContainer}>
 
-                <TouchableOpacity onPress={this._pickImage}>
-                    <Image
-                        source={{
-                            //uri: 'https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png'
-                            uri: image ? image : 'https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png'
-                        }}
-                        style={{ width: 120, height: 120 }}
-                    />
-                </TouchableOpacity>
-
-                    <View style={{flexDirection: 'row'}}>
-
-                        <TextInput style={styles.textInput}
-                            backgroundColor = {isSwitchOn ? colors.darkContainer : colors.deepGray}
-                            editable={isSwitchOn}
-                            value={this.state.name}
-                            width={235}
-                            onChangeText={ (txt) => this.setState({name: txt}) }
-                            placeholder="..."
+                    <TouchableOpacity onPress={this._pickImage}>
+                        <Image
+                            source={{
+                                uri: image ? image : 'https://simpleicon.com/wp-content/uploads/user1.png'
+                            }}
+                            style={{ width: 120, height: 120 }}
                         />
+                    </TouchableOpacity>
 
-                        <Switch
-                            trackColor={{ false: colors.lightGray, true: colors.orange }}
-                            thumbColor={colors.alternativeWhite}
-                            ios_backgroundColor={colors.darkGray}
-                            onValueChange={this._onToggleSwitch}
-                            value={isSwitchOn}
-                        />
+                    <Text style={styles.inputTitle}>Change Image</Text>
 
-                    </View>
+                    <View style = {styles.lineStyle}/>
 
                     <View style={{marginTop: 5}}>
 
                         <Text style={styles.inputTitle}>Name</Text>
                         
-                            <TextInput
-                                editable={false}
-                                style={styles.textInputPreference}
-                                value={this.state.name}
-                                onChangeText={ (txt) => this.setState({name: txt}) }
-                                placeholder="..."
-                            />
+                        <TextInput
+                            style={styles.textInputPreference}
+                            value={this.state.name}
+                            onChangeText={ (txt) => this.setState({name: txt}) }
+                            placeholder="..."
+                        />
 
-                            
                     </View>
 
                     <View style = {styles.lineStyle}/>
@@ -237,50 +196,27 @@ export default class PreferencesScreen extends Component {
 
                         <Text style={styles.inputTitle}>E-mail</Text>
                         
-                            <TextInput
-                                editable={false}
-                                style={styles.textInputPreference}
-                                value={this.state.email}
-                                onChangeText={ (txt) => this.setState({email: txt}) }
-                                placeholder="..."
-                            />
-
+                        <TextInput
+                            style={styles.textInputPreference}
+                            value={this.state.email}
+                            onChangeText={ (txt) => this.setState({email: txt}) }
+                            placeholder="..."
+                        />
                             
                     </View>
 
                     <View style = {styles.lineStyle}/>
-
-                    <View style={{marginTop: 5}}>
-
-                        <Text style={styles.inputTitle}>Password</Text>
                     
-                        <TextInput
-                            editable={false}
-                            style={styles.textInputPreference}
-                            value="......"
-                            secureTextEntry={true}
-                            onChangeText={ (txt) => this.setState({password: txt}) }
-                            placeholder="..."
-                        />
+                    <View style={{marginTop: 20}}>
 
-                            
+                        <TouchableOpacity onPress={this.updateUserProfile} style={styles.button}>
+                            <Text style={styles.buttonText}>Save Changes</Text>
+                        </TouchableOpacity>
+
                     </View>
 
-                    <TouchableOpacity
-                        onPress={this.updateName}
-                        disabled = {!isSwitchOn}
-                        style={[styles.button, {backgroundColor: isSwitchOn ? colors.orange : colors.DarkestOrange}]}
-                    >
-                        <Text style={styles.buttonText}>RENAME ACCOUNT</Text>
-                    </TouchableOpacity>
-                    
-
-                    <Text style={styles.dangerTitle}>Danger Zone</Text>
-                    
-                    <Text style={styles.dangerText}>If you delete your account, you will lose everything about it.</Text>
-
                     <TouchableOpacity onPress={this.buttonDelete} style={styles.button}>
-                        <Text style={styles.buttonText}>DELETE ACCOUNT</Text>
+                        <Text style={styles.buttonText}>Delete Account</Text>
                     </TouchableOpacity>
 
                 </View>

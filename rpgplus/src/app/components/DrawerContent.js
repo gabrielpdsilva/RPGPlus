@@ -22,13 +22,13 @@ export default function DrawerContent(props) {
         <View style={{flex:1}} backgroundColor = {colors.lightTheme}>
             <DrawerContentScrollView {...props}>
                 <View style={styles.drawerContent}>
-                    <View style={styles.drawerUserInfoSection, {backgroundColor: colors.lightTheme}}>
+                    <View style={styles.drawerUserInfoSection}>
 
                         <View style={{flexDirection: 'row', marginTop: 15}}>
 
                             <Avatar.Image
                                 source={{
-                                    uri: user.photoURL ? user.photoURL : 'https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png'
+                                    uri: user.photoURL ? user.photoURL : 'https://simpleicon.com/wp-content/uploads/user1.png'
                                 }}
                                 size={80}
                             />
