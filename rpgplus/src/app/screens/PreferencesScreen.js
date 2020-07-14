@@ -23,6 +23,8 @@ import * as ImagePicker from 'expo-image-picker';
 import Constants from 'expo-constants';
 import * as Permissions from 'expo-permissions';
 
+import DialogInput from 'react-native-dialog-input';
+
 export default class PreferencesScreen extends Component {
     constructor(props){
         super(props);
@@ -33,7 +35,26 @@ export default class PreferencesScreen extends Component {
             name: user.displayName,
             isSwitchOn: false,
             image: user.photoURL,
+            email: user.email,
+            password: user.password,
+            isDialogVisible: true,
         }
+    }
+
+    cancelAction = () => {
+        this.setState({isDialogVisible: false})
+    }
+
+    showaaaa = () => {
+        this.setState({isDialogVisible: true})
+       
+    }
+
+    sendInput = (inputText) => {
+
+        this.setState({name: inputText});
+        this.updateName;
+
     }
 
     componentDidMount() {
@@ -146,6 +167,7 @@ export default class PreferencesScreen extends Component {
         });
 
         this.setState({isSwitchOn: false});
+        this.setState({isDialogVisible: false});
 
     }
 
@@ -154,7 +176,7 @@ export default class PreferencesScreen extends Component {
     render(){
 
         const { isSwitchOn } = this.state;
-        let { image } = this.state;
+        let { image } = this.state.image;
 
         return(
             <View style={styles.container}>
@@ -166,13 +188,12 @@ export default class PreferencesScreen extends Component {
                 <TouchableOpacity onPress={this._pickImage}>
                     <Image
                         source={{
+                            //uri: 'https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png'
                             uri: image ? image : 'https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png'
                         }}
                         style={{ width: 120, height: 120 }}
                     />
                 </TouchableOpacity>
-                    
-                    <Text style={styles.text}>Change your name</Text>
 
                     <View style={{flexDirection: 'row'}}>
 
@@ -195,6 +216,56 @@ export default class PreferencesScreen extends Component {
 
                     </View>
 
+                    <View style={{marginTop: 5}}>
+
+                        <Text style={styles.inputTitle}>Name</Text>
+                        
+                            <TextInput
+                                editable={false}
+                                style={styles.textInputPreference}
+                                value={this.state.name}
+                                onChangeText={ (txt) => this.setState({name: txt}) }
+                                placeholder="..."
+                            />
+
+                            
+                    </View>
+
+                    <View style = {styles.lineStyle}/>
+
+                    <View style={{marginTop: 5}}>
+
+                        <Text style={styles.inputTitle}>E-mail</Text>
+                        
+                            <TextInput
+                                editable={false}
+                                style={styles.textInputPreference}
+                                value={this.state.email}
+                                onChangeText={ (txt) => this.setState({email: txt}) }
+                                placeholder="..."
+                            />
+
+                            
+                    </View>
+
+                    <View style = {styles.lineStyle}/>
+
+                    <View style={{marginTop: 5}}>
+
+                        <Text style={styles.inputTitle}>Password</Text>
+                    
+                        <TextInput
+                            editable={false}
+                            style={styles.textInputPreference}
+                            value="......"
+                            secureTextEntry={true}
+                            onChangeText={ (txt) => this.setState({password: txt}) }
+                            placeholder="..."
+                        />
+
+                            
+                    </View>
+
                     <TouchableOpacity
                         onPress={this.updateName}
                         disabled = {!isSwitchOn}
@@ -202,8 +273,7 @@ export default class PreferencesScreen extends Component {
                     >
                         <Text style={styles.buttonText}>RENAME ACCOUNT</Text>
                     </TouchableOpacity>
-
-                    <View style = {styles.lineStyle}/>
+                    
 
                     <Text style={styles.dangerTitle}>Danger Zone</Text>
                     

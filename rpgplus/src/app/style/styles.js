@@ -62,6 +62,14 @@ const styles = StyleSheet.create({
         borderRadius: 4,
     },
 
+    //textinput style
+    textInputPreference: {  
+        width: 290,
+        padding: 0,
+        backgroundColor: colors.lightTheme,
+        color: colors.black,
+    },
+
     //textinputBox style
     textInputBox: {  
         width: 290,
@@ -78,7 +86,7 @@ const styles = StyleSheet.create({
     lineStyle:{
         borderWidth: 0.5,
         borderColor: colors.black,
-//        margin:10,
+        margin: 5,
         width: 290,
    },
 

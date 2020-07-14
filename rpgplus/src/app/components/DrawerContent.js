@@ -22,7 +22,7 @@ export default function DrawerContent(props) {
         <View style={{flex:1}} backgroundColor = {colors.lightTheme}>
             <DrawerContentScrollView {...props}>
                 <View style={styles.drawerContent}>
-                    <View style={styles.drawerUserInfoSection}>
+                    <View style={styles.drawerUserInfoSection, {backgroundColor: colors.lightTheme}}>
 
                         <View style={{flexDirection: 'row', marginTop: 15}}>
 
