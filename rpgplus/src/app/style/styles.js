@@ -207,13 +207,13 @@ const styles = StyleSheet.create({
         fontSize: 16,
         marginTop: 3,
         fontWeight: 'bold',
-        color: 'white',
+        color: colors.black,
     },
 
     drawerCaption: {
         fontSize: 14,
         lineHeight: 14,
-        color: 'white',
+        color: colors.black,
     },
 
     drawerSection: {
@@ -225,7 +225,7 @@ const styles = StyleSheet.create({
         fontSize: 16,
         marginTop: 3,
         fontWeight: 'bold',
-        color: 'white',
+        color: colors.black,
     },
     /**********************
      * drawerContent style ends here*
