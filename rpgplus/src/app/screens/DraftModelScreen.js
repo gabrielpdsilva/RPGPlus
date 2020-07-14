@@ -18,7 +18,7 @@ import firebase from '../controller/FirebaseConfig';
 import 'firebase/firestore';
 
 import colors from '../style/colors';
-import DraftForm from './DraftForm'
+
 export default class DraftModelScreen extends Component {
     constructor(props){
         super(props);
@@ -215,8 +215,6 @@ export default class DraftModelScreen extends Component {
                         />
 
                     </View>
-
-                    <DraftForm name={this.state.name}/>
 
                     <View style={{justifyContent: 'center', alignItems: 'center'}}>
 

@@ -5,7 +5,6 @@ import {createStackNavigator} from '@react-navigation/stack';
 import LoginScreen from '../screens/LoginScreen';
 import RegisterScreen from '../screens/RegisterScreen';
 import ForgotPasswordScreen from '../screens/ForgotPasswordScreen';
-import DraftForm from '../screens/DraftForm';
 
 import MyDrawer from './MyDrawer';
 
@@ -38,11 +37,6 @@ const MyStack = () => {
                 options={{headerShown: false}}
             />
 
-            <Stack.Screen
-                name="DraftForm"
-                component={DraftForm}
-                options={{headerShown: false}}
-            />
         </Stack.Navigator>
     );
 }
