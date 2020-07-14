@@ -41,7 +41,7 @@ export default class DraftForm extends Component {
 
                             <Text style={styles.inputTitle}>Nome</Text>
                             <TextInput
-                                style={styles.newinput}
+                                style={styles.createDraftInput}
                                 value={this.state.name}
                                 onChangeText={(txt) => this.setState({name: txt})}
                                 placeholder = "Dance of the dragons..."
@@ -53,7 +53,7 @@ export default class DraftForm extends Component {
                             
                             <Text style={styles.inputTitle}>Categoria</Text>
                             <TextInput
-                                style={styles.newinput}
+                                style={styles.createDraftInput}
                                 value={this.state.category}
                                 onChangeText={(txt) => this.setState({category: txt})}
                                 placeholder = "Medieval..."
@@ -65,7 +65,7 @@ export default class DraftForm extends Component {
 
                             <Text style={styles.inputTitle}>Sistema</Text>
                             <TextInput
-                                style={styles.newinput}
+                                style={styles.createDraftInput}
                                 value={this.state.system}
                                 onChangeText={(txt) => this.setState({system: txt})}
                                 placeholder = "D20..."
@@ -80,7 +80,7 @@ export default class DraftForm extends Component {
                                 multiline = {true}
                                 height = {150}
                                 textAlignVertical = 'top'
-                                style={styles.newinputBOX}
+                                style={styles.createDraftInputBox}
                                 value={this.state.text}
                                 onChangeText={(txt) => this.setState({text: txt})}
                                 placeholder = "This story starts when a..."

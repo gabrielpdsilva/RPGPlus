@@ -94,7 +94,7 @@ export default class CreateDraftScreen extends Component {
 
                             <Text style={styles.inputTitle}>{translate('createDraftName')}</Text>
                             <TextInput
-                                style={styles.newinput}
+                                style={styles.createDraftInput}
                                 value={this.state.name}
                                 onChangeText={(txt) => this.setState({name: txt})}
                                 placeholder = {translate('createDraftNamePlaceholder')}
@@ -106,7 +106,7 @@ export default class CreateDraftScreen extends Component {
                                 
                             <Text style={styles.inputTitle}>{translate('createDraftCategory')}</Text>
                             <TextInput
-                                style={styles.newinput}
+                                style={styles.createDraftInput}
                                 value={this.state.category}
                                 onChangeText={(txt) => this.setState({category: txt})}
                                 placeholder = {translate('createDraftCategoryPlaceholder')}
@@ -118,7 +118,7 @@ export default class CreateDraftScreen extends Component {
 
                             <Text style={styles.inputTitle}>{translate('createDraftSystem')}</Text>
                             <TextInput
-                                style={styles.newinput}
+                                style={styles.createDraftInput}
                                 value={this.state.system}
                                 onChangeText={(txt) => this.setState({system: txt})}
                                 placeholder = {translate('createDraftSystemPlaceholder')}
@@ -133,7 +133,7 @@ export default class CreateDraftScreen extends Component {
                                 multiline = {true}
                                 height = {150}
                                 textAlignVertical = 'top'
-                                style={styles.newinputBOX}
+                                style={styles.createDraftInputBox}
                                 value={this.state.text}
                                 onChangeText={(txt) => this.setState({text: txt})}
                                 placeholder = {translate('createDraftTextBoxPlaceholder')}

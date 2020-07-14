@@ -62,7 +62,7 @@ const styles = StyleSheet.create({
         borderRadius: 4,
     },
 
-    //textinput style
+    //textinput style for preferenceScreen
     textInputPreference: {  
         width: 290,
         padding: 0,
@@ -90,18 +90,7 @@ const styles = StyleSheet.create({
         width: 290,
    },
 
-    //draft box style
-    draftBox: {
-        backgroundColor: colors.white,
-        margin: 10,
-        borderRadius: 10,
-        borderWidth: 1,
-        borderColor: colors.black,
-        marginTop: 0,
-        width: 290,
-    },
-
-    newinput: {
+    createDraftInput: {
         borderBottomColor: colors.black,
         borderBottomWidth: StyleSheet.hairlineWidth,
         height: 40,
@@ -109,7 +98,7 @@ const styles = StyleSheet.create({
         color: colors.black,
     },
 
-    newinputBOX: {
+    createDraftInputBox: {
         borderBottomColor: colors.black,
         borderBottomWidth: StyleSheet.hairlineWidth,
         height: 130,

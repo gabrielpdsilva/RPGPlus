@@ -77,6 +77,14 @@ const en = {
     createDraftTextBox: 'Text',
     createDraftTextBoxPlaceholder: 'Everything begins when the cells from the Black Tower explodes, releasing all the prisoners, ...',
     createDraftBtnCreate: 'Create',
+
+    //preferences
+    appBarPreferences: 'My Preferences',
+    preferencesChangeImage: 'Change Image',
+    preferencesName: 'Name',
+    preferencesEmail: 'E-mail',
+    preferencesBtnSaveChanges: 'Save Changes',
+    preferencesBtnDeleteAccount: 'Delete Account',
     
 };
   

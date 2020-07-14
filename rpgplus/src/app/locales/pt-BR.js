@@ -77,6 +77,14 @@ const pt = {
     createDraftTextBox: 'Texto',
     createDraftTextBoxPlaceholder: 'Tudo começa quando as celas da Torre Negra explodem e liberam os prisioneiros, ...',
     createDraftBtnCreate: 'Criar',
+
+    //preferences
+    appBarPreferences: 'Minhas Preferências',
+    preferencesChangeImage: 'Mudar Imagem',
+    preferencesName: 'Nome',
+    preferencesEmail: 'E-mail',
+    preferencesBtnSaveChanges: 'Salvar Mudanças',
+    preferencesBtnDeleteAccount: 'Deletar Conta',
     
 };
   

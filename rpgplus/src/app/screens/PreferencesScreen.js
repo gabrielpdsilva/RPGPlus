@@ -20,6 +20,8 @@ import * as ImagePicker from 'expo-image-picker';
 import Constants from 'expo-constants';
 import * as Permissions from 'expo-permissions';
 
+import {translate} from '../locales/localeConfig';
+
 export default class PreferencesScreen extends Component {
     constructor(props) {
         super(props);
@@ -160,7 +162,7 @@ export default class PreferencesScreen extends Component {
         return(
             <View style={styles.container}>
 
-                <CustomAppBar title="My Preferences" navigation={this.props.navigation}/>
+                <CustomAppBar title={translate('appBarPreferences')} navigation={this.props.navigation}/>
 
                 <View style={styles.childContainer}>
 
@@ -173,13 +175,13 @@ export default class PreferencesScreen extends Component {
                         />
                     </TouchableOpacity>
 
-                    <Text style={styles.inputTitle}>Change Image</Text>
+                    <Text style={styles.inputTitle}>{translate('preferencesChangeImage')}</Text>
 
                     <View style = {styles.lineStyle}/>
 
                     <View style={{marginTop: 5}}>
 
-                        <Text style={styles.inputTitle}>Name</Text>
+                        <Text style={styles.inputTitle}>{translate('preferencesName')}</Text>
                         
                         <TextInput
                             style={styles.textInputPreference}
@@ -194,7 +196,7 @@ export default class PreferencesScreen extends Component {
 
                     <View style={{marginTop: 5}}>
 
-                        <Text style={styles.inputTitle}>E-mail</Text>
+                        <Text style={styles.inputTitle}>{translate('preferencesEmail')}</Text>
                         
                         <TextInput
                             style={styles.textInputPreference}
@@ -210,13 +212,13 @@ export default class PreferencesScreen extends Component {
                     <View style={{marginTop: 20}}>
 
                         <TouchableOpacity onPress={this.updateUserProfile} style={styles.button}>
-                            <Text style={styles.buttonText}>Save Changes</Text>
+                            <Text style={styles.buttonText}>{translate('preferencesBtnSaveChanges')}</Text>
                         </TouchableOpacity>
 
                     </View>
 
                     <TouchableOpacity onPress={this.buttonDelete} style={styles.button}>
-                        <Text style={styles.buttonText}>Delete Account</Text>
+                        <Text style={styles.buttonText}>{translate('preferencesBtnDeleteAccount')}</Text>
                     </TouchableOpacity>
 
                 </View>
