@@ -12,7 +12,7 @@ import colors from '../style/colors';
 
 import CustomAppBar from '../components/CustomAppBar';
 
-import firebase from '../controller/Firebase';
+import firebase from '../controller/FirebaseConfig';
 
 import { translate } from '../locales/localeConfig';
 

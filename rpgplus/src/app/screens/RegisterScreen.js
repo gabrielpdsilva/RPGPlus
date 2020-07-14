@@ -12,7 +12,7 @@ import styles from '../style/styles';
 
 import CustomAppBar from '../components/CustomAppBar';
 
-import firebase from '../controller/Firebase';
+import firebase from '../controller/FirebaseConfig';
 
 import 'firebase/firestore';
 

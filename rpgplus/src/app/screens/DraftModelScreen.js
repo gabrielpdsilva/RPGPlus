@@ -14,7 +14,7 @@ import CustomAppBar from '../components/CustomAppBar';
 
 import styles from '../style/styles';
 
-import firebase from '../controller/Firebase';
+import firebase from '../controller/FirebaseConfig';
 import 'firebase/firestore';
 
 import colors from '../style/colors';

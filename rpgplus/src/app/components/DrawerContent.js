@@ -3,7 +3,7 @@ import {View, Text, Alert, ToastAndroid} from 'react-native';
 import {DrawerContentScrollView, DrawerItem} from '@react-navigation/drawer';
 import { Drawer, Avatar, Title, Caption } from 'react-native-paper';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-import firebase from '../controller/Firebase';
+import firebase from '../controller/FirebaseConfig';
 import 'firebase/firestore';
 import styles from '../style/styles';
 import colors from '../style/colors';

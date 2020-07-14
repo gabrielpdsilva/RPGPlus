@@ -12,7 +12,7 @@ import {NavigationContainer} from '@react-navigation/native';
 
 import MyStack from './src/app/navigations/MyStack';
 import MyDrawer from './src/app/navigations/MyDrawer';
-import firebase from './src/app/controller/Firebase';
+import firebase from './src/app/controller/FirebaseConfig';
 
 const App = () => {
 
