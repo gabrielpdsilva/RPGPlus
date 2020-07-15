@@ -94,8 +94,7 @@ const styles = StyleSheet.create({
 
     separatorLine: {
         borderWidth: 0.5,
-        borderColor: colors.black,
-        width: 300,
+        borderColor: colors.black,   
    },
 
     createDraftInput: {

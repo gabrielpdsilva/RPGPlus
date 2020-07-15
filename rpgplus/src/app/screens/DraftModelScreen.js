@@ -154,91 +154,78 @@ export default class DraftModelScreen extends Component {
                 
                 <CustomAppBar title="Edit Draft" subtitle="" backIsVisible={true} navigation={this.props.navigation}/>
 
-                <ScrollView>
+                <ScrollView style={{marginTop: 14}}>
                 
-                    <View style={styles.childCenterContainer}>
+                    <View style={styles.inputForm}>
 
-                        <Text style={styles.title}>Here you can edit or delete your draft.</Text>
+                        <View style={{marginTop: 14}}>
 
-                        <Switch
-                            trackColor={{ false: colors.lightGray, true: colors.orange }}
-                            thumbColor={colors.alternativeWhite}
-                            ios_backgroundColor={colors.darkGray}
-                            onValueChange={this._onToggleSwitch}
-                            value={isSwitchOn}
-                        />
+                            <Text style={styles.inputTitle}>Name</Text>
+                            <TextInput
+                                placeholder="Loading..."
+                                style={styles.createDraftInput}
+                                value={this.state.name}
+                                onChangeText={(txt) => this.setState({name: txt})}
+                            />
 
-                        <Text style={styles.textForm}>Name:</Text>
-        
-                        <TextInput
-                            style={styles.textInput}
-                            backgroundColor = {isSwitchOn ? colors.darkContainer : colors.deepGray}
-                            value={this.state.name} editable={isSwitchOn}
-                            onChangeText={ (txt) => this.setState({name: txt}) }
-                            placeholder="Loading..."
-                        />
+                        </View>
 
-                        <Text style={styles.textForm}>Category:</Text>
-                        
-                        <TextInput
-                            style={styles.textInput}
-                            backgroundColor = {isSwitchOn ? colors.darkContainer : colors.deepGray}
-                            value={this.state.category}
-                            editable={isSwitchOn}
-                            onChangeText={ (txt) => this.setState({category: txt}) }
-                            placeholder="Loading..."
-                        />
-                        
-                        <Text style={styles.textForm}>System:</Text>
-                        
-                        <TextInput
-                            style={styles.textInput}
-                            backgroundColor = {isSwitchOn ? colors.darkContainer : colors.deepGray}
-                            value={this.state.system}
-                            editable={isSwitchOn}
-                            onChangeText={ (txt) => this.setState({system: txt}) }
-                            placeholder="Loading..."
-                        />
-                        
-                        <Text style={styles.textForm}>Text:</Text>
-                        
-                        <TextInput
-                            style={styles.textInput}
-                            backgroundColor = {isSwitchOn ? colors.darkContainer : colors.deepGray}
-                            value={this.state.text}
-                            multiline = {true} //textinput will be multiline
-                            height = {150}
-                            textAlignVertical= 'top'
-                            editable={isSwitchOn}
-                            onChangeText={ (txt) => this.setState({text: txt}) }
-                            placeholder="Loading..."
-                        />
+                        <View style={{marginTop: 14}}>
+                                
+                            <Text style={styles.inputTitle}>Category</Text>
+                            <TextInput
+                                placeholder="Loading..."
+                                style={styles.createDraftInput}
+                                value={this.state.category}
+                                onChangeText={(txt) => this.setState({category: txt})}
+                            />
+                                
+                        </View>
+
+                        <View style={{marginTop: 14}}>
+
+                            <Text style={styles.inputTitle}>System</Text>
+                            <TextInput
+                                placeholder="Loading..."
+                                style={styles.createDraftInput}
+                                value={this.state.system}
+                                onChangeText={(txt) => this.setState({system: txt})}
+                            />
+
+                        </View>
+
+                        <View style={{marginTop: 14}}>
+                                
+                            <Text style={styles.inputTitle}>Text</Text>
+                            <TextInput
+                                placeholder="Loading..."
+                                multiline = {true}
+                                height = {150}
+                                textAlignVertical = 'top'
+                                style={styles.createDraftInputBox}
+                                value={this.state.text}
+                                onChangeText={(txt) => this.setState({text: txt})}
+                            />
+                                
+                        </View> 
 
                     </View>
 
-                    <View style={{justifyContent: 'center', alignItems: 'center'}}>
 
-                        <TouchableOpacity
-                            onPress={this.btnEditDraft}
-                            disabled = {!isSwitchOn}
-                            style={[styles.button, {backgroundColor: isSwitchOn ? colors.orange : colors.DarkestOrange}]}
-                        >
-                            <Text style={styles.buttonText}>EDIT DRAFT</Text>
+                    <View style={{justifyContent:'center', alignItems: 'center', marginBottom: 10}}>
+            
+                        <TouchableOpacity onPress={()=>alert("edit?")} style={styles.button}>
+                            <Text style={styles.buttonText}>Save Changes</Text>
                         </TouchableOpacity>
 
-                        <TouchableOpacity
-                            onPress={this.btnDeleteDraft}
-                            disabled = {!isSwitchOn}
-                            style={[styles.button, {backgroundColor: isSwitchOn ? colors.orange : colors.DarkestOrange}]}
-                        >
-                            <Text style={styles.buttonText}>DELETE DRAFT</Text>
+                        <TouchableOpacity onPress={()=>alert("delete?")} style={styles.button}>
+                            <Text style={styles.buttonText}>Delete Draft</Text>
                         </TouchableOpacity>
 
                     </View>
-
                     
-
                 </ScrollView>
+
             </View>
         );
     }

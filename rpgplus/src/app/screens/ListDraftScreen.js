@@ -70,6 +70,7 @@ export default class ListDraftScreen extends Component {
     renderItem = ({item}) => (
         <TouchableOpacity onPress={() => this.onClickItem(item)}>
             <View style={styles.listItem}>
+
                 <View style={{marginTop: 5}}>
 
                     <Text style={styles.inputTitle}>Name</Text>
@@ -77,7 +78,7 @@ export default class ListDraftScreen extends Component {
 
                 </View>
 
-                <View style = {styles.lineStyle}/>
+                <View style = {styles.separatorLine}/>
 
                 <View style={{marginTop: 5}}>
 
@@ -86,7 +87,7 @@ export default class ListDraftScreen extends Component {
 
                 </View>
 
-                <View style = {styles.lineStyle}/>
+                <View style = {styles.separatorLine}/>
 
                 <View style={{marginTop: 5}}>
 
@@ -95,7 +96,7 @@ export default class ListDraftScreen extends Component {
 
                 </View>
 
-                <View style = {styles.lineStyle}/>
+                <View style = {styles.separatorLine}/>
 
                 <View style={{marginTop: 5}}>
 

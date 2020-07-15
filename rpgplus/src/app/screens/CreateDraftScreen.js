@@ -153,7 +153,6 @@ export default class CreateDraftScreen extends Component {
                     
                 </ScrollView>
 
-                
             </View>
         );
     }
