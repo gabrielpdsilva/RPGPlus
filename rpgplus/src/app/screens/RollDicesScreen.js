@@ -74,23 +74,29 @@ export default class SketchScreen extends Component {
                 
                     <Text style={styles.title}>{translate('rollTitle')}</Text>
                     <Text style={styles.text}>{translate('rollSubtitle')}</Text>
-                 
-                    <Picker
-                        style={styles.pickerStyle}
-                        selectedValue={this.state.type}
-                        onValueChange={(itemValue) => this.setState({type: itemValue})}
-                    >
-                        <Picker.Item label="D4" value={4}/>
-                        <Picker.Item label="D6" value={6}/>
-                        <Picker.Item label="D8" value={8}/>
-                        <Picker.Item label="D10" value={10}/>
-                        <Picker.Item label="D12" value={12}/>
-                        <Picker.Item label="D20" value={20}/>
-                        <Picker.Item label="D100" value={100}/>
-            
-                    </Picker>
 
                     <View style={styles.inputForm}>
+
+                        <View style={{marginTop: 14}}>
+
+                        <Text style={styles.inputTitle}>{translate('rollType')}</Text>
+
+                            <Picker
+                                style={styles.pickerStyle}
+                                selectedValue={this.state.type}
+                                onValueChange={(itemValue) => this.setState({type: itemValue})}
+                            >
+                                <Picker.Item label="D4" value={4}/>
+                                <Picker.Item label="D6" value={6}/>
+                                <Picker.Item label="D8" value={8}/>
+                                <Picker.Item label="D10" value={10}/>
+                                <Picker.Item label="D12" value={12}/>
+                                <Picker.Item label="D20" value={20}/>
+                                <Picker.Item label="D100" value={100}/>
+
+                            </Picker>
+
+                        </View>
 
                         <View style={{marginTop: 14}}>
 

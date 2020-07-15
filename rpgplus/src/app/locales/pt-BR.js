@@ -56,6 +56,7 @@ const pt = {
     appBarRollDices: 'Rolar Dados',
     rollTitle: 'Rolar Dados',
     rollSubtitle: 'Por favor, selecione o tipo de dado, quantidade de dados a serem jogados e o modificador.',
+    rollType: 'Tipo',
     rollQuantity: 'Quantidade',
     rollQuantityPlaceholder: 'Valor padrão = 1',
     rollModifier: 'Modificador',

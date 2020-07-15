@@ -56,6 +56,7 @@ const en = {
     appBarRollDices: 'Roll Dices',
     rollTitle: 'Roll Dices',
     rollSubtitle: 'Please, select the type of the dice, quantity of dices to be rolled and the modifier.',
+    rollType: 'Type',
     rollQuantity: 'Quantity',
     rollQuantityPlaceholder: 'Default value = 1',
     rollModifier: 'Modifier',
