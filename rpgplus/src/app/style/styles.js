@@ -1,5 +1,7 @@
 import {StyleSheet} from 'react-native';
 
+import { Dimensions } from "react-native";
+
 import colors from './colors';
 
 const styles = StyleSheet.create({
@@ -83,11 +85,17 @@ const styles = StyleSheet.create({
     },
 
     //rule to separate items
-    lineStyle:{
+    lineStyle: {
         borderWidth: 0.5,
         borderColor: colors.black,
         margin: 5,
         width: 290,
+   },
+
+    separatorLine: {
+        borderWidth: 0.5,
+        borderColor: colors.black,
+        width: 300,
    },
 
     createDraftInput: {
@@ -116,15 +124,14 @@ const styles = StyleSheet.create({
     },
 
     listItem: {
-        backgroundColor: colors.orange,
-        width: 200,
-        margin: 10,
-        marginVertical: 2,
-        marginHorizontal: 2,
+        backgroundColor: colors.white,
+        margin: 4,
+        padding: 20
     },
 
     textItem: {
-        color: colors.white,
+        
+        color: colors.black,
         margin: 3,
         fontSize: 15,
     },

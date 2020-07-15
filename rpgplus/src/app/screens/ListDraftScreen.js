@@ -3,11 +3,13 @@ import {
     Text,
     View,
     FlatList,
-    TouchableOpacity
+    TouchableOpacity,
+    ScrollView,
+    StyleSheet
 } from 'react-native';
 
 import styles from '../style/styles';
-
+import colors from '../style/colors';
 import CustomAppBar from '../components/CustomAppBar';
 
 import firebase from '../controller/FirebaseConfig';
@@ -64,36 +66,60 @@ export default class ListDraftScreen extends Component {
         //navigates to draft model and send the ID of the item to the new screen
         this.props.navigation.navigate("Draft Model", {itemId: item.id});
     }
-    
-    renderItem = ({ item }) => (
+
+    renderItem = ({item}) => (
         <TouchableOpacity onPress={() => this.onClickItem(item)}>
             <View style={styles.listItem}>
-                <Text style={styles.textItem}>ID: {item.id}</Text>
-                <Text style={styles.textItem}>Name: {item.name}</Text>
-                <Text style={styles.textItem}>Category: {item.category}</Text>
-                <Text style={styles.textItem}>System: {item.system}</Text>
-                <Text style={styles.textItem}>Text: {item.text}</Text>
+                <View style={{marginTop: 5}}>
+
+                    <Text style={styles.inputTitle}>Name</Text>
+                    <Text>{item.name}</Text>
+
+                </View>
+
+                <View style = {styles.lineStyle}/>
+
+                <View style={{marginTop: 5}}>
+
+                    <Text style={styles.inputTitle}>Category</Text>
+                    <Text>{item.category}</Text>
+
+                </View>
+
+                <View style = {styles.lineStyle}/>
+
+                <View style={{marginTop: 5}}>
+
+                    <Text style={styles.inputTitle}>System</Text>
+                    <Text>{item.system}</Text>
+
+                </View>
+
+                <View style = {styles.lineStyle}/>
+
+                <View style={{marginTop: 5}}>
+
+                    <Text style={styles.inputTitle}>Text</Text>
+                    <Text>{item.text}</Text>
+
+                </View>
+
             </View>
         </TouchableOpacity>
     );
 
     render(){
         return(
-           <View style={styles.container}>
+            <View style={styles.container}>
                 
                 <CustomAppBar title="My Drafts" subtitle="" navigation={this.props.navigation}/>
-
-                <View style={styles.childContainer}>
-
-                    <Text style={styles.text}>{this.state.message}</Text>
-                    
+                <ScrollView>
                     <FlatList
                         data={this.state.data}
                         renderItem={this.renderItem}
                         keyExtractor={item => item.id} //need to fix this
                     />
-                </View>
-    
+                </ScrollView>
             </View>
         );
     }
