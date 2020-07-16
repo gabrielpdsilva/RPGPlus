@@ -53,14 +53,9 @@ export default class DraftModelScreen extends Component {
             text: this.state.text,
         });
 
-        //switch is off again
-        this.setState({isSwitchOn: false});
-
         //toast a message
-        ToastAndroid.show("Draft updated! ", ToastAndroid.SHORT);
+        ToastAndroid.show("Draft updated!", ToastAndroid.SHORT);
     }
-
-
 
     deleteDraft = () => {
 
@@ -82,11 +77,11 @@ export default class DraftModelScreen extends Component {
             .collection("sketchs")
             .doc(draftId)
             .delete()
-            .then(() => alert("Draft deleted!"))
+            .then(() => ToastAndroid.show("Draft deleted!", ToastAndroid.SHORT))
             .catch((error) => alert("Something went wrong:" + error));
 
-        //goes to the previous screen
-        this.props.navigation.goBack();
+        //goes to home screen
+        this.props.navigation.navigate("Home");
 
     }
 
@@ -214,11 +209,11 @@ export default class DraftModelScreen extends Component {
 
                     <View style={{justifyContent:'center', alignItems: 'center', marginBottom: 10}}>
             
-                        <TouchableOpacity onPress={()=>alert("edit?")} style={styles.button}>
+                        <TouchableOpacity onPress={this.btnEditDraft} style={styles.button}>
                             <Text style={styles.buttonText}>Save Changes</Text>
                         </TouchableOpacity>
 
-                        <TouchableOpacity onPress={()=>alert("delete?")} style={styles.button}>
+                        <TouchableOpacity onPress={this.deleteDraft} style={styles.button}>
                             <Text style={styles.buttonText}>Delete Draft</Text>
                         </TouchableOpacity>
 

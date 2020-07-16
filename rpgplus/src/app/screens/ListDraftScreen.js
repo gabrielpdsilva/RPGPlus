@@ -28,13 +28,14 @@ export default class ListDraftScreen extends Component {
         };
     }
 
-    componentDidMount = () => {
-        
+    listenForDrafts = () => {
+
         const user = firebase.auth().currentUser;
         const dbh = firebase.firestore();
 
-        //gets all the drafts from firestore and store it in the state
-        dbh.collection("users").doc(user.uid).collection("sketchs").get().then((snapshot) => {
+        let docsRef = dbh.collection("users").doc(user.uid).collection("sketchs");
+
+        docsRef.get().then((snapshot) => {
 
             //if user has no docs
             if(snapshot.empty){
@@ -57,6 +58,12 @@ export default class ListDraftScreen extends Component {
                 }))
             ))
         }) 
+
+    }
+
+    componentDidMount = () => {
+
+        this.listenForDrafts();
         
     }
 
