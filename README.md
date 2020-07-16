@@ -22,7 +22,6 @@ RPGPlus is a project made for tests and studies using React Native technology.
 - [x] Alert the user in ListDraftScreen if he has no drafts
 
 #### Features that have not been added to the app yet:
-- [ ] Fix problems of styling on Draft Screens
 - [ ] Generate names using firestore
 - [ ] Keep user logged in, unless he decides to logout
 - [ ] Edit the preferences screen to be like as described in Use Case Description
