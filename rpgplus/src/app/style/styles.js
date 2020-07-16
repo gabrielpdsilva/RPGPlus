@@ -123,8 +123,9 @@ const styles = StyleSheet.create({
     },
 
     listItem: {
+        borderRadius: 10,
         backgroundColor: colors.white,
-        margin: 4,
+        margin: 6,
         padding: 20
     },
 
