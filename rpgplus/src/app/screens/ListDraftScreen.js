@@ -5,11 +5,10 @@ import {
     FlatList,
     TouchableOpacity,
     ScrollView,
-    StyleSheet
+    ActivityIndicator
 } from 'react-native';
 
 import styles from '../style/styles';
-import colors from '../style/colors';
 import CustomAppBar from '../components/CustomAppBar';
 
 import firebase from '../controller/FirebaseConfig';
@@ -23,8 +22,8 @@ export default class ListDraftScreen extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            message: '',
-            data: []
+            data: [],
+            loading: true,
         };
     }
 
@@ -39,12 +38,9 @@ export default class ListDraftScreen extends Component {
 
             //if user has no docs
             if(snapshot.empty){
-                this.setState({message: 'Sorry, but you have no drafts.'}); //shows a message that the user has no drafts
+                alert("No Documents here.");
                 return;
             }
-
-            this.setState({message: 'Below is the list of all of your drafts'});
-
             //gets the docs and stores it inside the 'data' state
             snapshot.forEach((doc) => (
                 this.setState((prevState) => ({
@@ -57,8 +53,8 @@ export default class ListDraftScreen extends Component {
                     }]
                 }))
             ))
-        }) 
-
+            this.setState({loading: false}); //loading circle will be removed
+        })
     }
 
     componentDidMount = () => {
@@ -111,6 +107,19 @@ export default class ListDraftScreen extends Component {
     );
 
     render(){
+        let loading = this.state.loading;
+        if (loading) {
+            return(
+            <View style={styles.container}>
+                
+                <CustomAppBar title="My Drafts" subtitle="" navigation={this.props.navigation}/>
+                <View style={styles.childContainer}>
+                    <ActivityIndicator size="large"/>
+                </View>
+            </View>
+            );
+          }
+
         return(
             <View style={styles.container}>
                 
