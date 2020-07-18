@@ -79,7 +79,7 @@ export default class SketchScreen extends Component {
 
                         <View style={{marginTop: 14}}>
 
-                        <Text style={styles.inputTitle}>{translate('rollType')}</Text>
+                            <Text style={styles.inputTitle}>{translate('rollType')}</Text>
 
                             <Picker
                                 style={styles.pickerStyle}

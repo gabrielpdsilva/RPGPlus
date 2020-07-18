@@ -5,7 +5,8 @@ import {
     FlatList,
     TouchableOpacity,
     ScrollView,
-    ActivityIndicator
+    ActivityIndicator,
+    RefreshControl
 } from 'react-native';
 
 import styles from '../style/styles';
@@ -110,15 +111,17 @@ export default class ListDraftScreen extends Component {
         let loading = this.state.loading;
         if (loading) {
             return(
-            <View style={styles.container}>
+                <View style={styles.container}>
+                    
+                    <CustomAppBar title={translate('appBarListDrafts')} subtitle="" navigation={this.props.navigation}/>
+                    
+                    <View style={styles.childContainer}>
+                        <ActivityIndicator size="large"/>
+                    </View>
                 
-                <CustomAppBar title={translate('appBarListDrafts')} subtitle="" navigation={this.props.navigation}/>
-                <View style={styles.childContainer}>
-                    <ActivityIndicator size="large"/>
                 </View>
-            </View>
             );
-          }
+        }
 
         return(
             <View style={styles.container}>

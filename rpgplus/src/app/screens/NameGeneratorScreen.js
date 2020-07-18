@@ -23,7 +23,7 @@ export default class NameGeneratorScreen extends Component {
         super(props);
         this.state={
             pickerValue:'medieval',
-            name: ''
+            name: '...'
         }	
     };
     
@@ -134,30 +134,38 @@ export default class NameGeneratorScreen extends Component {
 
                     <Text style={styles.text}>{translate('generatorSubtitle')}</Text>
 
-                    <Picker
-                        style={styles.pickerStyle}
-                        //mode = "dropdown"     //used if you want the user to scroll up the options
-                        selectedValue={this.state.pickerValue}
-                        onValueChange={(itemValue) => this.setState({pickerValue: itemValue})}
-                    >
-                        <Picker.Item label="Changeling: The Dreaming" value="changeling"/>
-                        <Picker.Item label="Cyberpunk" value="cyberpunk"/>
-                        <Picker.Item label="Elvish" value="elvish"/>
-                        <Picker.Item label="Lovecraft Mythos" value="lovecraft"/>
-                        <Picker.Item label="Mage: The Ascension" value="mage"/>
-                        <Picker.Item label="Medieval" value="medieval"/>
-                        <Picker.Item label="Vampire: the Masquerade" value="vampire" />
-                        <Picker.Item label="Werewolf: the Apocalypse" value="werewolf" />
-                        
-                    </Picker>
+                    <View style={styles.inputForm}>
 
-                    <TouchableOpacity onPress={this.copyToClipboard}>
-                    <Text style={styles.text}>{this.state.name}</Text>
-                    </TouchableOpacity>
+                        <View style={{marginTop: 14}}>
+
+                            <Picker
+                            style={styles.pickerStyle}
+                            //mode = "dropdown"     //used if you want the user to scroll up the options
+                            selectedValue={this.state.pickerValue}
+                            onValueChange={(itemValue) => this.setState({pickerValue: itemValue})}
+                            >
+                                <Picker.Item label="Changeling: The Dreaming" value="changeling"/>
+                                <Picker.Item label="Cyberpunk" value="cyberpunk"/>
+                                <Picker.Item label="Elvish" value="elvish"/>
+                                <Picker.Item label="Lovecraft Mythos" value="lovecraft"/>
+                                <Picker.Item label="Mage: The Ascension" value="mage"/>
+                                <Picker.Item label="Medieval" value="medieval"/>
+                                <Picker.Item label="Vampire: the Masquerade" value="vampire" />
+                                <Picker.Item label="Werewolf: the Apocalypse" value="werewolf" />
+                            
+                            </Picker>
+
+                            <TouchableOpacity onPress={this.copyToClipboard}>
+                                <Text style={styles.text}>{this.state.name}</Text>
+                            </TouchableOpacity>
+                            
+                        </View>
     
                     <TouchableOpacity onPress={() => this.buttonOnClickListener(this.state.pickerValue)} style={styles.button}>
-                    <Text style={styles.buttonText}>{translate('generatorBtnGenerate')}</Text>
+                        <Text style={styles.buttonText}>{translate('generatorBtnGenerate')}</Text>
                     </TouchableOpacity>
+
+                    </View>
 
                 </View>
             </View>

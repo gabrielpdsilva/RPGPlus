@@ -7,6 +7,7 @@ import {
     ToastAndroid,
     Alert,
     ScrollView,
+    ActivityIndicator
 } from 'react-native';
 
 import CustomAppBar from '../components/CustomAppBar';
@@ -136,7 +137,6 @@ export default class DraftModelScreen extends Component {
         .catch(err => {
             alert("Error:\n" + err);
         });
-
     }
 
     render(){
