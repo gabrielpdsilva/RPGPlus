@@ -7,7 +7,6 @@ import {
     ToastAndroid,
     Alert,
     ScrollView,
-    Switch
 } from 'react-native';
 
 import CustomAppBar from '../components/CustomAppBar';
@@ -17,7 +16,6 @@ import styles from '../style/styles';
 import firebase from '../controller/FirebaseConfig';
 import 'firebase/firestore';
 
-import colors from '../style/colors';
 
 export default class DraftModelScreen extends Component {
     constructor(props){
@@ -28,7 +26,6 @@ export default class DraftModelScreen extends Component {
             system: '',
             text: '',
             id: '',
-            isSwitchOn: false,
         }
     }
 
@@ -66,9 +63,6 @@ export default class DraftModelScreen extends Component {
 
         //var of firestore database
         const dbh = firebase.firestore();
-
-        //disable switch
-        this.setState({isSwitchOn: false});
  
         //delete the doc
         dbh
@@ -107,18 +101,24 @@ export default class DraftModelScreen extends Component {
     }
 
     //function that will execute before render method
-    componentWillMount = () => {
+    UNSAFE_componentWillMount = () => {
+        //this.getChosenDraft(); 
+    }
 
-        //gets the current user
+    componentDidMount = () => {
+        this.getChosenDraft();
+    }
+
+    getChosenDraft = () => {
+        
         const user = firebase.auth().currentUser;
 
-        //var of firestore database
         const dbh = firebase.firestore();
 
         //gets the ID of the document that the user has chosen
-        const itemID = this.props.route.params.itemId;
+        let itemId = this.props.route.params.itemId;
 
-        let draftRef = dbh.collection("users").doc(user.uid).collection("sketchs").doc(itemID);
+        let draftRef = dbh.collection("users").doc(user.uid).collection("sketchs").doc(itemId);
 
         draftRef.get().then(doc => {
             if (!doc.exists) {
@@ -136,13 +136,10 @@ export default class DraftModelScreen extends Component {
         .catch(err => {
             alert("Error:\n" + err);
         });
+
     }
 
-    _onToggleSwitch = () =>  this.setState(state => ({ isSwitchOn: !state.isSwitchOn }));
-
     render(){
-
-        const { isSwitchOn } = this.state;
 
         return(
             <View style={styles.container}>
@@ -205,7 +202,6 @@ export default class DraftModelScreen extends Component {
                         </View> 
 
                     </View>
-
 
                     <View style={{justifyContent:'center', alignItems: 'center', marginBottom: 10}}>
             
