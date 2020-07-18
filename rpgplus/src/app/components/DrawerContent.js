@@ -8,7 +8,6 @@ import 'firebase/firestore';
 import styles from '../style/styles';
 import colors from '../style/colors';
 import {translate} from '../locales/localeConfig';
-import { Colors } from 'react-native/Libraries/NewAppScreen';
 
 //All credits goes to Pradip Debnath
 //https://github.com/itzpradip
@@ -20,6 +19,7 @@ export default function DrawerContent(props) {
     
     return(
         <View style={{flex:1}} backgroundColor = {colors.lightTheme}>
+            
             <DrawerContentScrollView {...props}>
                 <View style={styles.drawerContent}>
                     <View style={styles.drawerUserInfoSection}>
@@ -40,7 +40,14 @@ export default function DrawerContent(props) {
                         </View>
 
                     </View>
+                        
                     <Drawer.Section style={styles.drawerSection}>
+                        
+                    </Drawer.Section>
+
+                    <Drawer.Section style={styles.drawerSection}>
+                        <Text style={styles.drawerSubmenuTitle}>Principal</Text>
+                        
                         <DrawerItem
                             labelStyle = {{color: colors.black}}
                             label={translate('drawerHome')}
@@ -48,8 +55,8 @@ export default function DrawerContent(props) {
                         />
                     </Drawer.Section>
 
-                        <Text style={styles.drawerSubmenuTitle}>{translate('drawerTools')}</Text>
-
+                    <Text style={styles.drawerSubmenuTitle}>{translate('drawerTools')}</Text>
+                        
                     <Drawer.Section>
 
                         <DrawerItem
@@ -103,23 +110,20 @@ export default function DrawerContent(props) {
                                         },
                                         {
                                             text: 'OK', onPress: () => {
-                                                firebase
-                                                    .auth()
-                                                    .signOut()
-                                                    .then(() => {
-
+                                                firebase.auth().signOut().then(() => {
                                                     props.navigation.navigate("Login"); //goes to Login screen
                                                     ToastAndroid.show("Successfully logged out!", ToastAndroid.SHORT); //make a toast
-                                                
                                                 }).catch(error => alert("Ops, error: " + error));
                                             }
-                                       }
+                                        }
                                     ],
                                     { cancelable: false }
-                                  );
+                                );
                             }}
                         />
+                        
                     </Drawer.Section>
+                    
                 </View>
 
             </DrawerContentScrollView>

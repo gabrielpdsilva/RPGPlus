@@ -209,12 +209,11 @@ const styles = StyleSheet.create({
     },
     
     drawerUserInfoSection: {
-        paddingLeft: 20,
-        //backgroundColor: 'red',
+        paddingLeft: 12,
     },
     
     drawerTitle: {
-        fontSize: 16,
+        fontSize: 14,
         marginTop: 3,
         fontWeight: 'bold',
         color: colors.black,
@@ -227,12 +226,12 @@ const styles = StyleSheet.create({
     },
 
     drawerSection: {
-        marginTop: 15,
+        marginTop: 5,
     },
 
     drawerSubmenuTitle: {
         marginLeft: 15,
-        fontSize: 16,
+        fontSize: 14,
         marginTop: 3,
         fontWeight: 'bold',
         color: colors.black,

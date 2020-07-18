@@ -65,7 +65,6 @@ export default class ListDraftScreen extends Component {
 
     //when user clicks on item
     onClickItem = (item) => {
-
         //navigates to draft model and send the ID of the item to the new screen
         this.props.navigation.navigate("Draft Model", {itemId: item.id});
     }
