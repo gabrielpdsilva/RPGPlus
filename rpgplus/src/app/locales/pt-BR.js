@@ -31,6 +31,7 @@ const pt = {
     registerBtnRegister: 'Registrar',
 
     //drawer navigator
+    drawerMain: 'Principal',
     drawerHome: 'Página Inicial',
     drawerTools: 'Ferramentas',
     drawerNameGenerator: 'Gerador de Nomes',
@@ -86,6 +87,13 @@ const pt = {
     preferencesEmail: 'E-mail',
     preferencesBtnSaveChanges: 'Salvar Mudanças',
     preferencesBtnDeleteAccount: 'Deletar Conta',
+
+    //list draft
+    appBarListDrafts: 'Meus Rascunhos',
+    listDraftsName: 'Nome',
+    listDraftsCategory: 'Categoria',
+    listDraftsSystem: 'Sistema',
+    listDraftsText: 'Texto',
     
 };
   

@@ -31,6 +31,7 @@ const en = {
     registerBtnRegister: 'Register',
 
     //drawer navigator
+    drawerMain: 'Main',
     drawerHome: 'Home',
     drawerTools: 'Tools',
     drawerNameGenerator: 'Name Generator',
@@ -86,6 +87,13 @@ const en = {
     preferencesEmail: 'E-mail',
     preferencesBtnSaveChanges: 'Save Changes',
     preferencesBtnDeleteAccount: 'Delete Account',
+
+    //list draft
+    appBarListDrafts: 'My Drafts',
+    listDraftsName: 'Name',
+    listDraftsCategory: 'Category',
+    listDraftsSystem: 'System',
+    listDraftsText: 'Text',
     
 };
   

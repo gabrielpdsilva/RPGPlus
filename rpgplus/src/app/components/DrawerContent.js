@@ -46,7 +46,7 @@ export default function DrawerContent(props) {
                     </Drawer.Section>
 
                     <Drawer.Section style={styles.drawerSection}>
-                        <Text style={styles.drawerSubmenuTitle}>Principal</Text>
+                        <Text style={styles.drawerSubmenuTitle}>{translate('drawerMain')}</Text>
                         
                         <DrawerItem
                             labelStyle = {{color: colors.black}}

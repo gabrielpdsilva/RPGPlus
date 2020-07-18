@@ -13,6 +13,7 @@ import CustomAppBar from '../components/CustomAppBar';
 
 import firebase from '../controller/FirebaseConfig';
 import 'firebase/firestore';
+import {translate} from '../locales/localeConfig';
 
 //Useful links:
 //https://blog.rocketseat.com.br/scroll-infinito-no-react-native/
@@ -75,28 +76,28 @@ export default class ListDraftScreen extends Component {
 
                 <View style={{marginTop: 5}}>
 
-                    <Text style={styles.draftListTitle}>Name</Text>
+                    <Text style={styles.draftListTitle}>{translate('listDraftsName')}</Text>
                     <Text>{item.name}</Text>
 
                 </View>
 
                 <View style={{marginTop: 5}}>
 
-                    <Text style={styles.draftListTitle}>Category</Text>
+                    <Text style={styles.draftListTitle}>{translate('listDraftsCategory')}</Text>
                     <Text>{item.category}</Text>
 
                 </View>
 
                 <View style={{marginTop: 5}}>
 
-                    <Text style={styles.draftListTitle}>System</Text>
+                    <Text style={styles.draftListTitle}>{translate('listDraftsSystem')}</Text>
                     <Text>{item.system}</Text>
 
                 </View>
 
                 <View style={{marginTop: 5}}>
 
-                    <Text style={styles.draftListTitle}>Text</Text>
+                    <Text style={styles.draftListTitle}>{translate('listDraftsText')}</Text>
                     <Text>{item.text}</Text>
 
                 </View>
@@ -111,7 +112,7 @@ export default class ListDraftScreen extends Component {
             return(
             <View style={styles.container}>
                 
-                <CustomAppBar title="My Drafts" subtitle="" navigation={this.props.navigation}/>
+                <CustomAppBar title={translate('appBarListDrafts')} subtitle="" navigation={this.props.navigation}/>
                 <View style={styles.childContainer}>
                     <ActivityIndicator size="large"/>
                 </View>
@@ -122,7 +123,7 @@ export default class ListDraftScreen extends Component {
         return(
             <View style={styles.container}>
                 
-                <CustomAppBar title="My Drafts" subtitle="" navigation={this.props.navigation}/>
+                <CustomAppBar title={translate('appBarListDrafts')} subtitle="" navigation={this.props.navigation}/>
                 <ScrollView>
                     <FlatList
                         data={this.state.data}

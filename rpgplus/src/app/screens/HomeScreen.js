@@ -9,6 +9,7 @@ import CustomAppBar from '../components/CustomAppBar';
 
 import firebase from '../controller/FirebaseConfig';
 import {translate} from '../locales/localeConfig';
+
 const HomeScreen = ({navigation}) => {
 
     const user = firebase.auth().currentUser;
