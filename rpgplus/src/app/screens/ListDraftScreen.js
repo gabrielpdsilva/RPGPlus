@@ -80,34 +80,28 @@ export default class ListDraftScreen extends Component {
 
                 <View style={{marginTop: 5}}>
 
-                    <Text style={styles.inputTitle}>Name</Text>
+                    <Text style={styles.draftListTitle}>Name</Text>
                     <Text>{item.name}</Text>
 
                 </View>
 
-                <View style = {styles.separatorLine}/>
-
                 <View style={{marginTop: 5}}>
 
-                    <Text style={styles.inputTitle}>Category</Text>
+                    <Text style={styles.draftListTitle}>Category</Text>
                     <Text>{item.category}</Text>
 
                 </View>
 
-                <View style = {styles.separatorLine}/>
-
                 <View style={{marginTop: 5}}>
 
-                    <Text style={styles.inputTitle}>System</Text>
+                    <Text style={styles.draftListTitle}>System</Text>
                     <Text>{item.system}</Text>
 
                 </View>
 
-                <View style = {styles.separatorLine}/>
-
                 <View style={{marginTop: 5}}>
 
-                    <Text style={styles.inputTitle}>Text</Text>
+                    <Text style={styles.draftListTitle}>Text</Text>
                     <Text>{item.text}</Text>
 
                 </View>

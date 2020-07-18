@@ -126,7 +126,15 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         backgroundColor: colors.white,
         margin: 6,
-        padding: 20
+        padding: 10
+    },
+
+    draftListTitle: {
+
+        color: colors.purple,
+        fontSize: 15,
+        fontWeight: 'bold',
+
     },
 
     textItem: {
