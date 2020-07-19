@@ -139,6 +139,12 @@ export default class DraftModelScreen extends Component {
         });
     }
 
+    //called when there is an update, so when user selects
+    //another draft, data of the new draft will appear
+    componentDidUpdate = () => {
+        this.getChosenDraft();
+    }
+
     render(){
 
         return(
