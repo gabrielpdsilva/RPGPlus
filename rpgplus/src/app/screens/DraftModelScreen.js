@@ -7,16 +7,15 @@ import {
     ToastAndroid,
     Alert,
     ScrollView,
-    ActivityIndicator
 } from 'react-native';
 
 import CustomAppBar from '../components/CustomAppBar';
 
 import styles from '../style/styles';
+import colors from '../style/colors';
 
 import firebase from '../controller/FirebaseConfig';
 import 'firebase/firestore';
-
 
 export default class DraftModelScreen extends Component {
     constructor(props){
@@ -161,6 +160,7 @@ export default class DraftModelScreen extends Component {
                             <Text style={styles.inputTitle}>Name</Text>
                             <TextInput
                                 placeholder="Loading..."
+                                placeholderTextColor={colors.black}
                                 style={styles.createDraftInput}
                                 value={this.state.name}
                                 onChangeText={(txt) => this.setState({name: txt})}
@@ -173,6 +173,7 @@ export default class DraftModelScreen extends Component {
                             <Text style={styles.inputTitle}>Category</Text>
                             <TextInput
                                 placeholder="Loading..."
+                                placeholderTextColor={colors.black}
                                 style={styles.createDraftInput}
                                 value={this.state.category}
                                 onChangeText={(txt) => this.setState({category: txt})}
@@ -185,6 +186,7 @@ export default class DraftModelScreen extends Component {
                             <Text style={styles.inputTitle}>System</Text>
                             <TextInput
                                 placeholder="Loading..."
+                                placeholderTextColor={colors.black}
                                 style={styles.createDraftInput}
                                 value={this.state.system}
                                 onChangeText={(txt) => this.setState({system: txt})}
@@ -197,6 +199,7 @@ export default class DraftModelScreen extends Component {
                             <Text style={styles.inputTitle}>Text</Text>
                             <TextInput
                                 placeholder="Loading..."
+                                placeholderTextColor={colors.black}
                                 multiline = {true}
                                 height = {150}
                                 textAlignVertical = 'top'

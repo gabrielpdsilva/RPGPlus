@@ -60,11 +60,13 @@ export default class ListDraftScreen extends Component {
     }
 
     componentDidMount = () => {
-
         this.listenForDrafts();
-        
     }
-
+/*
+    componentDidUpdate = () => {
+        this.listenForDrafts();
+    }
+*/
     //when user clicks on item
     onClickItem = (item) => {
         //navigates to draft model and send the ID of the item to the new screen
