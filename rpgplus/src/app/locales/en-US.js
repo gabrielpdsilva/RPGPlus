@@ -94,6 +94,16 @@ const en = {
     listDraftsCategory: 'Category',
     listDraftsSystem: 'System',
     listDraftsText: 'Text',
+
+    //draft model
+    appBarDraftModel: 'Edit Draft',
+    editDraftName: 'Name',
+    editDraftCategory: 'Category',
+    editDraftSystem: 'System',
+    editDraftText: 'Text',
+    editDraftLoading: 'Loading...',
+    editDraftBtnSaveChanges: 'Save Changes',
+    editDraftBtnDeleteDraft: 'Delete Draft',
     
 };
   

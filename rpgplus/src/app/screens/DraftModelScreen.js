@@ -16,6 +16,7 @@ import colors from '../style/colors';
 
 import firebase from '../controller/FirebaseConfig';
 import 'firebase/firestore';
+import {translate} from '../locales/localeConfig';
 
 export default class DraftModelScreen extends Component {
     constructor(props){
@@ -149,7 +150,7 @@ export default class DraftModelScreen extends Component {
         return(
             <View style={styles.container}>
                 
-                <CustomAppBar title="Edit Draft" subtitle="" backIsVisible={true} navigation={this.props.navigation}/>
+                <CustomAppBar title={translate('appBarDraftModel')} subtitle="" backIsVisible={true} navigation={this.props.navigation}/>
 
                 <ScrollView style={{marginTop: 14}}>
                 
@@ -157,9 +158,9 @@ export default class DraftModelScreen extends Component {
 
                         <View style={{marginTop: 14}}>
 
-                            <Text style={styles.inputTitle}>Name</Text>
+                            <Text style={styles.inputTitle}>{translate('editDraftName')}</Text>
                             <TextInput
-                                placeholder="Loading..."
+                                placeholder={translate('editDraftLoading')}
                                 placeholderTextColor={colors.black}
                                 style={styles.createDraftInput}
                                 value={this.state.name}
@@ -170,9 +171,9 @@ export default class DraftModelScreen extends Component {
 
                         <View style={{marginTop: 14}}>
                                 
-                            <Text style={styles.inputTitle}>Category</Text>
+                            <Text style={styles.inputTitle}>{translate('editDraftCategory')}</Text>
                             <TextInput
-                                placeholder="Loading..."
+                                placeholder={translate('editDraftLoading')}
                                 placeholderTextColor={colors.black}
                                 style={styles.createDraftInput}
                                 value={this.state.category}
@@ -183,9 +184,9 @@ export default class DraftModelScreen extends Component {
 
                         <View style={{marginTop: 14}}>
 
-                            <Text style={styles.inputTitle}>System</Text>
+                            <Text style={styles.inputTitle}>{translate('editDraftSystem')}</Text>
                             <TextInput
-                                placeholder="Loading..."
+                                placeholder={translate('editDraftLoading')}
                                 placeholderTextColor={colors.black}
                                 style={styles.createDraftInput}
                                 value={this.state.system}
@@ -196,9 +197,9 @@ export default class DraftModelScreen extends Component {
 
                         <View style={{marginTop: 14}}>
                                 
-                            <Text style={styles.inputTitle}>Text</Text>
+                            <Text style={styles.inputTitle}>{translate('editDraftText')}</Text>
                             <TextInput
-                                placeholder="Loading..."
+                                placeholder={translate('editDraftLoading')}
                                 placeholderTextColor={colors.black}
                                 multiline = {true}
                                 height = {150}
@@ -215,11 +216,11 @@ export default class DraftModelScreen extends Component {
                     <View style={{justifyContent:'center', alignItems: 'center', marginBottom: 10}}>
             
                         <TouchableOpacity onPress={this.btnEditDraft} style={styles.button}>
-                            <Text style={styles.buttonText}>Save Changes</Text>
+                            <Text style={styles.buttonText}>{translate('editDraftBtnSaveChanges')}</Text>
                         </TouchableOpacity>
 
                         <TouchableOpacity onPress={this.deleteDraft} style={styles.button}>
-                            <Text style={styles.buttonText}>Delete Draft</Text>
+                            <Text style={styles.buttonText}>{translate('editDraftBtnDeleteDraft')}</Text>
                         </TouchableOpacity>
 
                     </View>

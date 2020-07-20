@@ -94,6 +94,16 @@ const pt = {
     listDraftsCategory: 'Categoria',
     listDraftsSystem: 'Sistema',
     listDraftsText: 'Texto',
+
+    //draft model
+    appBarDraftModel: 'Editar Rascunho',
+    editDraftName: 'Nome',
+    editDraftCategory: 'Categoria',
+    editDraftSystem: 'Sistema',
+    editDraftText: 'Texto',
+    editDraftLoading: 'Carregando...',
+    editDraftBtnSaveChanges: 'Salvar Mudanças',
+    editDraftBtnDeleteDraft: 'Deletar Rascunho',
     
 };
   
