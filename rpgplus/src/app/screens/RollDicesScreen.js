@@ -12,7 +12,7 @@ import styles from '../style/styles';
 import CustomAppBar from '../components/CustomAppBar';
 import {translate} from '../locales/localeConfig';
 
-export default class SketchScreen extends Component {
+export default class RollDicesScreen extends Component {
     constructor(props){
         super(props);
         this.state = {

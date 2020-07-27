@@ -43,4 +43,4 @@ RPGPlus is a project made for tests and studies using React Native technology.
 - [ ] Functional and Non-Functional Requirements available in English
 - [x] Functional and Non-Functional Requirements available in Portuguese
 - [ ] Test case available in English
-- [ ] Test case available in Portuguese
+- [x] Test case available in Portuguese
