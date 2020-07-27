@@ -21,10 +21,10 @@ RPGPlus is a project made for tests and studies using React Native technology.
 - [x] Roll dice system
 - [x] Alert the user in ListDraftScreen if he has no drafts
 - [x] Screens available in Portuguese and English
+- [x] Keep user logged in, unless he decides to logout
 
 #### Features that have not been added to the app yet:
 - [ ] Generate names using firestore
-- [ ] Keep user logged in, unless he decides to logout
 - [ ] Edit the preferences screen to be like as described in Use Case Description
 - [ ] Translate alerts and toasts
 
