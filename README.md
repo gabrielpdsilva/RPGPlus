@@ -25,7 +25,6 @@ RPGPlus is a project made for tests and studies using React Native technology.
 
 #### Features that have not been added to the app yet:
 - [ ] Generate names using firestore
-- [ ] Edit the preferences screen to be like as described in Use Case Description
 - [ ] Translate alerts and toasts
 
 #### Fixed bugs:
