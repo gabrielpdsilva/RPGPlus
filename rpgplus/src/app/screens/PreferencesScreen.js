@@ -61,15 +61,11 @@ export default class PreferencesScreen extends Component {
             
             //if user didnt cancel the action
             if (!result.cancelled) {
-                this.setState({ image: result.uri });
                 this.uploadImage(result.uri, "profile-picture")
                     .then(() => {
-                        ToastAndroid.show("Image added.", ToastAndroid.SHORT)
-                    }).catch((error)=>{
-                        alert(error);
-                    });
-
-                this.changeUserURL();
+                        ToastAndroid.show("Image added.", ToastAndroid.SHORT);
+                        this.getUserPhoto();                        
+                    }).catch((error)=> { alert(error) });
             } 
 
         } catch (E) {
@@ -77,15 +73,17 @@ export default class PreferencesScreen extends Component {
         }
     };
 
-    changeUserURL = () => {
+    getUserPhoto = () => {
         const user = firebase.auth().currentUser;
-        user.updateProfile({
-            photoURL: this.state.image
-        }).then(() => {
-            //...
-        }).catch((error) => {
-            alert("Something went wrong:\n"+ error);
-        });
+        let imageRef = firebase.storage().ref('users/' + user.uid + '/profile-picture');
+        imageRef
+            .getDownloadURL()
+            .then((url) => {
+                user.updateProfile({photoURL: url}); //updating photoURL of the user
+                ToastAndroid.show("Saved.", ToastAndroid.SHORT);
+                this.setState({image: url});
+            })
+            .catch((e) => alert('getting downloadURL of image error => '+ e));
 
     }
 
@@ -93,7 +91,7 @@ export default class PreferencesScreen extends Component {
         const response = await fetch(uri);
         const blob = await response.blob();
         const userUID = firebase.auth().currentUser.uid;
-        var ref = firebase.storage().ref().child('users/'+ userUID +"/"+ imageName);
+        let ref = firebase.storage().ref().child('users/'+ userUID +"/"+ imageName);
         return ref.put(blob);
     }
 

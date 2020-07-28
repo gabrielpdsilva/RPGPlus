@@ -2,7 +2,7 @@
  * 
  * author: G.P.
  * RPG+ (RPGPlus) is a project made for tests and studies using React Native technology
- * version: 1.19.67
+ * version: 1.19.68
  * 
  */
 
