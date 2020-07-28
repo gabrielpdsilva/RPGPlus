@@ -54,13 +54,19 @@ export default class PreferencesScreen extends Component {
             let result = await ImagePicker.launchImageLibraryAsync({
                 mediaTypes: ImagePicker.MediaTypeOptions.All,
                 allowsEditing: true,
-                aspect: [4, 3],
+                aspect: [4, 4],
                 quality: 1,
             });
             
             //if user didnt cancel the action
             if (!result.cancelled) {
                 this.setState({ image: result.uri });
+                this.uploadImage(result.uri, "profile-picture")
+                    .then(() => {
+                        ToastAndroid.show("Image added.", ToastAndroid.SHORT)
+                    }).catch((error)=>{
+                        alert(error);
+                    });
             }
 
             const user = firebase.auth().currentUser;
@@ -77,6 +83,14 @@ export default class PreferencesScreen extends Component {
             alert("Oops, error when picking image:\n" + E);
         }
     };
+
+    uploadImage = async (uri, imageName) => {
+        const response = await fetch(uri);
+        const blob = await response.blob();
+        const userUID = firebase.auth().currentUser.uid;
+        var ref = firebase.storage().ref().child('users/'+ userUID +"/"+ imageName);
+        return ref.put(blob);
+    }
 
     buttonDelete = () => {
         Alert.alert(
