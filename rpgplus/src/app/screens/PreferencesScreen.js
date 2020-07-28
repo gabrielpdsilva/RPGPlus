@@ -22,6 +22,10 @@ import * as Permissions from 'expo-permissions';
 
 import {translate} from '../locales/localeConfig';
 
+//useful content about Storage:
+//https://stackoverflow.com/questions/48108791/convert-image-path-to-blob-react-native
+//https://www.youtube.com/watch?v=KkZckepfm2Q&feature=youtu.be
+
 export default class PreferencesScreen extends Component {
     constructor(props) {
         super(props);
@@ -30,11 +34,8 @@ export default class PreferencesScreen extends Component {
 
         this.state = {
             name: user.displayName,
-            isSwitchOn: false,
             image: user.photoURL,
             email: user.email,
-            password: user.password,
-            isDialogVisible: true,
         }
     }
 
@@ -166,8 +167,6 @@ export default class PreferencesScreen extends Component {
         ToastAndroid.show("Done!", ToastAndroid.SHORT);
         this.props.navigation.navigate("Home");
     }
-
-    _onToggleSwitch = () =>  this.setState(state => ({ isSwitchOn: !state.isSwitchOn }));
 
     render(){
 
