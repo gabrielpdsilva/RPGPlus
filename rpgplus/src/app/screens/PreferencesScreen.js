@@ -68,22 +68,26 @@ export default class PreferencesScreen extends Component {
                     }).catch((error)=>{
                         alert(error);
                     });
-            }
 
-            const user = firebase.auth().currentUser;
-
-            user.updateProfile({
-                photoURL: this.state.image
-            }).then(() => {
-                //...
-            }).catch((error) => {
-                alert("Something went wrong:\n"+ error);
-            });
+                this.changeUserURL();
+            } 
 
         } catch (E) {
             alert("Oops, error when picking image:\n" + E);
         }
     };
+
+    changeUserURL = () => {
+        const user = firebase.auth().currentUser;
+        user.updateProfile({
+            photoURL: this.state.image
+        }).then(() => {
+            //...
+        }).catch((error) => {
+            alert("Something went wrong:\n"+ error);
+        });
+
+    }
 
     uploadImage = async (uri, imageName) => {
         const response = await fetch(uri);
