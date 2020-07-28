@@ -22,6 +22,8 @@ import * as Permissions from 'expo-permissions';
 
 import {translate} from '../locales/localeConfig';
 
+import { Avatar } from 'react-native-paper';
+
 //useful content about Storage:
 //https://stackoverflow.com/questions/48108791/convert-image-path-to-blob-react-native
 //https://www.youtube.com/watch?v=KkZckepfm2Q&feature=youtu.be
@@ -80,7 +82,7 @@ export default class PreferencesScreen extends Component {
             .getDownloadURL()
             .then((url) => {
                 user.updateProfile({photoURL: url}); //updating photoURL of the user
-                ToastAndroid.show("Saved.", ToastAndroid.SHORT);
+                ToastAndroid.show("Image saved.", ToastAndroid.SHORT);
                 this.setState({image: url});
             })
             .catch((e) => alert('getting downloadURL of image error => '+ e));
@@ -182,11 +184,11 @@ export default class PreferencesScreen extends Component {
                 <View style={styles.childContainer}>
 
                     <TouchableOpacity onPress={this._pickImage}>
-                        <Image
+                        <Avatar.Image
                             source={{
                                 uri: image ? image : 'https://simpleicon.com/wp-content/uploads/user1.png'
                             }}
-                            style={{ width: 120, height: 120 }}
+                            size={120}
                         />
                     </TouchableOpacity>
 
