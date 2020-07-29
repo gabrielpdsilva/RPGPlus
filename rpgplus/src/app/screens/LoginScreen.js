@@ -36,7 +36,7 @@ export default class LoginScreen extends Component {
 
         //if email or password is empty
         if(email == '' || password == ''){
-            alert("Please, fill all the fields.");
+            alert(translate('alertLoginFillFields'));
             return;
         }
 
@@ -46,8 +46,8 @@ export default class LoginScreen extends Component {
             .then(() => {
                 this.props.navigation.navigate("RPG+");
                 this.setState({email: '', password: ''});
-                ToastAndroid.show("Successfully logged!", ToastAndroid.SHORT);
-            }).catch(error => alert("error: " + error));   
+                ToastAndroid.show(translate('toastLoginSuccess'), ToastAndroid.SHORT);
+            }).catch(error => alert(translate('alertCatchError') + error));   
     }
 
     render(){

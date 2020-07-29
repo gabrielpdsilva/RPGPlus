@@ -35,13 +35,13 @@ export default class RegisterScreen extends Component {
 
         //if at least one field is empty
         if(this.state.name == '' || this.state.nickname == '' || this.state.email == '' || this.state.password == '' || this.state.confirmPassword == ''){
-            alert("You have to fill all the fields!");
+            alert(translate('alertRegisterFillFields'));
             return;
         }
 
         //if password is different from confirmPassord
         if(this.state.password !== this.state.confirmPassword){
-            alert("Password and Confirm Password fields cannot be different!");
+            alert(translate('alertRegisterPassword'));
             return;
         }
 
@@ -68,10 +68,10 @@ export default class RegisterScreen extends Component {
                     this.props.navigation.navigate('Login');
                     
                     //toast a message
-                    ToastAndroid.show("Successfully Registered!", ToastAndroid.SHORT);
+                    ToastAndroid.show(translate('toastRegisterSuccess'), ToastAndroid.SHORT);
 
-                }).catch(error => alert("Something went wrong:\n" + error));
-            }).catch(error => alert("Could not create an user:\n" + error));
+                }).catch(error => console.log("Something went wrong:\n" + error));
+            }).catch(error => console.log("Could not create an user:\n" + error));
     }
 
     render(){

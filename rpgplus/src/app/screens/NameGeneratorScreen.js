@@ -118,7 +118,7 @@ export default class NameGeneratorScreen extends Component {
         Clipboard.setString(this.state.name);
 
         //make a toast with the name
-        ToastAndroid.show(this.state.name + " copied to your clipboard", ToastAndroid.SHORT);
+        ToastAndroid.show(this.state.name + " " + translate('toastNameGeneratorCopied'), ToastAndroid.SHORT);
     }
 
     render() {

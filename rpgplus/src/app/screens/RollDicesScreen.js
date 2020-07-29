@@ -28,12 +28,12 @@ export default class RollDicesScreen extends Component {
     roll = (type, quantity, modifier) => {
 
         if(quantity < 1 || quantity > 5){
-            alert("The quantity must be a value between 1 and 5.");
+            alert(translate('alertRollQuantity'));
             return;
         }
 
         if(modifier > 30 || modifier < (-30)){
-            alert("The modifier must be a value between -30 and 30.");
+            alert(translate('alertRollModifier'));
             return;
         }
 

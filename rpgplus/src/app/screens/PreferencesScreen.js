@@ -65,13 +65,13 @@ export default class PreferencesScreen extends Component {
             if (!result.cancelled) {
                 this.uploadImage(result.uri, "profile-picture")
                     .then(() => {
-                        ToastAndroid.show("Image added.", ToastAndroid.SHORT);
+                        ToastAndroid.show(translate('toastPreferencesImageAdded'), ToastAndroid.SHORT);
                         this.getUserPhoto();                        
                     }).catch((error)=> { alert(error) });
             } 
 
-        } catch (E) {
-            alert("Oops, error when picking image:\n" + E);
+        } catch (e) {
+            alert(translate('alertCatchError') + e);
         }
     };
 
@@ -99,16 +99,16 @@ export default class PreferencesScreen extends Component {
 
     buttonDelete = () => {
         Alert.alert(
-            'Delete Account', //title
-            'Are you sure you want to delete your account? This can\'t be undone.', //message
+            translate('alertPreferencesTitle'), //title
+            translate('alertPreferencesMessage'), //message
             [
                 {
-                    text: 'Cancel',
-                    onPress: () => ToastAndroid.show("Delete canceled.", ToastAndroid.SHORT),
+                    text: translate('alertCancel'),
+                    onPress: () => ToastAndroid.show(translate('toastPreferencesDeleteCancel'), ToastAndroid.SHORT),
                     style: 'cancel'
                 },
                 {
-                    text: 'OK', onPress: () => {
+                    text: translate('alertConfirm'), onPress: () => {
                     this.deleteAccount();
                     }
                 }
@@ -124,23 +124,20 @@ export default class PreferencesScreen extends Component {
 
         dbh.collection("users").doc(user.uid).delete().then(() => {
 
-            //toast a message
-            ToastAndroid.show("Document successfully deleted!", ToastAndroid.SHORT);
-
             user.delete().then(() => {
     
                 //toast a message
-                ToastAndroid.show("Your account has been deleted!", ToastAndroid.SHORT);
+                ToastAndroid.show(translate('toastPreferencesUserDeleted'), ToastAndroid.SHORT);
     
                 //goes to login screen
                 this.props.navigation.navigate("Login");
             })
             .catch((error) => {
-                alert("Something went wrong: \n" + error);
+                alert(translate('alertCatchError') + error);
             });
 
         }).catch((error) => {
-            alert("Error removing document: " + error);
+            alert(translate('alertCatchError') + error);
         });
 
     }
@@ -156,7 +153,7 @@ export default class PreferencesScreen extends Component {
         }).then(() => {
             console.log("Name updated.");
         }).catch((error) => {
-            alert("Something went wrong: \n" + error);
+            alert(translate('alertCatchError') + error);
         });
 
         //updating email
@@ -165,10 +162,10 @@ export default class PreferencesScreen extends Component {
             console.log("E-mail updated.");
         }).catch((error) => {
             // An error happened.
-            alert("Something went wrong: \n" + error);
+            alert(translate('alertCatchError') + error);
         });
 
-        ToastAndroid.show("Done!", ToastAndroid.SHORT);
+        ToastAndroid.show(translate('toastPreferencesUpdateDone'), ToastAndroid.SHORT);
         this.props.navigation.navigate("Home");
     }
 

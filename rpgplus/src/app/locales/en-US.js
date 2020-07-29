@@ -104,6 +104,59 @@ const en = {
     editDraftLoading: 'Loading...',
     editDraftBtnSaveChanges: 'Save Changes',
     editDraftBtnDeleteDraft: 'Delete Draft',
+
+    //------------------------------------
+    //ALERTS AND TOASTS
+
+    //common alerts
+    alertCatchError: 'Something went wrong: ',
+    alertConfirm: 'OK',
+    alertCancel: 'Cancel',
+
+    //create draft
+    alertCreateDraftAllFields: 'All fields must be filled.',
+    alertCreateDraftReachedMaximum: 'You have reached the maximum number of drafts allowed. You will have to delete at least one draft to continue.',
+    toastCreateDraftCreated: 'Draft created!',
+
+    //draft model
+    toastDraftModelUpdated: 'Draft updated!',
+    toastDraftModelDeleted: 'Draft deleted!',
+    alertDraftModelTitle: 'Delete Draft',
+    alertDraftModelMessage: 'Are you sure you want to delete your draft?',
+    toastDraftModelCanceled: 'Delete canceled',
+    alertDraftModelNoExist: 'No docs here.',
+
+    //forgot password
+    toastForgotPasswordDone: 'Done, please check your e-mail.',
+
+    //list draft
+    alertListDraftNoDocs: 'No documents here.',
+
+    //login
+    alertLoginFillFields: 'Please, fill all the fields.',
+    toastLoginSuccess: 'Successfully logged.',
+
+    //name generator
+    toastNameGeneratorCopied: 'copied to your clipboard.',
+
+    //preferences
+    alertPreferencesPermissions: 'Sorry, we need camera roll permissions to make this work!',
+    toastPreferencesImageAdded: 'Image added.',
+    toastPreferencesImageSaved: 'Image saved.',
+    alertPreferencesTitle: 'Delete User',
+    alertPreferencesMessage: 'Are you sure you want to delete your account? This cannot be undone.',
+    toastPreferencesUserDeleted: 'User deleted!',
+    toastPreferencesUpdateDone: 'Done!',
+    toastPreferencesDeleteCancel: 'Delete canceled.',
+
+    //register
+    alertRegisterFillFields: 'You have to fill all the fields!',
+    alertRegisterPassword: 'Password and Confirm Password fields cannot be different!',
+    toastRegisterSuccess: 'Successfully Registered!',
+
+    //roll dices
+    alertRollQuantity: 'The quantity must be a value between 1 and 5.',
+    alertRollModifier: 'The modifier must be a value between -30 and 30.',
     
 };
   

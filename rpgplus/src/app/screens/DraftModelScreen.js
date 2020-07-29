@@ -87,12 +87,12 @@ export default class DraftModelScreen extends Component {
             translate('alertDraftModelMessage'), //message
             [
                 {
-                    text: translate('alertDraftModelBtnCanceled'),
+                    text: translate('alertCancel'),
                     onPress: () => ToastAndroid.show(translate('toastDraftModelCanceled'), ToastAndroid.SHORT),
                     style: 'cancel'
                 },
                 {
-                    text: translate('alertDraftModelBtnConfirm'), onPress: () => {
+                    text: translate('alertConfirm'), onPress: () => {
                         this.deleteDraft();
                     }
                 }

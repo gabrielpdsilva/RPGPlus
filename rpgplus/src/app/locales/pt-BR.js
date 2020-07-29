@@ -104,6 +104,60 @@ const pt = {
     editDraftLoading: 'Carregando...',
     editDraftBtnSaveChanges: 'Salvar Mudanças',
     editDraftBtnDeleteDraft: 'Deletar Rascunho',
+
+    //------------------------------------
+    //ALERTS AND TOASTS
+
+    //common alerts
+    alertCatchError: 'Algo deu errado: ',
+    alertConfirm: 'Sim',
+    alertCancel: 'Cancelar',
+
+    //create draft
+    alertCreateDraftAllFields: 'Todos os campos precisam ser preenchidos.',
+    alertCreateDraftReachedMaximum: 'Você atingiu o número máximo de rascunhos permitidos. precisará deletar pelo menos um pra continuar.',
+    toastCreateDraftCreated: 'Rascunho criado!',
+
+    
+    //draft model
+    toastDraftModelUpdated: 'Rascunho atualizado!',
+    toastDraftModelDeleted: 'Rascunho deletado!',
+    alertDraftModelTitle: 'Deletar Rascunho',
+    alertDraftModelMessage: 'Tem certeza de que deseja deletar seu rascunho?',
+    toastDraftModelCanceled: 'Ação cancelada.',
+    alertDraftModelNoExist: 'Sem documentos aqui.',
+
+    //forgot password
+    toastForgotPasswordDone: 'Pronto, por favor confira seu e-mail.',
+
+    //list draft
+    alertListDraftNoDocs: 'Não há documentos aqui.',
+
+    //login
+    alertLoginFillFields: 'Por favor, preencha todos os campos.',
+    toastLoginSuccess: 'Logado com sucesso!',
+
+    //name generator
+    toastNameGeneratorCopied: 'copiado para o seu teclado.',
+
+    //preferences
+    alertPreferencesPermissions: 'Lamentamos, mas precisamos das permissões de câmera para executar essa ação!',
+    toastPreferencesImageAdded: 'Imagem adicionada.',
+    toastPreferencesImageSaved: 'Imagem salva.',
+    alertPreferencesTitle: 'Deletar Conta',
+    alertPreferencesMessage: 'Tem certeza que deseja deletar sua conta? Isso não pode ser desfeito.',
+    toastPreferencesUserDeleted: 'Usuário deletado!',
+    toastPreferencesUpdateDone: 'Pronto!',
+    toastPreferencesDeleteCancel: 'Ação cancelada.',
+
+    //register
+    alertRegisterFillFields: 'Você precisa preencher todos os campos!',
+    alertRegisterPassword: 'Senha e COnfirmar Senha não podem ser diferentes!',
+    toastRegisterSuccess: 'Registrado com sucesso!',
+
+    //roll dices
+    alertRollQuantity: 'A quantidade precisa ser um valor entre 1 e 5.',
+    alertRollModifier: 'O modificador precisa ser um valor entre -30 e 30.',
     
 };
   
