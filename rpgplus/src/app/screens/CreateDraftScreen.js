@@ -34,7 +34,7 @@ export default class CreateDraftScreen extends Component {
     addDraft = () => {
 
         if(this.state.name == '' || this.state.category == '' || this.state.system == '' || this.state.text == '' ){
-            alert("All fields must be filled.");
+            alert(translate('alertCreateDraftAllFields'));
             return;
         }
 
@@ -47,7 +47,7 @@ export default class CreateDraftScreen extends Component {
 
         collectionRef.get().then(snap => {
             if(snap.size >= 10){
-                alert("You have reached the maximum number of drafts allowed. You will have to delete at least one draft to continue.");
+                alert(translate('alertCreateDraftReachedMaximum'));
             }else{
 
                 //create a draft to the doc of the user collection
@@ -60,7 +60,7 @@ export default class CreateDraftScreen extends Component {
         
                 }).then((docRef) => {
                     //toast a message
-                    ToastAndroid.show("Draft created! ", ToastAndroid.SHORT);
+                    ToastAndroid.show(translate('toastCreateDraftCreated'), ToastAndroid.SHORT);
         
                     //set all states to ''
                     this.setState({name: '', category: '', system: '', text: ''});
@@ -69,7 +69,7 @@ export default class CreateDraftScreen extends Component {
                     this.props.navigation.navigate("Home");
         
                 }).catch((error) => {
-                    alert("Could not add the doc, error:\n" + error);
+                    alert(translate('alertCatchError') + error);
                 });
             }
         }); 

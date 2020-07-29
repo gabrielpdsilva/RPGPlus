@@ -52,7 +52,7 @@ export default class DraftModelScreen extends Component {
         });
 
         //toast a message
-        ToastAndroid.show("Draft updated!", ToastAndroid.SHORT);
+        ToastAndroid.show(translate('toastDraftModelUpdated'), ToastAndroid.SHORT);
     }
 
     deleteDraft = () => {
@@ -72,8 +72,8 @@ export default class DraftModelScreen extends Component {
             .collection("sketchs")
             .doc(draftId)
             .delete()
-            .then(() => ToastAndroid.show("Draft deleted!", ToastAndroid.SHORT))
-            .catch((error) => alert("Something went wrong:" + error));
+            .then(() => ToastAndroid.show(translate('toastDraftModelDeleted'), ToastAndroid.SHORT))
+            .catch((error) => alert(translate('alertCatchError: ') + error));
 
         //goes to home screen
         this.props.navigation.navigate("Home");
@@ -83,16 +83,16 @@ export default class DraftModelScreen extends Component {
     btnDeleteDraft = () => {
 
         Alert.alert(
-            'Delete Draft', //title
-            'Are you sure you want to delete your draft?', //message
+            translate('alertDraftModelTitle'), //title
+            translate('alertDraftModelMessage'), //message
             [
                 {
-                    text: 'Cancel',
-                    onPress: () => ToastAndroid.show("Delete canceled.", ToastAndroid.SHORT),
+                    text: translate('alertDraftModelBtnCanceled'),
+                    onPress: () => ToastAndroid.show(translate('toastDraftModelCanceled'), ToastAndroid.SHORT),
                     style: 'cancel'
                 },
                 {
-                    text: 'OK', onPress: () => {
+                    text: translate('alertDraftModelBtnConfirm'), onPress: () => {
                         this.deleteDraft();
                     }
                 }
@@ -123,7 +123,7 @@ export default class DraftModelScreen extends Component {
 
         draftRef.get().then(doc => {
             if (!doc.exists) {
-                alert("No docs here.");
+                alert(translate('alertDraftModelNoExist'));
             } else {
                 this.setState({
                     id: doc.id,

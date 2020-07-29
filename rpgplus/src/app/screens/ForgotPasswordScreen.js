@@ -29,9 +29,9 @@ export default class ForgotPasswordScreen extends Component {
 
         //sent a request to reset password
         auth.sendPasswordResetEmail(emailAddress).then(() => {
-            ToastAndroid.show("Done, please check your e-mail", ToastAndroid.SHORT);
+            ToastAndroid.show(translate('toastForgotPasswordDone'), ToastAndroid.SHORT);
         }).catch((error) => {
-            alert("Something went wrong: \n" + error);
+            alert(translate('alertCatchError') + error);
         });
     }
 

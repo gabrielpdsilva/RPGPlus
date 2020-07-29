@@ -40,7 +40,7 @@ export default class ListDraftScreen extends Component {
 
             //if user has no docs
             if(snapshot.empty){
-                alert("No Documents here.");
+                alert(translate('alertListDraftNoDocs'));
                 return;
             }
             //gets the docs and stores it inside the 'data' state
