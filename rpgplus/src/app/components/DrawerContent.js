@@ -100,20 +100,20 @@ export default function DrawerContent(props) {
                             onPress={() => {
 
                                 Alert.alert(
-                                    'Logout', //title
-                                    'Are you sure you want to logout?', //message
+                                    translate('alertLogoutTitle'), //title
+                                    translate('alertLogoutMessage'), //message
                                     [
                                         {
-                                            text: 'Cancel',
-                                            onPress: () => ToastAndroid.show("Logout canceled.", ToastAndroid.SHORT),
+                                            text: translate('alertCancel'),
+                                            onPress: () => ToastAndroid.show(translate('alertLogoutCanceled'), ToastAndroid.SHORT),
                                             style: 'cancel'
                                         },
                                         {
-                                            text: 'OK', onPress: () => {
+                                            text: translate('alertConfirm'), onPress: () => {
                                                 firebase.auth().signOut().then(() => {
                                                     props.navigation.navigate("Login"); //goes to Login screen
-                                                    ToastAndroid.show("Successfully logged out!", ToastAndroid.SHORT); //make a toast
-                                                }).catch(error => alert("Ops, error: " + error));
+                                                    ToastAndroid.show(translate('alertLogoutSuccessful'), ToastAndroid.SHORT); //make a toast
+                                                }).catch(error => console.log("Ops, error: " + error));
                                             }
                                         }
                                     ],

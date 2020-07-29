@@ -159,6 +159,12 @@ const pt = {
     alertRollQuantity: 'A quantidade precisa ser um valor entre 1 e 5.',
     alertRollModifier: 'O modificador precisa ser um valor entre -30 e 30.',
     
+    //drawer content
+    alertLogoutTitle: 'Logout',
+    alertLogoutMessage: 'Tem certeza de que deseja fazer logout?',
+    alertLogoutCanceled: 'Logout cancelado.',
+    alertLogoutSuccessful: 'Você fez logout.',
+
 };
   
 export default pt;

@@ -157,6 +157,12 @@ const en = {
     //roll dices
     alertRollQuantity: 'The quantity must be a value between 1 and 5.',
     alertRollModifier: 'The modifier must be a value between -30 and 30.',
+
+    //drawer content
+    alertLogoutTitle: 'Logout',
+    alertLogoutMessage: 'Are you sure you want to logout?',
+    alertLogoutCanceled: 'Logout canceled.',
+    alertLogoutSuccessful: 'Successfully logged out!',
     
 };
   
