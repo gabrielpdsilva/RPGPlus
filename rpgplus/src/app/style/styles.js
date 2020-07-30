@@ -170,7 +170,7 @@ const styles = StyleSheet.create({
     },
 
     headerAppBar: {
-        backgroundColor: colors.purple,
+        backgroundColor: colors.orange,
     },
 
     //textinput of CreateDraftScreen, need to change it
@@ -193,7 +193,7 @@ const styles = StyleSheet.create({
         width: 290,
         margin: 5,
         height: 50,
-        backgroundColor: colors.water,
+        backgroundColor: colors.purple,
         borderRadius: 4,
         alignItems: "center",
         justifyContent: "center",
@@ -214,13 +214,13 @@ const styles = StyleSheet.create({
         fontSize: 14,
         marginTop: 3,
         fontWeight: 'bold',
-        color: colors.black,
+        color: colors.white,
     },
 
     drawerCaption: {
         fontSize: 14,
         lineHeight: 14,
-        color: colors.black,
+        color: colors.white,
     },
 
     drawerSection: {
@@ -232,7 +232,7 @@ const styles = StyleSheet.create({
         fontSize: 14,
         marginTop: 3,
         fontWeight: 'bold',
-        color: colors.black,
+        color: colors.white,
     },
     /**********************
      * drawerContent style ends here*

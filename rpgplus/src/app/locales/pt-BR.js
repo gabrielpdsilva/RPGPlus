@@ -94,6 +94,7 @@ const pt = {
     listDraftsCategory: 'Categoria',
     listDraftsSystem: 'Sistema',
     listDraftsText: 'Texto',
+    listDraftNoDrafts: 'Parece que você ainda não tem rascunhos.',
 
     //draft model
     appBarDraftModel: 'Editar Rascunho',
@@ -129,9 +130,6 @@ const pt = {
 
     //forgot password
     toastForgotPasswordDone: 'Pronto, por favor confira seu e-mail.',
-
-    //list draft
-    alertListDraftNoDocs: 'Não há documentos aqui.',
 
     //login
     alertLoginFillFields: 'Por favor, preencha todos os campos.',

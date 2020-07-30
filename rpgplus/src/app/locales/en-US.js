@@ -94,6 +94,7 @@ const en = {
     listDraftsCategory: 'Category',
     listDraftsSystem: 'System',
     listDraftsText: 'Text',
+    listDraftNoDrafts: 'It seems that you have no drafts here.',
 
     //draft model
     appBarDraftModel: 'Edit Draft',
@@ -128,9 +129,6 @@ const en = {
 
     //forgot password
     toastForgotPasswordDone: 'Done, please check your e-mail.',
-
-    //list draft
-    alertListDraftNoDocs: 'No documents here.',
 
     //login
     alertLoginFillFields: 'Please, fill all the fields.',

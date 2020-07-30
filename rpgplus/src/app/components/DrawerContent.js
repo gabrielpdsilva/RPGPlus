@@ -18,7 +18,7 @@ export default function DrawerContent(props) {
     const user = firebase.auth().currentUser;
     
     return(
-        <View style={{flex:1}} backgroundColor = {colors.lightTheme}>
+        <View style={{flex:1}} backgroundColor = {colors.orange}>
             
             <DrawerContentScrollView {...props}>
                 <View style={styles.drawerContent}>
@@ -49,7 +49,7 @@ export default function DrawerContent(props) {
                         <Text style={styles.drawerSubmenuTitle}>{translate('drawerMain')}</Text>
                         
                         <DrawerItem
-                            labelStyle = {{color: colors.black}}
+                            labelStyle = {{color: colors.white}}
                             label={translate('drawerHome')}
                             onPress={() => props.navigation.navigate('Home')}
                         />
@@ -60,25 +60,25 @@ export default function DrawerContent(props) {
                     <Drawer.Section>
 
                         <DrawerItem
-                            labelStyle = {{color: colors.black}}
+                            labelStyle = {{color: colors.white}}
                             label={translate('drawerNameGenerator')}
                             onPress={()=> props.navigation.navigate('Name Generator')}
                         />
 
                         <DrawerItem
-                            labelStyle = {{color: colors.black}}
+                            labelStyle = {{color: colors.white}}
                             label={translate('drawerRollDices')}
                             onPress={()=> props.navigation.navigate("Roll Dices")}
                         />
 
                         <DrawerItem
-                            labelStyle = {{color: colors.black}}
+                            labelStyle = {{color: colors.white}}
                             label={translate('drawerCreateDraft')}
                             onPress={()=>props.navigation.navigate('Create Draft')}
                         />
 
                         <DrawerItem
-                            labelStyle = {{color: colors.black}}
+                            labelStyle = {{color: colors.white}}
                             label={translate('drawerMyDrafts')}
                             onPress={()=>props.navigation.navigate('List Drafts')}
                         />
@@ -89,13 +89,13 @@ export default function DrawerContent(props) {
                     <Drawer.Section>
                         
                         <DrawerItem
-                            labelStyle = {{color: colors.black}}
+                            labelStyle = {{color: colors.white}}
                             label={translate('drawerPreferences')}
                             onPress={()=>props.navigation.navigate('Preferences')}
                         />
 
                         <DrawerItem
-                            labelStyle = {{color: colors.black}}
+                            labelStyle = {{color: colors.white}}
                             label={translate('drawerSignOut')}
                             onPress={() => {
 

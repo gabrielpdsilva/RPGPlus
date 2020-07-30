@@ -26,6 +26,7 @@ export default class ListDraftScreen extends Component {
         this.state = {
             data: [],
             loading: true,
+            noDrafts: true,
         };
     }
 
@@ -40,7 +41,7 @@ export default class ListDraftScreen extends Component {
 
             //if user has no docs
             if(snapshot.empty){
-                alert(translate('alertListDraftNoDocs'));
+                this.setState({loading: false, noDrafts: true}); //loading circle will be removed, message of no drafts will be displayed
                 return;
             }
             //gets the docs and stores it inside the 'data' state
@@ -55,7 +56,7 @@ export default class ListDraftScreen extends Component {
                     }]
                 }))
             ))
-            this.setState({loading: false}); //loading circle will be removed
+            this.setState({loading: false, noDrafts: false}); //loading circle will be removed, message will not appear
         })
     }
 
@@ -129,6 +130,9 @@ export default class ListDraftScreen extends Component {
             <View style={styles.container}>
                 
                 <CustomAppBar title={translate('appBarListDrafts')} subtitle="" navigation={this.props.navigation}/>
+
+                { this.state.noDrafts && <Text style={styles.text}>{translate('listDraftNoDrafts')}</Text> }
+
                 <ScrollView>
                     <FlatList
                         data={this.state.data}
