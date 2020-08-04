@@ -10,11 +10,13 @@ import {
 } from 'react-native';
 
 import styles from '../style/styles';
+import colors from '../style/colors';
 import CustomAppBar from '../components/CustomAppBar';
 
 import firebase from '../controller/FirebaseConfig';
 import 'firebase/firestore';
 import {translate} from '../locales/localeConfig';
+import { Colors } from 'react-native/Libraries/NewAppScreen';
 
 //Useful links:
 //https://blog.rocketseat.com.br/scroll-infinito-no-react-native/
@@ -119,7 +121,7 @@ export default class ListDraftScreen extends Component {
                     <CustomAppBar title={translate('appBarListDrafts')} subtitle="" navigation={this.props.navigation}/>
                     
                     <View style={styles.childContainer}>
-                        <ActivityIndicator size="large" color='#9001ff'/>
+                        <ActivityIndicator size="large" color={colors.purple}/>
                     </View>
                 
                 </View>

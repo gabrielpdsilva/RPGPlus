@@ -161,7 +161,7 @@ export default class DraftModelScreen extends Component {
                             <Text style={styles.inputTitle}>{translate('editDraftName')}</Text>
                             <TextInput
                                 placeholder={translate('editDraftLoading')}
-                                placeholderTextColor={colors.black}
+                                placeholderTextColor={colors.white}
                                 style={styles.createDraftInput}
                                 value={this.state.name}
                                 onChangeText={(txt) => this.setState({name: txt})}
@@ -174,7 +174,7 @@ export default class DraftModelScreen extends Component {
                             <Text style={styles.inputTitle}>{translate('editDraftCategory')}</Text>
                             <TextInput
                                 placeholder={translate('editDraftLoading')}
-                                placeholderTextColor={colors.black}
+                                placeholderTextColor={colors.white}
                                 style={styles.createDraftInput}
                                 value={this.state.category}
                                 onChangeText={(txt) => this.setState({category: txt})}
@@ -187,7 +187,7 @@ export default class DraftModelScreen extends Component {
                             <Text style={styles.inputTitle}>{translate('editDraftSystem')}</Text>
                             <TextInput
                                 placeholder={translate('editDraftLoading')}
-                                placeholderTextColor={colors.black}
+                                placeholderTextColor={colors.white}
                                 style={styles.createDraftInput}
                                 value={this.state.system}
                                 onChangeText={(txt) => this.setState({system: txt})}
@@ -200,7 +200,7 @@ export default class DraftModelScreen extends Component {
                             <Text style={styles.inputTitle}>{translate('editDraftText')}</Text>
                             <TextInput
                                 placeholder={translate('editDraftLoading')}
-                                placeholderTextColor={colors.black}
+                                placeholderTextColor={colors.white}
                                 multiline = {true}
                                 height = {150}
                                 textAlignVertical = 'top'

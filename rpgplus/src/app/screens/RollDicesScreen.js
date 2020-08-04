@@ -5,6 +5,7 @@ import {
     TouchableOpacity,
     TextInput,
     Picker,
+    ScrollView
 } from 'react-native';
 
 import styles from '../style/styles';
@@ -70,7 +71,8 @@ export default class RollDicesScreen extends Component {
             <View style={styles.container}>
                 
                 <CustomAppBar title={translate('appBarRollDices')} subtitle="" navigation={this.props.navigation}/>
-                <View style={styles.childContainer}>
+                
+                <ScrollView style={{marginTop: 14}}>
                 
                     <Text style={styles.title}>{translate('rollTitle')}</Text>
                     <Text style={styles.text}>{translate('rollSubtitle')}</Text>
@@ -135,12 +137,16 @@ export default class RollDicesScreen extends Component {
                     }
 
                     <Text style={styles.text}>{translate('rollSum')} {sum}</Text>
- 
-                    <TouchableOpacity onPress={() => this.roll(type, quantity, modifier)} style={styles.button}>
-                        <Text style={styles.buttonText}>{translate('rollBtnRoll')}</Text>
-                    </TouchableOpacity>
 
-                </View>
+                    <View style={{justifyContent:'center', alignItems: 'center', marginBottom: 10}}>
+
+                        <TouchableOpacity onPress={() => this.roll(type, quantity, modifier)} style={styles.button}>
+                            <Text style={styles.buttonText}>{translate('rollBtnRoll')}</Text>
+                        </TouchableOpacity>
+
+                    </View>
+
+                </ScrollView>
 
             </View>
         );

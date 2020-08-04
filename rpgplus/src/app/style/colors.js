@@ -1,17 +1,6 @@
-const colors = {
-
-    
-    
-    
+const colors = {  
     darkContainer: '#232635',
   
-    alternativeWhite: '#f4f3f4',
-    deepGray: '#14161f',
-    DarkestOrange: '#913000', //color of the button when switch is off
-    black: '#1f1f1f',
-    //water: '#41D9AE',
-    water: '#16c493',
-
     white: '#fff',
     black: '#000',
     orange: '#ff5700',

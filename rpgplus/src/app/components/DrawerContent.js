@@ -18,7 +18,7 @@ export default function DrawerContent(props) {
     const user = firebase.auth().currentUser;
     
     return(
-        <View style={{flex:1}} backgroundColor = {colors.mainLaranja}>
+        <View style={{flex:1}} backgroundColor = {colors.orange}>
             
             <DrawerContentScrollView {...props}>
                 <View style={styles.drawerContent}>

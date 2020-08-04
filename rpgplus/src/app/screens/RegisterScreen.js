@@ -75,7 +75,7 @@ export default class RegisterScreen extends Component {
     }
 
     render(){
-        //<View style={styles.childContainer}>
+        
         return(
 
             <View style={styles.container}>
@@ -151,9 +151,9 @@ export default class RegisterScreen extends Component {
 
                     <View style={{justifyContent:'center', alignItems: 'center', marginBottom: 10}}>
 
-                    <TouchableOpacity onPress={this.handleSignUp} style={styles.button}>
-                        <Text style={styles.buttonText}>{translate('registerBtnRegister')}</Text>
-                    </TouchableOpacity>
+                        <TouchableOpacity onPress={this.handleSignUp} style={styles.button}>
+                            <Text style={styles.buttonText}>{translate('registerBtnRegister')}</Text>
+                        </TouchableOpacity>
 
                     </View>
 

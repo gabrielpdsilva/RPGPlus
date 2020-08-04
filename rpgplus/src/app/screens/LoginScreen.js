@@ -5,6 +5,7 @@ import {
     TouchableOpacity,
     ToastAndroid,
     Text,
+    ScrollView
 } from 'react-native';
 
 import styles from '../style/styles';
@@ -59,6 +60,7 @@ export default class LoginScreen extends Component {
                 <CustomAppBar title={translate('appBarLogin')} subtitle="" backIsVisible={false} isLoginScreen = {true}/>
 
                 <View style={styles.childContainer}>
+
                 
                     <Text style={styles.title}>{translate('loginTitle')}</Text>
 
@@ -103,7 +105,8 @@ export default class LoginScreen extends Component {
 
                     <TouchableOpacity onPress={() => this.props.navigation.navigate("Forgot Password")}>
                         <Text style={styles.text}>{translate('loginBtnForgotPassword')}</Text>
-                    </TouchableOpacity>                    
+                    </TouchableOpacity>   
+             
 
                 </View>
             </View>

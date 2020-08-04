@@ -6,7 +6,7 @@ import {
     TextInput,
     ToastAndroid,
     Alert,
-    TouchableOpacity
+    TouchableOpacity,
 } from 'react-native';
 
 import CustomAppBar from '../components/CustomAppBar';

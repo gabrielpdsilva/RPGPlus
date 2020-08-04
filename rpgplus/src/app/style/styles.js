@@ -136,32 +136,8 @@ const styles = StyleSheet.create({
         color: colors.white,
     },
 
-    dangerTitle: {
-        color: colors.red,
-        fontWeight: 'bold',
-        fontSize: 20
-    },
-
-    dangerText: {
-        color: colors.red,
-        margin: 5,
-        fontSize: 15,
-        textAlign: 'center'
-    },
-
     headerAppBar: {
         backgroundColor: colors.orange,
-    },
-
-    //textinput of CreateDraftScreen, need to change it
-    customtextinput: {
-        padding: 5,
-        margin: 5,
-        height: 40,
-        borderColor: colors.black,
-        borderWidth: 1,
-        backgroundColor: colors.darkTheme,
-        color: colors.white
     },
 
     buttonText: {
