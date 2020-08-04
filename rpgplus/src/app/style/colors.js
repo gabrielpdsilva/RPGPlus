@@ -1,22 +1,26 @@
 const colors = {
 
-    white: '#fff',
-    orange: '#ff490d',
-    purple: '#5e07b5',
-    alternativeOrange: '#e62600',
-    black: '#000',
-    red: '#f91818',
-    darkTheme: '#2d3042',
-    lightTheme: '#e3e3e3',
+    
+    
+    
     darkContainer: '#232635',
-    lightGray: '#767577',
-    darkGray: '#3e3e3e',
+  
     alternativeWhite: '#f4f3f4',
     deepGray: '#14161f',
     DarkestOrange: '#913000', //color of the button when switch is off
     black: '#1f1f1f',
     //water: '#41D9AE',
-    water: '#16c493'
+    water: '#16c493',
+
+    white: '#fff',
+    black: '#000',
+    orange: '#ff5700',
+    purple: '#9001ff',
+    blue: '#613dff',
+    darkBlue: '#3d1dcb',
+    darkTheme: '#181d26',
+    lightTheme: '#e3e3e3',
+    darkBackground: '#13161c', //used for inputs
 
 }
 

@@ -6,7 +6,7 @@ const styles = StyleSheet.create({
 
     container: {
         flex: 1,
-        backgroundColor: colors.lightTheme,
+        backgroundColor: colors.darkTheme,
     },
 
     childContainer: {
@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
 
     inputTitle: {
 
-        color: colors.black,
+        color: colors.white,
         fontSize: 13,
 
     },
@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
 
     //common text
     text: {
-        color: colors.black,
+        color: colors.white,
         margin: 5,
         fontSize: 15,
         textAlign: 'center'
@@ -55,19 +55,11 @@ const styles = StyleSheet.create({
         width: 290,
         padding: 5,
         height: 40,
-        borderColor: colors.black,
+        borderColor: colors.orange,
         borderWidth: 1,
-        backgroundColor: colors.lightTheme,
-        color: colors.black,
+        backgroundColor: colors.darkBackground,
+        color: colors.white,
         borderRadius: 4,
-    },
-
-    //textinput style for preferenceScreen
-    textInputPreference: {  
-        width: 290,
-        padding: 0,
-        backgroundColor: colors.lightTheme,
-        color: colors.black,
     },
 
     //textinputBox style
@@ -85,7 +77,7 @@ const styles = StyleSheet.create({
     //rule to separate items
     lineStyle: {
         borderWidth: 0.5,
-        borderColor: colors.black,
+        borderColor: colors.orange,
         margin: 5,
         width: 290,
    },
@@ -96,24 +88,24 @@ const styles = StyleSheet.create({
    },
 
     createDraftInput: {
-        borderBottomColor: colors.black,
+        borderBottomColor: colors.orange,
         borderBottomWidth: StyleSheet.hairlineWidth,
         height: 40,
         fontSize: 15,
-        color: colors.black,
+        color: colors.white,
     },
 
     createDraftInputBox: {
-        borderBottomColor: colors.black,
+        borderBottomColor: colors.orange,
         borderBottomWidth: StyleSheet.hairlineWidth,
         height: 130,
         fontSize: 15,
-        color: colors.black,
+        color: colors.white,
     },
 
     //text title
     title: {
-        color: colors.black,
+        color: colors.white,
         fontWeight: 'bold',
         fontSize: 20,
         alignItems: 'center',
@@ -122,38 +114,26 @@ const styles = StyleSheet.create({
 
     listItem: {
         borderRadius: 10,
-        backgroundColor: colors.white,
+        backgroundColor: '#293140',
         margin: 6,
         padding: 10
     },
 
-    draftListTitle: {
-
-        color: colors.purple,
+    itemTitle: {
+        color: colors.blue,
         fontSize: 15,
         fontWeight: 'bold',
-
     },
 
-    textItem: {
-        
-        color: colors.black,
-        margin: 3,
-        fontSize: 15,
+    itemText: {
+        color: colors.white,
     },
 
-    item: {
-        backgroundColor: colors.red,
-        padding: 10,
-        marginVertical: 2,
-        marginHorizontal: 2,
-        width: 250,
-    },
 
     //picker used in roll dices screen and name generator screen
     pickerStyle: {  
         //height: 150,
-        color: colors.black,
+        color: colors.white,
     },
 
     dangerTitle: {
@@ -193,7 +173,17 @@ const styles = StyleSheet.create({
         width: 290,
         margin: 5,
         height: 50,
-        backgroundColor: colors.purple,
+        backgroundColor: colors.blue,
+        borderRadius: 4,
+        alignItems: "center",
+        justifyContent: "center",
+    },
+
+    buttonAlternative: {
+        width: 290,
+        margin: 5,
+        height: 50,
+        backgroundColor: colors.darkBlue,
         borderRadius: 4,
         alignItems: "center",
         justifyContent: "center",

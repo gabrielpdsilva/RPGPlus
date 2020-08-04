@@ -191,14 +191,12 @@ export default class PreferencesScreen extends Component {
 
                     <Text style={styles.inputTitle}>{translate('preferencesChangeImage')}</Text>
 
-                    <View style = {styles.lineStyle}/>
-
                     <View style={{marginTop: 5}}>
 
                         <Text style={styles.inputTitle}>{translate('preferencesName')}</Text>
                         
                         <TextInput
-                            style={styles.textInputPreference}
+                            style={styles.textInput}
                             value={this.state.name}
                             onChangeText={ (txt) => this.setState({name: txt}) }
                             placeholder="..."
@@ -206,22 +204,18 @@ export default class PreferencesScreen extends Component {
 
                     </View>
 
-                    <View style = {styles.lineStyle}/>
-
                     <View style={{marginTop: 5}}>
 
                         <Text style={styles.inputTitle}>{translate('preferencesEmail')}</Text>
                         
                         <TextInput
-                            style={styles.textInputPreference}
+                            style={styles.textInput}
                             value={this.state.email}
                             onChangeText={ (txt) => this.setState({email: txt}) }
                             placeholder="..."
                         />
                             
                     </View>
-
-                    <View style = {styles.lineStyle}/>
                     
                     <View style={{marginTop: 20}}>
 
@@ -231,7 +225,7 @@ export default class PreferencesScreen extends Component {
 
                     </View>
 
-                    <TouchableOpacity onPress={this.buttonDelete} style={styles.button}>
+                    <TouchableOpacity onPress={this.buttonDelete} style={styles.buttonAlternative}>
                         <Text style={styles.buttonText}>{translate('preferencesBtnDeleteAccount')}</Text>
                     </TouchableOpacity>
 

@@ -219,7 +219,7 @@ export default class DraftModelScreen extends Component {
                             <Text style={styles.buttonText}>{translate('editDraftBtnSaveChanges')}</Text>
                         </TouchableOpacity>
 
-                        <TouchableOpacity onPress={this.deleteDraft} style={styles.button}>
+                        <TouchableOpacity onPress={this.deleteDraft} style={styles.buttonAlternative}>
                             <Text style={styles.buttonText}>{translate('editDraftBtnDeleteDraft')}</Text>
                         </TouchableOpacity>
 

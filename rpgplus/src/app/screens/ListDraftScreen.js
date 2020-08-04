@@ -80,29 +80,29 @@ export default class ListDraftScreen extends Component {
 
                 <View style={{marginTop: 5}}>
 
-                    <Text style={styles.draftListTitle}>{translate('listDraftsName')}</Text>
-                    <Text>{item.name}</Text>
+                    <Text style={styles.itemTitle}>{translate('listDraftsName')}</Text>
+                    <Text style={styles.itemText}>{item.name}</Text>
 
                 </View>
 
                 <View style={{marginTop: 5}}>
 
-                    <Text style={styles.draftListTitle}>{translate('listDraftsCategory')}</Text>
-                    <Text>{item.category}</Text>
+                    <Text style={styles.itemTitle}>{translate('listDraftsCategory')}</Text>
+                    <Text style={styles.itemText}>{item.category}</Text>
 
                 </View>
 
                 <View style={{marginTop: 5}}>
 
-                    <Text style={styles.draftListTitle}>{translate('listDraftsSystem')}</Text>
-                    <Text>{item.system}</Text>
+                    <Text style={styles.itemTitle}>{translate('listDraftsSystem')}</Text>
+                    <Text style={styles.itemText}>{item.system}</Text>
 
                 </View>
 
                 <View style={{marginTop: 5}}>
 
-                    <Text style={styles.draftListTitle}>{translate('listDraftsText')}</Text>
-                    <Text>{item.text}</Text>
+                    <Text style={styles.itemTitle}>{translate('listDraftsText')}</Text>
+                    <Text style={styles.itemText}>{item.text}</Text>
 
                 </View>
 
@@ -119,7 +119,7 @@ export default class ListDraftScreen extends Component {
                     <CustomAppBar title={translate('appBarListDrafts')} subtitle="" navigation={this.props.navigation}/>
                     
                     <View style={styles.childContainer}>
-                        <ActivityIndicator size="large"/>
+                        <ActivityIndicator size="large" color='#9001ff'/>
                     </View>
                 
                 </View>

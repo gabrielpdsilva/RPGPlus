@@ -97,7 +97,7 @@ export default class LoginScreen extends Component {
 
                     <TouchableOpacity onPress={() => this.props.navigation.navigate("Register")}>
                         <Text style={styles.text}>
-                        {translate('loginBtnFirstTimeHere')} <Text style={{fontWeight: "500", color: colors.purple, fontWeight: 'bold'}}>{translate('loginBtnRegister')}</Text>
+                        {translate('loginBtnFirstTimeHere')} <Text style={{fontWeight: "500", color: colors.purple}}>{translate('loginBtnRegister')}</Text>
                         </Text>
                     </TouchableOpacity>
 
