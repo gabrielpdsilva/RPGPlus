@@ -13,6 +13,9 @@ import {translate} from '../locales/localeConfig';
 //https://github.com/itzpradip
 //https://www.youtube.com/watch?v=ayxRtBHw754
 
+//icons:
+//https://oblador.github.io/react-native-vector-icons/
+
 export default function DrawerContent(props) {
 
     const user = firebase.auth().currentUser;
@@ -49,6 +52,13 @@ export default function DrawerContent(props) {
                         <Text style={styles.drawerSubmenuTitle}>{translate('drawerMain')}</Text>
                         
                         <DrawerItem
+                            icon={({size}) => (
+                                <Icon 
+                                    name="home" 
+                                    color={colors.white}
+                                    size={size}
+                                />
+                            )} 
                             labelStyle = {{color: colors.white}}
                             label={translate('drawerHome')}
                             onPress={() => props.navigation.navigate('Home')}
@@ -60,24 +70,52 @@ export default function DrawerContent(props) {
                     <Drawer.Section>
 
                         <DrawerItem
+                            icon={({size}) => (
+                                <Icon 
+                                    name="drama-masks" 
+                                    color={colors.white}
+                                    size={size}
+                                />
+                            )} 
                             labelStyle = {{color: colors.white}}
                             label={translate('drawerNameGenerator')}
                             onPress={()=> props.navigation.navigate('Name Generator')}
                         />
 
                         <DrawerItem
+                            icon={({size}) => (
+                                <Icon 
+                                    name="dice-d20" 
+                                    color={colors.white}
+                                    size={size}
+                                />
+                            )} 
                             labelStyle = {{color: colors.white}}
                             label={translate('drawerRollDices')}
                             onPress={()=> props.navigation.navigate("Roll Dices")}
                         />
 
                         <DrawerItem
+                            icon={({size}) => (
+                                <Icon 
+                                    name="pen" 
+                                    color={colors.white}
+                                    size={size}
+                                />
+                            )} 
                             labelStyle = {{color: colors.white}}
                             label={translate('drawerCreateDraft')}
                             onPress={()=>props.navigation.navigate('Create Draft')}
                         />
 
                         <DrawerItem
+                            icon={({size}) => (
+                                <Icon 
+                                    name="folder" 
+                                    color={colors.white}
+                                    size={size}
+                                />
+                            )} 
                             labelStyle = {{color: colors.white}}
                             label={translate('drawerMyDrafts')}
                             onPress={()=>props.navigation.navigate('List Drafts')}
@@ -89,12 +127,26 @@ export default function DrawerContent(props) {
                     <Drawer.Section>
                         
                         <DrawerItem
+                            icon={({size}) => (
+                                <Icon 
+                                    name="settings" 
+                                    color={colors.white}
+                                    size={size}
+                                />
+                            )} 
                             labelStyle = {{color: colors.white}}
                             label={translate('drawerPreferences')}
                             onPress={()=>props.navigation.navigate('Preferences')}
                         />
 
                         <DrawerItem
+                            icon={({size}) => (
+                                <Icon 
+                                    name="logout" 
+                                    color={colors.white}
+                                    size={size}
+                                />
+                            )} 
                             labelStyle = {{color: colors.white}}
                             label={translate('drawerSignOut')}
                             onPress={() => {

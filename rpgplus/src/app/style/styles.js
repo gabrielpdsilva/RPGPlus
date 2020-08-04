@@ -114,13 +114,13 @@ const styles = StyleSheet.create({
 
     listItem: {
         borderRadius: 10,
-        backgroundColor: '#293140',
+        backgroundColor: '#303e54',
         margin: 6,
         padding: 10
     },
 
     itemTitle: {
-        color: colors.blue,
+        color: colors.orange,
         fontSize: 15,
         fontWeight: 'bold',
     },
