@@ -11,6 +11,7 @@ import {
 import CustomAppBar from '../components/CustomAppBar';
 
 import styles from '../style/styles';
+import colors from '../style/colors';
 
 import firebase from '../controller/FirebaseConfig';
 import 'firebase/firestore';
@@ -98,6 +99,7 @@ export default class CreateDraftScreen extends Component {
                                 value={this.state.name}
                                 onChangeText={(txt) => this.setState({name: txt})}
                                 placeholder = {translate('createDraftNamePlaceholder')}
+                                placeholderTextColor = {colors.darkGray}
                             />
 
                         </View>
@@ -110,6 +112,7 @@ export default class CreateDraftScreen extends Component {
                                 value={this.state.category}
                                 onChangeText={(txt) => this.setState({category: txt})}
                                 placeholder = {translate('createDraftCategoryPlaceholder')}
+                                placeholderTextColor = {colors.darkGray}
                             />
                                 
                         </View>
@@ -122,6 +125,7 @@ export default class CreateDraftScreen extends Component {
                                 value={this.state.system}
                                 onChangeText={(txt) => this.setState({system: txt})}
                                 placeholder = {translate('createDraftSystemPlaceholder')}
+                                placeholderTextColor = {colors.darkGray}
                             />
 
                         </View>
@@ -137,6 +141,7 @@ export default class CreateDraftScreen extends Component {
                                 value={this.state.text}
                                 onChangeText={(txt) => this.setState({text: txt})}
                                 placeholder = {translate('createDraftTextBoxPlaceholder')}
+                                placeholderTextColor = {colors.darkGray}
                             />
                                 
                         </View> 

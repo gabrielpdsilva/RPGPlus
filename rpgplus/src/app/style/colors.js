@@ -10,6 +10,8 @@ const colors = {
     darkTheme: '#181d26',
     lightTheme: '#e3e3e3',
     darkBackground: '#13161c', //used for inputs
+    gray: '#303e54', //used for backgrounf of listItem
+    darkGray: '#878787' //used for placeholders
 
 }
 
