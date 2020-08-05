@@ -5,7 +5,7 @@ import {
     TouchableOpacity,
     ToastAndroid,
     Text,
-    ScrollView
+    Image
 } from 'react-native';
 
 import styles from '../style/styles';
@@ -61,7 +61,12 @@ export default class LoginScreen extends Component {
 
                 <View style={styles.childContainer}>
 
-                
+                    <Image
+                        source={require('../../../assets/logo.png')}
+                        style={{ width: 200, height: 100, justifyContent: 'center',
+                        alignItems: 'center',}}
+                    />
+            
                     <Text style={styles.title}>{translate('loginTitle')}</Text>
 
                     <Text style={styles.text}>{translate('loginSubtitle')}</Text>
@@ -105,8 +110,7 @@ export default class LoginScreen extends Component {
 
                     <TouchableOpacity onPress={() => this.props.navigation.navigate("Forgot Password")}>
                         <Text style={styles.text}>{translate('loginBtnForgotPassword')}</Text>
-                    </TouchableOpacity>   
-             
+                    </TouchableOpacity> 
 
                 </View>
             </View>

@@ -2,6 +2,7 @@ import React from 'react';
 import {
     Text,
     View,
+    Image
 } from 'react-native';
 
 import styles from '../style/styles';
@@ -21,6 +22,11 @@ const HomeScreen = ({navigation}) => {
             <CustomAppBar title={translate('appBarHome')} subtitle="" navigation={navigation}/>
 
             <View style={styles.childContainer}>
+
+                <Image
+                    source={require('../../../assets/logo.png')}
+                    style={{ width: 200, height: 100 }}
+                />
 
                 <Text style={styles.title}>{translate('homeTitle')} {user.displayName}</Text>
 
