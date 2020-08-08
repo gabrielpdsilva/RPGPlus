@@ -59,12 +59,11 @@ const en = {
     rollSubtitle: 'Please, select the type of the dice, quantity of dices to be rolled and the modifier.',
     rollType: 'Type',
     rollQuantity: 'Quantity',
-    rollQuantityPlaceholder: 'Default value = 1',
     rollModifier: 'Modifier',
-    rollModifierPlaceholder: 'Default value = 0',
     rollCountingDices: 'º dice: ',
     rollSum: 'Sum of values: ',
     rollBtnRoll: 'Roll',
+    rollMaxAllowed: 'Max. dices to roll: 5',
 
     //create draft
     appBarCreateDraft: 'New Draft',

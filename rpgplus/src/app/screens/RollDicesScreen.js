@@ -18,7 +18,7 @@ export default class RollDicesScreen extends Component {
         super(props);
         this.state = {
             type: 4,        //type of the dice (D10, D20...)
-            quantity: 1,    //quantity of dices to get rolled
+            quantity: 0,    //quantity of dices to get rolled
             modifier: 0,    //modifier, if the player has for example +1 or -2 of bonus points
             results: [],    //final results
             sum: 0,         //sum of the final results
@@ -76,6 +76,7 @@ export default class RollDicesScreen extends Component {
                 
                     <Text style={styles.title}>{translate('rollTitle')}</Text>
                     <Text style={styles.text}>{translate('rollSubtitle')}</Text>
+                    <Text style={styles.text}>{translate('rollMaxAllowed')}</Text>
 
                     <View style={styles.inputForm}>
 
@@ -105,11 +106,12 @@ export default class RollDicesScreen extends Component {
                             <Text style={styles.inputTitle}>{translate('rollQuantity')}</Text>
                             <TextInput
                                 style={styles.textInput}
-                                value={this.state.quantity}
+                                value={quantity ? String(quantity) : null}
                                 maxLength={2}
                                 keyboardType = 'numeric'
                                 onChangeText={(txt) => this.setState({quantity: txt})}
-                                placeholder={translate('rollQuantityPlaceholder')}
+                                //placeholder={translate('rollQuantityPlaceholder')}
+                                placeholder="1..."
                             />
                             
                         </View>
@@ -119,11 +121,12 @@ export default class RollDicesScreen extends Component {
                             <Text style={styles.inputTitle}>{translate('rollModifier')}</Text>
                             <TextInput
                                 style={styles.textInput}
-                                value={this.state.modifier}
+                                value={modifier ? String(modifier) : null}
                                 maxLength={2}
                                 keyboardType = 'numeric'
                                 onChangeText={(txt) => this.setState({modifier: txt})}
-                                placeholder={translate('rollModifierPlaceholder')}
+                                //placeholder={translate('rollModifierPlaceholder')}
+                                placeholder="0..."
                             />
                             
                         </View> 

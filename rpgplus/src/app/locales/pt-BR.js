@@ -59,12 +59,11 @@ const pt = {
     rollSubtitle: 'Por favor, selecione o tipo de dado, quantidade de dados a serem jogados e o modificador.',
     rollType: 'Tipo',
     rollQuantity: 'Quantidade',
-    rollQuantityPlaceholder: 'Valor padrão = 1',
     rollModifier: 'Modificador',
-    rollModifierPlaceholder: 'Valor padrão = 0',
     rollCountingDices: 'º dado: ',
     rollSum: 'Soma dos valores: ',
     rollBtnRoll: 'Rolar Dados',
+    rollMaxAllowed: 'Máximo de dados permitidos: 5',
 
     //create draft
     appBarCreateDraft: 'Novo Rascunho',
