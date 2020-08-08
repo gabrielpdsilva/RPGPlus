@@ -45,7 +45,6 @@ export default class LoginScreen extends Component {
             .auth()
             .signInWithEmailAndPassword(email, password)
             .then(() => {
-                this.props.navigation.navigate("RPG+");
                 this.setState({email: '', password: ''});
                 ToastAndroid.show(translate('toastLoginSuccess'), ToastAndroid.SHORT);
             }).catch(error => alert(translate('alertCatchError') + error));   

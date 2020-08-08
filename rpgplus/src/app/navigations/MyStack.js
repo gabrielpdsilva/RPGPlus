@@ -30,12 +30,6 @@ const MyStack = () => {
                 component={ForgotPasswordScreen}
                 options={{headerShown: false}}
             />
-    
-            <Stack.Screen
-                name="RPG+"
-                component={MyDrawer}
-                options={{headerShown: false}}
-            />
 
         </Stack.Navigator>
     );

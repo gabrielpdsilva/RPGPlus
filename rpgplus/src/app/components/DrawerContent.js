@@ -163,7 +163,7 @@ export default function DrawerContent(props) {
                                         {
                                             text: translate('alertConfirm'), onPress: () => {
                                                 firebase.auth().signOut().then(() => {
-                                                    props.navigation.navigate("Login"); //goes to Login screen
+                                                    //props.navigation.navigate("Login"); //goes to Login screen
                                                     ToastAndroid.show(translate('alertLogoutSuccessful'), ToastAndroid.SHORT); //make a toast
                                                 }).catch(error => console.log("Ops, error: " + error));
                                             }
