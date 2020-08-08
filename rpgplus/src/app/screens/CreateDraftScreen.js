@@ -27,7 +27,7 @@ export default class CreateDraftScreen extends Component {
             name: '',
             category: '',
             system: '',
-            text: ''
+            text: '',
         }
     }
 
@@ -49,7 +49,8 @@ export default class CreateDraftScreen extends Component {
         collectionRef.get().then(snap => {
             if(snap.size >= 10){
                 alert(translate('alertCreateDraftReachedMaximum'));
-            }else{
+                return;
+            }//else{
 
                 //create a draft to the doc of the user collection
                 collectionRef.add({ //add is used so Firestore can generate a unique ID to the doc
@@ -72,7 +73,7 @@ export default class CreateDraftScreen extends Component {
                 }).catch((error) => {
                     alert(translate('alertCatchError') + error);
                 });
-            }
+            //}
         }); 
     }
    
@@ -150,7 +151,7 @@ export default class CreateDraftScreen extends Component {
 
                     <View style={{justifyContent:'center', alignItems: 'center', marginBottom: 10}}>
             
-                        <TouchableOpacity onPress={this.addDraft} style={styles.button}>
+                        <TouchableOpacity onPress={this.addDraft} style={styles.button} disabled={this.state.isButtonDisabled}>
                             <Text style={styles.buttonText}>{translate('createDraftBtnCreate')}</Text>
                         </TouchableOpacity>
 

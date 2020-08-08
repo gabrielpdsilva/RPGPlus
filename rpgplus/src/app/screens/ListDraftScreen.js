@@ -4,9 +4,8 @@ import {
     View,
     FlatList,
     TouchableOpacity,
-    ScrollView,
     ActivityIndicator,
-    RefreshControl
+    SafeAreaView
 } from 'react-native';
 
 import styles from '../style/styles';
@@ -135,13 +134,13 @@ export default class ListDraftScreen extends Component {
 
                 { this.state.noDrafts && <Text style={styles.text}>{translate('listDraftNoDrafts')}</Text> }
 
-                <ScrollView>
+                <SafeAreaView style={{flex: 1}}>
                     <FlatList
                         data={this.state.data}
                         renderItem={this.renderItem}
                         keyExtractor={item => item.id} //need to fix this
                     />
-                </ScrollView>
+                </SafeAreaView >
             </View>
         );
     }
