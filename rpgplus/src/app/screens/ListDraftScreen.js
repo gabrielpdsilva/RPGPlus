@@ -38,7 +38,8 @@ export default class ListDraftScreen extends Component {
 
         let docsRef = dbh.collection("users").doc(user.uid).collection("sketchs");
 
-        docsRef.get().then((snapshot) => {
+        //listening in real time for new updates in Firestore
+        docsRef.onSnapshot((snapshot) => {
 
             //if user has no docs
             if(snapshot.empty){
