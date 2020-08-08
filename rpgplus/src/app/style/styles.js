@@ -98,7 +98,6 @@ const styles = StyleSheet.create({
     createDraftInputBox: {
         borderBottomColor: colors.orange,
         borderBottomWidth: StyleSheet.hairlineWidth,
-        height: 130,
         fontSize: 15,
         color: colors.white,
     },

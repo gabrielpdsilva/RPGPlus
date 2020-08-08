@@ -202,7 +202,7 @@ export default class DraftModelScreen extends Component {
                                 placeholder={translate('editDraftLoading')}
                                 placeholderTextColor={colors.darkGray}
                                 multiline = {true}
-                                height = {150}
+                                height = {70}
                                 textAlignVertical = 'top'
                                 style={styles.createDraftInputBox}
                                 value={this.state.text}

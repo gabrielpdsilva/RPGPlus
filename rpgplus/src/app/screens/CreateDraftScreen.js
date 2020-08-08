@@ -136,7 +136,7 @@ export default class CreateDraftScreen extends Component {
                             <Text style={styles.inputTitle}>{translate('createDraftTextBox')}</Text>
                             <TextInput
                                 multiline = {true}
-                                height = {150}
+                                height = {70}
                                 textAlignVertical = 'top'
                                 style={styles.createDraftInputBox}
                                 value={this.state.text}
