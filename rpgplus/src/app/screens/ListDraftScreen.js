@@ -15,11 +15,13 @@ import CustomAppBar from '../components/CustomAppBar';
 import firebase from '../controller/FirebaseConfig';
 import 'firebase/firestore';
 import {translate} from '../locales/localeConfig';
-import { Colors } from 'react-native/Libraries/NewAppScreen';
 
 //Useful links:
 //https://blog.rocketseat.com.br/scroll-infinito-no-react-native/
 //https://stackoverflow.com/questions/53861022/rendering-react-components-mapped-from-firebase-firestore
+
+//Removing listener now is working, thanks to this link:
+//https://stackoverflow.com/questions/56964647/how-to-stop-listening-for-fetching-chat-messages-when-users-sign-out-in-firebase
 
 export default class ListDraftScreen extends Component {
     constructor(props) {
@@ -36,10 +38,7 @@ export default class ListDraftScreen extends Component {
         const user = firebase.auth().currentUser;
         const dbh = firebase.firestore();
 
-        let docsRef = dbh.collection("users").doc(user.uid).collection("sketchs");
-
-        //listening in real time for new updates in Firestore
-        docsRef.onSnapshot((snapshot) => {
+        this.docsListener = dbh.collection("users").doc(user.uid).collection("sketchs").onSnapshot((snapshot) => {
 
             //if user has no docs
             if(snapshot.empty){
@@ -65,11 +64,11 @@ export default class ListDraftScreen extends Component {
     componentDidMount = () => {
         this.listenForDrafts();
     }
-/*
-    componentDidUpdate = () => {
-        this.listenForDrafts();
+
+    componentWillUnmount = () => {
+        this.docsListener();
     }
-*/
+
     //when user clicks on item
     onClickItem = (item) => {
         //navigates to draft model and send the ID of the item to the new screen
