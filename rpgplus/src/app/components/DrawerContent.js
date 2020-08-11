@@ -16,6 +16,12 @@ import {translate} from '../locales/localeConfig';
 //icons:
 //https://oblador.github.io/react-native-vector-icons/
 
+function logout(){
+    firebase.auth().signOut().then(() => {
+        ToastAndroid.show(translate('alertLogoutSuccessful'), ToastAndroid.SHORT); //make a toast
+    }).catch(error => console.log("Ops, error: " + error));
+}
+
 export default function DrawerContent(props) {
 
     const user = firebase.auth().currentUser;
@@ -162,9 +168,7 @@ export default function DrawerContent(props) {
                                         },
                                         {
                                             text: translate('alertConfirm'), onPress: () => {
-                                                firebase.auth().signOut().then(() => {
-                                                    ToastAndroid.show(translate('alertLogoutSuccessful'), ToastAndroid.SHORT); //make a toast
-                                                }).catch(error => console.log("Ops, error: " + error));
+                                                logout();
                                             }
                                         }
                                     ],

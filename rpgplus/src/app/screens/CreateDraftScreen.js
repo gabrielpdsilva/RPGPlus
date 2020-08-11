@@ -50,30 +50,30 @@ export default class CreateDraftScreen extends Component {
             if(snap.size >= 10){
                 alert(translate('alertCreateDraftReachedMaximum'));
                 return;
-            }//else{
+            }
 
-                //create a draft to the doc of the user collection
-                collectionRef.add({ //add is used so Firestore can generate a unique ID to the doc
+            //create a draft to the doc of the user collection
+            collectionRef.add({ //add is used so Firestore can generate a unique ID to the doc
 
-                    name: this.state.name,
-                    category: this.state.category,
-                    system: this.state.system,
-                    text: this.state.text,
-        
-                }).then((docRef) => {
-                    //toast a message
-                    ToastAndroid.show(translate('toastCreateDraftCreated'), ToastAndroid.SHORT);
-        
-                    //set all states to ''
-                    this.setState({name: '', category: '', system: '', text: ''});
-        
-                    //goes to home screen
-                    this.props.navigation.navigate("Home");
-        
-                }).catch((error) => {
-                    alert(translate('alertCatchError') + error);
-                });
-            //}
+                name: this.state.name,
+                category: this.state.category,
+                system: this.state.system,
+                text: this.state.text,
+    
+            }).then((docRef) => {
+                //toast a message
+                ToastAndroid.show(translate('toastCreateDraftCreated'), ToastAndroid.SHORT);
+    
+                //set all states to ''
+                this.setState({name: '', category: '', system: '', text: ''});
+    
+                //goes to home screen
+                this.props.navigation.navigate("Home");
+    
+            }).catch((error) => {
+                alert(translate('alertCatchError') + error);
+            });
+
         }); 
     }
    
