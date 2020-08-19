@@ -29,7 +29,7 @@ export default class ListDraftScreen extends Component {
         this.state = {
             data: [],
             loading: true,
-            noDrafts: true,
+            userHasDrafts: false,
         };
     }
 
@@ -42,7 +42,7 @@ export default class ListDraftScreen extends Component {
 
             //if user has no docs
             if(snapshot.empty){
-                this.setState({loading: false, noDrafts: true}); //loading circle will be removed, message of no drafts will be displayed
+                this.setState({loading: false, userHasDrafts: false}); //loading circle will be removed, message of no drafts will be displayed
                 return;
             }
             //gets the docs and stores it inside the 'data' state
@@ -57,7 +57,7 @@ export default class ListDraftScreen extends Component {
                     }]
                 }))
             ))
-            this.setState({loading: false, noDrafts: false}); //loading circle will be removed, message will not appear
+            this.setState({loading: false, userHasDrafts: true}); //loading circle will be removed, message will not appear
         })
     }
 
@@ -113,6 +113,8 @@ export default class ListDraftScreen extends Component {
 
     render(){
         let loading = this.state.loading;
+        let userHasDrafts = this.state.userHasDrafts;
+
         if (loading) {
             return(
                 <View style={styles.container}>
@@ -127,21 +129,74 @@ export default class ListDraftScreen extends Component {
             );
         }
 
-        return(
-            <View style={styles.container}>
+        return (
+
+            userHasDrafts ?
+
+                <View style={styles.container}>
+                    
+                    <CustomAppBar title={translate('appBarListDrafts')} subtitle="" navigation={this.props.navigation}/>
+    
+                    <SafeAreaView style={{flex: 1}}>
+                        <FlatList
+                            data={this.state.data}
+                            renderItem={this.renderItem}
+                            keyExtractor={item => item.id} //need to fix this
+                        />
+                    </SafeAreaView >
+                </View>
                 
-                <CustomAppBar title={translate('appBarListDrafts')} subtitle="" navigation={this.props.navigation}/>
+                    :
+                
+                <View style={styles.container}>
+                    
+                    <CustomAppBar title={translate('appBarListDrafts')} subtitle="" navigation={this.props.navigation}/>
 
-                { this.state.noDrafts && <Text style={styles.text}>{translate('listDraftNoDrafts')}</Text> }
+                   <Text style={styles.text}>{translate('listDraftNoDrafts')}</Text>
 
-                <SafeAreaView style={{flex: 1}}>
-                    <FlatList
-                        data={this.state.data}
-                        renderItem={this.renderItem}
-                        keyExtractor={item => item.id} //need to fix this
-                    />
-                </SafeAreaView >
-            </View>
-        );
+                </View>
+
+        )
+/*
+        if(noDrafts) {
+
+            return(
+                <View style={styles.container}>
+                    
+                    <CustomAppBar title={translate('appBarListDrafts')} subtitle="" navigation={this.props.navigation}/>
+    
+                    { this.state.noDrafts && <Text style={styles.text}>{translate('listDraftNoDrafts')}</Text> }
+    
+                    <SafeAreaView style={{flex: 1}}>
+                        <FlatList
+                            data={this.state.data}
+                            renderItem={this.renderItem}
+                            keyExtractor={item => item.id} //need to fix this
+                        />
+                    </SafeAreaView >
+                </View>
+            );
+
+        }else{
+
+            return(
+                <View style={styles.container}>
+                    
+                    <CustomAppBar title={translate('appBarListDrafts')} subtitle="" navigation={this.props.navigation}/>
+    
+                    { this.state.noDrafts && <Text style={styles.text}>{translate('listDraftNoDrafts')}</Text> }
+    
+                    <SafeAreaView style={{flex: 1}}>
+                        <FlatList
+                            data={this.state.data}
+                            renderItem={this.renderItem}
+                            keyExtractor={item => item.id} //need to fix this
+                        />
+                    </SafeAreaView >
+                </View>
+            );
+
+        }*/
+        
     }
 }

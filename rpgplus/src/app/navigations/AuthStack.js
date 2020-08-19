@@ -6,11 +6,11 @@ import LoginScreen from '../screens/LoginScreen';
 import RegisterScreen from '../screens/RegisterScreen';
 import ForgotPasswordScreen from '../screens/ForgotPasswordScreen';
 
-import MyDrawer from './MyDrawer';
+import MainDrawer from './MainDrawer';
 
 const Stack = createStackNavigator();
 
-const MyStack = () => {
+const AuthStack = () => {
     return (
         <Stack.Navigator>
             <Stack.Screen
@@ -35,4 +35,4 @@ const MyStack = () => {
     );
 }
 
-export default MyStack;
+export default AuthStack;

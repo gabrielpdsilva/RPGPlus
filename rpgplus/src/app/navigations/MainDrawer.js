@@ -13,7 +13,7 @@ import DraftModelScreen from '../screens/DraftModelScreen';
 
 const Drawer = createDrawerNavigator();
 
-const MyDrawer = () => {
+const MainDrawer = () => {
 
     return(
         <Drawer.Navigator drawerContent={props => <DrawerContent {... props}/>}>
@@ -30,4 +30,4 @@ const MyDrawer = () => {
     );
 }
 
-export default MyDrawer;
+export default MainDrawer;

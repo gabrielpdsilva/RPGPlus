@@ -10,8 +10,8 @@ import React, {useState} from 'react';
 
 import {NavigationContainer} from '@react-navigation/native';
 
-import MyStack from './src/app/navigations/MyStack';
-import MyDrawer from './src/app/navigations/MyDrawer';
+import AuthStack from './src/app/navigations/AuthStack';
+import MainDrawer from './src/app/navigations/MainDrawer';
 import firebase from './src/app/controller/FirebaseConfig';
 
 //useful site about keep user logged in:
@@ -33,7 +33,7 @@ const App = () => {
 
         <NavigationContainer>
             {
-                user ? (<MyDrawer/>) : (<MyStack/>)
+                user ? (<MainDrawer/>) : (<AuthStack/>)
             }
         </NavigationContainer>
     );
