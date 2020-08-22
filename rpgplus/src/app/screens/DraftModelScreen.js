@@ -57,12 +57,13 @@ export default class DraftModelScreen extends Component {
 
     deleteDraft = () => {
 
+        //this.props.navigation.dispatch(StackActions.popToTop());
+        this.props.navigation.goBack();
+
         const draftId = this.state.id;
 
-        //gets the current user
         const user = firebase.auth().currentUser;
 
-        //var of firestore database
         const dbh = firebase.firestore();
  
         //delete the doc
@@ -74,9 +75,6 @@ export default class DraftModelScreen extends Component {
             .delete()
             .then(() => ToastAndroid.show(translate('toastDraftModelDeleted'), ToastAndroid.SHORT))
             .catch((error) => alert(translate('alertCatchError: ') + error));
-
-        //goes to home screen
-        this.props.navigation.navigate("Home");
 
     }
 
@@ -142,7 +140,7 @@ export default class DraftModelScreen extends Component {
     //called when there is an update, so when user selects
     //another draft, data of the new draft will appear
     componentDidUpdate = () => {
-        this.getChosenDraft();
+    //    this.getChosenDraft();
     }
 
     render(){

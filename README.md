@@ -29,9 +29,7 @@ RPGPlus is a project made for tests and studies using React Native technology.
 
 #### Fixed bugs:
 - [x] Refresh DraftModelScreen when user goes back and selects another draft
-
-#### Bugs to be fixed:
-- [ ] Refresh ListDraftScreen when user delete a draft
+- [x] Refresh ListDraftScreen when user delete a draft
 
 ## Documentation
 #### Documentation for now:

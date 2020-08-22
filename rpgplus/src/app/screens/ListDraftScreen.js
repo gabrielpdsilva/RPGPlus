@@ -45,19 +45,24 @@ export default class ListDraftScreen extends Component {
                 this.setState({loading: false, userHasDrafts: false}); //loading circle will be removed, message of no drafts will be displayed
                 return;
             }
-            //gets the docs and stores it inside the 'data' state
-            snapshot.forEach((doc) => (
-                this.setState((prevState) => ({
-                    data: [...prevState.data, {
-                        id: doc.id,
-                        name: doc.data().name,
-                        category: doc.data().category,
-                        system: doc.data().system,
-                        text: doc.data().text,
-                    }]
-                }))
-            ))
-            this.setState({loading: false, userHasDrafts: true}); //loading circle will be removed, message will not appear
+
+            const datas = [];
+
+            snapshot.forEach(doc => {
+                datas.push({
+                    id: doc.id,
+                    name: doc.data().name,
+                    category: doc.data().category,
+                    system: doc.data().system,
+                    text: doc.data().text,
+                });
+              });
+        
+            this.setState({
+                data: datas,
+                loading: false,
+                userHasDrafts: true
+            });
         })
     }
 
@@ -69,7 +74,6 @@ export default class ListDraftScreen extends Component {
         this.docsListener();
     }
 
-    //when user clicks on item
     onClickItem = (item) => {
         //navigates to draft model and send the ID of the item to the new screen
         this.props.navigation.navigate("Draft Model", {itemId: item.id});

@@ -124,7 +124,7 @@ export default function DrawerContent(props) {
                             )} 
                             labelStyle = {{color: colors.white}}
                             label={translate('drawerMyDrafts')}
-                            onPress={()=>props.navigation.navigate('List Drafts')}
+                            onPress={()=>props.navigation.navigate('Draft Stack')}
                         />
                     </Drawer.Section>
 

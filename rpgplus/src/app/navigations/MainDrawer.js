@@ -10,6 +10,7 @@ import DrawerContent from '../components/DrawerContent';
 import RollDices from '../screens/RollDicesScreen';
 import ListDraftScreen from '../screens/ListDraftScreen';
 import DraftModelScreen from '../screens/DraftModelScreen';
+import DraftStack from './DraftStack';
 
 const Drawer = createDrawerNavigator();
 
@@ -22,10 +23,11 @@ const MainDrawer = () => {
             <Drawer.Screen name="Name Generator" component={NameGeneratorScreen}/>
             <Drawer.Screen name="Roll Dices" component={RollDices}/>
             <Drawer.Screen name="Create Draft" component={CreateDraftScreen}/>
-            <Drawer.Screen name="List Drafts" component={ListDraftScreen}/>
             <Drawer.Screen name="Preferences" component={PreferencesScreen}/>
-            <Drawer.Screen name="Draft Model" component={DraftModelScreen}/>
-  
+            
+            <Drawer.Screen name="Draft Stack" component={DraftStack}/>
+
+
         </Drawer.Navigator>
     );
 }
