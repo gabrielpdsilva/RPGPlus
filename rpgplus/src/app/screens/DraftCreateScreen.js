@@ -32,7 +32,7 @@ export default class DraftCreateScreen extends Component {
     }
 
     //add draft to firestore
-    addDraft = () => {
+    handleCreate = () => {
 
         if(this.state.name == '' || this.state.category == '' || this.state.system == '' || this.state.text == '' ){
             alert(translate('alertCreateDraftAllFields'));
@@ -151,7 +151,7 @@ export default class DraftCreateScreen extends Component {
 
                     <View style={{justifyContent:'center', alignItems: 'center', marginBottom: 10}}>
             
-                        <TouchableOpacity onPress={this.addDraft} style={styles.button} disabled={this.state.isButtonDisabled}>
+                        <TouchableOpacity onPress={this.handleCreate} style={styles.button} disabled={this.state.isButtonDisabled}>
                             <Text style={styles.buttonText}>{translate('createDraftBtnCreate')}</Text>
                         </TouchableOpacity>
 

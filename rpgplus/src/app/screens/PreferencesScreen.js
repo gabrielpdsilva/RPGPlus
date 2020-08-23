@@ -100,7 +100,7 @@ export default class PreferencesScreen extends Component {
         return ref.put(blob);
     }
 
-    buttonDelete = () => {
+    handleDeleteAccount = () => {
         Alert.alert(
             translate('alertPreferencesTitle'), //title
             translate('alertPreferencesMessage'), //message
@@ -173,7 +173,7 @@ export default class PreferencesScreen extends Component {
         });    
     }
 
-    updateUserProfile = () => {
+    handleSaveChanges = () => {
 
         this.updateUserName();
         this.updateUserEmail();
@@ -253,13 +253,13 @@ export default class PreferencesScreen extends Component {
                     
                     <View style={{marginTop: 20}}>
 
-                        <TouchableOpacity onPress={this.updateUserProfile} style={styles.button}>
+                        <TouchableOpacity onPress={this.handleSaveChanges} style={styles.button}>
                             <Text style={styles.buttonText}>{translate('preferencesBtnSaveChanges')}</Text>
                         </TouchableOpacity>
 
                     </View>
 
-                    <TouchableOpacity onPress={this.buttonDelete} style={styles.buttonAlternative}>
+                    <TouchableOpacity onPress={this.handleDeleteAccount} style={styles.buttonAlternative}>
                         <Text style={styles.buttonText}>{translate('preferencesBtnDeleteAccount')}</Text>
                     </TouchableOpacity>
 

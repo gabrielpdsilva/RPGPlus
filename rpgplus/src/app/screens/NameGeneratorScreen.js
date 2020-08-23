@@ -32,7 +32,7 @@ export default class NameGeneratorScreen extends Component {
     
         //generates a random name based on the firstName and
         //lastName that the user has used
-        let finalName = firstName[Math.floor(Math.random() * firstName.length)] + " " + lastName[Math.floor(Math.random() * lastName.length)];
+        const finalName = firstName[Math.floor(Math.random() * firstName.length)] + " " + lastName[Math.floor(Math.random() * lastName.length)];
 
         //set the state of the name
         this.setState({name: finalName});
@@ -40,7 +40,7 @@ export default class NameGeneratorScreen extends Component {
     }
 
     //function that will execute on click
-    buttonOnClickListener = (category) => {
+    handleGenerateName = (category) => {
         let firstName;
         let lastName;
 
@@ -122,6 +122,8 @@ export default class NameGeneratorScreen extends Component {
     }
 
     render() {
+
+        const pickerValue = this.state.pickerValue;
         return (
 
             <View style={styles.container}>
@@ -139,10 +141,9 @@ export default class NameGeneratorScreen extends Component {
                         <View style={{marginTop: 14}}>
 
                             <Picker
-                            style={styles.pickerStyle}
-                            //mode = "dropdown"     //used if you want the user to scroll up the options
-                            selectedValue={this.state.pickerValue}
-                            onValueChange={(itemValue) => this.setState({pickerValue: itemValue})}
+                                style={styles.pickerStyle}
+                                selectedValue={this.state.pickerValue}
+                                onValueChange={(itemValue) => this.setState({pickerValue: itemValue})}
                             >
                                 <Picker.Item label="Changeling: The Dreaming" value="changeling"/>
                                 <Picker.Item label="Cyberpunk" value="cyberpunk"/>
@@ -161,7 +162,7 @@ export default class NameGeneratorScreen extends Component {
                             
                         </View>
     
-                    <TouchableOpacity onPress={() => this.buttonOnClickListener(this.state.pickerValue)} style={styles.button}>
+                    <TouchableOpacity onPress={() => this.handleGenerateName(pickerValue)} style={styles.button}>
                         <Text style={styles.buttonText}>{translate('generatorBtnGenerate')}</Text>
                     </TouchableOpacity>
 

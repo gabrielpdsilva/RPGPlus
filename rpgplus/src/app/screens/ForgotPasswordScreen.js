@@ -22,7 +22,7 @@ export default class ForgotPasswordScreen extends Component {
         }
     }
 
-    resetPassword = () => {
+    handleResetPassword = () => {
 
         const auth = firebase.auth();
         const emailAddress = this.state.email;
@@ -62,7 +62,7 @@ export default class ForgotPasswordScreen extends Component {
                         
                     </View>
 
-                    <TouchableOpacity onPress={this.resetPassword} style={styles.button}>
+                    <TouchableOpacity onPress={this.handleResetPassword} style={styles.button}>
                         <Text style={styles.buttonText}>{translate('forgotBtnPassword')}</Text>
                     </TouchableOpacity>
                     
