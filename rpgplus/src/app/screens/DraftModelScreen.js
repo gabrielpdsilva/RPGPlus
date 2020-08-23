@@ -80,13 +80,11 @@ export default class DraftModelScreen extends Component {
 
     deleteDraft = () => {
 
-        //this.props.navigation.dispatch(StackActions.popToTop());
+        //remove the current screen from stack
         this.props.navigation.goBack();
 
         const draftId = this.state.id;
-
         const user = firebase.auth().currentUser;
-
         const dbh = firebase.firestore();
  
         //delete the doc
@@ -103,7 +101,6 @@ export default class DraftModelScreen extends Component {
     getChosenDraft = () => {
         
         const user = firebase.auth().currentUser;
-
         const dbh = firebase.firestore();
 
         //gets the ID of the document that the user has chosen
@@ -225,7 +222,7 @@ export default class DraftModelScreen extends Component {
                             <Text style={styles.buttonText}>{translate('editDraftBtnSaveChanges')}</Text>
                         </TouchableOpacity>
 
-                        <TouchableOpacity onPress={this.deleteDraft} style={styles.buttonAlternative}>
+                        <TouchableOpacity onPress={this.handleDeleteDraft} style={styles.buttonAlternative}>
                             <Text style={styles.buttonText}>{translate('editDraftBtnDeleteDraft')}</Text>
                         </TouchableOpacity>
 

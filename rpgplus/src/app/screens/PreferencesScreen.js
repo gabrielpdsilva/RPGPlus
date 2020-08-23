@@ -81,14 +81,14 @@ export default class PreferencesScreen extends Component {
     getUserPhoto = () => {
         const user = firebase.auth().currentUser;
         let imageRef = firebase.storage().ref('users/' + user.uid + '/profile-picture');
-        imageRef
-            .getDownloadURL()
-            .then((url) => {
-                user.updateProfile({photoURL: url}); //updating photoURL of the user
-                ToastAndroid.show("Image saved.", ToastAndroid.SHORT);
-                this.setState({image: url});
-            })
-            .catch((e) => alert('getting downloadURL of image error => '+ e));
+        
+        imageRef.getDownloadURL()
+        .then((url) => {
+            user.updateProfile({photoURL: url}); //updating photoURL of the user
+            ToastAndroid.show("Image saved.", ToastAndroid.SHORT);
+            this.setState({image: url});
+        })
+        .catch((e) => alert('getting downloadURL of image error => '+ e));
 
     }
 
@@ -149,7 +149,6 @@ export default class PreferencesScreen extends Component {
 
         const user = firebase.auth().currentUser;
 
-        //updating name
         user.updateProfile({
             //updates the displayName of the user
             displayName: this.state.name,
@@ -165,7 +164,6 @@ export default class PreferencesScreen extends Component {
 
         const user = firebase.auth().currentUser;
 
-        //updating email
         user.updateEmail(this.state.email).then(() => {
             console.log("E-mail updated.");
         }).catch((error) => {
@@ -221,7 +219,6 @@ export default class PreferencesScreen extends Component {
                         />
 
                     </View>
-                    
 
                     <View style={{marginTop: 5}}>
 
