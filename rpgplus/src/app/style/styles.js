@@ -62,6 +62,18 @@ const styles = StyleSheet.create({
         borderRadius: 4,
     },
 
+    //disabled textinput style
+    disabledTextInput: {
+        width: 290,
+        padding: 5,
+        height: 40,
+        borderColor: colors.darkOrange,
+        borderWidth: 1,
+        backgroundColor: colors.darkBackground,
+        color: colors.white,
+        borderRadius: 4,
+    },
+
     //textinputBox style
     textInputBox: {  
         width: 290,

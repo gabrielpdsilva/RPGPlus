@@ -2,16 +2,18 @@ import React, { Component } from 'react';
 import {
     Text,
     View,
-    Image,
     TextInput,
     ToastAndroid,
     Alert,
     TouchableOpacity,
+    Switch
 } from 'react-native';
 
 import CustomAppBar from '../components/CustomAppBar';
 
 import styles from '../style/styles';
+
+import colors from '../style/colors';
 
 import firebase from '../controller/FirebaseConfig';
 import 'firebase/firestore';
@@ -38,6 +40,7 @@ export default class PreferencesScreen extends Component {
             name: user.displayName,
             image: user.photoURL,
             email: user.email,
+            isSwitchOn: false,
         }
     }
 
@@ -142,7 +145,7 @@ export default class PreferencesScreen extends Component {
 
     }
 
-    updateUserProfile = () => {
+    updateUserName = () => {
 
         const user = firebase.auth().currentUser;
 
@@ -153,25 +156,39 @@ export default class PreferencesScreen extends Component {
         }).then(() => {
             console.log("Name updated.");
         }).catch((error) => {
-            alert(translate('alertCatchError') + error);
+            console.log(translate('alertCatchError') + error);
         });
+
+    }
+
+    updateUserEmail = () => {
+
+        const user = firebase.auth().currentUser;
 
         //updating email
         user.updateEmail(this.state.email).then(() => {
-            // Update successful.
             console.log("E-mail updated.");
         }).catch((error) => {
-            // An error happened.
-            alert(translate('alertCatchError') + error);
-        });
+            console.log(translate('alertCatchError') + error);
+        });    
+    }
 
+    updateUserProfile = () => {
+
+        this.updateUserName();
+        this.updateUserEmail();
+        
+        this.setState({isSwitchOn: false});
         ToastAndroid.show(translate('toastPreferencesUpdateDone'), ToastAndroid.SHORT);
         this.props.navigation.navigate("Home");
     }
 
+    _onToggleSwitch = () =>  this.setState(state => ({ isSwitchOn: !state.isSwitchOn }));
+
     render(){
 
         const image = this.state.image;
+        const { isSwitchOn } = this.state;
 
         return(
             <View style={styles.container}>
@@ -191,13 +208,30 @@ export default class PreferencesScreen extends Component {
 
                     <Text style={styles.inputTitle}>{translate('preferencesChangeImage')}</Text>
 
+                    <View style={{flexDirection: 'row'}}>
+
+                        <Text style={styles.text}>Teste...</Text>
+
+                        <Switch
+                            trackColor={{ false: colors.darkGray, true: colors.orange }}
+                            thumbColor={colors.lightGray}
+                            ios_backgroundColor={colors.darkGray}
+                            onValueChange={this._onToggleSwitch}
+                            value={isSwitchOn}
+                        />
+
+
+                    </View>
+                    
+
                     <View style={{marginTop: 5}}>
 
                         <Text style={styles.inputTitle}>{translate('preferencesName')}</Text>
                         
                         <TextInput
-                            style={styles.textInput}
+                            style={isSwitchOn ? styles.textInput: styles.disabledTextInput}
                             value={this.state.name}
+                            editable={isSwitchOn}
                             onChangeText={ (txt) => this.setState({name: txt}) }
                             placeholder="..."
                         />
@@ -209,8 +243,9 @@ export default class PreferencesScreen extends Component {
                         <Text style={styles.inputTitle}>{translate('preferencesEmail')}</Text>
                         
                         <TextInput
-                            style={styles.textInput}
+                            style={isSwitchOn ? styles.textInput: styles.disabledTextInput}
                             value={this.state.email}
+                            editable={isSwitchOn}
                             onChangeText={ (txt) => this.setState({email: txt}) }
                             placeholder="..."
                         />
