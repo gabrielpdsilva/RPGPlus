@@ -78,11 +78,23 @@ const styles = StyleSheet.create({
     textInputBox: {  
         width: 290,
         padding: 5,
-        height: 150,
-        borderColor: colors.black,
+        height: 100,
+        borderColor: colors.orange,
         borderWidth: 1,
-        backgroundColor: colors.lightTheme,
-        color: colors.black,
+        backgroundColor: colors.darkBackground,
+        color: colors.white,
+        borderRadius: 4,
+    },
+
+    //textinputBox disabled style
+    textInputBoxDisabled: {  
+        width: 290,
+        padding: 5,
+        height: 100,
+        borderColor: colors.darkOrange,
+        borderWidth: 1,
+        backgroundColor: colors.darkBackground,
+        color: colors.white,
         borderRadius: 4,
     },
 
@@ -98,21 +110,6 @@ const styles = StyleSheet.create({
         borderWidth: 0.5,
         borderColor: colors.black,   
    },
-
-    createDraftInput: {
-        borderBottomColor: colors.orange,
-        borderBottomWidth: StyleSheet.hairlineWidth,
-        height: 40,
-        fontSize: 15,
-        color: colors.white,
-    },
-
-    createDraftInputBox: {
-        borderBottomColor: colors.orange,
-        borderBottomWidth: StyleSheet.hairlineWidth,
-        fontSize: 15,
-        color: colors.white,
-    },
 
     //text title
     title: {
@@ -139,7 +136,6 @@ const styles = StyleSheet.create({
     itemText: {
         color: colors.white,
     },
-
 
     //picker used in roll dices screen and name generator screen
     pickerStyle: {  

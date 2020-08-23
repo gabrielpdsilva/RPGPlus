@@ -86,6 +86,7 @@ const en = {
     preferencesEmail: 'E-mail',
     preferencesBtnSaveChanges: 'Save Changes',
     preferencesBtnDeleteAccount: 'Delete Account',
+    preferencesEditableProfile: 'Editable profile',
 
     //list draft
     appBarListDrafts: 'My Drafts',
@@ -104,6 +105,7 @@ const en = {
     editDraftLoading: 'Loading...',
     editDraftBtnSaveChanges: 'Save Changes',
     editDraftBtnDeleteDraft: 'Delete Draft',
+    editDraftEditableDraft: 'Editable draft',
 
     //------------------------------------
     //ALERTS AND TOASTS

@@ -126,6 +126,7 @@ const pt = {
     alertDraftModelMessage: 'Tem certeza de que deseja deletar seu rascunho?',
     toastDraftModelCanceled: 'Ação cancelada.',
     alertDraftModelNoExist: 'Sem documentos aqui.',
+    editDraftEditableDraft: 'Rascunho editável',
 
     //forgot password
     toastForgotPasswordDone: 'Pronto, por favor confira seu e-mail.',
@@ -146,6 +147,7 @@ const pt = {
     toastPreferencesUserDeleted: 'Usuário deletado!',
     toastPreferencesUpdateDone: 'Pronto!',
     toastPreferencesDeleteCancel: 'Ação cancelada.',
+    preferencesEditableProfile: 'Perfil editável',
 
     //register
     alertRegisterFillFields: 'Você precisa preencher todos os campos!',

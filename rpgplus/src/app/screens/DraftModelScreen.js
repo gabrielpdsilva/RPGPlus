@@ -7,6 +7,7 @@ import {
     ToastAndroid,
     Alert,
     ScrollView,
+    Switch
 } from 'react-native';
 
 import CustomAppBar from '../components/CustomAppBar';
@@ -27,6 +28,7 @@ export default class DraftModelScreen extends Component {
             system: '',
             text: '',
             id: '',
+            isSwitchOn: false,
         }
     }
 
@@ -143,7 +145,12 @@ export default class DraftModelScreen extends Component {
     //    this.getChosenDraft();
     }
 
+    _onToggleSwitch = () =>  this.setState(state => ({ isSwitchOn: !state.isSwitchOn }));
+
+
     render(){
+
+        const { isSwitchOn } = this.state;
 
         return(
             <View style={styles.container}>
@@ -156,11 +163,26 @@ export default class DraftModelScreen extends Component {
 
                         <View style={{marginTop: 14}}>
 
+                            <View style={{flexDirection: 'row'}}>
+
+                                <Text style={styles.text}>{translate('editDraftEditableDraft')}</Text>
+
+                                <Switch
+                                    trackColor={{ false: colors.darkGray, true: colors.orange }}
+                                    thumbColor={colors.lightGray}
+                                    ios_backgroundColor={colors.darkGray}
+                                    onValueChange={this._onToggleSwitch}
+                                    value={isSwitchOn}
+                                />
+
+                            </View>
+
                             <Text style={styles.inputTitle}>{translate('editDraftName')}</Text>
                             <TextInput
                                 placeholder={translate('editDraftLoading')}
                                 placeholderTextColor={colors.darkGray}
-                                style={styles.createDraftInput}
+                                style={isSwitchOn ? styles.textInput: styles.disabledTextInput}
+                                editable={isSwitchOn}
                                 value={this.state.name}
                                 onChangeText={(txt) => this.setState({name: txt})}
                             />
@@ -173,7 +195,8 @@ export default class DraftModelScreen extends Component {
                             <TextInput
                                 placeholder={translate('editDraftLoading')}
                                 placeholderTextColor={colors.darkGray}
-                                style={styles.createDraftInput}
+                                style={isSwitchOn ? styles.textInput: styles.disabledTextInput}
+                                editable={isSwitchOn}
                                 value={this.state.category}
                                 onChangeText={(txt) => this.setState({category: txt})}
                             />
@@ -186,7 +209,8 @@ export default class DraftModelScreen extends Component {
                             <TextInput
                                 placeholder={translate('editDraftLoading')}
                                 placeholderTextColor={colors.darkGray}
-                                style={styles.createDraftInput}
+                                style={isSwitchOn ? styles.textInput: styles.disabledTextInput}
+                                editable={isSwitchOn}
                                 value={this.state.system}
                                 onChangeText={(txt) => this.setState({system: txt})}
                             />
@@ -197,12 +221,13 @@ export default class DraftModelScreen extends Component {
                                 
                             <Text style={styles.inputTitle}>{translate('editDraftText')}</Text>
                             <TextInput
+                                editable={isSwitchOn}
                                 placeholder={translate('editDraftLoading')}
                                 placeholderTextColor={colors.darkGray}
                                 multiline = {true}
                                 height = {70}
                                 textAlignVertical = 'top'
-                                style={styles.createDraftInputBox}
+                                style={isSwitchOn ? styles.textInputBox: styles.textInputBoxDisabled}
                                 value={this.state.text}
                                 onChangeText={(txt) => this.setState({text: txt})}
                             />

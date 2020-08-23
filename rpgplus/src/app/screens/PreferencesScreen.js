@@ -210,7 +210,7 @@ export default class PreferencesScreen extends Component {
 
                     <View style={{flexDirection: 'row'}}>
 
-                        <Text style={styles.text}>Teste...</Text>
+                        <Text style={styles.text}>{translate('preferencesEditableProfile')}</Text>
 
                         <Switch
                             trackColor={{ false: colors.darkGray, true: colors.orange }}
@@ -219,7 +219,6 @@ export default class PreferencesScreen extends Component {
                             onValueChange={this._onToggleSwitch}
                             value={isSwitchOn}
                         />
-
 
                     </View>
                     
