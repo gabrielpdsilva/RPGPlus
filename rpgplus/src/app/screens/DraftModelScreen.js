@@ -101,11 +101,6 @@ export default class DraftModelScreen extends Component {
         );
     }
 
-    //function that will execute before render method
-    UNSAFE_componentWillMount = () => {
-        //this.getChosenDraft(); 
-    }
-
     componentDidMount = () => {
         this.getChosenDraft();
     }
@@ -139,14 +134,7 @@ export default class DraftModelScreen extends Component {
         });
     }
 
-    //called when there is an update, so when user selects
-    //another draft, data of the new draft will appear
-    componentDidUpdate = () => {
-    //    this.getChosenDraft();
-    }
-
     _onToggleSwitch = () =>  this.setState(state => ({ isSwitchOn: !state.isSwitchOn }));
-
 
     render(){
 

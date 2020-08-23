@@ -22,9 +22,7 @@ const MainDrawer = () => {
             <Drawer.Screen name="Roll Dices" component={RollDices}/>
             <Drawer.Screen name="Create Draft" component={DraftCreateScreen}/>
             <Drawer.Screen name="Preferences" component={PreferencesScreen}/>
-            
             <Drawer.Screen name="Draft Stack" component={DraftStack}/>
-
 
         </Drawer.Navigator>
     );
