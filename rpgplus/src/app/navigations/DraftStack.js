@@ -2,7 +2,7 @@ import React from 'react';
 
 import {createStackNavigator} from '@react-navigation/stack';
 
-import ListDraftScreen from '../screens/ListDraftScreen';
+import DraftListScreen from '../screens/DraftListScreen';
 import DraftModelScreen from '../screens/DraftModelScreen';
 
 const Stack = createStackNavigator();
@@ -12,7 +12,7 @@ const DraftStack = () => {
         <Stack.Navigator initialRouteName="List Drafts">
             <Stack.Screen
                 name="List Drafts"
-                component={ListDraftScreen}
+                component={DraftListScreen}
                 options={{headerShown: false}}
             />
     

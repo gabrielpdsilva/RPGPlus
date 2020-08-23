@@ -23,7 +23,7 @@ import {translate} from '../locales/localeConfig';
 //Removing listener now is working, thanks to this link:
 //https://stackoverflow.com/questions/56964647/how-to-stop-listening-for-fetching-chat-messages-when-users-sign-out-in-firebase
 
-export default class ListDraftScreen extends Component {
+export default class DraftListScreen extends Component {
     constructor(props) {
         super(props);
         this.state = {
