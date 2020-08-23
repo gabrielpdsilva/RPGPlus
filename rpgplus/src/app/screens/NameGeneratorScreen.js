@@ -108,24 +108,25 @@ export default class NameGeneratorScreen extends Component {
 
     }
 
-    //copy to clipboard function
-    copyToClipboard = () => {
+    handleCopyToClipboard = () => {
+
+        const name = this.state.name;
 
         //if user touches a region without name yet
-        if(this.state.name == '') return;
+        if(name == '' || name == '...') return;
     
         //copy the name to clipboard
-        Clipboard.setString(this.state.name);
+        Clipboard.setString(name);
 
         //make a toast with the name
-        ToastAndroid.show(this.state.name + " " + translate('toastNameGeneratorCopied'), ToastAndroid.SHORT);
+        ToastAndroid.show(name + " " + translate('toastNameGeneratorCopied'), ToastAndroid.SHORT);
     }
 
     render() {
 
         const pickerValue = this.state.pickerValue;
-        return (
 
+        return (
             <View style={styles.container}>
 
                 <CustomAppBar title={translate('appBarGenerate')} subtitle="" navigation={this.props.navigation}/>
@@ -156,7 +157,7 @@ export default class NameGeneratorScreen extends Component {
                             
                             </Picker>
 
-                            <TouchableOpacity onPress={this.copyToClipboard}>
+                            <TouchableOpacity onPress={this.handleCopyToClipboard}>
                                 <Text style={styles.text}>{this.state.name}</Text>
                             </TouchableOpacity>
                             
@@ -169,6 +170,7 @@ export default class NameGeneratorScreen extends Component {
                     </View>
 
                 </View>
+
             </View>
         );
     }
