@@ -40,11 +40,10 @@ export default class DraftCreateScreen extends Component {
         }
 
         const user = firebase.auth().currentUser;
-
         const dbh = firebase.firestore();
 
         //draft collection reference
-        const collectionRef = dbh.collection("users").doc(user.uid).collection("sketchs");
+        const collectionRef = dbh.collection("users").doc(user.uid).collection("drafts");
 
         collectionRef.get().then(snap => {
             if(snap.size >= 10){

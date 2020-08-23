@@ -32,7 +32,7 @@ export default class DraftModelScreen extends Component {
         }
     }
 
-    btnEditDraft = () => {
+    handleSaveChanges = () => {
 
         const draftId = this.state.id;
 
@@ -43,7 +43,7 @@ export default class DraftModelScreen extends Component {
         const dbh = firebase.firestore();
 
         //gets the current draft
-        let docRef = dbh.collection("users").doc(user.uid).collection("sketchs").doc(draftId);
+        let docRef = dbh.collection("users").doc(user.uid).collection("drafts").doc(draftId);
 
         //update data
         docRef.update({
@@ -57,30 +57,7 @@ export default class DraftModelScreen extends Component {
         ToastAndroid.show(translate('toastDraftModelUpdated'), ToastAndroid.SHORT);
     }
 
-    deleteDraft = () => {
-
-        //this.props.navigation.dispatch(StackActions.popToTop());
-        this.props.navigation.goBack();
-
-        const draftId = this.state.id;
-
-        const user = firebase.auth().currentUser;
-
-        const dbh = firebase.firestore();
- 
-        //delete the doc
-        dbh
-            .collection("users")
-            .doc(user.uid)
-            .collection("sketchs")
-            .doc(draftId)
-            .delete()
-            .then(() => ToastAndroid.show(translate('toastDraftModelDeleted'), ToastAndroid.SHORT))
-            .catch((error) => alert(translate('alertCatchError: ') + error));
-
-    }
-
-    btnDeleteDraft = () => {
+    handleDeleteDraft = () => {
 
         Alert.alert(
             translate('alertDraftModelTitle'), //title
@@ -101,6 +78,24 @@ export default class DraftModelScreen extends Component {
         );
     }
 
+    deleteDraft = () => {
+
+        //this.props.navigation.dispatch(StackActions.popToTop());
+        this.props.navigation.goBack();
+
+        const draftId = this.state.id;
+
+        const user = firebase.auth().currentUser;
+
+        const dbh = firebase.firestore();
+ 
+        //delete the doc
+        dbh.collection("users").doc(user.uid).collection("drafts").doc(draftId).delete()
+        .then(() => ToastAndroid.show(translate('toastDraftModelDeleted'), ToastAndroid.SHORT))
+        .catch((error) => alert(translate('alertCatchError: ') + error));
+
+    }
+
     componentDidMount = () => {
         this.getChosenDraft();
     }
@@ -114,7 +109,7 @@ export default class DraftModelScreen extends Component {
         //gets the ID of the document that the user has chosen
         let itemId = this.props.route.params.itemId;
 
-        let draftRef = dbh.collection("users").doc(user.uid).collection("sketchs").doc(itemId);
+        let draftRef = dbh.collection("users").doc(user.uid).collection("drafts").doc(itemId);
 
         draftRef.get().then(doc => {
             if (!doc.exists) {
@@ -226,7 +221,7 @@ export default class DraftModelScreen extends Component {
 
                     <View style={{justifyContent:'center', alignItems: 'center', marginBottom: 10}}>
             
-                        <TouchableOpacity onPress={this.btnEditDraft} style={styles.button}>
+                        <TouchableOpacity onPress={this.handleSaveChanges} style={styles.button}>
                             <Text style={styles.buttonText}>{translate('editDraftBtnSaveChanges')}</Text>
                         </TouchableOpacity>
 

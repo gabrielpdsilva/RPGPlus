@@ -25,8 +25,7 @@ export default class RollDicesScreen extends Component {
         }
     }
 
-    //roll dice function
-    roll = (type, quantity, modifier) => {
+    handleRollDices = (type, quantity, modifier) => {
 
         if(quantity < 1 || quantity > 5){
             alert(translate('alertRollQuantity'));
@@ -39,13 +38,10 @@ export default class RollDicesScreen extends Component {
         }
 
         let value;
-
         let results = [];
 
         for(let i = 0; i < quantity; i++){
-
             value = Math.floor((Math.random() * type) + 1); //rolls 1 dice
-
             results[i] = value; //will keep the value at that current index
         }
 
@@ -61,11 +57,11 @@ export default class RollDicesScreen extends Component {
 
     render(){
 
-        let type = this.state.type;
-        let quantity = this.state.quantity;
-        let modifier = this.state.modifier;
-        let results = this.state.results;
-        let sum = this.state.sum;
+        const type = this.state.type;
+        const quantity = this.state.quantity;
+        const modifier = this.state.modifier;
+        const results = this.state.results;
+        const sum = this.state.sum;
 
         return(
             <View style={styles.container}>
@@ -143,7 +139,7 @@ export default class RollDicesScreen extends Component {
 
                     <View style={{justifyContent:'center', alignItems: 'center', marginBottom: 10}}>
 
-                        <TouchableOpacity onPress={() => this.roll(type, quantity, modifier)} style={styles.button}>
+                        <TouchableOpacity onPress={() => this.handleRollDices(type, quantity, modifier)} style={styles.button}>
                             <Text style={styles.buttonText}>{translate('rollBtnRoll')}</Text>
                         </TouchableOpacity>
 

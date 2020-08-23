@@ -38,7 +38,7 @@ export default class DraftListScreen extends Component {
         const user = firebase.auth().currentUser;
         const dbh = firebase.firestore();
 
-        this.docsListener = dbh.collection("users").doc(user.uid).collection("sketchs").onSnapshot((snapshot) => {
+        this.docsListener = dbh.collection("users").doc(user.uid).collection("drafts").onSnapshot((snapshot) => {
 
             //if user has no docs
             if(snapshot.empty){
