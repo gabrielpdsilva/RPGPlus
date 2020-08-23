@@ -20,7 +20,7 @@ import {translate} from '../locales/localeConfig';
 //useful link about user collection on firestore
 //https://www.youtube.com/watch?v=qWy9ylc3f9U
 
-export default class CreateDraftScreen extends Component {
+export default class DraftCreateScreen extends Component {
     constructor(props){
         super(props);
         this.state = {
