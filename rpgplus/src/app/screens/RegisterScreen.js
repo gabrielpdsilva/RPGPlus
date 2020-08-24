@@ -31,10 +31,6 @@ export default class RegisterScreen extends Component {
         }
     }
 
-    createUserInFirestore = () => {
-        
-    }
-
     handleSignUp = () => {
 
         const name = this.state.name;
@@ -58,24 +54,16 @@ export default class RegisterScreen extends Component {
         firebase.auth().createUserWithEmailAndPassword(email, password)
         .then(cred => {
 
-                //set the displayName of the user
-                cred.user.updateProfile({
-                    displayName: this.state.name
-                });
+            cred.user.updateProfile({displayName: name});
 
-                //creates a doc of the user, here we can add to the doc whatever we want
-                return dbh.collection("users").doc(cred.user.uid).set({
+            //creates a doc of the user, here we can add to the doc whatever we want
+            //need to change this
+            return dbh.collection("users").doc(cred.user.uid).set({nickname: nickname})
+            .then(() => {
+                ToastAndroid.show(translate('toastRegisterSuccess'), ToastAndroid.SHORT);
+            }).catch(error => console.log("Something went wrong:\n" + error));
 
-                    nickname: nickname,
-
-                }).then(() => {
-
-                    this.props.navigation.navigate('Login');
-                    
-                    ToastAndroid.show(translate('toastRegisterSuccess'), ToastAndroid.SHORT);
-
-                }).catch(error => console.log("Something went wrong:\n" + error));
-            }).catch(error => console.log("Could not create an user:\n" + error));
+        }).catch(error => console.log("Could not create an user:\n" + error));
     }
 
     render(){
