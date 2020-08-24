@@ -21,10 +21,8 @@ const styles = StyleSheet.create({
     },
 
     inputTitle: {
-
         color: colors.white,
         fontSize: 13,
-
     },
 
     //container for drafts

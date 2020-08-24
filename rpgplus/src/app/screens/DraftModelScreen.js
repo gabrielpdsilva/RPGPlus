@@ -137,27 +137,27 @@ export default class DraftModelScreen extends Component {
                 
                 <CustomAppBar title={translate('appBarDraftModel')} subtitle="" backIsVisible={true} navigation={this.props.navigation}/>
 
+                <View style={{marginTop: 14, flexDirection: 'row', justifyContent: 'space-between', marginHorizontal: 30}}>
+
+                    <Text style={styles.title}>{translate('editDraftEditableDraft')}</Text>
+
+                    <Switch
+                        trackColor={{ false: colors.darkGray, true: colors.orange }}
+                        thumbColor={colors.lightGray}
+                        ios_backgroundColor={colors.darkGray}
+                        onValueChange={this._onToggleSwitch}
+                        value={isSwitchOn}
+                    />
+
+                </View>
+
                 <View style={styles.childContainer}>
 
-                    <ScrollView style={{marginTop: 14}}>
+                    <ScrollView style={{marginTop: 6}}>
                     
                         <View style={styles.inputForm}>
 
-                            <View style={{marginTop: 14}}>
-
-                                <View style={{flexDirection: 'row'}}>
-
-                                    <Text style={styles.text}>{translate('editDraftEditableDraft')}</Text>
-
-                                    <Switch
-                                        trackColor={{ false: colors.darkGray, true: colors.orange }}
-                                        thumbColor={colors.lightGray}
-                                        ios_backgroundColor={colors.darkGray}
-                                        onValueChange={this._onToggleSwitch}
-                                        value={isSwitchOn}
-                                    />
-
-                                </View>
+                            <View>                                
 
                                 <Text style={styles.inputTitle}>{translate('editDraftName')}</Text>
                                 <TextInput
