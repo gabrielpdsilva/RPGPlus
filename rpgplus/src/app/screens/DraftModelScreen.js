@@ -137,98 +137,102 @@ export default class DraftModelScreen extends Component {
                 
                 <CustomAppBar title={translate('appBarDraftModel')} subtitle="" backIsVisible={true} navigation={this.props.navigation}/>
 
-                <ScrollView style={{marginTop: 14}}>
-                
-                    <View style={styles.inputForm}>
+                <View style={styles.childContainer}>
 
-                        <View style={{marginTop: 14}}>
+                    <ScrollView style={{marginTop: 14}}>
+                    
+                        <View style={styles.inputForm}>
 
-                            <View style={{flexDirection: 'row'}}>
+                            <View style={{marginTop: 14}}>
 
-                                <Text style={styles.text}>{translate('editDraftEditableDraft')}</Text>
+                                <View style={{flexDirection: 'row'}}>
 
-                                <Switch
-                                    trackColor={{ false: colors.darkGray, true: colors.orange }}
-                                    thumbColor={colors.lightGray}
-                                    ios_backgroundColor={colors.darkGray}
-                                    onValueChange={this._onToggleSwitch}
-                                    value={isSwitchOn}
+                                    <Text style={styles.text}>{translate('editDraftEditableDraft')}</Text>
+
+                                    <Switch
+                                        trackColor={{ false: colors.darkGray, true: colors.orange }}
+                                        thumbColor={colors.lightGray}
+                                        ios_backgroundColor={colors.darkGray}
+                                        onValueChange={this._onToggleSwitch}
+                                        value={isSwitchOn}
+                                    />
+
+                                </View>
+
+                                <Text style={styles.inputTitle}>{translate('editDraftName')}</Text>
+                                <TextInput
+                                    placeholder={translate('editDraftLoading')}
+                                    placeholderTextColor={colors.darkGray}
+                                    style={isSwitchOn ? styles.textInput: styles.disabledTextInput}
+                                    editable={isSwitchOn}
+                                    value={this.state.name}
+                                    onChangeText={(txt) => this.setState({name: txt})}
                                 />
 
                             </View>
 
-                            <Text style={styles.inputTitle}>{translate('editDraftName')}</Text>
-                            <TextInput
-                                placeholder={translate('editDraftLoading')}
-                                placeholderTextColor={colors.darkGray}
-                                style={isSwitchOn ? styles.textInput: styles.disabledTextInput}
-                                editable={isSwitchOn}
-                                value={this.state.name}
-                                onChangeText={(txt) => this.setState({name: txt})}
-                            />
+                            <View style={{marginTop: 14}}>
+                                    
+                                <Text style={styles.inputTitle}>{translate('editDraftCategory')}</Text>
+                                <TextInput
+                                    placeholder={translate('editDraftLoading')}
+                                    placeholderTextColor={colors.darkGray}
+                                    style={isSwitchOn ? styles.textInput: styles.disabledTextInput}
+                                    editable={isSwitchOn}
+                                    value={this.state.category}
+                                    onChangeText={(txt) => this.setState({category: txt})}
+                                />
+                                    
+                            </View>
+
+                            <View style={{marginTop: 14}}>
+
+                                <Text style={styles.inputTitle}>{translate('editDraftSystem')}</Text>
+                                <TextInput
+                                    placeholder={translate('editDraftLoading')}
+                                    placeholderTextColor={colors.darkGray}
+                                    style={isSwitchOn ? styles.textInput: styles.disabledTextInput}
+                                    editable={isSwitchOn}
+                                    value={this.state.system}
+                                    onChangeText={(txt) => this.setState({system: txt})}
+                                />
+
+                            </View>
+
+                            <View style={{marginTop: 14}}>
+                                    
+                                <Text style={styles.inputTitle}>{translate('editDraftText')}</Text>
+                                <TextInput
+                                    editable={isSwitchOn}
+                                    placeholder={translate('editDraftLoading')}
+                                    placeholderTextColor={colors.darkGray}
+                                    multiline = {true}
+                                    height = {70}
+                                    textAlignVertical = 'top'
+                                    style={isSwitchOn ? styles.textInputBox: styles.textInputBoxDisabled}
+                                    value={this.state.text}
+                                    onChangeText={(txt) => this.setState({text: txt})}
+                                />
+                                    
+                            </View> 
 
                         </View>
 
-                        <View style={{marginTop: 14}}>
-                                
-                            <Text style={styles.inputTitle}>{translate('editDraftCategory')}</Text>
-                            <TextInput
-                                placeholder={translate('editDraftLoading')}
-                                placeholderTextColor={colors.darkGray}
-                                style={isSwitchOn ? styles.textInput: styles.disabledTextInput}
-                                editable={isSwitchOn}
-                                value={this.state.category}
-                                onChangeText={(txt) => this.setState({category: txt})}
-                            />
-                                
-                        </View>
+                        <View style={{justifyContent:'center', alignItems: 'center', marginBottom: 10}}>
+                
+                            <TouchableOpacity onPress={this.handleSaveChanges} style={styles.button}>
+                                <Text style={styles.buttonText}>{translate('editDraftBtnSaveChanges')}</Text>
+                            </TouchableOpacity>
 
-                        <View style={{marginTop: 14}}>
-
-                            <Text style={styles.inputTitle}>{translate('editDraftSystem')}</Text>
-                            <TextInput
-                                placeholder={translate('editDraftLoading')}
-                                placeholderTextColor={colors.darkGray}
-                                style={isSwitchOn ? styles.textInput: styles.disabledTextInput}
-                                editable={isSwitchOn}
-                                value={this.state.system}
-                                onChangeText={(txt) => this.setState({system: txt})}
-                            />
+                            <TouchableOpacity onPress={this.handleDeleteDraft} style={styles.buttonAlternative}>
+                                <Text style={styles.buttonText}>{translate('editDraftBtnDeleteDraft')}</Text>
+                            </TouchableOpacity>
 
                         </View>
+                        
+                    </ScrollView>
 
-                        <View style={{marginTop: 14}}>
-                                
-                            <Text style={styles.inputTitle}>{translate('editDraftText')}</Text>
-                            <TextInput
-                                editable={isSwitchOn}
-                                placeholder={translate('editDraftLoading')}
-                                placeholderTextColor={colors.darkGray}
-                                multiline = {true}
-                                height = {70}
-                                textAlignVertical = 'top'
-                                style={isSwitchOn ? styles.textInputBox: styles.textInputBoxDisabled}
-                                value={this.state.text}
-                                onChangeText={(txt) => this.setState({text: txt})}
-                            />
-                                
-                        </View> 
-
-                    </View>
-
-                    <View style={{justifyContent:'center', alignItems: 'center', marginBottom: 10}}>
-            
-                        <TouchableOpacity onPress={this.handleSaveChanges} style={styles.button}>
-                            <Text style={styles.buttonText}>{translate('editDraftBtnSaveChanges')}</Text>
-                        </TouchableOpacity>
-
-                        <TouchableOpacity onPress={this.handleDeleteDraft} style={styles.buttonAlternative}>
-                            <Text style={styles.buttonText}>{translate('editDraftBtnDeleteDraft')}</Text>
-                        </TouchableOpacity>
-
-                    </View>
-                    
-                </ScrollView>
+                </View>
 
             </View>
         );
