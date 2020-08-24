@@ -106,7 +106,6 @@ export default class RollDicesScreen extends Component {
                                 maxLength={2}
                                 keyboardType = 'numeric'
                                 onChangeText={(txt) => this.setState({quantity: txt})}
-                                //placeholder={translate('rollQuantityPlaceholder')}
                                 placeholder="1..."
                             />
                             
@@ -121,7 +120,6 @@ export default class RollDicesScreen extends Component {
                                 maxLength={2}
                                 keyboardType = 'numeric'
                                 onChangeText={(txt) => this.setState({modifier: txt})}
-                                //placeholder={translate('rollModifierPlaceholder')}
                                 placeholder="0..."
                             />
                             

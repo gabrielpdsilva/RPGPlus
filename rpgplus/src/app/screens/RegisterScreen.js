@@ -31,26 +31,32 @@ export default class RegisterScreen extends Component {
         }
     }
 
+    createUserInFirestore = () => {
+        
+    }
+
     handleSignUp = () => {
 
-        //if at least one field is empty
-        if(this.state.name == '' || this.state.nickname == '' || this.state.email == '' || this.state.password == '' || this.state.confirmPassword == ''){
+        const name = this.state.name;
+        const nickname = this.state.nickname;
+        const email = this.state.email;
+        const password = this.state.password;
+        const confirmPassword = this.state.confirmPassword;
+        
+        if(name == '' ||nickname == '' || email == '' || password == '' || confirmPassword == ''){
             alert(translate('alertRegisterFillFields'));
             return;
         }
 
-        //if password is different from confirmPassord
-        if(this.state.password !== this.state.confirmPassword){
+        if(password !== confirmPassword){
             alert(translate('alertRegisterPassword'));
             return;
         }
 
         const dbh = firebase.firestore();
 
-        firebase
-            .auth()
-            .createUserWithEmailAndPassword(this.state.email, this.state.password)
-            .then(cred => {
+        firebase.auth().createUserWithEmailAndPassword(email, password)
+        .then(cred => {
 
                 //set the displayName of the user
                 cred.user.updateProfile({
@@ -60,14 +66,12 @@ export default class RegisterScreen extends Component {
                 //creates a doc of the user, here we can add to the doc whatever we want
                 return dbh.collection("users").doc(cred.user.uid).set({
 
-                    nickname: this.state.nickname,
+                    nickname: nickname,
 
                 }).then(() => {
 
-                    //goes to Login screen after create the user
                     this.props.navigation.navigate('Login');
                     
-                    //toast a message
                     ToastAndroid.show(translate('toastRegisterSuccess'), ToastAndroid.SHORT);
 
                 }).catch(error => console.log("Something went wrong:\n" + error));
