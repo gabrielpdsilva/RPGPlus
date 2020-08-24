@@ -55,7 +55,7 @@ export default class PreferencesScreen extends Component {
         }
     };
     
-    _pickImage = async () => {
+    handlePickImage = async () => {
         try {
             let result = await ImagePicker.launchImageLibraryAsync({
                 mediaTypes: ImagePicker.MediaTypeOptions.All,
@@ -136,11 +136,11 @@ export default class PreferencesScreen extends Component {
                 this.props.navigation.navigate("Login");
             })
             .catch((error) => {
-                alert(translate('alertCatchError') + error);
+                console.log(translate('alertCatchError') + error);
             });
 
         }).catch((error) => {
-            alert(translate('alertCatchError') + error);
+            console.log(translate('alertCatchError') + error);
         });
 
     }
@@ -209,7 +209,7 @@ export default class PreferencesScreen extends Component {
 
                 <View style={styles.childContainer}>
 
-                    <TouchableOpacity onPress={this._pickImage}>
+                    <TouchableOpacity onPress={this.handlePickImage}>
                         <Avatar.Image
                             source={{
                                 uri: image ? image : 'https://simpleicon.com/wp-content/uploads/user1.png'

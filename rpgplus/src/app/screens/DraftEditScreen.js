@@ -54,18 +54,18 @@ export default class DraftEditScreen extends Component {
         });
 
         //toast a message
-        ToastAndroid.show(translate('toastDraftModelUpdated'), ToastAndroid.SHORT);
+        ToastAndroid.show(translate('toastDraftEditUpdated'), ToastAndroid.SHORT);
     }
 
     handleDeleteDraft = () => {
 
         Alert.alert(
-            translate('alertDraftModelTitle'), //title
-            translate('alertDraftModelMessage'), //message
+            translate('alertDraftEditTitle'), //title
+            translate('alertDraftEditMessage'), //message
             [
                 {
                     text: translate('alertCancel'),
-                    onPress: () => ToastAndroid.show(translate('toastDraftModelCanceled'), ToastAndroid.SHORT),
+                    onPress: () => ToastAndroid.show(translate('toastDraftEditCanceled'), ToastAndroid.SHORT),
                     style: 'cancel'
                 },
                 {
@@ -89,7 +89,7 @@ export default class DraftEditScreen extends Component {
  
         //delete the doc
         dbh.collection("users").doc(user.uid).collection("drafts").doc(draftId).delete()
-        .then(() => ToastAndroid.show(translate('toastDraftModelDeleted'), ToastAndroid.SHORT))
+        .then(() => ToastAndroid.show(translate('toastDraftEditDeleted'), ToastAndroid.SHORT))
         .catch((error) => console.log(translate('alertCatchError: ') + error));
 
     }
@@ -110,7 +110,7 @@ export default class DraftEditScreen extends Component {
 
         draftRef.get().then(doc => {
             if (!doc.exists) {
-                alert(translate('alertDraftModelNoExist'));
+                alert(translate('alertDraftEditNoExist'));
             } else {
                 this.setState({
                     id: doc.id,

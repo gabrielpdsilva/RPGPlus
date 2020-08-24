@@ -86,7 +86,7 @@ const en = {
     preferencesEmail: 'E-mail',
     preferencesBtnSaveChanges: 'Save Changes',
     preferencesBtnDeleteAccount: 'Delete Account',
-    preferencesEditableProfile: 'Editable profile',
+    preferencesEditableProfile: 'Edit Profile',
 
     //list draft
     appBarListDrafts: 'My Drafts',
@@ -96,7 +96,7 @@ const en = {
     listDraftsText: 'Text',
     listDraftNoDrafts: 'It seems that you have no drafts here.',
 
-    //draft model
+    //draft edit
     appBarDraftModel: 'Edit Draft',
     editDraftName: 'Name',
     editDraftCategory: 'Category',
@@ -105,7 +105,7 @@ const en = {
     editDraftLoading: 'Loading...',
     editDraftBtnSaveChanges: 'Save Changes',
     editDraftBtnDeleteDraft: 'Delete Draft',
-    editDraftEditableDraft: 'Editable draft',
+    editDraftEditableDraft: 'Edit Draft',
 
     //------------------------------------
     //ALERTS AND TOASTS
@@ -121,12 +121,12 @@ const en = {
     toastCreateDraftCreated: 'Draft created!',
 
     //draft model
-    toastDraftModelUpdated: 'Draft updated!',
-    toastDraftModelDeleted: 'Draft deleted!',
-    alertDraftModelTitle: 'Delete Draft',
-    alertDraftModelMessage: 'Are you sure you want to delete your draft?',
-    toastDraftModelCanceled: 'Delete canceled',
-    alertDraftModelNoExist: 'No docs here.',
+    toastDraftEditUpdated: 'Draft updated!',
+    toastDraftEditDeleted: 'Draft deleted!',
+    alertDraftEditTitle: 'Delete Draft',
+    alertDraftEditMessage: 'Are you sure you want to delete your draft?',
+    toastDraftEditCanceled: 'Delete canceled',
+    alertDraftEditNoExist: 'No docs here.',
 
     //forgot password
     toastForgotPasswordDone: 'Done, please check your e-mail.',

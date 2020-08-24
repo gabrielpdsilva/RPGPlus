@@ -95,7 +95,7 @@ const pt = {
     listDraftsText: 'Texto',
     listDraftNoDrafts: 'Parece que você ainda não tem rascunhos.',
 
-    //draft model
+    //draft edit
     appBarDraftModel: 'Editar Rascunho',
     editDraftName: 'Nome',
     editDraftCategory: 'Categoria',
@@ -118,15 +118,14 @@ const pt = {
     alertCreateDraftReachedMaximum: 'Você atingiu o número máximo de rascunhos permitidos. precisará deletar pelo menos um pra continuar.',
     toastCreateDraftCreated: 'Rascunho criado!',
 
-    
-    //draft model
-    toastDraftModelUpdated: 'Rascunho atualizado!',
-    toastDraftModelDeleted: 'Rascunho deletado!',
-    alertDraftModelTitle: 'Deletar Rascunho',
-    alertDraftModelMessage: 'Tem certeza de que deseja deletar seu rascunho?',
-    toastDraftModelCanceled: 'Ação cancelada.',
-    alertDraftModelNoExist: 'Sem documentos aqui.',
-    editDraftEditableDraft: 'Rascunho editável',
+    //draft edit
+    toastDraftEditUpdated: 'Rascunho atualizado!',
+    toastDraftEditDeleted: 'Rascunho deletado!',
+    alertDraftEditTitle: 'Deletar Rascunho',
+    alertDraftEditMessage: 'Tem certeza de que deseja deletar seu rascunho?',
+    toastDraftEditCanceled: 'Ação cancelada.',
+    alertDraftEditNoExist: 'Sem documentos aqui.',
+    editDraftEditableDraft: 'Editar Rascunho',
 
     //forgot password
     toastForgotPasswordDone: 'Pronto, por favor confira seu e-mail.',
@@ -147,7 +146,7 @@ const pt = {
     toastPreferencesUserDeleted: 'Usuário deletado!',
     toastPreferencesUpdateDone: 'Pronto!',
     toastPreferencesDeleteCancel: 'Ação cancelada.',
-    preferencesEditableProfile: 'Perfil editável',
+    preferencesEditableProfile: 'Editar Perfil',
 
     //register
     alertRegisterFillFields: 'Você precisa preencher todos os campos!',

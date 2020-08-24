@@ -56,7 +56,7 @@ export default class DraftListScreen extends Component {
                     system: doc.data().system,
                     text: doc.data().text,
                 });
-              });
+            });
         
             this.setState({
                 data: datas,
