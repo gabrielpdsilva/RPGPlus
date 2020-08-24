@@ -36,10 +36,8 @@ export default class DraftEditScreen extends Component {
 
         const draftId = this.state.id;
 
-        //gets the current user
         const user = firebase.auth().currentUser;
 
-        //var of firestore database
         const dbh = firebase.firestore();
 
         //gets the current draft
@@ -53,7 +51,6 @@ export default class DraftEditScreen extends Component {
             text: this.state.text,
         });
 
-        //toast a message
         ToastAndroid.show(translate('toastDraftEditUpdated'), ToastAndroid.SHORT);
     }
 
@@ -108,7 +105,8 @@ export default class DraftEditScreen extends Component {
 
         let draftRef = dbh.collection("users").doc(user.uid).collection("drafts").doc(itemId);
 
-        draftRef.get().then(doc => {
+        draftRef.get()
+        .then(doc => {
             if (!doc.exists) {
                 alert(translate('alertDraftEditNoExist'));
             } else {

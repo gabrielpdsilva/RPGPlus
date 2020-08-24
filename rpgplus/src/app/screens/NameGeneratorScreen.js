@@ -27,19 +27,16 @@ export default class NameGeneratorScreen extends Component {
         }	
     };
     
-    //generateName function
     generateName = (firstName, lastName) => {
     
-        //generates a random name based on the firstName and
-        //lastName that the user has used
+        //generates a random name based on the firstName
+        //and lastName that the user has chosen
         const finalName = firstName[Math.floor(Math.random() * firstName.length)] + " " + lastName[Math.floor(Math.random() * lastName.length)];
 
-        //set the state of the name
         this.setState({name: finalName});
 
     }
 
-    //function that will execute on click
     handleGenerateName = (category) => {
         let firstName;
         let lastName;
@@ -103,7 +100,6 @@ export default class NameGeneratorScreen extends Component {
                 alert("No options.");
         }
 
-        //after user choose a category, the name will be generated
         this.generateName(firstName, lastName);
 
     }
@@ -118,7 +114,6 @@ export default class NameGeneratorScreen extends Component {
         //copy the name to clipboard
         Clipboard.setString(name);
 
-        //make a toast with the name
         ToastAndroid.show(name + " " + translate('toastNameGeneratorCopied'), ToastAndroid.SHORT);
     }
 

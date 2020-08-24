@@ -64,7 +64,6 @@ export default class PreferencesScreen extends Component {
                 quality: 1,
             });
             
-            //if user didnt cancel the action
             if (!result.cancelled) {
                 this.uploadImage(result.uri, "profile-picture")
                     .then(() => {
@@ -84,7 +83,7 @@ export default class PreferencesScreen extends Component {
         
         imageRef.getDownloadURL()
         .then((url) => {
-            user.updateProfile({photoURL: url}); //updating photoURL of the user
+            user.updateProfile({photoURL: url});
             ToastAndroid.show("Image saved.", ToastAndroid.SHORT);
             this.setState({image: url});
         })
@@ -129,10 +128,8 @@ export default class PreferencesScreen extends Component {
 
             user.delete().then(() => {
     
-                //toast a message
                 ToastAndroid.show(translate('toastPreferencesUserDeleted'), ToastAndroid.SHORT);
     
-                //goes to login screen
                 this.props.navigation.navigate("Login");
             })
             .catch((error) => {
@@ -149,10 +146,8 @@ export default class PreferencesScreen extends Component {
 
         const user = firebase.auth().currentUser;
 
-        user.updateProfile({
-            //updates the displayName of the user
-            displayName: this.state.name,
-        }).then(() => {
+        user.updateProfile({displayName: this.state.name})
+        .then(() => {
             console.log("Name updated.");
         }).catch((error) => {
             console.log(translate('alertCatchError') + error);

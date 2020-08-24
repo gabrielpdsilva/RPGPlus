@@ -145,12 +145,12 @@ export default class DraftListScreen extends Component {
                         <FlatList
                             data={this.state.data}
                             renderItem={this.renderItem}
-                            keyExtractor={item => item.id} //need to fix this
+                            keyExtractor={item => item.id}
                         />
                     </SafeAreaView >
                 </View>
                 
-                    :
+            :
                 
                 <View style={styles.container}>
                     
@@ -161,46 +161,6 @@ export default class DraftListScreen extends Component {
                 </View>
 
         )
-/*
-        if(noDrafts) {
-
-            return(
-                <View style={styles.container}>
-                    
-                    <CustomAppBar title={translate('appBarListDrafts')} subtitle="" navigation={this.props.navigation}/>
-    
-                    { this.state.noDrafts && <Text style={styles.text}>{translate('listDraftNoDrafts')}</Text> }
-    
-                    <SafeAreaView style={{flex: 1}}>
-                        <FlatList
-                            data={this.state.data}
-                            renderItem={this.renderItem}
-                            keyExtractor={item => item.id} //need to fix this
-                        />
-                    </SafeAreaView >
-                </View>
-            );
-
-        }else{
-
-            return(
-                <View style={styles.container}>
-                    
-                    <CustomAppBar title={translate('appBarListDrafts')} subtitle="" navigation={this.props.navigation}/>
-    
-                    { this.state.noDrafts && <Text style={styles.text}>{translate('listDraftNoDrafts')}</Text> }
-    
-                    <SafeAreaView style={{flex: 1}}>
-                        <FlatList
-                            data={this.state.data}
-                            renderItem={this.renderItem}
-                            keyExtractor={item => item.id} //need to fix this
-                        />
-                    </SafeAreaView >
-                </View>
-            );
-
-        }*/
         
     }
 }

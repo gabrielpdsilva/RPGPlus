@@ -35,7 +35,6 @@ export default class LoginScreen extends Component {
     handleLogin = () => {
         const {email, password} = this.state;
 
-        //if email or password is empty
         if(email == '' || password == ''){
             alert(translate('alertLoginFillFields'));
             return;

@@ -27,10 +27,11 @@ export default class ForgotPasswordScreen extends Component {
         const auth = firebase.auth();
         const emailAddress = this.state.email;
 
-        //sent a request to reset password
-        auth.sendPasswordResetEmail(emailAddress).then(() => {
+        auth.sendPasswordResetEmail(emailAddress)
+        .then(() => {
             ToastAndroid.show(translate('toastForgotPasswordDone'), ToastAndroid.SHORT);
-        }).catch((error) => {
+        })
+        .catch((error) => {
             alert(translate('alertCatchError') + error);
         });
     }
