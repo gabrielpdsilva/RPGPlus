@@ -3,7 +3,7 @@ import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 
 import DraftListScreen from '../screens/DraftListScreen';
-import DraftModelScreen from '../screens/DraftModelScreen';
+import DraftEditScreen from '../screens/DraftEditScreen';
 
 const Stack = createStackNavigator();
 
@@ -18,7 +18,7 @@ const DraftStack = () => {
     
             <Stack.Screen
                 name="Draft Model"
-                component={DraftModelScreen}
+                component={DraftEditScreen}
                 options={{headerShown: false}}
             />
 

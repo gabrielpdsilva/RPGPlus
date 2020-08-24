@@ -193,6 +193,20 @@ export default class PreferencesScreen extends Component {
 
                 <CustomAppBar title={translate('appBarPreferences')} navigation={this.props.navigation}/>
 
+                <View style={{marginTop: 14, flexDirection: 'row', justifyContent: 'space-between', marginHorizontal: 30}}>
+
+                    <Text style={styles.title}>{translate('preferencesEditableProfile')}</Text>
+
+                    <Switch
+                        trackColor={{ false: colors.darkGray, true: colors.orange }}
+                        thumbColor={colors.lightGray}
+                        ios_backgroundColor={colors.darkGray}
+                        onValueChange={this._onToggleSwitch}
+                        value={isSwitchOn}
+                    />
+
+                </View>
+
                 <View style={styles.childContainer}>
 
                     <TouchableOpacity onPress={this._pickImage}>
@@ -205,20 +219,6 @@ export default class PreferencesScreen extends Component {
                     </TouchableOpacity>
 
                     <Text style={styles.inputTitle}>{translate('preferencesChangeImage')}</Text>
-
-                    <View style={{flexDirection: 'row'}}>
-
-                        <Text style={styles.text}>{translate('preferencesEditableProfile')}</Text>
-
-                        <Switch
-                            trackColor={{ false: colors.darkGray, true: colors.orange }}
-                            thumbColor={colors.lightGray}
-                            ios_backgroundColor={colors.darkGray}
-                            onValueChange={this._onToggleSwitch}
-                            value={isSwitchOn}
-                        />
-
-                    </View>
 
                     <View style={{marginTop: 5}}>
 

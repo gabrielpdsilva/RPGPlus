@@ -19,7 +19,7 @@ import firebase from '../controller/FirebaseConfig';
 import 'firebase/firestore';
 import {translate} from '../locales/localeConfig';
 
-export default class DraftModelScreen extends Component {
+export default class DraftEditScreen extends Component {
     constructor(props){
         super(props);
         this.state = {
@@ -90,7 +90,7 @@ export default class DraftModelScreen extends Component {
         //delete the doc
         dbh.collection("users").doc(user.uid).collection("drafts").doc(draftId).delete()
         .then(() => ToastAndroid.show(translate('toastDraftModelDeleted'), ToastAndroid.SHORT))
-        .catch((error) => alert(translate('alertCatchError: ') + error));
+        .catch((error) => console.log(translate('alertCatchError: ') + error));
 
     }
 
