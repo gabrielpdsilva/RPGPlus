@@ -83,80 +83,84 @@ export default class DraftCreateScreen extends Component {
             <View style={styles.container}>
                 
                 <CustomAppBar title={translate('appBarCreateDraft')} subtitle="" navigation={this.props.navigation}/>
+
+                <View style={styles.childContainer}>
                 
-                <ScrollView style={{marginTop: 14}}>
+                    <ScrollView style={{marginTop: 14}}>
 
-                    <Text style={styles.title}>{translate('createDraftTitle')}</Text>
-                    <Text style={styles.text}>{translate('createDraftSubtitle')}</Text>
-       
-                    <View style={styles.inputForm}>
+                        <Text style={styles.title}>{translate('createDraftTitle')}</Text>
+                        <Text style={styles.text}>{translate('createDraftSubtitle')}</Text>
+        
+                        <View style={styles.inputForm}>
 
-                        <View style={{marginTop: 14}}>
+                            <View style={{marginTop: 14}}>
 
-                            <Text style={styles.inputTitle}>{translate('createDraftName')}</Text>
-                            <TextInput
-                                style={styles.textInput}
-                                value={this.state.name}
-                                onChangeText={(txt) => this.setState({name: txt})}
-                                placeholder = {translate('createDraftNamePlaceholder')}
-                                placeholderTextColor = {colors.darkGray}
-                            />
+                                <Text style={styles.inputTitle}>{translate('createDraftName')}</Text>
+                                <TextInput
+                                    style={styles.textInput}
+                                    value={this.state.name}
+                                    onChangeText={(txt) => this.setState({name: txt})}
+                                    placeholder = {translate('createDraftNamePlaceholder')}
+                                    placeholderTextColor = {colors.darkGray}
+                                />
+
+                            </View>
+
+                            <View style={{marginTop: 14}}>
+                                    
+                                <Text style={styles.inputTitle}>{translate('createDraftCategory')}</Text>
+                                <TextInput
+                                    style={styles.textInput}
+                                    value={this.state.category}
+                                    onChangeText={(txt) => this.setState({category: txt})}
+                                    placeholder = {translate('createDraftCategoryPlaceholder')}
+                                    placeholderTextColor = {colors.darkGray}
+                                />
+                                    
+                            </View>
+
+                            <View style={{marginTop: 14}}>
+
+                                <Text style={styles.inputTitle}>{translate('createDraftSystem')}</Text>
+                                <TextInput
+                                    style={styles.textInput}
+                                    value={this.state.system}
+                                    onChangeText={(txt) => this.setState({system: txt})}
+                                    placeholder = {translate('createDraftSystemPlaceholder')}
+                                    placeholderTextColor = {colors.darkGray}
+                                />
+
+                            </View>
+                        
+                            <View style={{marginTop: 14}}>
+                                    
+                                <Text style={styles.inputTitle}>{translate('createDraftTextBox')}</Text>
+                                <TextInput
+                                    multiline = {true}
+                                    height = {70}
+                                    textAlignVertical = 'top'
+                                    style={styles.textInputBox}
+                                    value={this.state.text}
+                                    onChangeText={(txt) => this.setState({text: txt})}
+                                    placeholder = {translate('createDraftTextBoxPlaceholder')}
+                                    placeholderTextColor = {colors.darkGray}
+                                />
+                                    
+                            </View> 
 
                         </View>
 
-                        <View style={{marginTop: 14}}>
-                                
-                            <Text style={styles.inputTitle}>{translate('createDraftCategory')}</Text>
-                            <TextInput
-                                style={styles.textInput}
-                                value={this.state.category}
-                                onChangeText={(txt) => this.setState({category: txt})}
-                                placeholder = {translate('createDraftCategoryPlaceholder')}
-                                placeholderTextColor = {colors.darkGray}
-                            />
-                                
-                        </View>
-
-                        <View style={{marginTop: 14}}>
-
-                            <Text style={styles.inputTitle}>{translate('createDraftSystem')}</Text>
-                            <TextInput
-                                style={styles.textInput}
-                                value={this.state.system}
-                                onChangeText={(txt) => this.setState({system: txt})}
-                                placeholder = {translate('createDraftSystemPlaceholder')}
-                                placeholderTextColor = {colors.darkGray}
-                            />
+                        <View style={{justifyContent:'center', alignItems: 'center', marginBottom: 10}}>
+                
+                            <TouchableOpacity onPress={this.handleCreate} style={styles.button} disabled={this.state.isButtonDisabled}>
+                                <Text style={styles.buttonText}>{translate('createDraftBtnCreate')}</Text>
+                            </TouchableOpacity>
 
                         </View>
-                    
-                        <View style={{marginTop: 14}}>
-                                
-                            <Text style={styles.inputTitle}>{translate('createDraftTextBox')}</Text>
-                            <TextInput
-                                multiline = {true}
-                                height = {70}
-                                textAlignVertical = 'top'
-                                style={styles.textInputBox}
-                                value={this.state.text}
-                                onChangeText={(txt) => this.setState({text: txt})}
-                                placeholder = {translate('createDraftTextBoxPlaceholder')}
-                                placeholderTextColor = {colors.darkGray}
-                            />
-                                
-                        </View> 
+                        
+                    </ScrollView>
 
-                    </View>
-
-                    <View style={{justifyContent:'center', alignItems: 'center', marginBottom: 10}}>
-            
-                        <TouchableOpacity onPress={this.handleCreate} style={styles.button} disabled={this.state.isButtonDisabled}>
-                            <Text style={styles.buttonText}>{translate('createDraftBtnCreate')}</Text>
-                        </TouchableOpacity>
-
-                    </View>
-                    
-                </ScrollView>
+                </View>
 
             </View>
         );
