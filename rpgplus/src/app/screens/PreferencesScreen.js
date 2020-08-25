@@ -110,36 +110,36 @@ export default class PreferencesScreen extends Component {
                     style: 'cancel'
                 },
                 {
-                    text: translate('alertConfirm'), onPress: () => {
-                    this.deleteAccount();
-                    }
+                    text: translate('alertConfirm'),
+                    onPress: () => this.deleteUserFromFirestore()
                 }
             ],
             { cancelable: false }
         );
     }
 
-    deleteAccount = () => {
+    deleteUserFromFirestore = () => {
 
         const user = firebase.auth().currentUser;
         const dbh = firebase.firestore();
 
-        dbh.collection("users").doc(user.uid).delete().then(() => {
-
-            user.delete().then(() => {
-    
-                ToastAndroid.show(translate('toastPreferencesUserDeleted'), ToastAndroid.SHORT);
-    
-                this.props.navigation.navigate("Login");
-            })
-            .catch((error) => {
-                console.log(translate('alertCatchError') + error);
-            });
-
+        dbh.collection("users").doc(user.uid).delete()
+        .then(() => {
+            this.deleteAccount(user);
         }).catch((error) => {
             console.log(translate('alertCatchError') + error);
         });
 
+    }
+
+    deleteAccount = (user) => {
+        user.delete()
+        .then(() => {
+            ToastAndroid.show(translate('toastPreferencesUserDeleted'), ToastAndroid.SHORT);
+        })
+        .catch((error) => {
+            console.log(translate('alertCatchError') + error);
+        });
     }
 
     updateUserName = () => {
