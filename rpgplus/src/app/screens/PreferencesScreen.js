@@ -65,7 +65,7 @@ export default class PreferencesScreen extends Component {
             });
             
             if (!result.cancelled) {
-                this.uploadImage(result.uri, "profile-picture")
+                this.uploadImageToStorage(result.uri, "profile-picture")
                     .then(() => {
                         ToastAndroid.show(translate('toastPreferencesImageAdded'), ToastAndroid.SHORT);
                         this.getUserPhoto();                        
@@ -91,7 +91,7 @@ export default class PreferencesScreen extends Component {
 
     }
 
-    uploadImage = async (uri, imageName) => {
+    uploadImageToStorage = async (uri, imageName) => {
         const response = await fetch(uri);
         const blob = await response.blob();
         const userUID = firebase.auth().currentUser.uid;
@@ -145,8 +145,9 @@ export default class PreferencesScreen extends Component {
     updateUserName = () => {
 
         const user = firebase.auth().currentUser;
+        const name = this.state.name;
 
-        user.updateProfile({displayName: this.state.name})
+        user.updateProfile({displayName: name})
         .then(() => {
             console.log("Name updated.");
         }).catch((error) => {
