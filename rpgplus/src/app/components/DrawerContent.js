@@ -37,7 +37,8 @@ export default function DrawerContent(props) {
 
                             <Avatar.Image
                                 source={{
-                                    uri: user.photoURL ? user.photoURL : 'https://simpleicon.com/wp-content/uploads/user1.png'
+                                    uri: user.photoURL !== null ?
+                                        user.photoURL : 'https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png'
                                 }}
                                 size={80}
                             />

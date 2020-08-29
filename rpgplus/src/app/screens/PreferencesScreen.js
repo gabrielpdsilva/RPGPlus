@@ -38,7 +38,6 @@ export default class PreferencesScreen extends Component {
 
         this.state = {
             name: user.displayName,
-            image: user.photoURL,
             email: user.email,
             isSwitchOn: false,
         }
@@ -181,8 +180,8 @@ export default class PreferencesScreen extends Component {
 
     render(){
 
-        const image = this.state.image;
         const { isSwitchOn } = this.state;
+        const user = firebase.auth().currentUser;
 
         return(
             <View style={styles.container}>
@@ -208,7 +207,8 @@ export default class PreferencesScreen extends Component {
                     <TouchableOpacity onPress={this.handlePickImage}>
                         <Avatar.Image
                             source={{
-                                uri: image ? image : 'https://simpleicon.com/wp-content/uploads/user1.png'
+                                uri: user.photoURL !== null ?
+                                    user.photoURL : 'https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png'
                             }}
                             size={120}
                         />

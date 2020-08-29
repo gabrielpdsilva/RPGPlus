@@ -53,7 +53,7 @@ export default class RegisterScreen extends Component {
 
         firebase.auth().createUserWithEmailAndPassword(email, password)
         .then(cred => {
-
+            
             cred.user.updateProfile({displayName: name});
 
             //creates a doc of the user, here we can add to the doc whatever we want
