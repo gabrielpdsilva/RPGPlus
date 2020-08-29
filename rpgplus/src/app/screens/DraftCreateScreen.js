@@ -86,14 +86,14 @@ export default class DraftCreateScreen extends Component {
 
                 <View style={styles.childContainer}>
                 
-                    <ScrollView style={{marginTop: 14}}>
+                    <ScrollView style={{marginTop: 8}}>
 
                         <Text style={styles.title}>{translate('createDraftTitle')}</Text>
                         <Text style={styles.text}>{translate('createDraftSubtitle')}</Text>
         
                         <View style={styles.inputForm}>
 
-                            <View style={{marginTop: 14}}>
+                            <View style={{marginTop: 8}}>
 
                                 <Text style={styles.inputTitle}>{translate('createDraftName')}</Text>
                                 <TextInput
@@ -106,7 +106,7 @@ export default class DraftCreateScreen extends Component {
 
                             </View>
 
-                            <View style={{marginTop: 14}}>
+                            <View style={{marginTop: 8}}>
                                     
                                 <Text style={styles.inputTitle}>{translate('createDraftCategory')}</Text>
                                 <TextInput
@@ -119,7 +119,7 @@ export default class DraftCreateScreen extends Component {
                                     
                             </View>
 
-                            <View style={{marginTop: 14}}>
+                            <View style={{marginTop: 8}}>
 
                                 <Text style={styles.inputTitle}>{translate('createDraftSystem')}</Text>
                                 <TextInput
@@ -132,7 +132,7 @@ export default class DraftCreateScreen extends Component {
 
                             </View>
                         
-                            <View style={{marginTop: 14}}>
+                            <View style={{marginTop: 8}}>
                                     
                                 <Text style={styles.inputTitle}>{translate('createDraftTextBox')}</Text>
                                 <TextInput

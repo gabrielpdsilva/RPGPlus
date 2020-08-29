@@ -50,7 +50,7 @@ export default class ForgotPasswordScreen extends Component {
 
                     <View style={styles.inputForm}>
 
-                        <View style={{marginTop: 14}}>
+                        <View style={{marginTop: 8}}>
 
                             <Text style={styles.inputTitle}>{translate('forgotEmail')}</Text>
                             <TextInput

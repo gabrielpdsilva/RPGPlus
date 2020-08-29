@@ -134,7 +134,7 @@ export default class NameGeneratorScreen extends Component {
 
                     <View style={styles.inputForm}>
 
-                        <View style={{marginTop: 14}}>
+                        <View style={{marginTop: 8}}>
 
                             <Picker
                                 style={styles.pickerStyle}

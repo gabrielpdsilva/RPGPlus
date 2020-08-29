@@ -169,7 +169,7 @@ export default class DraftEditScreen extends Component {
 
                             </View>
 
-                            <View style={{marginTop: 14}}>
+                            <View style={{marginTop: 8}}>
                                     
                                 <Text style={styles.inputTitle}>{translate('editDraftCategory')}</Text>
                                 <TextInput
@@ -183,7 +183,7 @@ export default class DraftEditScreen extends Component {
                                     
                             </View>
 
-                            <View style={{marginTop: 14}}>
+                            <View style={{marginTop: 8}}>
 
                                 <Text style={styles.inputTitle}>{translate('editDraftSystem')}</Text>
                                 <TextInput
@@ -197,7 +197,7 @@ export default class DraftEditScreen extends Component {
 
                             </View>
 
-                            <View style={{marginTop: 14}}>
+                            <View style={{marginTop: 8}}>
                                     
                                 <Text style={styles.inputTitle}>{translate('editDraftText')}</Text>
                                 <TextInput

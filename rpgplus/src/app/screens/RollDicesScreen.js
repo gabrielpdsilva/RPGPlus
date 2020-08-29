@@ -68,7 +68,7 @@ export default class RollDicesScreen extends Component {
                 
                 <CustomAppBar title={translate('appBarRollDices')} subtitle="" navigation={this.props.navigation}/>
                 
-                <ScrollView style={{marginTop: 14}}>
+                <ScrollView style={{marginTop: 8}}>
                 
                     <Text style={styles.title}>{translate('rollTitle')}</Text>
                     <Text style={styles.text}>{translate('rollSubtitle')}</Text>
@@ -76,7 +76,7 @@ export default class RollDicesScreen extends Component {
 
                     <View style={styles.inputForm}>
 
-                        <View style={{marginTop: 14}}>
+                        <View style={{marginTop: 8}}>
 
                             <Text style={styles.inputTitle}>{translate('rollType')}</Text>
 
@@ -97,7 +97,7 @@ export default class RollDicesScreen extends Component {
 
                         </View>
 
-                        <View style={{marginTop: 14}}>
+                        <View style={{marginTop: 8}}>
 
                             <Text style={styles.inputTitle}>{translate('rollQuantity')}</Text>
                             <TextInput
@@ -111,7 +111,7 @@ export default class RollDicesScreen extends Component {
                             
                         </View>
 
-                        <View style={{marginTop: 14}}>
+                        <View style={{marginTop: 8}}>
                             
                             <Text style={styles.inputTitle}>{translate('rollModifier')}</Text>
                             <TextInput
@@ -129,7 +129,8 @@ export default class RollDicesScreen extends Component {
 
                     {
                         results.map((item, key)=>
-                            (<Text key={key} style={styles.text}>{key + 1} {translate('rollCountingDices')} { item }</Text>)
+                        (
+                            <Text key={key} style={styles.text}>{key + 1} {translate('rollCountingDices')} {item}</Text>)
                         )
                     }
 
