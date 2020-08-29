@@ -60,13 +60,11 @@ export default class DraftCreateScreen extends Component {
                 text: this.state.text,
     
             }).then((docRef) => {
-                //toast a message
                 ToastAndroid.show(translate('toastCreateDraftCreated'), ToastAndroid.SHORT);
     
                 //set all states to ''
                 this.setState({name: '', category: '', system: '', text: ''});
-    
-                //goes to home screen
+
                 this.props.navigation.navigate("Home");
     
             }).catch((error) => {
