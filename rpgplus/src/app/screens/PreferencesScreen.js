@@ -183,7 +183,6 @@ export default class PreferencesScreen extends Component {
 
         const { isSwitchOn } = this.state;
         const image = this.state.image;
-//        const user = firebase.auth().currentUser;
 
         return(
             <View style={styles.container}>
@@ -217,7 +216,7 @@ export default class PreferencesScreen extends Component {
 
                     <Text style={styles.inputTitle}>{translate('preferencesChangeImage')}</Text>
 
-                    <View style={{marginTop: 5}}>
+                    <View style={{marginTop: 8}}>
 
                         <Text style={styles.inputTitle}>{translate('preferencesName')}</Text>
                         
@@ -231,7 +230,7 @@ export default class PreferencesScreen extends Component {
 
                     </View>
 
-                    <View style={{marginTop: 5}}>
+                    <View style={{marginTop: 8}}>
 
                         <Text style={styles.inputTitle}>{translate('preferencesEmail')}</Text>
                         

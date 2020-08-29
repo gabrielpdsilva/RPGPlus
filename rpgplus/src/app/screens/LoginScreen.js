@@ -71,7 +71,7 @@ export default class LoginScreen extends Component {
                     
                     <View style={styles.inputForm}>
 
-                        <View style={{marginTop: 14}}>
+                        <View style={{marginTop: 8}}>
 
                             <Text style={styles.inputTitle}>{translate('loginEmail')}</Text>
                             <TextInput
@@ -82,7 +82,7 @@ export default class LoginScreen extends Component {
                             
                         </View>
 
-                        <View style={{marginTop: 14}}>
+                        <View style={{marginTop: 8}}>
                             
                             <Text style={styles.inputTitle}>{translate('loginPassword')}</Text>
                             <TextInput

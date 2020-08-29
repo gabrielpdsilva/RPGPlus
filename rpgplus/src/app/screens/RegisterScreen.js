@@ -5,7 +5,7 @@ import {
     ToastAndroid,
     Text,
     TouchableOpacity,
-    ScrollView
+    ScrollView,
 } from 'react-native';
 
 import styles from '../style/styles';
@@ -27,7 +27,6 @@ export default class RegisterScreen extends Component {
             email: '',
             password: '',
             confirmPassword: '',
-            pic: '',
         }
     }
 
@@ -53,7 +52,7 @@ export default class RegisterScreen extends Component {
 
         firebase.auth().createUserWithEmailAndPassword(email, password)
         .then(cred => {
-            
+
             cred.user.updateProfile({displayName: name});
 
             //creates a doc of the user, here we can add to the doc whatever we want
@@ -74,7 +73,7 @@ export default class RegisterScreen extends Component {
 
                 <CustomAppBar title={translate('appBarRegister')} subtitle="" backIsVisible={true} navigation={this.props.navigation}/>
 
-                <ScrollView style={{marginTop: 14}}>
+                <ScrollView style={{marginTop: 8}}>   
 
                     <Text style={styles.title}>{translate('registerTitle')}</Text>
 
@@ -82,8 +81,8 @@ export default class RegisterScreen extends Component {
 
                     <View style={styles.inputForm}>
 
-                        <View style={{marginTop: 14}}>
-
+                        <View style={{marginTop: 8}}>
+                            
                             <Text style={styles.inputTitle}>{translate('registerName')}</Text>
                             <TextInput
                                 style={styles.textInput}
@@ -93,7 +92,7 @@ export default class RegisterScreen extends Component {
                             
                         </View>
 
-                        <View style={{marginTop: 14}}>
+                        <View style={{marginTop: 8}}>
                             
                             <Text style={styles.inputTitle}>{translate('registerNickname')}</Text>
                             <TextInput
@@ -104,7 +103,7 @@ export default class RegisterScreen extends Component {
                             
                         </View>
 
-                        <View style={{marginTop: 14}}>
+                        <View style={{marginTop: 8}}>
 
                             <Text style={styles.inputTitle}>{translate('registerEmail')}</Text>
                             <TextInput
@@ -115,7 +114,7 @@ export default class RegisterScreen extends Component {
                             
                         </View>
 
-                        <View style={{marginTop: 14}}>
+                        <View style={{marginTop: 8}}>
                             
                             <Text style={styles.inputTitle}>{translate('registerPassword')}</Text>
                             <TextInput
@@ -127,7 +126,7 @@ export default class RegisterScreen extends Component {
                             
                         </View>
 
-                        <View style={{marginTop: 14}}>
+                        <View style={{marginTop: 8}}>
                             
                             <Text style={styles.inputTitle}>{translate('registerConfirmPassword')}</Text>
                             <TextInput
