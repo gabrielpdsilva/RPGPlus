@@ -65,10 +65,10 @@ export default class PreferencesScreen extends Component {
             });
             
             if (!result.cancelled) {
-                this.uploadImageToStorage(result.uri, "profile-picture")
+                this.uploadPhotoToStorage(result.uri, "profile-picture")
                     .then(() => {
-                        ToastAndroid.show(translate('toastPreferencesImageAdded'), ToastAndroid.SHORT);
-                        this.getUserPhoto();                        
+                        console.log(translate('toastPreferencesImageAdded'));
+                        this.getUserPhotoFromStorage();                        
                     }).catch((error)=> { alert(error) });
             } 
 
@@ -77,7 +77,7 @@ export default class PreferencesScreen extends Component {
         }
     };
 
-    getUserPhoto = () => {
+    getUserPhotoFromStorage = () => {
         const user = firebase.auth().currentUser;
         let imageRef = firebase.storage().ref('users/' + user.uid + '/profile-picture');
         
@@ -91,7 +91,7 @@ export default class PreferencesScreen extends Component {
 
     }
 
-    uploadImageToStorage = async (uri, imageName) => {
+    uploadPhotoToStorage = async (uri, imageName) => {
         const response = await fetch(uri);
         const blob = await response.blob();
         const userUID = firebase.auth().currentUser.uid;
