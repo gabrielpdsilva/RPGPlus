@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import {
     View,
-    TextInput,
     ToastAndroid,
     Text,
     TouchableOpacity,
     ScrollView,
+    Image
 } from 'react-native';
 
 import styles from '../style/styles';
@@ -17,6 +17,10 @@ import firebase from '../controller/FirebaseConfig';
 import 'firebase/firestore';
 
 import { translate } from '../locales/localeConfig';
+
+import { Hoshi } from 'react-native-textinput-effects';
+
+import colors from '../style/colors';
 
 export default class RegisterScreen extends Component {
     constructor(props){
@@ -74,70 +78,87 @@ export default class RegisterScreen extends Component {
 
                 <ScrollView style={{marginTop: 8}}>   
 
+                <Image
+                        source={require('../../../assets/logo.png')}
+                        style={{ width: 200, height: 100, justifyContent: 'center',
+                        alignItems: 'center',}}
+                    />
+
                     <Text style={styles.title}>{translate('registerTitle')}</Text>
 
                     <Text style={styles.text}>{translate('registerSubtitle')}</Text>
 
-                    <View style={styles.inputForm}>
+                    <Hoshi
+                        style={styles.hoshiStyle}
+                        borderColor={colors.orange}
+                        labelStyle={{color: colors.black}}
+                        inputStyle={{color: colors.black}}
+                        backgroundColor={colors.white}
+                        label={translate('registerName')}
+                        borderHeight={3}
+                        inputPadding={16}
+                        maxLength={50}
+                        value={this.state.name}
+                        onChangeText={(txt) => this.setState({name: txt})}
+                    />
 
-                        <View style={{marginTop: 8}}>
-                            
-                            <Text style={styles.inputTitle}>{translate('registerName')}</Text>
-                            <TextInput
-                                style={styles.textInput}
-                                value={this.state.name}
-                                onChangeText={(txt) => this.setState({name: txt})}
-                            />
-                            
-                        </View>
+                    <Hoshi
+                        style={styles.hoshiStyle}
+                        borderColor={colors.orange}
+                        labelStyle={{color: colors.black}}
+                        inputStyle={{color: colors.black}}
+                        backgroundColor={colors.white}
+                        label={translate('registerNickname')}
+                        borderHeight={3}
+                        inputPadding={16}
+                        maxLength={50}
+                        value={this.state.nickname}
+                        onChangeText={(txt) => this.setState({nickname: txt})}
+                    />
 
-                        <View style={{marginTop: 8}}>
-                            
-                            <Text style={styles.inputTitle}>{translate('registerNickname')}</Text>
-                            <TextInput
-                                style={styles.textInput}
-                                value={this.state.nickname}
-                                onChangeText={(txt) => this.setState({nickname: txt})}
-                            />
-                            
-                        </View>
+                    <Hoshi
+                        style={styles.hoshiStyle}
+                        borderColor={colors.orange}
+                        labelStyle={{color: colors.black}}
+                        inputStyle={{color: colors.black}}
+                        backgroundColor={colors.white}
+                        label={translate('registerEmail')}
+                        borderHeight={3}
+                        inputPadding={16}
+                        maxLength={50}
+                        value={this.state.email}
+                        onChangeText={(txt) => this.setState({email: txt})}
+                    />
 
-                        <View style={{marginTop: 8}}>
+                    <Hoshi
+                        style={styles.hoshiStyle}
+                        borderColor={colors.orange}
+                        labelStyle={{color: colors.black}}
+                        inputStyle={{color: colors.black}}
+                        backgroundColor={colors.white}
+                        label={translate('registerPassword')}
+                        borderHeight={3}
+                        inputPadding={16}
+                        maxLength={50}
+                        secureTextEntry={true}
+                        value={this.state.password}
+                        onChangeText={(txt) => this.setState({password: txt})}
+                    />
 
-                            <Text style={styles.inputTitle}>{translate('registerEmail')}</Text>
-                            <TextInput
-                                style={styles.textInput}
-                                value={this.state.email}
-                                onChangeText={(txt) => this.setState({email: txt})}
-                            />
-                            
-                        </View>
-
-                        <View style={{marginTop: 8}}>
-                            
-                            <Text style={styles.inputTitle}>{translate('registerPassword')}</Text>
-                            <TextInput
-                                style={styles.textInput}
-                                value={this.state.password}
-                                onChangeText={(txt) => this.setState({password: txt})}
-                                secureTextEntry={true}
-                            />
-                            
-                        </View>
-
-                        <View style={{marginTop: 8}}>
-                            
-                            <Text style={styles.inputTitle}>{translate('registerConfirmPassword')}</Text>
-                            <TextInput
-                                style={styles.textInput}
-                                value={this.state.confirmPassword}
-                                onChangeText={(txt) => this.setState({confirmPassword: txt})}
-                                secureTextEntry={true}
-                            />
-                            
-                        </View>
-
-                    </View>
+                    <Hoshi
+                        style={styles.hoshiStyle}
+                        borderColor={colors.orange}
+                        labelStyle={{color: colors.black}}
+                        inputStyle={{color: colors.black}}
+                        backgroundColor={colors.white}
+                        label={translate('registerConfirmPassword')}
+                        borderHeight={3}
+                        inputPadding={16}
+                        maxLength={50}
+                        secureTextEntry={true}
+                        value={this.state.confirmPassword}
+                        onChangeText={(txt) => this.setState({confirmPassword: txt})}
+                    />
 
                     <View style={{justifyContent:'center', alignItems: 'center', marginBottom: 10}}>
 

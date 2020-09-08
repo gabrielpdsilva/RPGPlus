@@ -76,7 +76,6 @@ export default class LoginScreen extends Component {
                         borderColor={colors.orange}
                         labelStyle={{color: colors.black}}
                         inputStyle={{color: colors.black}}
-                        //needs to be the same of the container
                         backgroundColor={colors.white}
                         label={translate('loginEmail')}
                         borderHeight={3}
@@ -91,7 +90,6 @@ export default class LoginScreen extends Component {
                         borderColor={colors.orange}
                         labelStyle={{color: colors.black}}
                         inputStyle={{color: colors.black}}
-                        //needs to be the same of the container
                         backgroundColor={colors.white}
                         label={translate('loginPassword')}
                         borderHeight={3}
