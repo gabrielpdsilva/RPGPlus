@@ -4,7 +4,8 @@ import {
     View,
     TextInput,
     TouchableOpacity,
-    ToastAndroid
+    ToastAndroid,
+    Image
 } from 'react-native';
 
 import styles from '../style/styles';
@@ -44,6 +45,12 @@ export default class ForgotPasswordScreen extends Component {
                 <CustomAppBar title={translate('appBarForgot')} subtitle="" backIsVisible={true} navigation={this.props.navigation}/>
 
                 <View style={styles.childContainer}>
+
+                    <Image
+                        source={require('../../../assets/logo.png')}
+                        style={{ width: 200, height: 100, justifyContent: 'center',
+                        alignItems: 'center',}}
+                    />
 
                     <Text style={styles.title}>{translate('forgotTitle')}</Text>
                     <Text style={styles.text}>{translate('forgotSubtitle')}</Text>
