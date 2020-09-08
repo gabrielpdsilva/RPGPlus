@@ -15,6 +15,9 @@ import CustomAppBar from '../components/CustomAppBar';
 import firebase from '../controller/FirebaseConfig';
 import { translate } from '../locales/localeConfig';
 
+import { Hoshi } from 'react-native-textinput-effects';
+import colors from '../style/colors';
+
 export default class ForgotPasswordScreen extends Component {
     constructor(props){
         super(props);
@@ -44,8 +47,6 @@ export default class ForgotPasswordScreen extends Component {
 
                 <CustomAppBar title={translate('appBarForgot')} subtitle="" backIsVisible={true} navigation={this.props.navigation}/>
 
-                <View style={styles.childContainer}>
-
                     <Image
                         source={require('../../../assets/logo.png')}
                         style={{ width: 200, height: 100, justifyContent: 'center',
@@ -54,27 +55,26 @@ export default class ForgotPasswordScreen extends Component {
 
                     <Text style={styles.title}>{translate('forgotTitle')}</Text>
                     <Text style={styles.text}>{translate('forgotSubtitle')}</Text>
-
-                    <View style={styles.inputForm}>
-
-                        <View style={{marginTop: 8}}>
-
-                            <Text style={styles.inputTitle}>{translate('forgotEmail')}</Text>
-                            <TextInput
-                                style={styles.textInput}
-                                value={this.state.email}
-                                onChangeText={(txt) => this.setState({email: txt})}
-                            />
-                            
-                        </View>
-                        
-                    </View>
-
+                    
+                    <Hoshi
+                        style={styles.hoshiStyle}
+                        borderColor={colors.orange}
+                        labelStyle={{color: colors.black}}
+                        inputStyle={{color: colors.black}}
+                        //needs to be the same of the container
+                        backgroundColor={colors.white}
+                        label={translate('forgotEmail')}
+                        borderHeight={3}
+                        inputPadding={16}
+                        maxLength={50}
+                        value={this.state.email}
+                        onChangeText={(txt) => this.setState({email: txt})}
+                    />
+  
                     <TouchableOpacity onPress={this.handleResetPassword} style={styles.button}>
                         <Text style={styles.buttonText}>{translate('forgotBtnPassword')}</Text>
                     </TouchableOpacity>
                     
-                </View>
             </View>
         );
     }

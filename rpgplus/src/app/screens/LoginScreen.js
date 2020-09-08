@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {
     View,
-    TextInput,
+    ScrollView,
     TouchableOpacity,
     ToastAndroid,
     Text,
@@ -16,6 +16,8 @@ import CustomAppBar from '../components/CustomAppBar';
 import firebase from '../controller/FirebaseConfig';
 
 import { translate } from '../locales/localeConfig';
+
+import { Hoshi } from 'react-native-textinput-effects';
 
 /*Useful site about login
 *https://medium.com/better-programming/react-native-firebase-authentication-7652e1d2c8a2
@@ -57,7 +59,7 @@ export default class LoginScreen extends Component {
 
                 <CustomAppBar title={translate('appBarLogin')} subtitle="" backIsVisible={false} isLoginScreen = {true}/>
 
-                <View style={styles.childContainer}>
+                <ScrollView>
 
                     <Image
                         source={require('../../../assets/logo.png')}
@@ -68,33 +70,36 @@ export default class LoginScreen extends Component {
                     <Text style={styles.title}>{translate('loginTitle')}</Text>
 
                     <Text style={styles.text}>{translate('loginSubtitle')}</Text>
-                    
-                    <View style={styles.inputForm}>
 
-                        <View style={{marginTop: 8}}>
+                    <Hoshi
+                        style={styles.hoshiStyle}
+                        borderColor={colors.orange}
+                        labelStyle={{color: colors.black}}
+                        inputStyle={{color: colors.black}}
+                        //needs to be the same of the container
+                        backgroundColor={colors.white}
+                        label={translate('loginEmail')}
+                        borderHeight={3}
+                        inputPadding={16}
+                        maxLength={50}
+                        value={this.state.email}
+                        onChangeText={(txt) => this.setState({email: txt})}
+                    />
 
-                            <Text style={styles.inputTitle}>{translate('loginEmail')}</Text>
-                            <TextInput
-                                style={styles.textInput}
-                                value={this.state.email}
-                                onChangeText={(txt) => this.setState({email: txt})}
-                            />
-                            
-                        </View>
-
-                        <View style={{marginTop: 8}}>
-                            
-                            <Text style={styles.inputTitle}>{translate('loginPassword')}</Text>
-                            <TextInput
-                                style={styles.textInput}
-                                value={this.state.password}
-                                onChangeText={(txt) => this.setState({password: txt})}
-                                secureTextEntry={true}
-                            />
-                            
-                        </View> 
-
-                    </View>
+                    <Hoshi
+                        style={styles.hoshiStyle}
+                        borderColor={colors.orange}
+                        labelStyle={{color: colors.black}}
+                        inputStyle={{color: colors.black}}
+                        //needs to be the same of the container
+                        backgroundColor={colors.white}
+                        label={translate('loginPassword')}
+                        borderHeight={3}
+                        inputPadding={16}
+                        maxLength={50}
+                        value={this.state.password}
+                        onChangeText={(txt) => this.setState({password: txt})}
+                    />
                     
                     <TouchableOpacity onPress={this.handleLogin} style={styles.button}>
                         <Text style={styles.buttonText}>{translate('loginBtnLogin')}</Text>
@@ -110,7 +115,8 @@ export default class LoginScreen extends Component {
                         <Text style={styles.text}>{translate('loginBtnForgotPassword')}</Text>
                     </TouchableOpacity> 
 
-                </View>
+                    </ScrollView>
+
             </View>
         );
     }

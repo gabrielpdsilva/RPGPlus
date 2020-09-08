@@ -6,7 +6,12 @@ const styles = StyleSheet.create({
 
     container: {
         flex: 1,
-        backgroundColor: colors.darkTheme,
+        backgroundColor: colors.white,
+    },
+
+    hoshiStyle: {
+        marginLeft: 10,
+        marginRight: 10
     },
 
     childContainer: {
@@ -35,7 +40,7 @@ const styles = StyleSheet.create({
 
     //common text
     text: {
-        color: colors.white,
+        color: colors.black,
         margin: 5,
         fontSize: 15,
         textAlign: 'center'
@@ -43,7 +48,7 @@ const styles = StyleSheet.create({
 
     //text used on forms
     textForm: {
-        color: colors.white,
+        color: colors.black,
         margin: 5,
         fontSize: 15,
     },
@@ -56,7 +61,7 @@ const styles = StyleSheet.create({
         borderColor: colors.orange,
         borderWidth: 1,
         backgroundColor: colors.darkBackground,
-        color: colors.white,
+        color: colors.black,
         borderRadius: 4,
     },
 
@@ -68,7 +73,7 @@ const styles = StyleSheet.create({
         borderColor: colors.darkOrange,
         borderWidth: 1,
         backgroundColor: colors.darkBackground,
-        color: colors.white,
+        color: colors.black,
         borderRadius: 4,
     },
 
@@ -80,7 +85,7 @@ const styles = StyleSheet.create({
         borderColor: colors.orange,
         borderWidth: 1,
         backgroundColor: colors.darkBackground,
-        color: colors.white,
+        color: colors.black,
         borderRadius: 4,
     },
 
@@ -92,7 +97,7 @@ const styles = StyleSheet.create({
         borderColor: colors.darkOrange,
         borderWidth: 1,
         backgroundColor: colors.darkBackground,
-        color: colors.white,
+        color: colors.black,
         borderRadius: 4,
     },
 
@@ -111,7 +116,7 @@ const styles = StyleSheet.create({
 
     //text title
     title: {
-        color: colors.white,
+        color: colors.black,
         fontWeight: 'bold',
         fontSize: 20,
         alignItems: 'center',
@@ -132,13 +137,13 @@ const styles = StyleSheet.create({
     },
 
     itemText: {
-        color: colors.white,
+        color: colors.black,
     },
 
     //picker used in roll dices screen and name generator screen
     pickerStyle: {  
         //height: 150,
-        color: colors.white,
+        color: colors.black,
     },
 
     headerAppBar: {
