@@ -15,7 +15,10 @@ import firebase from '../controller/FirebaseConfig';
 import { translate } from '../locales/localeConfig';
 
 import { Hoshi } from 'react-native-textinput-effects';
+
 import colors from '../style/colors';
+
+import AwesomeButton from "react-native-really-awesome-button";
 
 export default class ForgotPasswordScreen extends Component {
     constructor(props){
@@ -69,10 +72,20 @@ export default class ForgotPasswordScreen extends Component {
                         value={this.state.email}
                         onChangeText={(txt) => this.setState({email: txt})}
                     />
-  
-                    <TouchableOpacity onPress={this.handleResetPassword} style={styles.button}>
-                        <Text style={styles.buttonText}>{translate('forgotBtnPassword')}</Text>
-                    </TouchableOpacity>
+
+                    <AwesomeButton
+                        backgroundColor={colors.blue}
+                        backgroundDarker={colors.darkBlue}
+                        backgroundShadow={colors.lightGray}
+                        progress
+                        width={100}
+                        onPress={next => {
+                            this.handleResetPassword();
+                            next();
+                        }}
+                    >
+                        {translate('forgotBtnPassword')}
+                    </AwesomeButton>
                     
             </View>
         );

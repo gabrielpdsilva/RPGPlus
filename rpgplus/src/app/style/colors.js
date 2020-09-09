@@ -14,7 +14,7 @@ const colors = {
     darkBackground: '#13161c', //used for inputs
     gray: '#303e54', //used for background of listItem
     darkGray: '#878787', //used for placeholders
-    lightGray: '#f4f3f4' //used for disable switches
+    lightGray: '#C0C0C0' //used for disable switches
 
 }
 

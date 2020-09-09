@@ -19,6 +19,8 @@ import { translate } from '../locales/localeConfig';
 
 import { Hoshi } from 'react-native-textinput-effects';
 
+import AwesomeButton from "react-native-really-awesome-button";
+
 /*Useful site about login
 *https://medium.com/better-programming/react-native-firebase-authentication-7652e1d2c8a2
 *
@@ -95,9 +97,25 @@ export default class LoginScreen extends Component {
                         borderHeight={3}
                         inputPadding={16}
                         maxLength={50}
+                        secureTextEntry={true}
                         value={this.state.password}
                         onChangeText={(txt) => this.setState({password: txt})}
                     />
+
+                    <AwesomeButton
+                        backgroundColor={colors.blue}
+                        backgroundDarker={colors.darkBlue}
+                        backgroundShadow={colors.lightGray}
+                        progress
+                        width={100}
+                        onPress={next => {
+                            /** Do Something **/
+                            this.handleLogin();
+                            next();
+                        }}
+                    >
+                        {translate('loginBtnLogin')}
+                    </AwesomeButton>
                     
                     <TouchableOpacity onPress={this.handleLogin} style={styles.button}>
                         <Text style={styles.buttonText}>{translate('loginBtnLogin')}</Text>
