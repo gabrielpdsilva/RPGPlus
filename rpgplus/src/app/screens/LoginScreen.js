@@ -102,24 +102,24 @@ export default class LoginScreen extends Component {
                         onChangeText={(txt) => this.setState({password: txt})}
                     />
 
-                    <AwesomeButton
-                        backgroundColor={colors.blue}
-                        backgroundDarker={colors.darkBlue}
-                        backgroundShadow={colors.lightGray}
-                        progress
-                        width={100}
-                        onPress={next => {
-                            /** Do Something **/
-                            this.handleLogin();
-                            next();
-                        }}
-                    >
-                        {translate('loginBtnLogin')}
-                    </AwesomeButton>
-                    
-                    <TouchableOpacity onPress={this.handleLogin} style={styles.button}>
-                        <Text style={styles.buttonText}>{translate('loginBtnLogin')}</Text>
-                    </TouchableOpacity>
+                    <View style={{justifyContent:'center', alignItems: 'center', marginTop: 10, marginBottom: 10}}>
+
+                        <AwesomeButton
+                            backgroundColor={colors.blue}
+                            backgroundDarker={colors.darkBlue}
+                            backgroundShadow={colors.lightGray}
+                            progress
+                            width={100}
+                            onPress={next => {
+                                /** Do Something **/
+                                this.handleLogin();
+                                next();
+                            }}
+                        >
+                            {translate('loginBtnLogin')}
+                        </AwesomeButton>
+
+                    </View>                  
 
                     <TouchableOpacity onPress={() => this.props.navigation.navigate("Register")}>
                         <Text style={styles.text}>

@@ -73,20 +73,23 @@ export default class ForgotPasswordScreen extends Component {
                         onChangeText={(txt) => this.setState({email: txt})}
                     />
 
-                    <AwesomeButton
-                        backgroundColor={colors.blue}
-                        backgroundDarker={colors.darkBlue}
-                        backgroundShadow={colors.lightGray}
-                        progress
-                        width={100}
-                        onPress={next => {
-                            this.handleResetPassword();
-                            next();
-                        }}
-                    >
-                        {translate('forgotBtnPassword')}
-                    </AwesomeButton>
-                    
+                    <View style={{justifyContent:'center', alignItems: 'center', marginTop: 10, marginBottom: 10}}>
+
+                        <AwesomeButton
+                            backgroundColor={colors.blue}
+                            backgroundDarker={colors.darkBlue}
+                            backgroundShadow={colors.lightGray}
+                            progress
+                            width={100}
+                            onPress={next => {
+                                this.handleResetPassword();
+                                next();
+                            }}
+                        >
+                            {translate('forgotBtnPassword')}
+                        </AwesomeButton>
+                        
+                    </View>
             </View>
         );
     }

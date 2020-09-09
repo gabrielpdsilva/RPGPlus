@@ -11,6 +11,8 @@ import {
 import styles from '../style/styles';
 import CustomAppBar from '../components/CustomAppBar';
 import {translate} from '../locales/localeConfig';
+import AwesomeButton from "react-native-really-awesome-button";
+import colors from '../style/colors';
 
 /*
 Name Generator algorithm by RyanGoslingsBugle
@@ -157,10 +159,24 @@ export default class NameGeneratorScreen extends Component {
                             </TouchableOpacity>
                             
                         </View>
-    
-                    <TouchableOpacity onPress={() => this.handleGenerateName(pickerValue)} style={styles.button}>
-                        <Text style={styles.buttonText}>{translate('generatorBtnGenerate')}</Text>
-                    </TouchableOpacity>
+
+                        <View style={{justifyContent:'center', alignItems: 'center', marginTop: 10, marginBottom: 10}}>
+
+                            <AwesomeButton
+                                backgroundColor={colors.blue}
+                                backgroundDarker={colors.darkBlue}
+                                backgroundShadow={colors.lightGray}
+                                progress={false}
+                                width={100}
+                                onPress={next => {
+                                    this.handleGenerateName(pickerValue);
+                                    next();
+                                }}
+                            >
+                                {translate('generatorBtnGenerate')}
+                            </AwesomeButton>
+
+                        </View>
 
                     </View>
 

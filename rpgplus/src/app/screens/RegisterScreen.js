@@ -22,6 +22,8 @@ import { Hoshi } from 'react-native-textinput-effects';
 
 import colors from '../style/colors';
 
+import AwesomeButton from "react-native-really-awesome-button";
+
 export default class RegisterScreen extends Component {
     constructor(props){
         super(props);
@@ -160,11 +162,22 @@ export default class RegisterScreen extends Component {
                         onChangeText={(txt) => this.setState({confirmPassword: txt})}
                     />
 
-                    <View style={{justifyContent:'center', alignItems: 'center', marginBottom: 10}}>
+                    <View style={{justifyContent:'center', alignItems: 'center', marginTop: 10, marginBottom: 10}}>
 
-                        <TouchableOpacity onPress={this.handleSignUp} style={styles.button}>
-                            <Text style={styles.buttonText}>{translate('registerBtnRegister')}</Text>
-                        </TouchableOpacity>
+                        <AwesomeButton
+                            backgroundColor={colors.blue}
+                            backgroundDarker={colors.darkBlue}
+                            backgroundShadow={colors.lightGray}
+                            progress
+                            width={100}
+                            onPress={next => {
+                                /** Do Something **/
+                                this.handleSignUp();
+                                next();
+                            }}
+                        >
+                            {translate('registerBtnRegister')}
+                        </AwesomeButton>
 
                     </View>
 
