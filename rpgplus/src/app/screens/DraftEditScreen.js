@@ -19,6 +19,9 @@ import firebase from '../controller/FirebaseConfig';
 import 'firebase/firestore';
 import {translate} from '../locales/localeConfig';
 
+import { Hoshi } from 'react-native-textinput-effects';
+import AwesomeButton from "react-native-really-awesome-button";
+
 export default class DraftEditScreen extends Component {
     constructor(props){
         super(props);
@@ -128,6 +131,10 @@ export default class DraftEditScreen extends Component {
 
     render(){
 
+        const name = this.state.name;
+        const category = this.state.category;
+        const system = this.state.system;
+        const text = this.state.text;
         const { isSwitchOn } = this.state;
 
         return(
@@ -149,88 +156,107 @@ export default class DraftEditScreen extends Component {
 
                 </View>
 
-                <View style={styles.childContainer}>
+                                              
 
-                    <ScrollView style={{marginTop: 6}}>
+                    <ScrollView style={{marginTop: 8}}>
+
+                    <Hoshi
+                            style={styles.hoshiStyle}
+                            borderColor={colors.orange}
+                            labelStyle={{color: colors.black}}
+                            inputStyle={{color: colors.black}}
+                            backgroundColor={colors.white}
+                            label={translate('editDraftName')}
+                            placeholder={translate('editDraftLoading')}
+                            borderHeight={3}
+                            inputPadding={16}
+                            maxLength={50}
+                            value={name ? name : translate('editDraftLoading')}
+                            onChangeText={(txt) => this.setState({name: txt})}
+                        />
+
+                        <Hoshi
+                            style={styles.hoshiStyle}
+                            borderColor={colors.orange}
+                            labelStyle={{color: colors.black}}
+                            inputStyle={{color: colors.black}}
+                            backgroundColor={colors.white}
+                            label={translate('editDraftCategory')}
+                            placeholder={translate('editDraftLoading')}
+                            borderHeight={3}
+                            inputPadding={16}
+                            maxLength={50}
+                            value={category ? category : translate('editDraftLoading')}
+                            onChangeText={(txt) => this.setState({category: txt})}
+                        />
+
+                        <Hoshi
+                            style={styles.hoshiStyle}
+                            borderColor={colors.orange}
+                            labelStyle={{color: colors.black}}
+                            inputStyle={{color: colors.black}}
+                            backgroundColor={colors.white}
+                            label={translate('editDraftSystem')}
+                            placeholder={translate('editDraftLoading')}
+                            borderHeight={3}
+                            inputPadding={16}
+                            maxLength={50}
+                            value={system ? system : translate('editDraftLoading')}
+                            onChangeText={(txt) => this.setState({system: txt})}
+                        />
+
+                        <Hoshi
+                            style={styles.hoshiStyle}
+                            borderColor={colors.orange}
+                            labelStyle={{color: colors.black}}
+                            inputStyle={{color: colors.black}}
+                            backgroundColor={colors.white}
+                            label={translate('editDraftText')}
+                            placeholder={translate('editDraftLoading')}
+                            borderHeight={3}
+                            inputPadding={16}
+                            maxLength={1000}
+                            multiline
+                            value={text ? text : translate('editDraftLoading')}
+                            onChangeText={(txt) => this.setState({text: txt})}
+                        />  
                     
-                        <View style={styles.inputForm}>
+                        
+                        <View style={{justifyContent:'center', alignItems: 'center', marginTop: 10, marginBottom: 10}}>
 
-                            <View>                                
+                            <AwesomeButton
+                                backgroundColor={colors.blue}
+                                backgroundDarker={colors.darkBlue}
+                                backgroundShadow={colors.lightGray}
+                                progress
+                                width={100}
+                                onPress={next => {
+                                    this.handleSaveChanges();
+                                    next();
+                                }}
+                            >
+                                {translate('editDraftBtnSaveChanges')}
+                            </AwesomeButton>
 
-                                <Text style={styles.inputTitle}>{translate('editDraftName')}</Text>
-                                <TextInput
-                                    placeholder={translate('editDraftLoading')}
-                                    placeholderTextColor={colors.darkGray}
-                                    style={isSwitchOn ? styles.textInput: styles.disabledTextInput}
-                                    editable={isSwitchOn}
-                                    value={this.state.name}
-                                    onChangeText={(txt) => this.setState({name: txt})}
-                                />
-
-                            </View>
-
-                            <View style={{marginTop: 8}}>
-                                    
-                                <Text style={styles.inputTitle}>{translate('editDraftCategory')}</Text>
-                                <TextInput
-                                    placeholder={translate('editDraftLoading')}
-                                    placeholderTextColor={colors.darkGray}
-                                    style={isSwitchOn ? styles.textInput: styles.disabledTextInput}
-                                    editable={isSwitchOn}
-                                    value={this.state.category}
-                                    onChangeText={(txt) => this.setState({category: txt})}
-                                />
-                                    
-                            </View>
-
-                            <View style={{marginTop: 8}}>
-
-                                <Text style={styles.inputTitle}>{translate('editDraftSystem')}</Text>
-                                <TextInput
-                                    placeholder={translate('editDraftLoading')}
-                                    placeholderTextColor={colors.darkGray}
-                                    style={isSwitchOn ? styles.textInput: styles.disabledTextInput}
-                                    editable={isSwitchOn}
-                                    value={this.state.system}
-                                    onChangeText={(txt) => this.setState({system: txt})}
-                                />
-
-                            </View>
-
-                            <View style={{marginTop: 8}}>
-                                    
-                                <Text style={styles.inputTitle}>{translate('editDraftText')}</Text>
-                                <TextInput
-                                    editable={isSwitchOn}
-                                    placeholder={translate('editDraftLoading')}
-                                    placeholderTextColor={colors.darkGray}
-                                    multiline = {true}
-                                    height = {70}
-                                    textAlignVertical = 'top'
-                                    style={isSwitchOn ? styles.textInputBox: styles.textInputBoxDisabled}
-                                    value={this.state.text}
-                                    onChangeText={(txt) => this.setState({text: txt})}
-                                />
-                                    
-                            </View> 
-
-                        </View>
-
-                        <View style={{justifyContent:'center', alignItems: 'center', marginBottom: 10}}>
-                
-                            <TouchableOpacity onPress={this.handleSaveChanges} style={styles.button}>
-                                <Text style={styles.buttonText}>{translate('editDraftBtnSaveChanges')}</Text>
-                            </TouchableOpacity>
-
-                            <TouchableOpacity onPress={this.handleDeleteDraft} style={styles.buttonAlternative}>
-                                <Text style={styles.buttonText}>{translate('editDraftBtnDeleteDraft')}</Text>
-                            </TouchableOpacity>
+                            <AwesomeButton
+                                backgroundColor={colors.blue}
+                                backgroundDarker={colors.darkBlue}
+                                backgroundShadow={colors.lightGray}
+                                progress
+                                width={100}
+                                onPress={next => {
+                                    this.handleDeleteDraft();
+                                    next();
+                                }}
+                            >
+                                {translate('editDraftBtnDeleteDraft')}
+                            </AwesomeButton>
 
                         </View>
                         
                     </ScrollView>
 
-                </View>
+                        
 
             </View>
         );
