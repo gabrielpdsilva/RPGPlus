@@ -43,6 +43,9 @@ export default class ForgotPasswordScreen extends Component {
     }
 
     render(){
+
+        const email = this.state.email;
+
         return(
 
             <View style={styles.container}>
@@ -69,7 +72,7 @@ export default class ForgotPasswordScreen extends Component {
                         borderHeight={3}
                         inputPadding={16}
                         maxLength={50}
-                        value={this.state.email}
+                        value={email}
                         onChangeText={(txt) => this.setState({email: txt})}
                     />
 

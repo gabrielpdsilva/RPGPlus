@@ -55,6 +55,9 @@ export default class LoginScreen extends Component {
 
     render(){
 
+        const email = this.state.email;
+        const password = this.state.password;
+
         return(
 
             <View style={styles.container}>
@@ -83,7 +86,7 @@ export default class LoginScreen extends Component {
                         borderHeight={3}
                         inputPadding={16}
                         maxLength={50}
-                        value={this.state.email}
+                        value={email}
                         onChangeText={(txt) => this.setState({email: txt})}
                     />
 
@@ -98,7 +101,7 @@ export default class LoginScreen extends Component {
                         inputPadding={16}
                         maxLength={50}
                         secureTextEntry={true}
-                        value={this.state.password}
+                        value={password}
                         onChangeText={(txt) => this.setState({password: txt})}
                     />
 
