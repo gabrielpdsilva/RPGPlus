@@ -12,10 +12,11 @@ import CustomAppBar from '../components/CustomAppBar';
 
 import styles from '../style/styles';
 import colors from '../style/colors';
-
 import firebase from '../controller/FirebaseConfig';
 import 'firebase/firestore';
 import {translate} from '../locales/localeConfig';
+import AwesomeButton from "react-native-really-awesome-button";
+import { Hoshi } from 'react-native-textinput-effects';
 
 //useful link about user collection on firestore
 //https://www.youtube.com/watch?v=qWy9ylc3f9U
@@ -76,6 +77,11 @@ export default class DraftCreateScreen extends Component {
    
     render(){
 
+        const name =  this.state.name;
+        const category = this.state.category;
+        const system = this.state.system;
+        const text = this.state.text;
+
         return(
 
             <View style={styles.container}>
@@ -88,71 +94,79 @@ export default class DraftCreateScreen extends Component {
 
                         <Text style={styles.title}>{translate('createDraftTitle')}</Text>
                         <Text style={styles.text}>{translate('createDraftSubtitle')}</Text>
-        
-                        <View style={styles.inputForm}>
 
-                            <View style={{marginTop: 8}}>
+                        <Hoshi
+                            style={styles.hoshiStyle}
+                            borderColor={colors.orange}
+                            labelStyle={{color: colors.black}}
+                            inputStyle={{color: colors.black}}
+                            backgroundColor={colors.white}
+                            label={translate('createDraftName')}
+                            borderHeight={3}
+                            inputPadding={16}
+                            maxLength={50}
+                            value={name}
+                            onChangeText={(txt) => this.setState({name: txt})}
+                        />
 
-                                <Text style={styles.inputTitle}>{translate('createDraftName')}</Text>
-                                <TextInput
-                                    style={styles.textInput}
-                                    value={this.state.name}
-                                    onChangeText={(txt) => this.setState({name: txt})}
-                                    placeholder = {translate('createDraftNamePlaceholder')}
-                                    placeholderTextColor = {colors.darkGray}
-                                />
+                        <Hoshi
+                            style={styles.hoshiStyle}
+                            borderColor={colors.orange}
+                            labelStyle={{color: colors.black}}
+                            inputStyle={{color: colors.black}}
+                            backgroundColor={colors.white}
+                            label={translate('createDraftCategory')}
+                            borderHeight={3}
+                            inputPadding={16}
+                            maxLength={50}
+                            value={category}
+                            onChangeText={(txt) => this.setState({category: txt})}
+                        />
 
-                            </View>
+                        <Hoshi
+                            style={styles.hoshiStyle}
+                            borderColor={colors.orange}
+                            labelStyle={{color: colors.black}}
+                            inputStyle={{color: colors.black}}
+                            backgroundColor={colors.white}
+                            label={translate('createDraftSystem')}
+                            borderHeight={3}
+                            inputPadding={16}
+                            maxLength={50}
+                            value={system}
+                            onChangeText={(txt) => this.setState({system: txt})}
+                        />
 
-                            <View style={{marginTop: 8}}>
-                                    
-                                <Text style={styles.inputTitle}>{translate('createDraftCategory')}</Text>
-                                <TextInput
-                                    style={styles.textInput}
-                                    value={this.state.category}
-                                    onChangeText={(txt) => this.setState({category: txt})}
-                                    placeholder = {translate('createDraftCategoryPlaceholder')}
-                                    placeholderTextColor = {colors.darkGray}
-                                />
-                                    
-                            </View>
+                        <Hoshi
+                            style={styles.hoshiStyle}
+                            borderColor={colors.orange}
+                            labelStyle={{color: colors.black}}
+                            inputStyle={{color: colors.black}}
+                            backgroundColor={colors.white}
+                            label={translate('createDraftTextBox')}
+                            borderHeight={3}
+                            inputPadding={16}
+                            maxLength={50}
+                            value={text}
+                            multiline
+                            onChangeText={(txt) => this.setState({text: txt})}
+                        />
 
-                            <View style={{marginTop: 8}}>
+                        <View style={{justifyContent:'center', alignItems: 'center', marginTop: 10, marginBottom: 10}}>
 
-                                <Text style={styles.inputTitle}>{translate('createDraftSystem')}</Text>
-                                <TextInput
-                                    style={styles.textInput}
-                                    value={this.state.system}
-                                    onChangeText={(txt) => this.setState({system: txt})}
-                                    placeholder = {translate('createDraftSystemPlaceholder')}
-                                    placeholderTextColor = {colors.darkGray}
-                                />
-
-                            </View>
-                        
-                            <View style={{marginTop: 8}}>
-                                    
-                                <Text style={styles.inputTitle}>{translate('createDraftTextBox')}</Text>
-                                <TextInput
-                                    multiline = {true}
-                                    height = {70}
-                                    textAlignVertical = 'top'
-                                    style={styles.textInputBox}
-                                    value={this.state.text}
-                                    onChangeText={(txt) => this.setState({text: txt})}
-                                    placeholder = {translate('createDraftTextBoxPlaceholder')}
-                                    placeholderTextColor = {colors.darkGray}
-                                />
-                                    
-                            </View> 
-
-                        </View>
-
-                        <View style={{justifyContent:'center', alignItems: 'center', marginBottom: 10}}>
-                
-                            <TouchableOpacity onPress={this.handleCreate} style={styles.button} disabled={this.state.isButtonDisabled}>
-                                <Text style={styles.buttonText}>{translate('createDraftBtnCreate')}</Text>
-                            </TouchableOpacity>
+                            <AwesomeButton
+                                backgroundColor={colors.blue}
+                                backgroundDarker={colors.darkBlue}
+                                backgroundShadow={colors.lightGray}
+                                progress
+                                width={100}
+                                onPress={next => {
+                                    this.handleCreate();
+                                    next();
+                                }}
+                            >
+                                {translate('createDraftBtnCreate')}
+                            </AwesomeButton>
 
                         </View>
                         

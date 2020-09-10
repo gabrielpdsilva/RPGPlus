@@ -76,7 +76,6 @@ export default class RollDicesScreen extends Component {
                     <Text style={styles.text}>{translate('rollSubtitle')}</Text>
                     <Text style={styles.text}>{translate('rollMaxAllowed')}</Text>
 
-
                     <Text style={{marginBottom: 25, marginHorizontal: 30}}>{translate('rollType')}</Text>
 
                     <Picker
