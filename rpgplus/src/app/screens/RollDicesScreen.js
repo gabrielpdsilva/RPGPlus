@@ -13,6 +13,7 @@ import colors from '../style/colors';
 import CustomAppBar from '../components/CustomAppBar';
 import {translate} from '../locales/localeConfig';
 import { Hoshi } from 'react-native-textinput-effects';
+import AwesomeButton from "react-native-really-awesome-button";
 
 export default class RollDicesScreen extends Component {
     constructor(props){
@@ -141,9 +142,19 @@ export default class RollDicesScreen extends Component {
 
                     <View style={{justifyContent:'center', alignItems: 'center', marginBottom: 10}}>
 
-                        <TouchableOpacity onPress={() => this.handleRollDices(type, quantity, modifier)} style={styles.button}>
-                            <Text style={styles.buttonText}>{translate('rollBtnRoll')}</Text>
-                        </TouchableOpacity>
+                        <AwesomeButton
+                            backgroundColor={colors.blue}
+                            backgroundDarker={colors.darkBlue}
+                            backgroundShadow={colors.lightGray}
+                            progress={false}
+                            width={100}
+                            onPress={next => {
+                                this.handleRollDices(type, quantity, modifier);
+                                next();
+                            }}
+                        >
+                            {translate('rollBtnRoll')}
+                        </AwesomeButton>
 
                     </View>
 
