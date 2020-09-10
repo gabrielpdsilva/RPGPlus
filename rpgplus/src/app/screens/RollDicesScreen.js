@@ -9,9 +9,10 @@ import {
 } from 'react-native';
 
 import styles from '../style/styles';
-
+import colors from '../style/colors';
 import CustomAppBar from '../components/CustomAppBar';
 import {translate} from '../locales/localeConfig';
+import { Hoshi } from 'react-native-textinput-effects';
 
 export default class RollDicesScreen extends Component {
     constructor(props){
@@ -97,40 +98,42 @@ export default class RollDicesScreen extends Component {
 
                         </View>
 
-                        <View style={{marginTop: 8}}>
+                        <Hoshi
+                            style={styles.hoshiStyle}
+                            borderColor={colors.orange}
+                            labelStyle={{color: colors.black}}
+                            inputStyle={{color: colors.black}}
+                            backgroundColor={colors.white}
+                            label={translate('rollQuantity')}
+                            borderHeight={3}
+                            inputPadding={16}
+                            maxLength={2}
+                            keyboardType = 'numeric'
+                            value={quantity ? String(quantity) : null}
+                            onChangeText={(txt) => this.setState({quantity: txt})}
+                        />
 
-                            <Text style={styles.inputTitle}>{translate('rollQuantity')}</Text>
-                            <TextInput
-                                style={styles.textInput}
-                                value={quantity ? String(quantity) : null}
-                                maxLength={2}
-                                keyboardType = 'numeric'
-                                onChangeText={(txt) => this.setState({quantity: txt})}
-                                placeholder="1..."
-                            />
-                            
-                        </View>
-
-                        <View style={{marginTop: 8}}>
-                            
-                            <Text style={styles.inputTitle}>{translate('rollModifier')}</Text>
-                            <TextInput
-                                style={styles.textInput}
-                                value={modifier ? String(modifier) : null}
-                                maxLength={2}
-                                keyboardType = 'numeric'
-                                onChangeText={(txt) => this.setState({modifier: txt})}
-                                placeholder="0..."
-                            />
-                            
-                        </View> 
+                        <Hoshi
+                            style={styles.hoshiStyle}
+                            borderColor={colors.orange}
+                            labelStyle={{color: colors.black}}
+                            inputStyle={{color: colors.black}}
+                            backgroundColor={colors.white}
+                            label={translate('rollModifier')}
+                            borderHeight={3}
+                            inputPadding={16}
+                            maxLength={2}
+                            keyboardType = 'numeric'
+                            value={modifier ? String(modifier) : null}
+                            onChangeText={(txt) => this.setState({modifier: txt})}
+                        />
 
                     </View>
 
                     {
                         results.map((item, key)=>
                         (
-                            <Text key={key} style={styles.text}>{key + 1} {translate('rollCountingDices')} {item}</Text>)
+                            <Text key={key} style={styles.text}>{key + 1}{translate('rollCountingDices')} {item}</Text>)
                         )
                     }
 
