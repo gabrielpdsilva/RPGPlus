@@ -154,11 +154,9 @@ export default class DraftEditScreen extends Component {
                         value={isSwitchOn}
                     />
 
-                </View>
+                </View>                
 
-                                              
-
-                    <ScrollView style={{marginTop: 8}}>
+                <ScrollView style={{marginTop: 8}}>
 
                     <Hoshi
                             style={styles.hoshiStyle}
@@ -221,7 +219,6 @@ export default class DraftEditScreen extends Component {
                             onChangeText={(txt) => this.setState({text: txt})}
                         />  
                     
-                        
                         <View style={{justifyContent:'center', alignItems: 'center', marginTop: 10, marginBottom: 10}}>
 
                             <AwesomeButton
@@ -253,10 +250,8 @@ export default class DraftEditScreen extends Component {
                             </AwesomeButton>
 
                         </View>
-                        
-                    </ScrollView>
-
-                        
+                    
+                </ScrollView>
 
             </View>
         );
