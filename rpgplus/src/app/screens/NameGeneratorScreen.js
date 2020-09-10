@@ -120,7 +120,7 @@ export default class NameGeneratorScreen extends Component {
     }
 
     render() {
-
+        const name = this.state.name;
         const pickerValue = this.state.pickerValue;
 
         return (
@@ -128,7 +128,7 @@ export default class NameGeneratorScreen extends Component {
 
                 <CustomAppBar title={translate('appBarGenerate')} subtitle="" navigation={this.props.navigation}/>
 
-                <View style={styles.childContainer}>
+                <View style={{marginTop: 8}}>
       
                     <Text style={styles.title}>{translate('generatorTitle')}</Text>
 
@@ -136,7 +136,7 @@ export default class NameGeneratorScreen extends Component {
 
                     <Picker
                         style={styles.pickerStyle}
-                        selectedValue={this.state.pickerValue}
+                        selectedValue={pickerValue}
                         onValueChange={(itemValue) => this.setState({pickerValue: itemValue})}
                     >
                         <Picker.Item label="Changeling: The Dreaming" value="changeling"/>
@@ -151,7 +151,7 @@ export default class NameGeneratorScreen extends Component {
                     </Picker>
 
                     <TouchableOpacity onPress={this.handleCopyToClipboard}>
-                        <Text style={styles.text}>{this.state.name}</Text>
+                        <Text style={styles.text}>{name}</Text>
                     </TouchableOpacity>
 
                     <View style={{justifyContent:'center', alignItems: 'center', marginTop: 10, marginBottom: 10}}>
@@ -171,7 +171,6 @@ export default class NameGeneratorScreen extends Component {
                         </AwesomeButton>
 
                     </View>
-
 
                 </View>
 

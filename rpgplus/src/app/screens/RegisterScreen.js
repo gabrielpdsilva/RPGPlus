@@ -71,6 +71,12 @@ export default class RegisterScreen extends Component {
     }
 
     render(){
+
+        const name = this.state.name;
+        const nickname = this.state.nickname;
+        const email = this.state.email;
+        const password = this.state.password;
+        const confirmPassword = this.state.confirmPassword;
         
         return(
 
@@ -100,7 +106,7 @@ export default class RegisterScreen extends Component {
                         borderHeight={3}
                         inputPadding={16}
                         maxLength={50}
-                        value={this.state.name}
+                        value={name}
                         onChangeText={(txt) => this.setState({name: txt})}
                     />
 
@@ -114,7 +120,7 @@ export default class RegisterScreen extends Component {
                         borderHeight={3}
                         inputPadding={16}
                         maxLength={50}
-                        value={this.state.nickname}
+                        value={nickname}
                         onChangeText={(txt) => this.setState({nickname: txt})}
                     />
 
@@ -128,7 +134,7 @@ export default class RegisterScreen extends Component {
                         borderHeight={3}
                         inputPadding={16}
                         maxLength={50}
-                        value={this.state.email}
+                        value={email}
                         onChangeText={(txt) => this.setState({email: txt})}
                     />
 
@@ -143,7 +149,7 @@ export default class RegisterScreen extends Component {
                         inputPadding={16}
                         maxLength={50}
                         secureTextEntry={true}
-                        value={this.state.password}
+                        value={password}
                         onChangeText={(txt) => this.setState({password: txt})}
                     />
 
@@ -158,7 +164,7 @@ export default class RegisterScreen extends Component {
                         inputPadding={16}
                         maxLength={50}
                         secureTextEntry={true}
-                        value={this.state.confirmPassword}
+                        value={confirmPassword}
                         onChangeText={(txt) => this.setState({confirmPassword: txt})}
                     />
 
