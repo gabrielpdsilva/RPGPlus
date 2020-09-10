@@ -79,11 +79,11 @@ export default class RollDicesScreen extends Component {
 
                         <View style={{marginTop: 8}}>
 
-                            <Text style={styles.inputTitle}>{translate('rollType')}</Text>
+                            <Text style={{marginBottom: 25, marginHorizontal: 30}}>{translate('rollType')}</Text>
 
                             <Picker
                                 style={styles.pickerStyle}
-                                selectedValue={this.state.type}
+                                selectedValue={type}
                                 onValueChange={(itemValue) => this.setState({type: itemValue})}
                             >
                                 <Picker.Item label="D4" value={4}/>

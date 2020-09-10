@@ -134,51 +134,44 @@ export default class NameGeneratorScreen extends Component {
 
                     <Text style={styles.text}>{translate('generatorSubtitle')}</Text>
 
-                    <View style={styles.inputForm}>
+                    <Picker
+                        style={styles.pickerStyle}
+                        selectedValue={this.state.pickerValue}
+                        onValueChange={(itemValue) => this.setState({pickerValue: itemValue})}
+                    >
+                        <Picker.Item label="Changeling: The Dreaming" value="changeling"/>
+                        <Picker.Item label="Cyberpunk" value="cyberpunk"/>
+                        <Picker.Item label="Elvish" value="elvish"/>
+                        <Picker.Item label="Lovecraft Mythos" value="lovecraft"/>
+                        <Picker.Item label="Mage: The Ascension" value="mage"/>
+                        <Picker.Item label="Medieval" value="medieval"/>
+                        <Picker.Item label="Vampire: the Masquerade" value="vampire" />
+                        <Picker.Item label="Werewolf: the Apocalypse" value="werewolf" />
+                    
+                    </Picker>
 
-                        <View style={{marginTop: 8}}>
+                    <TouchableOpacity onPress={this.handleCopyToClipboard}>
+                        <Text style={styles.text}>{this.state.name}</Text>
+                    </TouchableOpacity>
 
-                            <Picker
-                                style={styles.pickerStyle}
-                                selectedValue={this.state.pickerValue}
-                                onValueChange={(itemValue) => this.setState({pickerValue: itemValue})}
-                            >
-                                <Picker.Item label="Changeling: The Dreaming" value="changeling"/>
-                                <Picker.Item label="Cyberpunk" value="cyberpunk"/>
-                                <Picker.Item label="Elvish" value="elvish"/>
-                                <Picker.Item label="Lovecraft Mythos" value="lovecraft"/>
-                                <Picker.Item label="Mage: The Ascension" value="mage"/>
-                                <Picker.Item label="Medieval" value="medieval"/>
-                                <Picker.Item label="Vampire: the Masquerade" value="vampire" />
-                                <Picker.Item label="Werewolf: the Apocalypse" value="werewolf" />
-                            
-                            </Picker>
+                    <View style={{justifyContent:'center', alignItems: 'center', marginTop: 10, marginBottom: 10}}>
 
-                            <TouchableOpacity onPress={this.handleCopyToClipboard}>
-                                <Text style={styles.text}>{this.state.name}</Text>
-                            </TouchableOpacity>
-                            
-                        </View>
-
-                        <View style={{justifyContent:'center', alignItems: 'center', marginTop: 10, marginBottom: 10}}>
-
-                            <AwesomeButton
-                                backgroundColor={colors.blue}
-                                backgroundDarker={colors.darkBlue}
-                                backgroundShadow={colors.lightGray}
-                                progress={false}
-                                width={100}
-                                onPress={next => {
-                                    this.handleGenerateName(pickerValue);
-                                    next();
-                                }}
-                            >
-                                {translate('generatorBtnGenerate')}
-                            </AwesomeButton>
-
-                        </View>
+                        <AwesomeButton
+                            backgroundColor={colors.blue}
+                            backgroundDarker={colors.darkBlue}
+                            backgroundShadow={colors.lightGray}
+                            progress={false}
+                            width={100}
+                            onPress={next => {
+                                this.handleGenerateName(pickerValue);
+                                next();
+                            }}
+                        >
+                            {translate('generatorBtnGenerate')}
+                        </AwesomeButton>
 
                     </View>
+
 
                 </View>
 

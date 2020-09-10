@@ -143,6 +143,7 @@ const styles = StyleSheet.create({
     //picker used in roll dices screen and name generator screen
     pickerStyle: {  
         //height: 150,
+        width: '80%',
         color: colors.black,
     },
 
