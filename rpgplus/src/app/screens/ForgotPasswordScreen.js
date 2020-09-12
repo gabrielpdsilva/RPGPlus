@@ -52,11 +52,15 @@ export default class ForgotPasswordScreen extends Component {
 
                 <CustomAppBar title={translate('appBarForgot')} subtitle="" backIsVisible={true} navigation={this.props.navigation}/>
 
-                    <Image
-                        source={require('../../../assets/logo.png')}
-                        style={{ width: 200, height: 100, justifyContent: 'center',
-                        alignItems: 'center',}}
-                    />
+                    <View style={{justifyContent:'center', alignItems: 'center', marginTop: 10, marginBottom: 0}}>
+
+                        <Image
+                            source={require('../../../assets/logo.png')}
+                            style={{ width: 200, height: 100, justifyContent: 'center',
+                            alignItems: 'center',}}
+                        />
+
+                    </View>
 
                     <Text style={styles.title}>{translate('forgotTitle')}</Text>
                     <Text style={styles.text}>{translate('forgotSubtitle')}</Text>
@@ -67,7 +71,7 @@ export default class ForgotPasswordScreen extends Component {
                         labelStyle={{color: colors.black}}
                         inputStyle={{color: colors.black}}
                         //needs to be the same of the container
-                        backgroundColor={colors.white}
+                        backgroundColor={colors.lightTheme}
                         label={translate('forgotEmail')}
                         borderHeight={3}
                         inputPadding={16}
