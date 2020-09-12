@@ -133,7 +133,8 @@ const styles = StyleSheet.create({
         shadowOffset: {
             width: 3,
             height: 3
-        }
+        },
+        elevation: 3,
     },
 
     card: {
