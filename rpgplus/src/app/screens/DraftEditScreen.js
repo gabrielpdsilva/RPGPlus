@@ -163,7 +163,7 @@ export default class DraftEditScreen extends Component {
                             borderColor={colors.orange}
                             labelStyle={{color: colors.black}}
                             inputStyle={{color: colors.black}}
-                            backgroundColor={colors.white}
+                            backgroundColor={colors.lightTheme}
                             label={translate('editDraftName')}
                             placeholder={translate('editDraftLoading')}
                             borderHeight={3}
@@ -178,7 +178,7 @@ export default class DraftEditScreen extends Component {
                             borderColor={colors.orange}
                             labelStyle={{color: colors.black}}
                             inputStyle={{color: colors.black}}
-                            backgroundColor={colors.white}
+                            backgroundColor={colors.lightTheme}
                             label={translate('editDraftCategory')}
                             placeholder={translate('editDraftLoading')}
                             borderHeight={3}
@@ -193,7 +193,7 @@ export default class DraftEditScreen extends Component {
                             borderColor={colors.orange}
                             labelStyle={{color: colors.black}}
                             inputStyle={{color: colors.black}}
-                            backgroundColor={colors.white}
+                            backgroundColor={colors.lightTheme}
                             label={translate('editDraftSystem')}
                             placeholder={translate('editDraftLoading')}
                             borderHeight={3}
@@ -208,12 +208,15 @@ export default class DraftEditScreen extends Component {
                             borderColor={colors.orange}
                             labelStyle={{color: colors.black}}
                             inputStyle={{color: colors.black}}
-                            backgroundColor={colors.white}
+                            backgroundColor={colors.lightTheme}
                             label={translate('editDraftText')}
                             placeholder={translate('editDraftLoading')}
                             borderHeight={3}
                             inputPadding={16}
                             maxLength={1000}
+                            height={80}
+                            textAlignVertical = 'top'
+                            paddingTop = {10}
                             multiline
                             value={text ? text : translate('editDraftLoading')}
                             onChangeText={(txt) => this.setState({text: txt})}

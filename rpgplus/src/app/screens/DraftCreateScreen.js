@@ -100,7 +100,7 @@ export default class DraftCreateScreen extends Component {
                             borderColor={colors.orange}
                             labelStyle={{color: colors.black}}
                             inputStyle={{color: colors.black}}
-                            backgroundColor={colors.white}
+                            backgroundColor={colors.lightTheme}
                             label={translate('createDraftName')}
                             borderHeight={3}
                             inputPadding={16}
@@ -114,7 +114,7 @@ export default class DraftCreateScreen extends Component {
                             borderColor={colors.orange}
                             labelStyle={{color: colors.black}}
                             inputStyle={{color: colors.black}}
-                            backgroundColor={colors.white}
+                            backgroundColor={colors.lightTheme}
                             label={translate('createDraftCategory')}
                             borderHeight={3}
                             inputPadding={16}
@@ -128,7 +128,7 @@ export default class DraftCreateScreen extends Component {
                             borderColor={colors.orange}
                             labelStyle={{color: colors.black}}
                             inputStyle={{color: colors.black}}
-                            backgroundColor={colors.white}
+                            backgroundColor={colors.lightTheme}
                             label={translate('createDraftSystem')}
                             borderHeight={3}
                             inputPadding={16}
@@ -142,12 +142,14 @@ export default class DraftCreateScreen extends Component {
                             borderColor={colors.orange}
                             labelStyle={{color: colors.black}}
                             inputStyle={{color: colors.black}}
-                            backgroundColor={colors.white}
+                            backgroundColor={colors.lightTheme}
                             label={translate('createDraftTextBox')}
                             borderHeight={3}
                             inputPadding={16}
-                            maxLength={50}
-                            value={text}
+                            maxLength={1000}
+                            height={80}
+                            textAlignVertical = 'top'
+                            paddingTop = {10}
                             multiline
                             onChangeText={(txt) => this.setState({text: txt})}
                         />

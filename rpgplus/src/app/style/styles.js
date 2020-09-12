@@ -6,7 +6,7 @@ const styles = StyleSheet.create({
 
     container: {
         flex: 1,
-        backgroundColor: colors.white,
+        backgroundColor: colors.lightTheme //colors.white,
     },
 
     hoshiStyle: {
@@ -127,7 +127,26 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         backgroundColor: "#ffff",
         margin: 6,
-        padding: 10
+        padding: 10,
+        shadowColor: '#000',
+        shadowOpacity: 1,
+        shadowOffset: {
+            width: 3,
+            height: 3
+        }
+    },
+
+    card: {
+        backgroundColor: '#fff',
+        marginBottom: 10,
+        marginLeft: '2%',
+        width: '96%',
+        shadowColor: '#000',
+        shadowOpacity: 1,
+        shadowOffset: {
+            width: 3,
+            height: 3
+        }
     },
 
     itemTitle: {

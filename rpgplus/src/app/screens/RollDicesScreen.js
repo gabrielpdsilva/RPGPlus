@@ -98,7 +98,7 @@ export default class RollDicesScreen extends Component {
                         borderColor={colors.orange}
                         labelStyle={{color: colors.black}}
                         inputStyle={{color: colors.black}}
-                        backgroundColor={colors.white}
+                        backgroundColor={colors.lightTheme}
                         label={translate('rollQuantity')}
                         borderHeight={3}
                         inputPadding={16}
@@ -113,7 +113,7 @@ export default class RollDicesScreen extends Component {
                         borderColor={colors.orange}
                         labelStyle={{color: colors.black}}
                         inputStyle={{color: colors.black}}
-                        backgroundColor={colors.white}
+                        backgroundColor={colors.lightTheme}
                         label={translate('rollModifier')}
                         borderHeight={3}
                         inputPadding={16}

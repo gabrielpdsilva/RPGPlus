@@ -101,7 +101,7 @@ export default class RegisterScreen extends Component {
                         borderColor={colors.orange}
                         labelStyle={{color: colors.black}}
                         inputStyle={{color: colors.black}}
-                        backgroundColor={colors.white}
+                        backgroundColor={colors.lightTheme}
                         label={translate('registerName')}
                         borderHeight={3}
                         inputPadding={16}
@@ -115,7 +115,7 @@ export default class RegisterScreen extends Component {
                         borderColor={colors.orange}
                         labelStyle={{color: colors.black}}
                         inputStyle={{color: colors.black}}
-                        backgroundColor={colors.white}
+                        backgroundColor={colors.lightTheme}
                         label={translate('registerNickname')}
                         borderHeight={3}
                         inputPadding={16}
@@ -129,7 +129,7 @@ export default class RegisterScreen extends Component {
                         borderColor={colors.orange}
                         labelStyle={{color: colors.black}}
                         inputStyle={{color: colors.black}}
-                        backgroundColor={colors.white}
+                        backgroundColor={colors.lightTheme}
                         label={translate('registerEmail')}
                         borderHeight={3}
                         inputPadding={16}
@@ -143,7 +143,7 @@ export default class RegisterScreen extends Component {
                         borderColor={colors.orange}
                         labelStyle={{color: colors.black}}
                         inputStyle={{color: colors.black}}
-                        backgroundColor={colors.white}
+                        backgroundColor={colors.lightTheme}
                         label={translate('registerPassword')}
                         borderHeight={3}
                         inputPadding={16}
@@ -158,7 +158,7 @@ export default class RegisterScreen extends Component {
                         borderColor={colors.orange}
                         labelStyle={{color: colors.black}}
                         inputStyle={{color: colors.black}}
-                        backgroundColor={colors.white}
+                        backgroundColor={colors.lightTheme}
                         label={translate('registerConfirmPassword')}
                         borderHeight={3}
                         inputPadding={16}
