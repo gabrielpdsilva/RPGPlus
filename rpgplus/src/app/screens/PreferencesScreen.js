@@ -26,6 +26,8 @@ import {translate} from '../locales/localeConfig';
 
 import { Avatar } from 'react-native-paper';
 
+import AwesomeButton from "react-native-really-awesome-button";
+
 //useful content about Storage:
 //https://stackoverflow.com/questions/48108791/convert-image-path-to-blob-react-native
 //https://www.youtube.com/watch?v=KkZckepfm2Q&feature=youtu.be
