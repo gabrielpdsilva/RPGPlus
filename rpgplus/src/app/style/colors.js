@@ -1,7 +1,7 @@
 const colors = {  
     darkContainer: '#232635',
   
-    white: '#F9F7F6',
+    white: '#fff',
     whiteBackground: '#efefef',
     black: '#000',
     orange: '#ff5700',

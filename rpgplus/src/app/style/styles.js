@@ -123,31 +123,18 @@ const styles = StyleSheet.create({
         textAlign: 'center'
     },
 
-    listItem: {
+    card: {
         borderRadius: 10,
-        backgroundColor: "#ffff",
+        backgroundColor: colors.white,
         margin: 6,
         padding: 10,
-        shadowColor: '#000',
+        shadowColor: colors.black,
         shadowOpacity: 1,
         shadowOffset: {
             width: 3,
             height: 3
         },
         elevation: 3,
-    },
-
-    card: {
-        backgroundColor: '#fff',
-        marginBottom: 10,
-        marginLeft: '2%',
-        width: '96%',
-        shadowColor: '#000',
-        shadowOpacity: 1,
-        shadowOffset: {
-            width: 3,
-            height: 3
-        }
     },
 
     itemTitle: {
