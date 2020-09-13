@@ -129,12 +129,12 @@ export default class NameGeneratorScreen extends Component {
                 <CustomAppBar title={translate('appBarGenerate')} subtitle="" navigation={this.props.navigation}/>
 
                 <View style={{marginTop: 8}}>
+
+                <View style={styles.cardItem}>
       
                     <Text style={styles.title}>{translate('generatorTitle')}</Text>
 
                     <Text style={styles.text}>{translate('generatorSubtitle')}</Text>
-
-                    <View style={styles.cardItem}>
 
                         <Picker
                             style={styles.pickerStyle}

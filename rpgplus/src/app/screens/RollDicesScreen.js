@@ -71,12 +71,12 @@ export default class RollDicesScreen extends Component {
                 <CustomAppBar title={translate('appBarRollDices')} subtitle="" navigation={this.props.navigation}/>
                 
                 <ScrollView style={{marginTop: 8}}>
-                
-                    <Text style={styles.title}>{translate('rollTitle')}</Text>
-                    <Text style={styles.text}>{translate('rollSubtitle')}</Text>
-                    <Text style={styles.text}>{translate('rollMaxAllowed')}</Text>
 
                     <View style={styles.cardItem}>
+                
+                        <Text style={styles.title}>{translate('rollTitle')}</Text>
+                        <Text style={styles.text}>{translate('rollSubtitle')}</Text>
+                        <Text style={styles.text}>{translate('rollMaxAllowed')}</Text>
 
                         <Text style={{marginBottom: 0, marginHorizontal: 25}}>{translate('rollType')}</Text>
 

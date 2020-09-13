@@ -62,23 +62,27 @@ export default class ForgotPasswordScreen extends Component {
 
                     </View>
 
-                    <Text style={styles.title}>{translate('forgotTitle')}</Text>
-                    <Text style={styles.text}>{translate('forgotSubtitle')}</Text>
-                    
-                    <Hoshi
-                        style={styles.hoshiStyle}
-                        borderColor={colors.orange}
-                        labelStyle={{color: colors.black}}
-                        inputStyle={{color: colors.black}}
-                        //needs to be the same of the container
-                        backgroundColor={colors.lightTheme}
-                        label={translate('forgotEmail')}
-                        borderHeight={3}
-                        inputPadding={16}
-                        maxLength={50}
-                        value={email}
-                        onChangeText={(txt) => this.setState({email: txt})}
-                    />
+                    <View style={styles.cardBackground}>
+
+                        <Text style={styles.title}>{translate('forgotTitle')}</Text>
+                        <Text style={styles.text}>{translate('forgotSubtitle')}</Text>
+                        
+                        <Hoshi
+                            style={styles.hoshiStyle}
+                            borderColor={colors.orange}
+                            labelStyle={{color: colors.black}}
+                            inputStyle={{color: colors.black}}
+                            //needs to be the same of the container
+                            backgroundColor={colors.white}
+                            label={translate('forgotEmail')}
+                            borderHeight={3}
+                            inputPadding={16}
+                            maxLength={50}
+                            value={email}
+                            onChangeText={(txt) => this.setState({email: txt})}
+                        />
+
+                    </View>
 
                     <View style={{justifyContent:'center', alignItems: 'center', marginTop: 10, marginBottom: 10}}>
 

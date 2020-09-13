@@ -90,10 +90,10 @@ export default class DraftCreateScreen extends Component {
                 
                     <ScrollView style={{marginTop: 8}}>
 
-                        <Text style={styles.title}>{translate('createDraftTitle')}</Text>
-                        <Text style={styles.text}>{translate('createDraftSubtitle')}</Text>
+                        <View style={styles.cardBackground}>
 
-                        <View style={styles.cardDraft}>
+                            <Text style={styles.title}>{translate('createDraftTitle')}</Text>
+                            <Text style={styles.text}>{translate('createDraftSubtitle')}</Text>
 
                             <Hoshi
                                 style={styles.hoshiStyle}

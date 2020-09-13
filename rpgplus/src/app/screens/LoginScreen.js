@@ -75,39 +75,43 @@ export default class LoginScreen extends Component {
                         />
 
                     </View>
-            
-                    <Text style={styles.title}>{translate('loginTitle')}</Text>
+                    
+                    <View style={styles.cardBackground}>
 
-                    <Text style={styles.text}>{translate('loginSubtitle')}</Text>
+                        <Text style={styles.title}>{translate('loginTitle')}</Text>
 
-                    <Hoshi
-                        style={styles.hoshiStyle}
-                        borderColor={colors.orange}
-                        labelStyle={{color: colors.black}}
-                        inputStyle={{color: colors.black}}
-                        backgroundColor={colors.lightTheme}
-                        label={translate('loginEmail')}
-                        borderHeight={3}
-                        inputPadding={16}
-                        maxLength={50}
-                        value={email}
-                        onChangeText={(txt) => this.setState({email: txt})}
-                    />
+                        <Text style={styles.text}>{translate('loginSubtitle')}</Text>
 
-                    <Hoshi
-                        style={styles.hoshiStyle}
-                        borderColor={colors.orange}
-                        labelStyle={{color: colors.black}}
-                        inputStyle={{color: colors.black}}
-                        backgroundColor={colors.lightTheme}
-                        label={translate('loginPassword')}
-                        borderHeight={3}
-                        inputPadding={16}
-                        maxLength={50}
-                        secureTextEntry={true}
-                        value={password}
-                        onChangeText={(txt) => this.setState({password: txt})}
-                    />
+                        <Hoshi
+                            style={styles.hoshiStyle}
+                            borderColor={colors.orange}
+                            labelStyle={{color: colors.black}}
+                            inputStyle={{color: colors.black}}
+                            backgroundColor={colors.white}
+                            label={translate('loginEmail')}
+                            borderHeight={3}
+                            inputPadding={16}
+                            maxLength={50}
+                            value={email}
+                            onChangeText={(txt) => this.setState({email: txt})}
+                        />
+
+                        <Hoshi
+                            style={styles.hoshiStyle}
+                            borderColor={colors.orange}
+                            labelStyle={{color: colors.black}}
+                            inputStyle={{color: colors.black}}
+                            backgroundColor={colors.white}
+                            label={translate('loginPassword')}
+                            borderHeight={3}
+                            inputPadding={16}
+                            maxLength={50}
+                            secureTextEntry={true}
+                            value={password}
+                            onChangeText={(txt) => this.setState({password: txt})}
+                        />
+
+                    </View>
 
                     <View style={{justifyContent:'center', alignItems: 'center', marginTop: 10, marginBottom: 10}}>
 
