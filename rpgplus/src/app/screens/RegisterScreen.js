@@ -84,9 +84,9 @@ export default class RegisterScreen extends Component {
 
                 <CustomAppBar title={translate('appBarRegister')} subtitle="" backIsVisible={true} navigation={this.props.navigation}/>
 
-                <ScrollView style={{marginTop: 8}}>   
+                <ScrollView style={{marginTop: 4}}>   
 
-                    <View style={{justifyContent:'center', alignItems: 'center', marginTop: 10}}>
+                    <View style={{justifyContent:'center', alignItems: 'center'}}>
 
                         <Image
                             source={require('../../../assets/logo.png')}

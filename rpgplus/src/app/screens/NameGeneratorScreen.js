@@ -134,25 +134,29 @@ export default class NameGeneratorScreen extends Component {
 
                     <Text style={styles.text}>{translate('generatorSubtitle')}</Text>
 
-                    <Picker
-                        style={styles.pickerStyle}
-                        selectedValue={pickerValue}
-                        onValueChange={(itemValue) => this.setState({pickerValue: itemValue})}
-                    >
-                        <Picker.Item label="Changeling: The Dreaming" value="changeling"/>
-                        <Picker.Item label="Cyberpunk" value="cyberpunk"/>
-                        <Picker.Item label="Elvish" value="elvish"/>
-                        <Picker.Item label="Lovecraft Mythos" value="lovecraft"/>
-                        <Picker.Item label="Mage: The Ascension" value="mage"/>
-                        <Picker.Item label="Medieval" value="medieval"/>
-                        <Picker.Item label="Vampire: the Masquerade" value="vampire" />
-                        <Picker.Item label="Werewolf: the Apocalypse" value="werewolf" />
-                    
-                    </Picker>
+                    <View style={styles.card}>
 
-                    <TouchableOpacity onPress={this.handleCopyToClipboard}>
-                        <Text style={styles.text}>{name}</Text>
-                    </TouchableOpacity>
+                        <Picker
+                            style={styles.pickerStyle}
+                            selectedValue={pickerValue}
+                            onValueChange={(itemValue) => this.setState({pickerValue: itemValue})}
+                        >
+                            <Picker.Item label="Changeling: The Dreaming" value="changeling"/>
+                            <Picker.Item label="Cyberpunk" value="cyberpunk"/>
+                            <Picker.Item label="Elvish" value="elvish"/>
+                            <Picker.Item label="Lovecraft Mythos" value="lovecraft"/>
+                            <Picker.Item label="Mage: The Ascension" value="mage"/>
+                            <Picker.Item label="Medieval" value="medieval"/>
+                            <Picker.Item label="Vampire: the Masquerade" value="vampire" />
+                            <Picker.Item label="Werewolf: the Apocalypse" value="werewolf" />
+                        
+                        </Picker>
+
+                        <TouchableOpacity onPress={this.handleCopyToClipboard}>
+                            <Text style={styles.text}>{name}</Text>
+                        </TouchableOpacity>
+
+                    </View>
 
                     <View style={{justifyContent:'center', alignItems: 'center', marginTop: 10, marginBottom: 10}}>
 
