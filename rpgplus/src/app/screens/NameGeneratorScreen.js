@@ -134,7 +134,7 @@ export default class NameGeneratorScreen extends Component {
 
                     <Text style={styles.text}>{translate('generatorSubtitle')}</Text>
 
-                    <View style={styles.card}>
+                    <View style={styles.cardItem}>
 
                         <Picker
                             style={styles.pickerStyle}

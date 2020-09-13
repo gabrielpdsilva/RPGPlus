@@ -76,7 +76,7 @@ export default class RollDicesScreen extends Component {
                     <Text style={styles.text}>{translate('rollSubtitle')}</Text>
                     <Text style={styles.text}>{translate('rollMaxAllowed')}</Text>
 
-                    <View style={styles.card}>
+                    <View style={styles.cardItem}>
 
                         <Text style={{marginBottom: 0, marginHorizontal: 25}}>{translate('rollType')}</Text>
 
@@ -100,7 +100,7 @@ export default class RollDicesScreen extends Component {
                             borderColor={colors.orange}
                             labelStyle={{color: colors.black}}
                             inputStyle={{color: colors.black}}
-                            backgroundColor={colors.lightTheme}
+                            backgroundColor={colors.white}
                             label={translate('rollQuantity')}
                             borderHeight={3}
                             inputPadding={16}
@@ -115,7 +115,7 @@ export default class RollDicesScreen extends Component {
                             borderColor={colors.orange}
                             labelStyle={{color: colors.black}}
                             inputStyle={{color: colors.black}}
-                            backgroundColor={colors.lightTheme}
+                            backgroundColor={colors.white}
                             label={translate('rollModifier')}
                             borderHeight={3}
                             inputPadding={16}

@@ -81,7 +81,7 @@ export default class DraftListScreen extends Component {
 
     renderItem = ({item}) => (
         <TouchableOpacity onPress={() => this.onClickItem(item)}>
-            <View style={styles.card}>
+            <View style={styles.cardItem}>
 
                 <View style={{marginTop: 5}}>
 

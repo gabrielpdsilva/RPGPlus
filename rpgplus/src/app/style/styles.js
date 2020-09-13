@@ -123,7 +123,21 @@ const styles = StyleSheet.create({
         textAlign: 'center'
     },
 
-    card: {
+    cardItem: {
+        borderRadius: 10,
+        backgroundColor: colors.white,
+        margin: 10,
+        padding: 10,
+        shadowColor: colors.black,
+        shadowOpacity: 1,
+        shadowOffset: {
+            width: 3,
+            height: 3
+        },
+        elevation: 3,
+    },
+
+    cardDraft: {
         borderRadius: 10,
         backgroundColor: colors.white,
         margin: 10,

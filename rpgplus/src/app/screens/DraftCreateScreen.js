@@ -87,72 +87,74 @@ export default class DraftCreateScreen extends Component {
             <View style={styles.container}>
                 
                 <CustomAppBar title={translate('appBarCreateDraft')} subtitle="" navigation={this.props.navigation}/>
-
-                <View style={styles.childContainer}>
                 
                     <ScrollView style={{marginTop: 8}}>
 
                         <Text style={styles.title}>{translate('createDraftTitle')}</Text>
                         <Text style={styles.text}>{translate('createDraftSubtitle')}</Text>
 
-                        <Hoshi
-                            style={styles.hoshiStyle}
-                            borderColor={colors.orange}
-                            labelStyle={{color: colors.black}}
-                            inputStyle={{color: colors.black}}
-                            backgroundColor={colors.lightTheme}
-                            label={translate('createDraftName')}
-                            borderHeight={3}
-                            inputPadding={16}
-                            maxLength={50}
-                            value={name}
-                            onChangeText={(txt) => this.setState({name: txt})}
-                        />
+                        <View style={styles.cardDraft}>
 
-                        <Hoshi
-                            style={styles.hoshiStyle}
-                            borderColor={colors.orange}
-                            labelStyle={{color: colors.black}}
-                            inputStyle={{color: colors.black}}
-                            backgroundColor={colors.lightTheme}
-                            label={translate('createDraftCategory')}
-                            borderHeight={3}
-                            inputPadding={16}
-                            maxLength={50}
-                            value={category}
-                            onChangeText={(txt) => this.setState({category: txt})}
-                        />
+                            <Hoshi
+                                style={styles.hoshiStyle}
+                                borderColor={colors.orange}
+                                labelStyle={{color: colors.black}}
+                                inputStyle={{color: colors.black}}
+                                backgroundColor={colors.white}
+                                label={translate('createDraftName')}
+                                borderHeight={3}
+                                inputPadding={16}
+                                maxLength={50}
+                                value={name}
+                                onChangeText={(txt) => this.setState({name: txt})}
+                            />
 
-                        <Hoshi
-                            style={styles.hoshiStyle}
-                            borderColor={colors.orange}
-                            labelStyle={{color: colors.black}}
-                            inputStyle={{color: colors.black}}
-                            backgroundColor={colors.lightTheme}
-                            label={translate('createDraftSystem')}
-                            borderHeight={3}
-                            inputPadding={16}
-                            maxLength={50}
-                            value={system}
-                            onChangeText={(txt) => this.setState({system: txt})}
-                        />
+                            <Hoshi
+                                style={styles.hoshiStyle}
+                                borderColor={colors.orange}
+                                labelStyle={{color: colors.black}}
+                                inputStyle={{color: colors.black}}
+                                backgroundColor={colors.white}
+                                label={translate('createDraftCategory')}
+                                borderHeight={3}
+                                inputPadding={16}
+                                maxLength={50}
+                                value={category}
+                                onChangeText={(txt) => this.setState({category: txt})}
+                            />
 
-                        <Hoshi
-                            style={styles.hoshiStyle}
-                            borderColor={colors.orange}
-                            labelStyle={{color: colors.black}}
-                            inputStyle={{color: colors.black}}
-                            backgroundColor={colors.lightTheme}
-                            label={translate('createDraftTextBox')}
-                            borderHeight={3}
-                            inputPadding={16}
-                            maxLength={1000}
-                            height={80}
-                            textAlignVertical = 'top'
-                            paddingTop = {10}
-                            multiline
-                            onChangeText={(txt) => this.setState({text: txt})}
-                        />
+                            <Hoshi
+                                style={styles.hoshiStyle}
+                                borderColor={colors.orange}
+                                labelStyle={{color: colors.black}}
+                                inputStyle={{color: colors.black}}
+                                backgroundColor={colors.white}
+                                label={translate('createDraftSystem')}
+                                borderHeight={3}
+                                inputPadding={16}
+                                maxLength={50}
+                                value={system}
+                                onChangeText={(txt) => this.setState({system: txt})}
+                            />
+
+                            <Hoshi
+                                style={styles.hoshiStyle}
+                                borderColor={colors.orange}
+                                labelStyle={{color: colors.black}}
+                                inputStyle={{color: colors.black}}
+                                backgroundColor={colors.white}
+                                label={translate('createDraftTextBox')}
+                                borderHeight={3}
+                                inputPadding={16}
+                                maxLength={1000}
+                                height={80}
+                                textAlignVertical = 'top'
+                                paddingTop = {10}
+                                multiline
+                                onChangeText={(txt) => this.setState({text: txt})}
+                            />
+
+                        </View>
 
                         <View style={{justifyContent:'center', alignItems: 'center', marginTop: 10, marginBottom: 10}}>
 
@@ -173,9 +175,6 @@ export default class DraftCreateScreen extends Component {
                         </View>
                         
                     </ScrollView>
-
-                </View>
-
             </View>
         );
     }
