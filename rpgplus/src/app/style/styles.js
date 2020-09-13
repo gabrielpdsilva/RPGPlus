@@ -152,7 +152,7 @@ const styles = StyleSheet.create({
     },
 
     itemTitle: {
-        color: colors.orange,
+        color: colors.blue,
         fontSize: 15,
         fontWeight: 'bold',
     },
