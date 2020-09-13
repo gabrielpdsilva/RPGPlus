@@ -161,70 +161,70 @@ export default class DraftEditScreen extends Component {
                     <View style={styles.cardBackground}>
 
                         <Hoshi
-                                style={styles.hoshiStyle}
-                                borderColor={colors.orange}
-                                labelStyle={{color: colors.black}}
-                                inputStyle={{color: colors.black}}
-                                backgroundColor={colors.white}
-                                label={translate('editDraftName')}
-                                placeholder={translate('editDraftLoading')}
-                                borderHeight={3}
-                                inputPadding={16}
-                                maxLength={50}
-                                value={name ? name : translate('editDraftLoading')}
-                                onChangeText={(txt) => this.setState({name: txt})}
-                            />
+                            style={styles.hoshiStyle}
+                            borderColor={colors.orange}
+                            labelStyle={{color: colors.black}}
+                            inputStyle={{color: colors.black}}
+                            backgroundColor={colors.white}
+                            label={translate('editDraftName')}
+                            placeholder={translate('editDraftLoading')}
+                            borderHeight={3}
+                            inputPadding={16}
+                            maxLength={50}
+                            value={name ? name : translate('editDraftLoading')}
+                            onChangeText={(txt) => this.setState({name: txt})}
+                        />
 
-                            <Hoshi
-                                style={styles.hoshiStyle}
-                                borderColor={colors.orange}
-                                labelStyle={{color: colors.black}}
-                                inputStyle={{color: colors.black}}
-                                backgroundColor={colors.white}
-                                label={translate('editDraftCategory')}
-                                placeholder={translate('editDraftLoading')}
-                                borderHeight={3}
-                                inputPadding={16}
-                                maxLength={50}
-                                value={category ? category : translate('editDraftLoading')}
-                                onChangeText={(txt) => this.setState({category: txt})}
-                            />
+                        <Hoshi
+                            style={styles.hoshiStyle}
+                            borderColor={colors.orange}
+                            labelStyle={{color: colors.black}}
+                            inputStyle={{color: colors.black}}
+                            backgroundColor={colors.white}
+                            label={translate('editDraftCategory')}
+                            placeholder={translate('editDraftLoading')}
+                            borderHeight={3}
+                            inputPadding={16}
+                            maxLength={50}
+                            value={category ? category : translate('editDraftLoading')}
+                            onChangeText={(txt) => this.setState({category: txt})}
+                        />
 
-                            <Hoshi
-                                style={styles.hoshiStyle}
-                                borderColor={colors.orange}
-                                labelStyle={{color: colors.black}}
-                                inputStyle={{color: colors.black}}
-                                backgroundColor={colors.white}
-                                label={translate('editDraftSystem')}
-                                placeholder={translate('editDraftLoading')}
-                                borderHeight={3}
-                                inputPadding={16}
-                                maxLength={50}
-                                value={system ? system : translate('editDraftLoading')}
-                                onChangeText={(txt) => this.setState({system: txt})}
-                            />
+                        <Hoshi
+                            style={styles.hoshiStyle}
+                            borderColor={colors.orange}
+                            labelStyle={{color: colors.black}}
+                            inputStyle={{color: colors.black}}
+                            backgroundColor={colors.white}
+                            label={translate('editDraftSystem')}
+                            placeholder={translate('editDraftLoading')}
+                            borderHeight={3}
+                            inputPadding={16}
+                            maxLength={50}
+                            value={system ? system : translate('editDraftLoading')}
+                            onChangeText={(txt) => this.setState({system: txt})}
+                        />
 
-                            <Hoshi
-                                style={styles.hoshiStyle}
-                                borderColor={colors.orange}
-                                labelStyle={{color: colors.black}}
-                                inputStyle={{color: colors.black}}
-                                backgroundColor={colors.white}
-                                label={translate('editDraftText')}
-                                placeholder={translate('editDraftLoading')}
-                                borderHeight={3}
-                                inputPadding={16}
-                                maxLength={1000}
-                                height={80}
-                                textAlignVertical = 'top'
-                                paddingTop = {10}
-                                multiline
-                                value={text ? text : translate('editDraftLoading')}
-                                onChangeText={(txt) => this.setState({text: txt})}
-                            /> 
+                        <Hoshi
+                            style={styles.hoshiStyle}
+                            borderColor={colors.orange}
+                            labelStyle={{color: colors.black}}
+                            inputStyle={{color: colors.black}}
+                            backgroundColor={colors.white}
+                            label={translate('editDraftText')}
+                            placeholder={translate('editDraftLoading')}
+                            borderHeight={3}
+                            inputPadding={16}
+                            maxLength={1000}
+                            height={80}
+                            textAlignVertical = 'top'
+                            paddingTop = {10}
+                            multiline
+                            value={text ? text : translate('editDraftLoading')}
+                            onChangeText={(txt) => this.setState({text: txt})}
+                        /> 
 
-                        </View>
+                    </View>
                     
                         <View style={{ 
                                         justifyContent:'center',
