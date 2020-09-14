@@ -231,19 +231,20 @@ export default class PreferencesScreen extends Component {
 
                     <Text style={styles.inputTitle}>{translate('preferencesChangeImage')}</Text>
 
-                    <View style={{marginTop: 8}}>
+                    <TouchableOpacity style={{backgroundColor: 'red'}} onPress={()=>this.setState({isDialogVisible: true})}>
+                        <Text>{translate('preferencesName')}</Text>
+                    </TouchableOpacity>
 
-                        <Text style={styles.inputTitle}>{translate('preferencesName')}</Text>
+                    <DialogInput isDialogVisible={isDialogVisible}
+                        title={"Alterar Nome"}
+                        message={"Digite abaixo o novo nome... "}
+                        hintInput ={name}
+                        submitInput={ (inputText) => {this.sendInput(inputText)} }
+                        closeDialog={ () => {this.showDialog(false)}}
+                        cancelText="Cancelar"
+                        submitText="Confirmar"
+                    />
                         
-                        <TextInput
-                            style={isSwitchOn ? styles.textInput: styles.disabledTextInput}
-                            value={this.state.name}
-                            editable={isSwitchOn}
-                            onChangeText={ (txt) => this.setState({name: txt}) }
-                            placeholder="..."
-                        />
-
-                    </View>
 
                     <View style={{marginTop: 8}}>
 
@@ -258,35 +259,46 @@ export default class PreferencesScreen extends Component {
                         />
                             
                     </View>
-                    
-                    <View style={{marginTop: 20}}>
 
-                        <TouchableOpacity onPress={this.handleSaveChanges} style={styles.button}>
-                            <Text style={styles.buttonText}>{translate('preferencesBtnSaveChanges')}</Text>
-                        </TouchableOpacity>
+                    <View style={{ 
+                                    justifyContent:'center',
+                                    alignItems: 'center',
+                                    marginTop: 10,
+                                    marginBottom: 10,
+                                    flexDirection: 'row',
+                                    justifyContent:'space-between',
+                                    padding: 20
+                                }}>
+
+                        <AwesomeButton
+                            backgroundColor={colors.blue}
+                            backgroundDarker={colors.darkBlue}
+                            backgroundShadow={colors.lightGray}
+                            progress
+                            width={100}
+                            onPress={next => {
+                                this.handleSaveChanges();
+                                next();
+                            }}
+                        >
+                            {translate('preferencesBtnSaveChanges')}
+                        </AwesomeButton>
+
+                        <AwesomeButton
+                            backgroundColor={colors.blue}
+                            backgroundDarker={colors.darkBlue}
+                            backgroundShadow={colors.lightGray}
+                            progress
+                            width={100}
+                            onPress={next => {
+                                this.handleDeleteAccount();
+                                next();
+                            }}
+                        >
+                            {translate('preferencesBtnDeleteAccount')}
+                        </AwesomeButton>
 
                     </View>
-
-                    <TouchableOpacity style={{backgroundColor: 'red'}} onPress={()=>this.setState({isDialogVisible: true})}>
-                        <Text>Teste</Text>
-                    </TouchableOpacity>
-
-                    <DialogInput isDialogVisible={isDialogVisible}
-                        title={"Alterar Nome"}
-                        message={"Digite abaixo o novo nome..."}
-                        hintInput ={name}
-                        
-                        submitInput={ (inputText) => {this.sendInput(inputText)} }
-                        closeDialog={ () => {this.showDialog(false)}}
-                        cancelText="Cancelar"
-                        submitText="Confirmar"
-                        >
-                            
-                    </DialogInput>
-
-                    <TouchableOpacity onPress={this.handleDeleteAccount} style={styles.buttonAlternative}>
-                        <Text style={styles.buttonText}>{translate('preferencesBtnDeleteAccount')}</Text>
-                    </TouchableOpacity>
 
                 </View>
             </View>

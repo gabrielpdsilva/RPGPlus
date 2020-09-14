@@ -226,45 +226,45 @@ export default class DraftEditScreen extends Component {
 
                     </View>
                     
-                        <View style={{ 
-                                        justifyContent:'center',
-                                        alignItems: 'center',
-                                        marginTop: 10,
-                                        marginBottom: 10,
-                                        flexDirection: 'row',
-                                        justifyContent:'space-between',
-                                        padding: 20
-                                    }}>
+                    <View style={{ 
+                                    justifyContent:'center',
+                                    alignItems: 'center',
+                                    marginTop: 10,
+                                    marginBottom: 10,
+                                    flexDirection: 'row',
+                                    justifyContent:'space-between',
+                                    padding: 20
+                                }}>
 
-                            <AwesomeButton
-                                backgroundColor={colors.blue}
-                                backgroundDarker={colors.darkBlue}
-                                backgroundShadow={colors.lightGray}
-                                progress
-                                width={100}
-                                onPress={next => {
-                                    this.handleSaveChanges();
-                                    next();
-                                }}
-                            >
-                                {translate('editDraftBtnSaveChanges')}
-                            </AwesomeButton>
+                        <AwesomeButton
+                            backgroundColor={colors.blue}
+                            backgroundDarker={colors.darkBlue}
+                            backgroundShadow={colors.lightGray}
+                            progress
+                            width={100}
+                            onPress={next => {
+                                this.handleSaveChanges();
+                                next();
+                            }}
+                        >
+                            {translate('editDraftBtnSaveChanges')}
+                        </AwesomeButton>
 
-                            <AwesomeButton
-                                backgroundColor={colors.blue}
-                                backgroundDarker={colors.darkBlue}
-                                backgroundShadow={colors.lightGray}
-                                progress
-                                width={100}
-                                onPress={next => {
-                                    this.handleDeleteDraft();
-                                    next();
-                                }}
-                            >
-                                {translate('editDraftBtnDeleteDraft')}
-                            </AwesomeButton>
+                        <AwesomeButton
+                            backgroundColor={colors.blue}
+                            backgroundDarker={colors.darkBlue}
+                            backgroundShadow={colors.lightGray}
+                            progress
+                            width={100}
+                            onPress={next => {
+                                this.handleDeleteDraft();
+                                next();
+                            }}
+                        >
+                            {translate('editDraftBtnDeleteDraft')}
+                        </AwesomeButton>
 
-                        </View>
+                    </View>
                     
                 </ScrollView>
 
