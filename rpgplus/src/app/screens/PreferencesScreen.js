@@ -56,6 +56,11 @@ export default class PreferencesScreen extends Component {
         this.setState({isDialogVisible: value});
     }
 
+    sendInput = (inputText) => {
+        this.setState({name: inputText});
+        this.showDialog(false);
+    }
+
     getPermissionAsync = async () => {
         if (Constants.platform.ios) {
             const { status } = await Permissions.askAsync(Permissions.CAMERA_ROLL);
@@ -191,6 +196,8 @@ export default class PreferencesScreen extends Component {
 
         const { isSwitchOn } = this.state;
         const image = this.state.image;
+        const name = this.state.name;
+        const isDialogVisible = this.state.isDialogVisible;
 
         return(
             <View style={styles.container}>
@@ -264,12 +271,17 @@ export default class PreferencesScreen extends Component {
                         <Text>Teste</Text>
                     </TouchableOpacity>
 
-                    <DialogInput isDialogVisible={this.state.isDialogVisible}
-                        title={"DialogInput 1"}
-                        message={"Message for DialogInput #1"}
-                        hintInput ={"HINT INPUT"}
+                    <DialogInput isDialogVisible={isDialogVisible}
+                        title={"Alterar Nome"}
+                        message={"Digite abaixo o novo nome..."}
+                        hintInput ={name}
+                        
                         submitInput={ (inputText) => {this.sendInput(inputText)} }
-                        closeDialog={ () => {this.showDialog(false)}}>
+                        closeDialog={ () => {this.showDialog(false)}}
+                        cancelText="Cancelar"
+                        submitText="Confirmar"
+                        >
+                            
                     </DialogInput>
 
                     <TouchableOpacity onPress={this.handleDeleteAccount} style={styles.buttonAlternative}>
