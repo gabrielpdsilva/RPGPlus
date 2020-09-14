@@ -27,6 +27,7 @@ import {translate} from '../locales/localeConfig';
 import { Avatar } from 'react-native-paper';
 
 import AwesomeButton from "react-native-really-awesome-button";
+import DialogInput from 'react-native-dialog-input';
 
 //useful content about Storage:
 //https://stackoverflow.com/questions/48108791/convert-image-path-to-blob-react-native
@@ -43,11 +44,16 @@ export default class PreferencesScreen extends Component {
             email: user.email,
             image: user.photoURL,
             isSwitchOn: false,
+            isDialogVisible: false
         }
     }
 
     componentDidMount() {
         this.getPermissionAsync();
+    }
+
+    showDialog = (value) => {
+        this.setState({isDialogVisible: value});
     }
 
     getPermissionAsync = async () => {
@@ -253,6 +259,18 @@ export default class PreferencesScreen extends Component {
                         </TouchableOpacity>
 
                     </View>
+
+                    <TouchableOpacity style={{backgroundColor: 'red'}} onPress={()=>this.setState({isDialogVisible: true})}>
+                        <Text>Teste</Text>
+                    </TouchableOpacity>
+
+                    <DialogInput isDialogVisible={this.state.isDialogVisible}
+                        title={"DialogInput 1"}
+                        message={"Message for DialogInput #1"}
+                        hintInput ={"HINT INPUT"}
+                        submitInput={ (inputText) => {this.sendInput(inputText)} }
+                        closeDialog={ () => {this.showDialog(false)}}>
+                    </DialogInput>
 
                     <TouchableOpacity onPress={this.handleDeleteAccount} style={styles.buttonAlternative}>
                         <Text style={styles.buttonText}>{translate('preferencesBtnDeleteAccount')}</Text>
