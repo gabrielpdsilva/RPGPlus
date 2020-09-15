@@ -1,15 +1,11 @@
 import React, { Component } from 'react';
 import {
-    TouchableOpacity,
     Text,
     View,
-    TextInput,
     ToastAndroid,
     ScrollView
 } from 'react-native';
-
 import CustomAppBar from '../components/CustomAppBar';
-
 import styles from '../style/styles';
 import colors from '../style/colors';
 import firebase from '../controller/FirebaseConfig';

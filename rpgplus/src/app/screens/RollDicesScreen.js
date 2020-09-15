@@ -2,12 +2,9 @@ import React, { Component } from 'react';
 import {
     Text,
     View,
-    TouchableOpacity,
-    TextInput,
     Picker,
     ScrollView
 } from 'react-native';
-
 import styles from '../style/styles';
 import colors from '../style/colors';
 import CustomAppBar from '../components/CustomAppBar';

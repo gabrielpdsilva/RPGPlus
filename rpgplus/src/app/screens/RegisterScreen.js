@@ -3,25 +3,16 @@ import {
     View,
     ToastAndroid,
     Text,
-    TouchableOpacity,
     ScrollView,
     Image
 } from 'react-native';
-
 import styles from '../style/styles';
-
 import CustomAppBar from '../components/CustomAppBar';
-
 import firebase from '../controller/FirebaseConfig';
-
 import 'firebase/firestore';
-
 import { translate } from '../locales/localeConfig';
-
 import { Hoshi } from 'react-native-textinput-effects';
-
 import colors from '../style/colors';
-
 import AwesomeButton from "react-native-really-awesome-button";
 
 export default class RegisterScreen extends Component {

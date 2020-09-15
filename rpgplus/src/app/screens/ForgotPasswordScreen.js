@@ -2,22 +2,15 @@ import React, { Component } from 'react';
 import {
     Text,
     View,
-    TouchableOpacity,
     ToastAndroid,
     Image
 } from 'react-native';
-
 import styles from '../style/styles';
-
 import CustomAppBar from '../components/CustomAppBar';
-
 import firebase from '../controller/FirebaseConfig';
 import { translate } from '../locales/localeConfig';
-
 import { Hoshi } from 'react-native-textinput-effects';
-
 import colors from '../style/colors';
-
 import AwesomeButton from "react-native-really-awesome-button";
 
 export default class ForgotPasswordScreen extends Component {

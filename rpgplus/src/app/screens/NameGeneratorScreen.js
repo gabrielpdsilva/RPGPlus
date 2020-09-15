@@ -7,7 +7,6 @@ import {
     Clipboard,
     Text
 } from 'react-native';
-
 import styles from '../style/styles';
 import CustomAppBar from '../components/CustomAppBar';
 import {translate} from '../locales/localeConfig';
