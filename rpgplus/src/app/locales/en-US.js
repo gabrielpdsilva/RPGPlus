@@ -81,7 +81,6 @@ const en = {
 
     //preferences
     appBarPreferences: 'My Preferences',
-    preferencesChangeImage: 'Change Image',
     preferencesName: 'Name',
     preferencesEmail: 'E-mail',
     preferencesBtnSaveChanges: 'Save Changes',

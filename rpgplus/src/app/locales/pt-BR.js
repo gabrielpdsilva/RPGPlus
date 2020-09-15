@@ -81,7 +81,6 @@ const pt = {
 
     //preferences
     appBarPreferences: 'Minhas Preferências',
-    preferencesChangeImage: 'Mudar Imagem',
     preferencesName: 'Nome',
     preferencesEmail: 'E-mail',
     preferencesBtnSaveChanges: 'Salvar Mudanças',

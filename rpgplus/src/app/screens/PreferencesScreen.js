@@ -2,11 +2,9 @@ import React, { Component } from 'react';
 import {
     Text,
     View,
-    TextInput,
     ToastAndroid,
     Alert,
     TouchableOpacity,
-    Switch
 } from 'react-native';
 
 import CustomAppBar from '../components/CustomAppBar';
@@ -45,7 +43,6 @@ export default class PreferencesScreen extends Component {
             name: user.displayName,
             email: user.email,
             image: user.photoURL,
-            isSwitchOn: false,
             isDialogVisible: false
         }
     }
@@ -196,7 +193,6 @@ export default class PreferencesScreen extends Component {
 
     render(){
 
-        const { isSwitchOn } = this.state;
         const image = this.state.image;
         const name = this.state.name;
         const email = this.state.email;
@@ -207,9 +203,7 @@ export default class PreferencesScreen extends Component {
 
                 <CustomAppBar title={translate('appBarPreferences')} navigation={this.props.navigation}/>
 
-                <Text style={styles.title}>{translate('preferencesEditableProfile')}</Text>
-
-                <View style={{justifyContent:'center', alignItems: 'center'}}>
+                <View style={{justifyContent:'center', alignItems: 'center', margin: 20}}>
 
                     <TouchableOpacity onPress={this.handlePickImage}>
                         <Avatar.Image
@@ -217,38 +211,48 @@ export default class PreferencesScreen extends Component {
                                 uri: image !== null ? image : 'https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png'
                             }}
                             size={120}
+                            backgroundColor={colors.lightTheme}
                         />
             
                     </TouchableOpacity>
 
                 </View>
 
-                <Text style={styles.inputTitle}>{translate('preferencesChangeImage')}</Text>
+                <View style={{margin: 15}}>
 
-                <View style={{margin: 10}}>
+                    <Text style={styles.newTitle}>{translate('preferencesName')}</Text>
 
-                <Text>{translate('preferencesName')}</Text>
+                    <View style={{flexDirection: 'row', justifyContent:'space-between'}}>
 
-                <View style={{flexDirection: 'row', justifyContent:'space-between'}}>
+                        <Text>{name}</Text>
+                        
+                        <TouchableOpacity style={{backgroundColor: colors.lightTheme}} onPress={()=>this.setState({isDialogVisible: true})}>
+                            <Icon 
+                                name="pencil" 
+                                color={colors.darkBlue}
+                                size={20}
+                            />
+                        </TouchableOpacity>
+                    </View>
 
-                    <Text>{name}</Text>
+                    <View style={styles.separatorLine}/>
+
+                    <Text style={styles.newTitle}>{translate('preferencesEmail')}</Text>
                     
-                    <TouchableOpacity style={{backgroundColor: colors.lightTheme}} onPress={()=>this.setState({isDialogVisible: true})}>
-                        <Text>ooo</Text>
-                    
-                    </TouchableOpacity>
-                </View>
-                   
+                    <View style={{flexDirection: 'row', justifyContent:'space-between'}}>
 
-                    <TouchableOpacity style={{backgroundColor: 'red'}} onPress={()=>this.setState({isDialogVisible: true})}>
-                        <Text>{translate('preferencesEmail')}</Text>
                         <Text>{email}</Text>
-                    
-                    </TouchableOpacity>
+                        
+                        <TouchableOpacity style={{backgroundColor: colors.lightTheme}} onPress={()=>this.setState({isDialogVisible: true})}>
+                            <Icon 
+                                name="pencil" 
+                                color={colors.darkBlue}
+                                size={20}
+                            />
+                        </TouchableOpacity>
+                    </View>
 
                 </View>
-
-               
 
                 <DialogInput isDialogVisible={isDialogVisible}
                     title={"Alterar Nome"}
@@ -259,23 +263,15 @@ export default class PreferencesScreen extends Component {
                     cancelText="Cancelar"
                     submitText="Confirmar"
                 />
-                    
-                <View style={{ 
-                                justifyContent:'center',
-                                alignItems: 'center',
-                                marginTop: 10,
-                                marginBottom: 10,
-                                flexDirection: 'row',
-                                justifyContent:'space-between',
-                                padding: 20
-                            }}>
+
+                <View style={{justifyContent:'center', alignItems: 'center', marginTop: 10, marginBottom: 10}}>
 
                     <AwesomeButton
                         backgroundColor={colors.blue}
                         backgroundDarker={colors.darkBlue}
                         backgroundShadow={colors.lightGray}
                         progress
-                        width={100}
+                        width={250}
                         onPress={next => {
                             this.handleSaveChanges();
                             next();
@@ -284,12 +280,16 @@ export default class PreferencesScreen extends Component {
                         {translate('preferencesBtnSaveChanges')}
                     </AwesomeButton>
 
+                </View>
+
+                <View style={{justifyContent:'center', alignItems: 'center', marginTop: 10, marginBottom: 10}}>
+
                     <AwesomeButton
                         backgroundColor={colors.blue}
                         backgroundDarker={colors.darkBlue}
                         backgroundShadow={colors.lightGray}
                         progress
-                        width={100}
+                        width={250}
                         onPress={next => {
                             this.handleDeleteAccount();
                             next();

@@ -110,6 +110,8 @@ const styles = StyleSheet.create({
    },
 
     separatorLine: {
+        marginTop: 15,
+        marginBottom: 15,
         borderWidth: 0.5,
         borderColor: colors.black,   
    },
@@ -121,6 +123,12 @@ const styles = StyleSheet.create({
         fontSize: 20,
         alignItems: 'center',
         textAlign: 'center'
+    },
+
+    newTitle: {
+        color: colors.black,
+        fontWeight: 'bold',
+        fontSize: 14,
     },
 
     cardBackground: {
