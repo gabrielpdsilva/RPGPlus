@@ -29,6 +29,8 @@ import { Avatar } from 'react-native-paper';
 import AwesomeButton from "react-native-really-awesome-button";
 import DialogInput from 'react-native-dialog-input';
 
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+
 //useful content about Storage:
 //https://stackoverflow.com/questions/48108791/convert-image-path-to-blob-react-native
 //https://www.youtube.com/watch?v=KkZckepfm2Q&feature=youtu.be
@@ -197,6 +199,7 @@ export default class PreferencesScreen extends Component {
         const { isSwitchOn } = this.state;
         const image = this.state.image;
         const name = this.state.name;
+        const email = this.state.email;
         const isDialogVisible = this.state.isDialogVisible;
 
         return(
@@ -204,21 +207,9 @@ export default class PreferencesScreen extends Component {
 
                 <CustomAppBar title={translate('appBarPreferences')} navigation={this.props.navigation}/>
 
-                <View style={{marginTop: 14, flexDirection: 'row', justifyContent: 'space-between', marginHorizontal: 30}}>
+                <Text style={styles.title}>{translate('preferencesEditableProfile')}</Text>
 
-                    <Text style={styles.title}>{translate('preferencesEditableProfile')}</Text>
-
-                    <Switch
-                        trackColor={{ false: colors.darkGray, true: colors.orange }}
-                        thumbColor={colors.lightGray}
-                        ios_backgroundColor={colors.darkGray}
-                        onValueChange={this._onToggleSwitch}
-                        value={isSwitchOn}
-                    />
-
-                </View>
-
-                <View style={styles.childContainer}>
+                <View style={{justifyContent:'center', alignItems: 'center'}}>
 
                     <TouchableOpacity onPress={this.handlePickImage}>
                         <Avatar.Image
@@ -227,80 +218,88 @@ export default class PreferencesScreen extends Component {
                             }}
                             size={120}
                         />
+            
                     </TouchableOpacity>
-
-                    <Text style={styles.inputTitle}>{translate('preferencesChangeImage')}</Text>
-
-                    <TouchableOpacity style={{backgroundColor: 'red'}} onPress={()=>this.setState({isDialogVisible: true})}>
-                        <Text>{translate('preferencesName')}</Text>
-                    </TouchableOpacity>
-
-                    <DialogInput isDialogVisible={isDialogVisible}
-                        title={"Alterar Nome"}
-                        message={"Digite abaixo o novo nome... "}
-                        hintInput ={name}
-                        submitInput={ (inputText) => {this.sendInput(inputText)} }
-                        closeDialog={ () => {this.showDialog(false)}}
-                        cancelText="Cancelar"
-                        submitText="Confirmar"
-                    />
-                        
-
-                    <View style={{marginTop: 8}}>
-
-                        <Text style={styles.inputTitle}>{translate('preferencesEmail')}</Text>
-                        
-                        <TextInput
-                            style={isSwitchOn ? styles.textInput: styles.disabledTextInput}
-                            value={this.state.email}
-                            editable={isSwitchOn}
-                            onChangeText={ (txt) => this.setState({email: txt}) }
-                            placeholder="..."
-                        />
-                            
-                    </View>
-
-                    <View style={{ 
-                                    justifyContent:'center',
-                                    alignItems: 'center',
-                                    marginTop: 10,
-                                    marginBottom: 10,
-                                    flexDirection: 'row',
-                                    justifyContent:'space-between',
-                                    padding: 20
-                                }}>
-
-                        <AwesomeButton
-                            backgroundColor={colors.blue}
-                            backgroundDarker={colors.darkBlue}
-                            backgroundShadow={colors.lightGray}
-                            progress
-                            width={100}
-                            onPress={next => {
-                                this.handleSaveChanges();
-                                next();
-                            }}
-                        >
-                            {translate('preferencesBtnSaveChanges')}
-                        </AwesomeButton>
-
-                        <AwesomeButton
-                            backgroundColor={colors.blue}
-                            backgroundDarker={colors.darkBlue}
-                            backgroundShadow={colors.lightGray}
-                            progress
-                            width={100}
-                            onPress={next => {
-                                this.handleDeleteAccount();
-                                next();
-                            }}
-                        >
-                            {translate('preferencesBtnDeleteAccount')}
-                        </AwesomeButton>
-
-                    </View>
 
                 </View>
+
+                <Text style={styles.inputTitle}>{translate('preferencesChangeImage')}</Text>
+
+                <View style={{margin: 10}}>
+
+                <Text>{translate('preferencesName')}</Text>
+
+                <View style={{flexDirection: 'row', justifyContent:'space-between'}}>
+
+                    <Text>{name}</Text>
+                    
+                    <TouchableOpacity style={{backgroundColor: colors.lightTheme}} onPress={()=>this.setState({isDialogVisible: true})}>
+                        <Text>ooo</Text>
+                    
+                    </TouchableOpacity>
+                </View>
+                   
+
+                    <TouchableOpacity style={{backgroundColor: 'red'}} onPress={()=>this.setState({isDialogVisible: true})}>
+                        <Text>{translate('preferencesEmail')}</Text>
+                        <Text>{email}</Text>
+                    
+                    </TouchableOpacity>
+
+                </View>
+
+               
+
+                <DialogInput isDialogVisible={isDialogVisible}
+                    title={"Alterar Nome"}
+                    message={"Digite abaixo o novo nome... "}
+                    hintInput ={name}
+                    submitInput={ (inputText) => {this.sendInput(inputText)} }
+                    closeDialog={ () => {this.showDialog(false)}}
+                    cancelText="Cancelar"
+                    submitText="Confirmar"
+                />
+                    
+                <View style={{ 
+                                justifyContent:'center',
+                                alignItems: 'center',
+                                marginTop: 10,
+                                marginBottom: 10,
+                                flexDirection: 'row',
+                                justifyContent:'space-between',
+                                padding: 20
+                            }}>
+
+                    <AwesomeButton
+                        backgroundColor={colors.blue}
+                        backgroundDarker={colors.darkBlue}
+                        backgroundShadow={colors.lightGray}
+                        progress
+                        width={100}
+                        onPress={next => {
+                            this.handleSaveChanges();
+                            next();
+                        }}
+                    >
+                        {translate('preferencesBtnSaveChanges')}
+                    </AwesomeButton>
+
+                    <AwesomeButton
+                        backgroundColor={colors.blue}
+                        backgroundDarker={colors.darkBlue}
+                        backgroundShadow={colors.lightGray}
+                        progress
+                        width={100}
+                        onPress={next => {
+                            this.handleDeleteAccount();
+                            next();
+                        }}
+                    >
+                        {translate('preferencesBtnDeleteAccount')}
+                    </AwesomeButton>
+
+                </View>
+
             </View>
         );
     }
