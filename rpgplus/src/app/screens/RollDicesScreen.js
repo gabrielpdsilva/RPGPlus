@@ -143,7 +143,7 @@ export default class RollDicesScreen extends Component {
                             backgroundDarker={colors.darkBlue}
                             backgroundShadow={colors.lightGray}
                             progress={false}
-                            width={100}
+                            width={340}
                             onPress={next => {
                                 this.handleRollDices(type, quantity, modifier);
                                 next();

@@ -6,27 +6,18 @@ import {
     Alert,
     TouchableOpacity,
 } from 'react-native';
-
 import CustomAppBar from '../components/CustomAppBar';
-
 import styles from '../style/styles';
-
 import colors from '../style/colors';
-
 import firebase from '../controller/FirebaseConfig';
 import 'firebase/firestore';
-
 import * as ImagePicker from 'expo-image-picker';
 import Constants from 'expo-constants';
 import * as Permissions from 'expo-permissions';
-
 import {translate} from '../locales/localeConfig';
-
 import { Avatar } from 'react-native-paper';
-
 import AwesomeButton from "react-native-really-awesome-button";
 import DialogInput from 'react-native-dialog-input';
-
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 //useful content about Storage:
@@ -203,7 +194,7 @@ export default class PreferencesScreen extends Component {
 
                 <CustomAppBar title={translate('appBarPreferences')} navigation={this.props.navigation}/>
 
-                <View style={{justifyContent:'center', alignItems: 'center', margin: 20}}>
+                <View style={{justifyContent:'center', alignItems: 'center', margin: 25}}>
 
                     <TouchableOpacity onPress={this.handlePickImage}>
                         <Avatar.Image
@@ -264,14 +255,14 @@ export default class PreferencesScreen extends Component {
                     submitText="Confirmar"
                 />
 
-                <View style={{justifyContent:'center', alignItems: 'center', marginTop: 10, marginBottom: 10}}>
+                <View style={{justifyContent:'center', alignItems: 'center', marginTop: 10}}>
 
                     <AwesomeButton
                         backgroundColor={colors.blue}
                         backgroundDarker={colors.darkBlue}
                         backgroundShadow={colors.lightGray}
                         progress
-                        width={250}
+                        width={340}
                         onPress={next => {
                             this.handleSaveChanges();
                             next();
@@ -289,7 +280,7 @@ export default class PreferencesScreen extends Component {
                         backgroundDarker={colors.darkBlue}
                         backgroundShadow={colors.lightGray}
                         progress
-                        width={250}
+                        width={340}
                         onPress={next => {
                             this.handleDeleteAccount();
                             next();

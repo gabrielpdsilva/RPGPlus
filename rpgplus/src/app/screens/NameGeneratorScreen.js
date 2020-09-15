@@ -165,7 +165,7 @@ export default class NameGeneratorScreen extends Component {
                             backgroundDarker={colors.darkBlue}
                             backgroundShadow={colors.lightGray}
                             progress={false}
-                            width={100}
+                            width={340}
                             onPress={next => {
                                 this.handleGenerateName(pickerValue);
                                 next();

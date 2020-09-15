@@ -91,7 +91,7 @@ export default class ForgotPasswordScreen extends Component {
                             backgroundDarker={colors.darkBlue}
                             backgroundShadow={colors.lightGray}
                             progress
-                            width={100}
+                            width={340}
                             onPress={next => {
                                 this.handleResetPassword();
                                 next();

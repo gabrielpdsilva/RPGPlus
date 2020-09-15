@@ -179,7 +179,7 @@ export default class RegisterScreen extends Component {
                             backgroundDarker={colors.darkBlue}
                             backgroundShadow={colors.lightGray}
                             progress
-                            width={100}
+                            width={340}
                             onPress={next => {
                                 /** Do Something **/
                                 this.handleSignUp();
