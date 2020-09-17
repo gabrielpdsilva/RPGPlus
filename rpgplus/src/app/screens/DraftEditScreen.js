@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
 import {
-    Text,
     View,
     ToastAndroid,
     Alert,
     ScrollView,
-    Switch
 } from 'react-native';
 import CustomAppBar from '../components/CustomAppBar';
 import styles from '../style/styles';
@@ -20,21 +18,22 @@ export default class DraftEditScreen extends Component {
     constructor(props){
         super(props);
         this.state = {
+            loading: true,
             name: '',
             category: '',
             system: '',
             text: '',
             id: '',
-            isSwitchOn: false,
         }
     }
 
     handleSaveChanges = () => {
 
+        //remove the current screen from stack
+        this.props.navigation.goBack();
+
         const draftId = this.state.id;
-
         const user = firebase.auth().currentUser;
-
         const dbh = firebase.firestore();
 
         //gets the current draft
@@ -113,6 +112,7 @@ export default class DraftEditScreen extends Component {
                     category: doc.data().category,
                     system: doc.data().system,
                     text: doc.data().text,
+                    loading: false,
                 });
             }
         })
@@ -121,15 +121,13 @@ export default class DraftEditScreen extends Component {
         });
     }
 
-    _onToggleSwitch = () =>  this.setState(state => ({ isSwitchOn: !state.isSwitchOn }));
-
     render(){
 
+        const loading = this.state.loading;
         const name = this.state.name;
         const category = this.state.category;
         const system = this.state.system;
         const text = this.state.text;
-        const { isSwitchOn } = this.state;
 
         return(
             <View style={styles.container}>
@@ -147,11 +145,10 @@ export default class DraftEditScreen extends Component {
                             inputStyle={{color: colors.black}}
                             backgroundColor={colors.white}
                             label={translate('editDraftName')}
-                            placeholder={translate('editDraftLoading')}
                             borderHeight={3}
                             inputPadding={16}
                             maxLength={50}
-                            value={name ? name : translate('editDraftLoading')}
+                            value={loading ? translate('editDraftLoading') : name}
                             onChangeText={(txt) => this.setState({name: txt})}
                         />
 
@@ -162,11 +159,10 @@ export default class DraftEditScreen extends Component {
                             inputStyle={{color: colors.black}}
                             backgroundColor={colors.white}
                             label={translate('editDraftCategory')}
-                            placeholder={translate('editDraftLoading')}
                             borderHeight={3}
                             inputPadding={16}
                             maxLength={50}
-                            value={category ? category : translate('editDraftLoading')}
+                            value={loading ? translate('editDraftLoading') : category}
                             onChangeText={(txt) => this.setState({category: txt})}
                         />
 
@@ -177,11 +173,10 @@ export default class DraftEditScreen extends Component {
                             inputStyle={{color: colors.black}}
                             backgroundColor={colors.white}
                             label={translate('editDraftSystem')}
-                            placeholder={translate('editDraftLoading')}
                             borderHeight={3}
                             inputPadding={16}
                             maxLength={50}
-                            value={system ? system : translate('editDraftLoading')}
+                            value={loading ? translate('editDraftLoading') : system}
                             onChangeText={(txt) => this.setState({system: txt})}
                         />
 
@@ -192,7 +187,6 @@ export default class DraftEditScreen extends Component {
                             inputStyle={{color: colors.black}}
                             backgroundColor={colors.white}
                             label={translate('editDraftText')}
-                            placeholder={translate('editDraftLoading')}
                             borderHeight={3}
                             inputPadding={16}
                             maxLength={1000}
@@ -200,7 +194,7 @@ export default class DraftEditScreen extends Component {
                             textAlignVertical = 'top'
                             paddingTop = {10}
                             multiline
-                            value={text ? text : translate('editDraftLoading')}
+                            value={loading ? translate('editDraftLoading') : text}
                             onChangeText={(txt) => this.setState({text: txt})}
                         /> 
 
