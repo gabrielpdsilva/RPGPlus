@@ -87,7 +87,7 @@ export default class PreferencesScreen extends Component {
         imageRef.getDownloadURL()
         .then((url) => {
             user.updateProfile({photoURL: url});
-            ToastAndroid.show("Image saved.", ToastAndroid.SHORT);
+            ToastAndroid.show(translate('toastPreferencesImageSaved'), ToastAndroid.SHORT);
             this.setState({image: url});
         })
         .catch((e) => alert('getting downloadURL of image error => '+ e));
