@@ -87,81 +87,85 @@ export default class RegisterScreen extends Component {
 
                     </View>
 
-                    <Text style={styles.title}>{translate('registerTitle')}</Text>
+                    <View style={styles.cardBackground}>
 
-                    <Text style={styles.text}>{translate('registerSubtitle')}</Text>
+                        <Text style={styles.title}>{translate('registerTitle')}</Text>
 
-                    <Hoshi
-                        style={styles.hoshiStyle}
-                        borderColor={colors.orange}
-                        labelStyle={{color: colors.black}}
-                        inputStyle={{color: colors.black}}
-                        backgroundColor={colors.lightTheme}
-                        label={translate('registerName')}
-                        borderHeight={3}
-                        inputPadding={16}
-                        maxLength={50}
-                        value={name}
-                        onChangeText={(txt) => this.setState({name: txt})}
-                    />
+                        <Text style={styles.text}>{translate('registerSubtitle')}</Text>
 
-                    <Hoshi
-                        style={styles.hoshiStyle}
-                        borderColor={colors.orange}
-                        labelStyle={{color: colors.black}}
-                        inputStyle={{color: colors.black}}
-                        backgroundColor={colors.lightTheme}
-                        label={translate('registerNickname')}
-                        borderHeight={3}
-                        inputPadding={16}
-                        maxLength={50}
-                        value={nickname}
-                        onChangeText={(txt) => this.setState({nickname: txt})}
-                    />
+                        <Hoshi
+                            style={styles.hoshiStyle}
+                            borderColor={colors.orange}
+                            labelStyle={{color: colors.black}}
+                            inputStyle={{color: colors.black}}
+                            backgroundColor={colors.white}
+                            label={translate('registerName')}
+                            borderHeight={3}
+                            inputPadding={16}
+                            maxLength={50}
+                            value={name}
+                            onChangeText={(txt) => this.setState({name: txt})}
+                        />
 
-                    <Hoshi
-                        style={styles.hoshiStyle}
-                        borderColor={colors.orange}
-                        labelStyle={{color: colors.black}}
-                        inputStyle={{color: colors.black}}
-                        backgroundColor={colors.lightTheme}
-                        label={translate('registerEmail')}
-                        borderHeight={3}
-                        inputPadding={16}
-                        maxLength={50}
-                        value={email}
-                        onChangeText={(txt) => this.setState({email: txt})}
-                    />
+                        <Hoshi
+                            style={styles.hoshiStyle}
+                            borderColor={colors.orange}
+                            labelStyle={{color: colors.black}}
+                            inputStyle={{color: colors.black}}
+                            backgroundColor={colors.white}
+                            label={translate('registerNickname')}
+                            borderHeight={3}
+                            inputPadding={16}
+                            maxLength={50}
+                            value={nickname}
+                            onChangeText={(txt) => this.setState({nickname: txt})}
+                        />
 
-                    <Hoshi
-                        style={styles.hoshiStyle}
-                        borderColor={colors.orange}
-                        labelStyle={{color: colors.black}}
-                        inputStyle={{color: colors.black}}
-                        backgroundColor={colors.lightTheme}
-                        label={translate('registerPassword')}
-                        borderHeight={3}
-                        inputPadding={16}
-                        maxLength={50}
-                        secureTextEntry={true}
-                        value={password}
-                        onChangeText={(txt) => this.setState({password: txt})}
-                    />
+                        <Hoshi
+                            style={styles.hoshiStyle}
+                            borderColor={colors.orange}
+                            labelStyle={{color: colors.black}}
+                            inputStyle={{color: colors.black}}
+                            backgroundColor={colors.white}
+                            label={translate('registerEmail')}
+                            borderHeight={3}
+                            inputPadding={16}
+                            maxLength={50}
+                            value={email}
+                            onChangeText={(txt) => this.setState({email: txt})}
+                        />
 
-                    <Hoshi
-                        style={styles.hoshiStyle}
-                        borderColor={colors.orange}
-                        labelStyle={{color: colors.black}}
-                        inputStyle={{color: colors.black}}
-                        backgroundColor={colors.lightTheme}
-                        label={translate('registerConfirmPassword')}
-                        borderHeight={3}
-                        inputPadding={16}
-                        maxLength={50}
-                        secureTextEntry={true}
-                        value={confirmPassword}
-                        onChangeText={(txt) => this.setState({confirmPassword: txt})}
-                    />
+                        <Hoshi
+                            style={styles.hoshiStyle}
+                            borderColor={colors.orange}
+                            labelStyle={{color: colors.black}}
+                            inputStyle={{color: colors.black}}
+                            backgroundColor={colors.white}
+                            label={translate('registerPassword')}
+                            borderHeight={3}
+                            inputPadding={16}
+                            maxLength={50}
+                            secureTextEntry={true}
+                            value={password}
+                            onChangeText={(txt) => this.setState({password: txt})}
+                        />
+
+                        <Hoshi
+                            style={styles.hoshiStyle}
+                            borderColor={colors.orange}
+                            labelStyle={{color: colors.black}}
+                            inputStyle={{color: colors.black}}
+                            backgroundColor={colors.white}
+                            label={translate('registerConfirmPassword')}
+                            borderHeight={3}
+                            inputPadding={16}
+                            maxLength={50}
+                            secureTextEntry={true}
+                            value={confirmPassword}
+                            onChangeText={(txt) => this.setState({confirmPassword: txt})}
+                        />
+
+                    </View>
 
                     <View style={{justifyContent:'center', alignItems: 'center', marginTop: 10, marginBottom: 10}}>
 
