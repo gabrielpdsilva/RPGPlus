@@ -107,7 +107,7 @@ export default class DraftListScreen extends Component {
                 <View style={{marginTop: 5}}>
 
                     <Text style={styles.itemTitle}>{translate('listDraftsText')}</Text>
-                    <Text style={styles.itemText}>{item.text}</Text>
+                    <Text style={styles.itemText}>...</Text>
 
                 </View>
 
