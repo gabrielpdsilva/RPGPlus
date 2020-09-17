@@ -209,7 +209,7 @@ export default class PreferencesScreen extends Component {
 
                 </View>
 
-                <View style={{margin: 15}}>
+                <View style={styles.cardBackground}>
 
                     <Text style={styles.newTitle}>{translate('preferencesName')}</Text>
 
@@ -217,13 +217,14 @@ export default class PreferencesScreen extends Component {
 
                         <Text>{name}</Text>
                         
-                        <TouchableOpacity style={{backgroundColor: colors.lightTheme}} onPress={()=>this.setState({isDialogVisible: true})}>
+                        <TouchableOpacity style={{backgroundColor: colors.white}} onPress={()=>this.setState({isDialogVisible: true})}>
                             <Icon 
                                 name="pencil" 
                                 color={colors.darkBlue}
                                 size={20}
                             />
                         </TouchableOpacity>
+
                     </View>
 
                     <View style={styles.separatorLine}/>
@@ -234,7 +235,7 @@ export default class PreferencesScreen extends Component {
 
                         <Text>{email}</Text>
                         
-                        <TouchableOpacity style={{backgroundColor: colors.lightTheme}} onPress={()=>this.setState({isDialogVisible: true})}>
+                        <TouchableOpacity style={{backgroundColor: colors.white}} onPress={()=>this.setState({isDialogVisible: true})}>
                             <Icon 
                                 name="pencil" 
                                 color={colors.darkBlue}
