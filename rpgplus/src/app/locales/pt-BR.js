@@ -124,7 +124,6 @@ const pt = {
     alertDraftEditMessage: 'Tem certeza de que deseja deletar seu rascunho?',
     toastDraftEditCanceled: 'Ação cancelada.',
     alertDraftEditNoExist: 'Sem documentos aqui.',
-    editDraftEditableDraft: 'Editar Rascunho',
 
     //forgot password
     toastForgotPasswordDone: 'Pronto, por favor confira seu e-mail.',

@@ -104,7 +104,6 @@ const en = {
     editDraftLoading: 'Loading...',
     editDraftBtnSaveChanges: 'Save Changes',
     editDraftBtnDeleteDraft: 'Delete Draft',
-    editDraftEditableDraft: 'Edit Draft',
 
     //------------------------------------
     //ALERTS AND TOASTS

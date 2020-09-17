@@ -134,21 +134,7 @@ export default class DraftEditScreen extends Component {
         return(
             <View style={styles.container}>
                 
-                <CustomAppBar title={translate('appBarDraftModel')} subtitle="" backIsVisible={true} navigation={this.props.navigation}/>
-
-                <View style={{marginTop: 14, flexDirection: 'row', justifyContent: 'space-between', marginHorizontal: 30}}>
-
-                    <Text style={styles.title}>{translate('editDraftEditableDraft')}</Text>
-
-                    <Switch
-                        trackColor={{ false: colors.darkGray, true: colors.orange }}
-                        thumbColor={colors.lightGray}
-                        ios_backgroundColor={colors.darkGray}
-                        onValueChange={this._onToggleSwitch}
-                        value={isSwitchOn}
-                    />
-
-                </View>                
+                <CustomAppBar title={translate('appBarDraftModel')} subtitle="" backIsVisible={true} navigation={this.props.navigation}/>            
 
                 <ScrollView style={{marginTop: 8}}>
 
@@ -220,22 +206,14 @@ export default class DraftEditScreen extends Component {
 
                     </View>
                     
-                    <View style={{ 
-                                    justifyContent:'center',
-                                    alignItems: 'center',
-                                    marginTop: 10,
-                                    marginBottom: 10,
-                                    flexDirection: 'row',
-                                    justifyContent:'space-between',
-                                    padding: 20
-                                }}>
+                    <View style={{justifyContent:'center', alignItems: 'center', marginTop: 10, marginBottom: 0}}>
 
                         <AwesomeButton
                             backgroundColor={colors.blue}
                             backgroundDarker={colors.darkBlue}
                             backgroundShadow={colors.lightGray}
                             progress
-                            width={100}
+                            width={340}
                             onPress={next => {
                                 this.handleSaveChanges();
                                 next();
@@ -244,12 +222,16 @@ export default class DraftEditScreen extends Component {
                             {translate('editDraftBtnSaveChanges')}
                         </AwesomeButton>
 
+                    </View>
+
+                    <View style={{justifyContent:'center', alignItems: 'center', marginTop: 10, marginBottom: 10}}>
+
                         <AwesomeButton
                             backgroundColor={colors.blue}
                             backgroundDarker={colors.darkBlue}
                             backgroundShadow={colors.lightGray}
                             progress
-                            width={100}
+                            width={340}
                             onPress={next => {
                                 this.handleDeleteDraft();
                                 next();
