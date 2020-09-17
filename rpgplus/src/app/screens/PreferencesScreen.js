@@ -211,7 +211,7 @@ export default class PreferencesScreen extends Component {
 
                 <View style={styles.cardBackground}>
 
-                    <Text style={styles.newTitle}>{translate('preferencesName')}</Text>
+                    <Text style={styles.preferencesTitle}>{translate('preferencesName')}</Text>
 
                     <View style={{flexDirection: 'row', justifyContent:'space-between'}}>
 
@@ -229,7 +229,7 @@ export default class PreferencesScreen extends Component {
 
                     <View style={styles.separatorLine}/>
 
-                    <Text style={styles.newTitle}>{translate('preferencesEmail')}</Text>
+                    <Text style={styles.preferencesTitle}>{translate('preferencesEmail')}</Text>
                     
                     <View style={{flexDirection: 'row', justifyContent:'space-between'}}>
 

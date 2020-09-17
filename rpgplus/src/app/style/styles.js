@@ -14,12 +14,6 @@ const styles = StyleSheet.create({
         marginRight: 10
     },
 
-    childContainer: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
-
     inputForm: {
         marginBottom: 25,
         marginHorizontal: 30,
@@ -30,20 +24,11 @@ const styles = StyleSheet.create({
         fontSize: 13,
     },
 
-    //container for drafts
-    childCenterContainer: {
-        borderColor: 'black',
-        borderWidth: 1,
-        padding: 15,
-        backgroundColor: colors.darkContainer,
-    },
-
     //common text
     text: {
         color: colors.black,
         margin: 5,
         fontSize: 15,
-        textAlign: 'center'
     },
 
     //text used on forms
@@ -51,54 +36,6 @@ const styles = StyleSheet.create({
         color: colors.black,
         margin: 5,
         fontSize: 15,
-    },
-
-    //textinput style
-    textInput: {  
-        width: 290,
-        padding: 5,
-        height: 40,
-        borderColor: colors.orange,
-        borderWidth: 1,
-        backgroundColor: colors.darkBackground,
-        color: colors.black,
-        borderRadius: 4,
-    },
-
-    //disabled textinput style
-    disabledTextInput: {
-        width: 290,
-        padding: 5,
-        height: 40,
-        borderColor: colors.darkOrange,
-        borderWidth: 1,
-        backgroundColor: colors.darkBackground,
-        color: colors.black,
-        borderRadius: 4,
-    },
-
-    //textinputBox style
-    textInputBox: {  
-        width: 290,
-        padding: 5,
-        height: 100,
-        borderColor: colors.orange,
-        borderWidth: 1,
-        backgroundColor: colors.darkBackground,
-        color: colors.black,
-        borderRadius: 4,
-    },
-
-    //textinputBox disabled style
-    textInputBoxDisabled: {  
-        width: 290,
-        padding: 5,
-        height: 100,
-        borderColor: colors.darkOrange,
-        borderWidth: 1,
-        backgroundColor: colors.darkBackground,
-        color: colors.black,
-        borderRadius: 4,
     },
 
     //rule to separate items
@@ -121,11 +58,9 @@ const styles = StyleSheet.create({
         color: colors.black,
         fontWeight: 'bold',
         fontSize: 20,
-        alignItems: 'center',
-        textAlign: 'center'
     },
 
-    newTitle: {
+    preferencesTitle: {
         color: colors.black,
         fontWeight: 'bold',
         fontSize: 14,

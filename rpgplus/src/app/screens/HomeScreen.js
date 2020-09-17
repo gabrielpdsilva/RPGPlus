@@ -21,7 +21,7 @@ const HomeScreen = ({navigation}) => {
 
             <CustomAppBar title={translate('appBarHome')} subtitle="" navigation={navigation}/>
 
-            <View style={styles.childContainer}>
+            <View style={{flex: 1, justifyContent:'center', alignItems: 'center', marginTop: 10}}>
 
                 <Image
                     source={require('../../../assets/logo.png')}
