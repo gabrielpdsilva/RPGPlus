@@ -75,52 +75,56 @@ export default class RollDicesScreen extends Component {
                         <Text style={styles.text}>{translate('rollSubtitle')}</Text>
                         <Text style={styles.text}>{translate('rollMaxAllowed')}</Text>
 
-                        <Text style={{marginBottom: 0, marginHorizontal: 25}}>{translate('rollType')}</Text>
+                        <View style={styles.cardItem}>
 
-                        <Picker
-                            style={styles.pickerStyle}
-                            selectedValue={type}
-                            onValueChange={(itemValue) => this.setState({type: itemValue})}
-                        >
-                            <Picker.Item label="D4" value={4}/>
-                            <Picker.Item label="D6" value={6}/>
-                            <Picker.Item label="D8" value={8}/>
-                            <Picker.Item label="D10" value={10}/>
-                            <Picker.Item label="D12" value={12}/>
-                            <Picker.Item label="D20" value={20}/>
-                            <Picker.Item label="D100" value={100}/>
+                            <Text style={{marginBottom: 0, marginHorizontal: 25, fontSize: 16}}>{translate('rollType')}</Text>
 
-                        </Picker>
+                            <Picker
+                                style={styles.pickerStyle}
+                                selectedValue={type}
+                                onValueChange={(itemValue) => this.setState({type: itemValue})}
+                            >
+                                <Picker.Item label="D4" value={4}/>
+                                <Picker.Item label="D6" value={6}/>
+                                <Picker.Item label="D8" value={8}/>
+                                <Picker.Item label="D10" value={10}/>
+                                <Picker.Item label="D12" value={12}/>
+                                <Picker.Item label="D20" value={20}/>
+                                <Picker.Item label="D100" value={100}/>
 
-                        <Hoshi
-                            style={styles.hoshiStyle}
-                            borderColor={colors.orange}
-                            labelStyle={{color: colors.black}}
-                            inputStyle={{color: colors.black}}
-                            backgroundColor={colors.white}
-                            label={translate('rollQuantity')}
-                            borderHeight={3}
-                            inputPadding={16}
-                            maxLength={2}
-                            keyboardType = 'numeric'
-                            value={quantity ? String(quantity) : null}
-                            onChangeText={(txt) => this.setState({quantity: txt})}
-                        />
+                            </Picker>
 
-                        <Hoshi
-                            style={styles.hoshiStyle}
-                            borderColor={colors.orange}
-                            labelStyle={{color: colors.black}}
-                            inputStyle={{color: colors.black}}
-                            backgroundColor={colors.white}
-                            label={translate('rollModifier')}
-                            borderHeight={3}
-                            inputPadding={16}
-                            maxLength={2}
-                            keyboardType = 'numeric'
-                            value={modifier ? String(modifier) : null}
-                            onChangeText={(txt) => this.setState({modifier: txt})}
-                        />
+                            <Hoshi
+                                style={styles.hoshiStyle}
+                                borderColor={colors.orange}
+                                labelStyle={{color: colors.black}}
+                                inputStyle={{color: colors.black}}
+                                backgroundColor={colors.white}
+                                label={translate('rollQuantity')}
+                                borderHeight={3}
+                                inputPadding={16}
+                                maxLength={2}
+                                keyboardType = 'numeric'
+                                value={quantity ? String(quantity) : null}
+                                onChangeText={(txt) => this.setState({quantity: txt})}
+                            />
+
+                            <Hoshi
+                                style={styles.hoshiStyle}
+                                borderColor={colors.orange}
+                                labelStyle={{color: colors.black}}
+                                inputStyle={{color: colors.black}}
+                                backgroundColor={colors.white}
+                                label={translate('rollModifier')}
+                                borderHeight={3}
+                                inputPadding={16}
+                                maxLength={2}
+                                keyboardType = 'numeric'
+                                value={modifier ? String(modifier) : null}
+                                onChangeText={(txt) => this.setState({modifier: txt})}
+                            />
+                            
+                        </View>
 
                         {
                             results.map((item, key)=>
@@ -130,6 +134,7 @@ export default class RollDicesScreen extends Component {
                         }
 
                         <Text style={styles.text}>{translate('rollSum')} {sum}</Text>
+                        
 
                     </View>
 

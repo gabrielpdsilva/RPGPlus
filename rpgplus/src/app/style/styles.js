@@ -29,6 +29,7 @@ const styles = StyleSheet.create({
         color: colors.black,
         margin: 5,
         fontSize: 15,
+        textAlign: 'center'
     },
 
     //text used on forms
@@ -58,6 +59,7 @@ const styles = StyleSheet.create({
         color: colors.black,
         fontWeight: 'bold',
         fontSize: 20,
+        textAlign: 'center'
     },
 
     preferencesTitle: {
@@ -106,9 +108,10 @@ const styles = StyleSheet.create({
 
     //picker used in roll dices screen and name generator screen
     pickerStyle: {  
-        marginLeft: 10,
+        marginLeft: 20,
         marginRight: 10,
         color: colors.black,
+        //backgroundColor: 'red'
     },
 
     headerAppBar: {
