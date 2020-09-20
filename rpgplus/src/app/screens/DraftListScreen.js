@@ -116,8 +116,9 @@ export default class DraftListScreen extends Component {
     );
 
     render(){
-        let loading = this.state.loading;
-        let userHasDrafts = this.state.userHasDrafts;
+        const loading = this.state.loading;
+        const data = this.state.data;
+        const userHasDrafts = this.state.userHasDrafts;
 
         if (loading) {
             return(
@@ -125,7 +126,7 @@ export default class DraftListScreen extends Component {
                     
                     <CustomAppBar title={translate('appBarListDrafts')} subtitle="" navigation={this.props.navigation}/>
                     
-                    <View style={styles.childContainer}>
+                    <View style={{flex: 1, justifyContent: 'center'}}>
                         <ActivityIndicator size="large" color={colors.purple}/>
                     </View>
                 
@@ -143,7 +144,7 @@ export default class DraftListScreen extends Component {
     
                     <SafeAreaView style={{flex: 1}}>
                         <FlatList
-                            data={this.state.data}
+                            data={data}
                             renderItem={this.renderItem}
                             keyExtractor={item => item.id}
                         />
