@@ -11,6 +11,7 @@ import CustomAppBar from '../components/CustomAppBar';
 import {translate} from '../locales/localeConfig';
 import { Hoshi } from 'react-native-textinput-effects';
 import AwesomeButton from "react-native-really-awesome-button";
+import { Audio } from 'expo-av';
 
 export default class RollDicesScreen extends Component {
     constructor(props){
@@ -36,6 +37,8 @@ export default class RollDicesScreen extends Component {
             return;
         }
 
+        this.playDiceEffect();
+
         let value;
         let results = [];
 
@@ -52,6 +55,23 @@ export default class RollDicesScreen extends Component {
             results: results,
             sum: sumOfResults
         });
+    }
+
+    playDiceEffect = async () => {
+
+        const soundObject = new Audio.Sound();
+        try {
+            await soundObject.loadAsync(require('../../../assets/sounds/dice_effect.mp3'));
+            await soundObject.playAsync();
+            //The sound is playing!
+
+            // Unload the sound from memory
+            // when done using the Sound object
+            await soundObject.unloadAsync();
+        } catch (error) {
+            console.log("Something went wrong while trying to play the sound: " + error);
+        }
+
     }
 
     render(){

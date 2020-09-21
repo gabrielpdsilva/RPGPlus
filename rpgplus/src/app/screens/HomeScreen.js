@@ -24,7 +24,7 @@ const HomeScreen = ({navigation}) => {
             <View style={{flex: 1, justifyContent:'center', alignItems: 'center', marginTop: 10}}>
 
                 <Image
-                    source={require('../../../assets/logo.png')}
+                    source={require('../../../assets/images/logo.png')}
                     style={{ width: 200, height: 100 }}
                 />
 

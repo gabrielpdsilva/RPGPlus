@@ -63,7 +63,7 @@ export default class LoginScreen extends Component {
                     <View style={{justifyContent:'center', alignItems: 'center', marginTop: 10}}>
 
                         <Image
-                            source={require('../../../assets/logo.png')}
+                            source={require('../../../assets/images/logo.png')}
                             style={{ width: 200, height: 100, justifyContent: 'center',
                             alignItems: 'center',}}
                         />
