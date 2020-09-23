@@ -80,7 +80,7 @@ export default class NameGeneratorScreen extends Component {
     
             case "medieval":
 
-                firstName = ["Aynur","Asriel","Baldor","Hannah","Vannet", "Verena", "Silke", "Sillina", "Lunet", "Luffechild", "Liana", "Ansere"];
+                firstName = ["Aynur","Asriel", "Aldyt", "Baldor","Hannah","Vannet", "Verena", "Silke", "Sillina", "Lunet", "Luffechild", "Liana", "Ansere"];
                 lastName = ["the Great","Iron Heart","Turambar", "Valstar", "Yelenna", "The Great One", "Wihted", "Wiemda", "Liaueld"];
             
             break;
@@ -92,8 +92,8 @@ export default class NameGeneratorScreen extends Component {
             break;
     
             case "vampire":
-                firstName = ["Victoria","Anna","Richard"];
-                lastName = ["Valerius","Stohess"];
+                firstName = ["Victoria","Anna","Richard", "Lucie", "Lucina", "Lucy", "Vivienne", ];
+                lastName = ["Valerius","Stohess", "Vreni", "Vreneli", ];
 
             break;
     
