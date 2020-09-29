@@ -34,7 +34,9 @@ export default class PreferencesScreen extends Component {
             name: user.displayName,
             email: user.email,
             image: user.photoURL,
-            isDialogVisible: false
+            isDialogVisible: false,
+            isNameDialogVisible: false,
+            isEmailDialogVisible: false,
         }
     }
 
@@ -42,13 +44,23 @@ export default class PreferencesScreen extends Component {
         this.getPermissionAsync();
     }
 
-    showDialog = (value) => {
-        this.setState({isDialogVisible: value});
+    showNameDialog = (value) => {
+        this.setState({isNameDialogVisible: value});
     }
 
-    sendInput = (inputText) => {
+    showEmailDialog = (value) => {
+        this.setState({isEmailDialogVisible: value});
+    }
+
+    sendNameInput = (inputText) => {
         this.setState({name: inputText});
-        this.showDialog(false);
+        this.showNameDialog(false);
+    }
+
+    sendEmailInput = (inputText) => {
+
+        this.setState({email: inputText});
+        this.showEmailDialog(false);
     }
 
     getPermissionAsync = async () => {
@@ -166,7 +178,7 @@ export default class PreferencesScreen extends Component {
         user.updateEmail(this.state.email).then(() => {
             console.log("E-mail updated.");
         }).catch((error) => {
-            console.log(translate('alertCatchError') + error);
+            alert(translate('alertCatchError') + error);
         });    
     }
 
@@ -188,6 +200,9 @@ export default class PreferencesScreen extends Component {
         const name = this.state.name;
         const email = this.state.email;
         const isDialogVisible = this.state.isDialogVisible;
+
+        const isNameDialogVisible = this.state.isNameDialogVisible;
+        const isEmailDialogVisible = this.state.isEmailDialogVisible;
 
         return(
             <View style={styles.container}>
@@ -217,7 +232,7 @@ export default class PreferencesScreen extends Component {
 
                         <Text>{name}</Text>
                         
-                        <TouchableOpacity style={{backgroundColor: colors.white}} onPress={()=>this.setState({isDialogVisible: true})}>
+                        <TouchableOpacity style={{backgroundColor: colors.white}} onPress={()=>this.setState({isNameDialogVisible: true})}>
                             <Icon 
                                 name="pencil" 
                                 color={colors.darkBlue}
@@ -235,7 +250,7 @@ export default class PreferencesScreen extends Component {
 
                         <Text>{email}</Text>
                         
-                        <TouchableOpacity style={{backgroundColor: colors.white}} onPress={()=>this.setState({isDialogVisible: true})}>
+                        <TouchableOpacity style={{backgroundColor: colors.white}} onPress={()=>this.setState({isEmailDialogVisible: true})}>
                             <Icon 
                                 name="pencil" 
                                 color={colors.darkBlue}
@@ -246,12 +261,22 @@ export default class PreferencesScreen extends Component {
 
                 </View>
 
-                <DialogInput isDialogVisible={isDialogVisible}
+                <DialogInput isDialogVisible={isNameDialogVisible}
                     title={"Alterar Nome"}
                     message={"Digite abaixo o novo nome... "}
                     hintInput ={name}
-                    submitInput={ (inputText) => {this.sendInput(inputText)} }
-                    closeDialog={ () => {this.showDialog(false)}}
+                    submitInput={ (inputText) => this.sendNameInput(inputText) }
+                    closeDialog={ () => this.showNameDialog(false)}
+                    cancelText="Cancelar"
+                    submitText="Confirmar"
+                />
+
+                <DialogInput isDialogVisible={isEmailDialogVisible}
+                    title={"Alterar E-mail"}
+                    message={"Digite abaixo o novo e-mail... "}
+                    hintInput ={email}
+                    submitInput={ (inputText) => this.sendEmailInput(inputText) }
+                    closeDialog={ () => this.showEmailDialog(false)}
                     cancelText="Cancelar"
                     submitText="Confirmar"
                 />
