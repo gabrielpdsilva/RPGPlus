@@ -179,13 +179,20 @@ export default class PreferencesScreen extends Component {
             ToastAndroid.show(translate('toastPreferencesEmailUpdated'), ToastAndroid.SHORT);
         }).catch((error) => {
             alert(translate('alertCatchError') + error);
-        });    
+        });
     }
 
     handleSaveChanges = () => {
 
-        this.updateUserName();
-        this.updateUserEmail();
+        //TODO...
+        const nameChanged = true;
+        const emailChanged = false;
+
+        if(nameChanged)
+            this.updateUserName();
+
+        if(emailChanged)
+            this.updateUserEmail();
         
         this.setState({isSwitchOn: false});
         this.props.navigation.navigate("Home");

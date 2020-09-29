@@ -140,6 +140,8 @@ const en = {
     alertPreferencesPermissions: 'Sorry, we need camera roll permissions to make this work!',
     toastPreferencesImageAdded: 'Image added.',
     toastPreferencesImageSaved: 'Image saved.',
+    toastPreferencesNameUpdated: 'Name updated.',
+    toastPreferencesEmailUpdated: 'E-mail updated.',
     alertPreferencesTitle: 'Delete User',
     alertPreferencesMessage: 'Are you sure you want to delete your account? This cannot be undone.',
     toastPreferencesUserDeleted: 'User deleted!',
