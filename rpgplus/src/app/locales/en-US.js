@@ -143,7 +143,6 @@ const en = {
     alertPreferencesTitle: 'Delete User',
     alertPreferencesMessage: 'Are you sure you want to delete your account? This cannot be undone.',
     toastPreferencesUserDeleted: 'User deleted!',
-    toastPreferencesUpdateDone: 'Done!',
     toastPreferencesDeleteCancel: 'Delete canceled.',
 
     //register

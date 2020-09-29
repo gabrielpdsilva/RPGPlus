@@ -139,10 +139,11 @@ const pt = {
     alertPreferencesPermissions: 'Lamentamos, mas precisamos das permissões de câmera para executar essa ação!',
     toastPreferencesImageAdded: 'Imagem adicionada.',
     toastPreferencesImageSaved: 'Imagem salva.',
+    toastPreferencesNameUpdated: 'Nome atualizado.',
+    toastPreferencesEmailUpdated: 'E-mail atualizado.',
     alertPreferencesTitle: 'Deletar Conta',
     alertPreferencesMessage: 'Tem certeza que deseja deletar sua conta? Isso não pode ser desfeito.',
     toastPreferencesUserDeleted: 'Usuário deletado!',
-    toastPreferencesUpdateDone: 'Pronto!',
     toastPreferencesDeleteCancel: 'Ação cancelada.',
     preferencesEditableProfile: 'Editar Perfil',
 

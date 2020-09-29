@@ -34,7 +34,6 @@ export default class PreferencesScreen extends Component {
             name: user.displayName,
             email: user.email,
             image: user.photoURL,
-            isDialogVisible: false,
             isNameDialogVisible: false,
             isEmailDialogVisible: false,
         }
@@ -164,7 +163,7 @@ export default class PreferencesScreen extends Component {
 
         user.updateProfile({displayName: name})
         .then(() => {
-            console.log("Name updated.");
+            ToastAndroid.show(translate('toastPreferencesNameUpdated'), ToastAndroid.SHORT);
         }).catch((error) => {
             console.log(translate('alertCatchError') + error);
         });
@@ -174,9 +173,10 @@ export default class PreferencesScreen extends Component {
     updateUserEmail = () => {
 
         const user = firebase.auth().currentUser;
+        const email = this.state.email;
 
-        user.updateEmail(this.state.email).then(() => {
-            console.log("E-mail updated.");
+        user.updateEmail(email).then(() => {
+            ToastAndroid.show(translate('toastPreferencesEmailUpdated'), ToastAndroid.SHORT);
         }).catch((error) => {
             alert(translate('alertCatchError') + error);
         });    
@@ -188,7 +188,6 @@ export default class PreferencesScreen extends Component {
         this.updateUserEmail();
         
         this.setState({isSwitchOn: false});
-        ToastAndroid.show(translate('toastPreferencesUpdateDone'), ToastAndroid.SHORT);
         this.props.navigation.navigate("Home");
     }
 
@@ -199,8 +198,6 @@ export default class PreferencesScreen extends Component {
         const image = this.state.image;
         const name = this.state.name;
         const email = this.state.email;
-        const isDialogVisible = this.state.isDialogVisible;
-
         const isNameDialogVisible = this.state.isNameDialogVisible;
         const isEmailDialogVisible = this.state.isEmailDialogVisible;
 
