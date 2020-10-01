@@ -38,6 +38,7 @@ export default class PreferencesScreen extends Component {
             image: user.photoURL,
             isNameDialogVisible: false,
             isEmailDialogVisible: false,
+            buttonDisabled: true,
         }
     }
 
@@ -54,13 +55,12 @@ export default class PreferencesScreen extends Component {
     }
 
     sendNameInput = (inputText) => {
-        this.setState({name: inputText});
+        this.setState({name: inputText, buttonDisabled: false});
         this.showNameDialog(false);
     }
 
     sendEmailInput = (inputText) => {
-
-        this.setState({email: inputText});
+        this.setState({email: inputText, buttonDisabled: false});
         this.showEmailDialog(false);
     }
 
@@ -169,7 +169,6 @@ export default class PreferencesScreen extends Component {
         }).catch((error) => {
             console.log(translate('alertCatchError') + error);
         });
-
     }
 
     updateUserEmail = () => {
@@ -199,14 +198,13 @@ export default class PreferencesScreen extends Component {
         if(prevEmail !== email)
             this.updateUserEmail();
         
-        if((prevName !== name) || (prevEmail !== email))
+        if((prevName !== name) || (prevEmail !== email)){
+        
+            this.setState({buttonDisabled: true});
             this.props.navigation.navigate("Home");
-        else
-            alert("Nothing changed.");
-    
+        
+        }
     }
-
-    _onToggleSwitch = () =>  this.setState(state => ({ isSwitchOn: !state.isSwitchOn }));
 
     render(){
 
@@ -215,6 +213,7 @@ export default class PreferencesScreen extends Component {
         const email = this.state.email;
         const isNameDialogVisible = this.state.isNameDialogVisible;
         const isEmailDialogVisible = this.state.isEmailDialogVisible;
+        const buttonDisabled = this.state.buttonDisabled;
 
         return(
             <View style={styles.container}>
@@ -296,8 +295,11 @@ export default class PreferencesScreen extends Component {
                 <View style={{justifyContent:'center', alignItems: 'center', marginTop: 10}}>
 
                     <AwesomeButton
-                        backgroundColor={colors.blue}
-                        backgroundDarker={colors.darkBlue}
+                        disabled={buttonDisabled}
+                        backgroundColor= {buttonDisabled ? '#7a7491' : colors.blue}
+                        //backgroundColor={colors.blue}
+                        backgroundDarker= {buttonDisabled ? '#2f2463' : colors.darkBlue}
+                        //backgroundDarker={colors.darkBlue}
                         backgroundShadow={colors.lightGray}
                         progress
                         width={340}
