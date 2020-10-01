@@ -32,7 +32,9 @@ export default class PreferencesScreen extends Component {
 
         this.state = {
             name: user.displayName,
+            prevName: user.displayName,
             email: user.email,
+            prevEmail: user.email,
             image: user.photoURL,
             isNameDialogVisible: false,
             isEmailDialogVisible: false,
@@ -185,17 +187,23 @@ export default class PreferencesScreen extends Component {
     handleSaveChanges = () => {
 
         //TODO...
-        const nameChanged = true;
-        const emailChanged = false;
+        const prevName = this.state.prevName;
+        const prevEmail = this.state.prevEmail;
+        const name = this.state.name;
+        const email = this.state.email;
+        
 
-        if(nameChanged)
+        if(prevName !== name)
             this.updateUserName();
 
-        if(emailChanged)
+        if(prevEmail !== email)
             this.updateUserEmail();
         
-        this.setState({isSwitchOn: false});
-        this.props.navigation.navigate("Home");
+        if((prevName !== name) || (prevEmail !== email))
+            this.props.navigation.navigate("Home");
+        else
+            alert("Nothing changed.");
+    
     }
 
     _onToggleSwitch = () =>  this.setState(state => ({ isSwitchOn: !state.isSwitchOn }));
