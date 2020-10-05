@@ -149,7 +149,7 @@ const pt = {
 
     //register
     alertRegisterFillFields: 'Você precisa preencher todos os campos!',
-    alertRegisterPassword: 'Senha e COnfirmar Senha não podem ser diferentes!',
+    alertRegisterPassword: 'Senha e Confirmar Senha não podem ser diferentes!',
     toastRegisterSuccess: 'Registrado com sucesso!',
 
     //roll dices

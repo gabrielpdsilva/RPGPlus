@@ -4,7 +4,8 @@ import {
     ToastAndroid,
     Text,
     ScrollView,
-    Image
+    Image,
+    Alert
 } from 'react-native';
 import styles from '../style/styles';
 import CustomAppBar from '../components/CustomAppBar';
@@ -52,7 +53,25 @@ export default class RegisterScreen extends Component {
             cred.user.updateProfile({displayName: name});
             this.addUserToFirestore(dbh, cred);
         })
-        .catch(error => console.log("Could not create an user:\n" + error));
+        .catch(error => {   
+            switch(error.code) {
+                case 'auth/email-already-in-use':
+                    Alert.alert('E-mail em uso', 'E-mail em uso!');
+                break;
+
+                case 'auth/invalid-email':
+                    alert('E-mail inválido.')
+                break;
+
+                case 'auth/weak-password':
+                    alert('A senha precisa de no mínimo 6 caracteres.');
+                break;
+
+                default:
+                    alert(error);
+           }
+        });
+
     }
 
     addUserToFirestore = (dbh, cred) => {

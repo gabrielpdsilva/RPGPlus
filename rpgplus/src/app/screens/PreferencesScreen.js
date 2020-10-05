@@ -178,8 +178,16 @@ export default class PreferencesScreen extends Component {
 
         user.updateEmail(email).then(() => {
             ToastAndroid.show(translate('toastPreferencesEmailUpdated'), ToastAndroid.SHORT);
-        }).catch((error) => {
-            alert(translate('alertCatchError') + error);
+        })
+        .catch(error => {   
+            switch(error.code) {
+                case 'auth/requires-recent-login':
+                    alert('Por segurança, é necessário realizar login novamente antes de fazer essa ação.');
+                break;
+
+                default:
+                    alert(error);
+           }
         });
     }
 
