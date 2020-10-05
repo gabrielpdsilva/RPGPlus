@@ -296,9 +296,9 @@ export default class PreferencesScreen extends Component {
 
                     <AwesomeButton
                         disabled={buttonDisabled}
-                        backgroundColor= {buttonDisabled ? '#7a7491' : colors.blue}
+                        backgroundColor= {buttonDisabled ? colors.grayBlue : colors.slateBlue}
                         //backgroundColor={colors.blue}
-                        backgroundDarker= {buttonDisabled ? '#2f2463' : colors.darkBlue}
+                        backgroundDarker= {buttonDisabled ? colors.DarkSlateBlue : colors.darkBlue}
                         //backgroundDarker={colors.darkBlue}
                         backgroundShadow={colors.lightGray}
                         progress
@@ -316,7 +316,7 @@ export default class PreferencesScreen extends Component {
                 <View style={{justifyContent:'center', alignItems: 'center', marginTop: 10, marginBottom: 10}}>
 
                     <AwesomeButton
-                        backgroundColor={colors.blue}
+                        backgroundColor={colors.slateBlue}
                         backgroundDarker={colors.darkBlue}
                         backgroundShadow={colors.lightGray}
                         progress

@@ -97,7 +97,7 @@ const styles = StyleSheet.create({
     },
 
     itemTitle: {
-        color: colors.blue,
+        color: colors.slateBlue,
         fontSize: 15,
         fontWeight: 'bold',
     },
@@ -127,7 +127,7 @@ const styles = StyleSheet.create({
         width: 290,
         margin: 5,
         height: 50,
-        backgroundColor: colors.blue,
+        backgroundColor: colors.slateBlue,
         borderRadius: 4,
         alignItems: "center",
         justifyContent: "center",

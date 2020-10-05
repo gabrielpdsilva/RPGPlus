@@ -160,7 +160,7 @@ export default class NameGeneratorScreen extends Component {
                     <View style={{justifyContent:'center', alignItems: 'center', marginTop: 10, marginBottom: 10}}>
 
                         <AwesomeButton
-                            backgroundColor={colors.blue}
+                            backgroundColor={colors.slateBlue}
                             backgroundDarker={colors.darkBlue}
                             backgroundShadow={colors.lightGray}
                             progress={false}
