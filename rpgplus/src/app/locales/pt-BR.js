@@ -151,6 +151,12 @@ const pt = {
     alertRegisterFillFields: 'Você precisa preencher todos os campos!',
     alertRegisterPassword: 'Senha e Confirmar Senha não podem ser diferentes!',
     toastRegisterSuccess: 'Registrado com sucesso!',
+    alertTitleEmailUsed: 'E-mail em uso',
+    alertEmailUsed: 'Este e-mail já está sendo usado.',
+    alertTitleInvalidEmail: 'E-mail inválido',
+    alertInvalidEmail: 'Você precisa digitar um e-mail válido.',
+    alertTitleWeakPassword: 'Senha fraca',
+    alertWeakPassword: 'A senha deve ter no mínimo 6 caracteres.',
 
     //roll dices
     alertRollQuantity: 'A quantidade precisa ser um valor entre 1 e 5.',

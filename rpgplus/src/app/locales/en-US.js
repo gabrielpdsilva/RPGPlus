@@ -151,6 +151,12 @@ const en = {
     alertRegisterFillFields: 'You have to fill all the fields!',
     alertRegisterPassword: 'Password and Confirm Password fields cannot be different!',
     toastRegisterSuccess: 'Successfully Registered!',
+    alertTitleEmailUsed: 'E-mail in use',
+    alertEmailUsed: 'This e-mail is already in use!',
+    alertTitleInvalidEmail: 'Invalid e-mail',
+    alertInvalidEmail: 'You have to use a valid e-mail!',
+    alertTitleWeakPassword: 'Weak password',
+    alertWeakPassword: 'Your password has to be at least 6 characters.',
 
     //roll dices
     alertRollQuantity: 'The quantity must be a value between 1 and 5.',
