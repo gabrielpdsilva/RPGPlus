@@ -129,8 +129,23 @@ const pt = {
     toastForgotPasswordDone: 'Pronto, por favor confira seu e-mail.',
 
     //login
+    alertTitleLoginFillFields: 'Campos em branco',
     alertLoginFillFields: 'Por favor, preencha todos os campos.',
+    
     toastLoginSuccess: 'Logado com sucesso!',
+
+    //dealing with firebase exceptions
+    alertTitleUserNotFound: 'Usuário não encontrado',
+    alertUserNotFound: 'Não foi possível encontrar o usuário com este e-mail.',
+
+    alertTitleInvalidEmail: 'E-mail inválido',
+    alertInvalidEmail: 'Você precisa digitar um e-mail válido.',
+   
+    alertTitleEmailInUse: 'E-mail em uso',
+    alertEmailInUse: 'Este e-mail já está sendo usado.',
+
+    alertTitleWeakPassword: 'Senha fraca',
+    alertWeakPassword: 'A senha deve ter no mínimo 6 caracteres.',
 
     //name generator
     toastNameGeneratorCopied: 'copiado para o seu teclado.',
@@ -151,12 +166,6 @@ const pt = {
     alertRegisterFillFields: 'Você precisa preencher todos os campos!',
     alertRegisterPassword: 'Senha e Confirmar Senha não podem ser diferentes!',
     toastRegisterSuccess: 'Registrado com sucesso!',
-    alertTitleEmailUsed: 'E-mail em uso',
-    alertEmailUsed: 'Este e-mail já está sendo usado.',
-    alertTitleInvalidEmail: 'E-mail inválido',
-    alertInvalidEmail: 'Você precisa digitar um e-mail válido.',
-    alertTitleWeakPassword: 'Senha fraca',
-    alertWeakPassword: 'A senha deve ter no mínimo 6 caracteres.',
 
     //roll dices
     alertRollQuantity: 'A quantidade precisa ser um valor entre 1 e 5.',

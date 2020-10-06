@@ -3,7 +3,8 @@ import {
     Text,
     View,
     ToastAndroid,
-    Image
+    Image,
+    Alert
 } from 'react-native';
 import styles from '../style/styles';
 import CustomAppBar from '../components/CustomAppBar';
@@ -31,7 +32,16 @@ export default class ForgotPasswordScreen extends Component {
             ToastAndroid.show(translate('toastForgotPasswordDone'), ToastAndroid.SHORT);
         })
         .catch((error) => {
-            alert(translate('alertCatchError') + error);
+            switch(error.code) {
+                case 'auth/invalid-email':
+                    Alert.alert(translate('alertTitleInvalidEmail'),
+                                translate('alertInvalidEmail'));
+                break;
+
+                case 'auth/user-not-found':
+                    Alert.alert(translate('alertTitleUserNotFound'),
+                                translate('alertUserNotFound'));
+            }
         });
     }
 

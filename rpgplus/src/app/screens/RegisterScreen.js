@@ -56,15 +56,18 @@ export default class RegisterScreen extends Component {
         .catch(error => {   
             switch(error.code) {
                 case 'auth/email-already-in-use':
-                    Alert.alert(translate('alertTitleEmailUsed'), translate('alertEmailUsed'));
+                    Alert.alert(translate('alertTitleEmailInUse'),
+                                translate('alertEmailInUse'));
                 break;
 
                 case 'auth/invalid-email':
-                    Alert.alert(translate('alertTitleInvalidEmail'), translate('alertInvalidEmail'));
+                    Alert.alert(translate('alertTitleInvalidEmail'),
+                                translate('alertInvalidEmail'));
                 break;
 
                 case 'auth/weak-password':
-                    Alert.alert(translate('alertTitleWeakPassword'), translate('alertWeakPassword'));
+                    Alert.alert(translate('alertTitleWeakPassword'),
+                                translate('alertWeakPassword'));
                 break;
 
                 default:

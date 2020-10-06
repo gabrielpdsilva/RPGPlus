@@ -5,7 +5,8 @@ import {
     TouchableOpacity,
     ToastAndroid,
     Text,
-    Image
+    Image,
+    Alert
 } from 'react-native';
 import styles from '../style/styles';
 import colors from '../style/colors';
@@ -34,7 +35,8 @@ export default class LoginScreen extends Component {
         const {email, password} = this.state;
 
         if(email == '' || password == ''){
-            alert(translate('alertLoginFillFields'));
+            Alert.alert(translate('alertTitleLoginFillFields'),
+                        translate('alertLoginFillFields'));
             return;
         }
 
@@ -44,7 +46,18 @@ export default class LoginScreen extends Component {
             .then(() => {
                 this.setState({email: '', password: ''});
                 ToastAndroid.show(translate('toastLoginSuccess'), ToastAndroid.SHORT);
-            }).catch(error => alert(translate('alertCatchError') + error));   
+            }).catch(error => {  
+                    switch(error.code) {
+                        case 'auth/invalid-email':
+                            Alert.alert(translate('alertTitleInvalidEmail'),
+                                        translate('alertInvalidEmail'));
+                        break;
+
+                        case 'auth/user-not-found':
+                            Alert.alert(translate('alertTitleUserNotFound'),
+                                        translate('alertUserNotFound'));
+                        break;
+            }});
     }
 
     render(){
