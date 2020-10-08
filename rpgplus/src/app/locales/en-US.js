@@ -167,7 +167,9 @@ const en = {
     toastPreferencesDeleteCancel: 'Delete canceled.',
 
     //register
+    alertRegisterTitleFillFields: 'Empty fields',
     alertRegisterFillFields: 'You have to fill all the fields!',
+    alertRegisterTitlePassword: 'Password conflict',
     alertRegisterPassword: 'Password and Confirm Password fields cannot be different!',
     toastRegisterSuccess: 'Successfully Registered!',
 

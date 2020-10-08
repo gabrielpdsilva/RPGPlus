@@ -168,7 +168,9 @@ const pt = {
     preferencesEditableProfile: 'Editar Perfil',
 
     //register
+    alertRegisterTitleFillFields: 'Campos vazios',
     alertRegisterFillFields: 'Você precisa preencher todos os campos!',
+    alertRegisterTitlePassword: 'Conflito de senhas',
     alertRegisterPassword: 'Senha e Confirmar Senha não podem ser diferentes!',
     toastRegisterSuccess: 'Registrado com sucesso!',
 
