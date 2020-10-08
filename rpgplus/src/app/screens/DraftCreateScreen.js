@@ -3,7 +3,8 @@ import {
     Text,
     View,
     ToastAndroid,
-    ScrollView
+    ScrollView,
+    Alert
 } from 'react-native';
 import CustomAppBar from '../components/CustomAppBar';
 import styles from '../style/styles';
@@ -32,7 +33,8 @@ export default class DraftCreateScreen extends Component {
     handleCreate = () => {
 
         if(this.state.name == '' || this.state.category == '' || this.state.system == '' || this.state.text == '' ){
-            alert(translate('alertCreateDraftAllFields'));
+            Alert.alert(translate('alertCommonTitle'),
+                        translate('alertCreateDraftAllFields'));
             return;
         }
 
@@ -44,7 +46,8 @@ export default class DraftCreateScreen extends Component {
 
         collectionRef.get().then(snap => {
             if(snap.size >= 10){
-                alert(translate('alertCreateDraftReachedMaximum'));
+                Alert.alert(translate('alertCommonTitle'),
+                            translate('alertCreateDraftReachedMaximum'));
                 return;
             }
 
@@ -65,7 +68,8 @@ export default class DraftCreateScreen extends Component {
                 this.props.navigation.navigate("Home");
     
             }).catch((error) => {
-                alert(translate('alertCatchError') + error);
+                Alert.alert(translate('alertCommonTitle'),
+                            translate('alertCatchError') + error);
             });
 
         }); 

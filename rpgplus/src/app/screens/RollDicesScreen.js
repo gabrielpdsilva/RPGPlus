@@ -3,7 +3,8 @@ import {
     Text,
     View,
     Picker,
-    ScrollView
+    ScrollView,
+    Alert
 } from 'react-native';
 import styles from '../style/styles';
 import colors from '../style/colors';
@@ -28,12 +29,12 @@ export default class RollDicesScreen extends Component {
     handleRollDices = (type, quantity, modifier) => {
 
         if(quantity < 1 || quantity > 5){
-            alert(translate('alertRollQuantity'));
+            Alert.alert(translate('alertCommonTitle'), translate('alertRollQuantity'));
             return;
         }
 
         if(modifier > 30 || modifier < (-30)){
-            alert(translate('alertRollModifier'));
+            Alert.alert(translate('alertCommonTitle'), translate('alertRollModifier'));
             return;
         }
 

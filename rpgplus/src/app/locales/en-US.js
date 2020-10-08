@@ -44,7 +44,7 @@ const en = {
 
     //home page
     appBarHome: 'Home',
-    homeTitle: 'Welcome, ',
+    homeTitle: 'Welcome!',
     homeSubtitle: 'Thank you for using RPG+! Please, select the menu at the upper left corner and check out all the available tools.',
 
     //name generator
@@ -109,6 +109,7 @@ const en = {
     //ALERTS AND TOASTS
 
     //common alerts
+    alertCommonTitle: 'Alert',
     alertCatchError: 'Something went wrong: ',
     alertConfirm: 'OK',
     alertCancel: 'Cancel',
@@ -147,16 +148,20 @@ const en = {
     alertTitleWeakPassword: 'Weak password',
     alertWeakPassword: 'Your password has to be at least 6 characters.',
 
+    alertTitleRecentLogin: 'Recent log-in required',
+    alertRecentLogin: 'For your security, you will have to log-in again to continue.',
+
     //name generator
     toastNameGeneratorCopied: 'copied to your clipboard.',
 
     //preferences
+    alertTitlePreferencesPermissions: 'Permission denied',
     alertPreferencesPermissions: 'Sorry, we need camera roll permissions to make this work!',
     toastPreferencesImageAdded: 'Image added.',
     toastPreferencesImageSaved: 'Image saved.',
     toastPreferencesNameUpdated: 'Name updated.',
     toastPreferencesEmailUpdated: 'E-mail updated.',
-    alertPreferencesTitle: 'Delete User',
+    alertPreferencesTitle: 'Delete user',
     alertPreferencesMessage: 'Are you sure you want to delete your account? This cannot be undone.',
     toastPreferencesUserDeleted: 'User deleted!',
     toastPreferencesDeleteCancel: 'Delete canceled.',

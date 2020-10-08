@@ -44,7 +44,7 @@ const pt = {
 
     //home page
     appBarHome: 'Página Inicial',
-    homeTitle: 'Bem-vindo, ',
+    homeTitle: 'Bem-vindo!',
     homeSubtitle: 'Obrigado por usar o RPG+! Por favor, selecione o menu no canto superior esquerdo e confira as ferramentas disponíveis.',
 
     //name generator
@@ -108,6 +108,7 @@ const pt = {
     //ALERTS AND TOASTS
 
     //common alerts
+    alertCommonTitle: 'Alerta',
     alertCatchError: 'Algo deu errado: ',
     alertConfirm: 'Sim',
     alertCancel: 'Cancelar',
@@ -147,16 +148,20 @@ const pt = {
     alertTitleWeakPassword: 'Senha fraca',
     alertWeakPassword: 'A senha deve ter no mínimo 6 caracteres.',
 
+    alertTitleRecentLogin: 'Necessário login recente',
+    alertRecentLogin: 'Por segurança, é necessário realizar login novamente antes de fazer essa ação.',
+
     //name generator
     toastNameGeneratorCopied: 'copiado para o seu teclado.',
 
     //preferences
+    alertTitlePreferencesPermissions: 'Permissão negada',
     alertPreferencesPermissions: 'Lamentamos, mas precisamos das permissões de câmera para executar essa ação!',
     toastPreferencesImageAdded: 'Imagem adicionada.',
     toastPreferencesImageSaved: 'Imagem salva.',
     toastPreferencesNameUpdated: 'Nome atualizado.',
     toastPreferencesEmailUpdated: 'E-mail atualizado.',
-    alertPreferencesTitle: 'Deletar Conta',
+    alertPreferencesTitle: 'Deletar conta',
     alertPreferencesMessage: 'Tem certeza que deseja deletar sua conta? Isso não pode ser desfeito.',
     toastPreferencesUserDeleted: 'Usuário deletado!',
     toastPreferencesDeleteCancel: 'Ação cancelada.',

@@ -104,7 +104,8 @@ export default class DraftEditScreen extends Component {
         draftRef.get()
         .then(doc => {
             if (!doc.exists) {
-                alert(translate('alertDraftEditNoExist'));
+                Alert.alert(translate('alertCommonTitle'),
+                            translate('alertDraftEditNoExist'));
             } else {
                 this.setState({
                     id: doc.id,

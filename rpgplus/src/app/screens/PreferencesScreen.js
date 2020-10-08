@@ -67,7 +67,9 @@ export default class PreferencesScreen extends Component {
     getPermissionAsync = async () => {
         if (Constants.platform.ios) {
             const { status } = await Permissions.askAsync(Permissions.CAMERA_ROLL);
-            if (status !== 'granted') alert('Sorry, we need camera roll permissions to make this work!');
+            if (status !== 'granted')
+                Alert.alert(translate('alertTitlePreferencesPermissions'),
+                            translate('alertPreferencesPermissions'));
         }
     };
     
@@ -153,8 +155,16 @@ export default class PreferencesScreen extends Component {
         .then(() => {
             ToastAndroid.show(translate('toastPreferencesUserDeleted'), ToastAndroid.SHORT);
         })
-        .catch((error) => {
-            console.log(translate('alertCatchError') + error);
+        .catch(error => {   
+            switch(error.code) {
+                case 'auth/requires-recent-login':
+                    Alert.alert(translate('alertTitleRecentLogin'),
+                                translate('alertRecentLogin'));
+                break;
+
+                default:
+                    alert(error);
+           }
         });
     }
 
@@ -182,7 +192,8 @@ export default class PreferencesScreen extends Component {
         .catch(error => {   
             switch(error.code) {
                 case 'auth/requires-recent-login':
-                    alert('Por segurança, é necessário realizar login novamente antes de fazer essa ação.');
+                    Alert.alert(translate('alertTitleRecentLogin'),
+                                translate('alertRecentLogin'));
                 break;
 
                 default:
@@ -193,12 +204,10 @@ export default class PreferencesScreen extends Component {
 
     handleSaveChanges = () => {
 
-        //TODO...
         const prevName = this.state.prevName;
         const prevEmail = this.state.prevEmail;
         const name = this.state.name;
         const email = this.state.email;
-        
 
         if(prevName !== name)
             this.updateUserName();

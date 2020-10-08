@@ -8,12 +8,9 @@ import {
 import styles from '../style/styles';
 import CustomAppBar from '../components/CustomAppBar';
 
-import firebase from '../controller/FirebaseConfig';
 import {translate} from '../locales/localeConfig';
 
 const HomeScreen = ({navigation}) => {
-
-    const user = firebase.auth().currentUser;
     
     return(
 
@@ -28,7 +25,7 @@ const HomeScreen = ({navigation}) => {
                     style={{ width: 200, height: 100 }}
                 />
 
-                <Text style={styles.title}>{translate('homeTitle')} {user.displayName}</Text>
+                <Text style={styles.title}>{translate('homeTitle')}</Text>
 
                 <Text style={styles.text}>{translate('homeSubtitle')}</Text>
 

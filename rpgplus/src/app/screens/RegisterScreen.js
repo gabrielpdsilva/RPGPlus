@@ -37,12 +37,14 @@ export default class RegisterScreen extends Component {
         const confirmPassword = this.state.confirmPassword;
         
         if(name == '' ||nickname == '' || email == '' || password == '' || confirmPassword == ''){
-            alert(translate('alertRegisterFillFields'));
+            Alert.alert(translate('alertCommonTitle'),
+                        translate('alertRegisterFillFields'));
             return;
         }
 
         if(password !== confirmPassword){
-            alert(translate('alertRegisterPassword'));
+            Alert.alert(translate('alertCommonTitle'),
+                        translate('alertRegisterPassword'));
             return;
         }
 
