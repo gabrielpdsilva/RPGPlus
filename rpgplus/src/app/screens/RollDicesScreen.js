@@ -72,7 +72,7 @@ export default class RollDicesScreen extends Component {
 
         const soundObject = new Audio.Sound();
         try {
-            await soundObject.loadAsync(require('../../../assets/sounds/dice_effect.mp3'));
+            await soundObject.loadAsync(require('../assets/sounds/dice_effect.mp3'));
             await soundObject.playAsync();
             //The sound is playing!
             

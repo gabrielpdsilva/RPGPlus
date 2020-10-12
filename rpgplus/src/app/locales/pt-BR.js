@@ -53,6 +53,7 @@ const pt = {
     appBarHome: 'Página Inicial',
     homeTitle: 'Bem-vindo!',
     homeSubtitle: 'Obrigado por usar o RPG+! Por favor, selecione o menu no canto superior esquerdo e confira as ferramentas disponíveis.',
+    homeAppVersion: 'Versão do app: ',
 
     //name generator
     appBarGenerate: 'Gerador de Nomes',

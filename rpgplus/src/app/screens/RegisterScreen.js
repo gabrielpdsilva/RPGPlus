@@ -111,7 +111,7 @@ export default class RegisterScreen extends Component {
                     <View style={{justifyContent:'center', alignItems: 'center'}}>
 
                         <Image
-                            source={require('../../../assets/images/logo.png')}
+                            source={require('../assets/images/logo.png')}
                             style={{ width: 200, height: 100, justifyContent: 'center',
                             alignItems: 'center',}}
                         />

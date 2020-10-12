@@ -11,10 +11,8 @@ import {
     View,
     Image
 } from 'react-native';
-
 import styles from '../style/styles';
 import CustomAppBar from '../components/CustomAppBar';
-
 import {translate} from '../locales/localeConfig';
 
 const HomeScreen = ({navigation}) => {
@@ -28,13 +26,15 @@ const HomeScreen = ({navigation}) => {
             <View style={{flex: 1, justifyContent:'center', alignItems: 'center', marginTop: 10}}>
 
                 <Image
-                    source={require('../../../assets/images/logo.png')}
+                    source={require('../assets/images/logo.png')}
                     style={{ width: 200, height: 100 }}
                 />
 
                 <Text style={styles.title}>{translate('homeTitle')}</Text>
 
                 <Text style={styles.text}>{translate('homeSubtitle')}</Text>
+
+                <Text style ={styles.text}>{translate('homeAppVersion')} 1.0.0</Text>
 
             </View>
             

@@ -53,6 +53,7 @@ const en = {
     appBarHome: 'Home',
     homeTitle: 'Welcome!',
     homeSubtitle: 'Thank you for using RPG+! Please, select the menu at the upper left corner and check out all the available tools.',
+    homeAppVersion: 'App version: ',
 
     //name generator
     appBarGenerate: 'Name Generator',
