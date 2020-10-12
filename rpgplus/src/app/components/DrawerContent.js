@@ -1,3 +1,10 @@
+/**
+ * 
+ * author: G.P.
+ * RPG+ (RPGPlus) is a project made for tests and studies using React Native technology
+ * 
+ */
+
 import React from 'react';
 import {View, Text, Alert, ToastAndroid} from 'react-native';
 import {DrawerContentScrollView, DrawerItem} from '@react-navigation/drawer';

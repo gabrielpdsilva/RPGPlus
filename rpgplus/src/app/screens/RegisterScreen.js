@@ -1,4 +1,11 @@
-import React, { Component } from 'react';
+/**
+ * 
+ * author: G.P.
+ * RPG+ (RPGPlus) is a project made for tests and studies using React Native technology
+ * 
+ */
+
+ import React, { Component } from 'react';
 import {
     View,
     ToastAndroid,

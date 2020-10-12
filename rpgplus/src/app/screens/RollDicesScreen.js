@@ -1,3 +1,10 @@
+/**
+ * 
+ * author: G.P.
+ * RPG+ (RPGPlus) is a project made for tests and studies using React Native technology
+ * 
+ */
+
 import React, { Component } from 'react';
 import {
     Text,
@@ -26,20 +33,7 @@ export default class RollDicesScreen extends Component {
         }
     }
 
-    handleRollDices = (type, quantity, modifier) => {
-
-        if(quantity < 1 || quantity > 5){
-            Alert.alert(translate('alertCommonTitle'), translate('alertRollQuantity'));
-            return;
-        }
-
-        if(modifier > 30 || modifier < (-30)){
-            Alert.alert(translate('alertCommonTitle'), translate('alertRollModifier'));
-            return;
-        }
-
-        this.playDiceEffect();
-
+    roll = (type, quantity, modifier) => {
         let value;
         let results = [];
 
@@ -58,6 +52,22 @@ export default class RollDicesScreen extends Component {
         });
     }
 
+    handleRollDices = (type, quantity, modifier) => {
+
+        if(quantity < 1 || quantity > 5){
+            Alert.alert(translate('alertCommonTitle'), translate('alertRollQuantity'));
+            return;
+        }
+
+        if(modifier > 30 || modifier < (-30)){
+            Alert.alert(translate('alertCommonTitle'), translate('alertRollModifier'));
+            return;
+        }
+
+        this.playDiceEffect();
+        this.roll(type, quantity, modifier);
+    }
+
     playDiceEffect = async () => {
 
         const soundObject = new Audio.Sound();
@@ -65,14 +75,15 @@ export default class RollDicesScreen extends Component {
             await soundObject.loadAsync(require('../../../assets/sounds/dice_effect.mp3'));
             await soundObject.playAsync();
             //The sound is playing!
+            
+        } catch (error) {
+            console.log("Something went wrong while trying to play the sound: " + error);
+        } finally {
 
             // Unload the sound from memory
             // when done using the Sound object
             await soundObject.unloadAsync();
-        } catch (error) {
-            console.log("Something went wrong while trying to play the sound: " + error);
         }
-
     }
 
     render(){

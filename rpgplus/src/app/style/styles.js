@@ -1,3 +1,10 @@
+/**
+ * 
+ * author: G.P.
+ * RPG+ (RPGPlus) is a project made for tests and studies using React Native technology
+ * 
+ */
+
 import {StyleSheet} from 'react-native';
 
 import colors from './colors';
@@ -6,7 +13,7 @@ const styles = StyleSheet.create({
 
     container: {
         flex: 1,
-        backgroundColor: colors.lightTheme //colors.white,
+        backgroundColor: colors.lightTheme
     },
 
     hoshiStyle: {
@@ -111,7 +118,6 @@ const styles = StyleSheet.create({
         marginLeft: 20,
         marginRight: 10,
         color: colors.black,
-        //backgroundColor: 'red'
     },
 
     headerAppBar: {

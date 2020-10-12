@@ -1,4 +1,11 @@
-import * as React from 'react';
+/**
+ * 
+ * author: G.P.
+ * RPG+ (RPGPlus) is a project made for tests and studies using React Native technology
+ * 
+ */
+
+ import * as React from 'react';
 import { Appbar } from 'react-native-paper';
 import styles from '../style/styles';
 

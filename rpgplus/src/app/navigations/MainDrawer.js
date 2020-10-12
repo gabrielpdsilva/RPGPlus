@@ -1,7 +1,12 @@
+/**
+ * 
+ * author: G.P.
+ * RPG+ (RPGPlus) is a project made for tests and studies using React Native technology
+ * 
+ */
+
 import React from 'react';
-
 import {createDrawerNavigator} from '@react-navigation/drawer';
-
 import HomeScreen from '../screens/HomeScreen';
 import DraftCreateScreen from '../screens/DraftCreateScreen';
 import NameGeneratorScreen from '../screens/NameGeneratorScreen';

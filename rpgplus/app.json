@@ -1,11 +1,10 @@
 {
   "expo": {
-    "name": "rpgplus",
+    "name": "RPGPlus",
     "slug": "rpgplus",
     "platforms": [
       "ios",
-      "android",
-      "web"
+      "android"
     ],
     "version": "1.0.0",
     "orientation": "portrait",
@@ -22,7 +21,15 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.rpgplusteam.rpgplus"
+    },
+    "android": {
+      "package": "com.rpgplusteam.rpgplus",
+      "versionCode": 1,
+      "permissions": [
+        "CAMERA_ROLL"
+      ]
     }
   }
 }

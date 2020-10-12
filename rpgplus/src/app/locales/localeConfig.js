@@ -1,3 +1,10 @@
+/**
+ * 
+ * author: G.P.
+ * RPG+ (RPGPlus) is a project made for tests and studies using React Native technology
+ * 
+ */
+
 import { Platform, NativeModules } from 'react-native'
 import I18n from 'i18n-js'
 import en from './en-US' //import the English words
